@@ -1,0 +1,4109 @@
+<sounds>
+    <!-- ENEMY SOUNDS --->
+
+    <armadilloAttack delayFrames="0" delayBeats="0" delayMS="0" volume="0.6">
+        <filename>en_armadillo_attack</filename>
+    </armadilloAttack>
+    <armadilloCry volume="0.4">
+        <filename>en_armadillo_cry</filename>
+    </armadilloCry>
+    <armadilloDeath volume="0.4">
+        <filename>en_armadillo_death</filename>
+    </armadilloDeath>
+    <armadilloHit volume="0.4">
+        <filename>en_armadillo_hit</filename>
+    </armadilloHit>
+    <armadilloShielded volume="0.8">
+        <filename>en_armadillo_shielded</filename>
+    </armadilloShielded>
+    <armadilloWall volume="0.4">
+        <filename>en_armadillo_wallimpact</filename>
+    </armadilloWall>
+
+    <bansheeAttack volume="0.8">
+        <filename>en_banshee_attack</filename>
+    </bansheeAttack>
+    <bansheeCry volume="0.8">
+        <filename>en_banshee_cry</filename>
+    </bansheeCry>
+	<bansheeLoop volume="1.0">
+        <filename>en_banshee_loop</filename>
+    </bansheeLoop>
+    <bansheeDeath volume="0.5">
+        <filename>en_banshee_death</filename>
+    </bansheeDeath>
+	<bansheeHit volume="1.0">
+        <filename>en_banshee_hit_01</filename>
+        <filename>en_banshee_hit_02</filename>
+        <filename>en_banshee_hit_03</filename>
+    </bansheeHit>
+
+    <batAttack volume="0.4">
+        <filename>en_bat_attack</filename>
+    </batAttack>
+    <batHit volume="0.4">
+        <filename>en_bat_hit</filename>
+    </batHit>
+    <batDeath volume="0.4">
+        <filename>en_bat_death</filename>
+    </batDeath>
+
+	<beetleAttack volume="0.5" delayMS="50">
+        <filename>en_beetle_attack</filename>
+    </beetleAttack>
+    <beetleHit volume="0.8" delayMS="150">
+        <filename>en_beetle_hit</filename>
+    </beetleHit>
+    <beetleDeath volume="0.4">
+        <filename>en_beetle_death</filename>
+    </beetleDeath>
+	<beetleDrop volume="0.5">
+        <filename>en_beetle_drop</filename>
+    </beetleDrop> 
+
+	<blademasterAttackFar volume="0.7">
+        <filename>en_blademaster_attack_far</filename>
+    </blademasterAttackFar>
+	<blademasterAttackNear volume="0.7">
+        <filename>en_blademaster_attack_near</filename>
+    </blademasterAttackNear>
+	<blademasterDeath volume="0.6">
+        <filename>en_blademaster_death</filename>
+    </blademasterDeath>
+	<blademasterHit volume="0.7">
+        <filename>en_blademaster_hit</filename>
+    </blademasterHit>
+	
+	<chessAttack volume="0.5">
+        <filename>en_blues_piece_attack</filename>
+    </chessAttack>
+    <chessDeath volume="0.5">
+        <filename>en_blues_piece_death_01</filename>
+        <filename>en_blues_piece_death_02</filename>
+        <filename>en_blues_piece_death_03</filename>
+    </chessDeath>
+
+    <cloneAttack volume="0.4">
+        <filename>en_clone_attack</filename>
+    </cloneAttack>
+    <cloneDeath volume="0.7">
+        <filename>en_clone_death</filename>
+    </cloneDeath>
+
+	<coralriffAttack volume="0.9">
+        <filename>en_coralriff_attack_mel_01</filename>
+        <filename>en_coralriff_attack_mel_02</filename>
+        <filename>en_coralriff_attack_mel_03</filename>
+        <filename>en_coralriff_attack_mel_04</filename>
+    </coralriffAttack>
+	<coralriffSplash volume="0.9">
+        <filename>en_coralriff_attack_splash_01</filename>
+        <filename>en_coralriff_attack_splash_02</filename>
+        <filename>en_coralriff_attack_splash_03</filename>
+        <filename>en_coralriff_attack_splash_04</filename>
+    </coralriffSplash>
+    <coralriffHit volume="0.9">
+        <filename>en_coralriff_hit_01</filename>
+        <filename>en_coralriff_hit_02</filename>
+        <filename>en_coralriff_hit_03</filename>
+        <filename>en_coralriff_hit_04</filename>
+    </coralriffHit>
+    <coralriffDeath volume="0.9">
+        <filename>en_coralriff_death</filename>
+    </coralriffDeath>
+	<coralriffCry volume="0.9">
+        <filename>en_coralriff_cry</filename>
+    </coralriffCry>
+
+    <cursewraithAttack volume="0.5">
+        <filename>en_cursewraith_attack</filename>
+    </cursewraithAttack>
+    <cursewraithCry volume="0.5">
+        <filename>en_cursewraith_cry</filename>
+    </cursewraithCry>
+    <cursewraithDeath volume="0.5">
+        <filename>en_cursewraith_death</filename>
+    </cursewraithDeath>
+
+	
+	<deadRingerArmor volume="0.9">
+		<filename>en_deadringer_hit_armor</filename>
+	</deadRingerArmor>
+	<deadRingerCharge volume="0.6">
+		<filename>en_deadringer_charge</filename>
+	</deadRingerCharge>
+	<deadRingerChargeInstant volume="0.6">
+		<filename>en_deadringer_charge_instant</filename>
+	</deadRingerChargeInstant>
+	<deadRingerWindup2>
+		<filename>en_deadringer_bell_strike_prep</filename>
+	</deadRingerWindup2>
+	<deadRingerBellBreak volume="0.9">
+		<filename>en_deadringer_bell_break</filename>
+	</deadRingerBellBreak>
+	<deadRingerBell1 volume="0.9">
+		<filename>en_deadringer_bell_strike_01</filename>
+	</deadRingerBell1>
+	<deadRingerBell2 volume="0.9">
+		<filename>en_deadringer_bell_strike_02</filename>
+	</deadRingerBell2>
+	<deadRingerBell3 volume="0.9">
+		<filename>en_deadringer_bell_strike_03</filename>
+	</deadRingerBell3>
+	<deadRingerBell4 volume="0.9">
+		<filename>en_deadringer_bell_strike_04</filename>
+	</deadRingerBell4>
+	<deadRingerBell5>
+		<filename>en_deadringer_gong_strike</filename>
+	</deadRingerBell5>
+	<deadRingerWindup volume="0.5">
+		<filename>en_dorian_hammer_a_01</filename>
+		<filename>en_dorian_hammer_a_02</filename>
+		<filename>en_dorian_hammer_a_03</filename>
+	</deadRingerWindup>
+	<deadRingerDeath volume="1.0">
+		<filename>en_dorian_death_01</filename>
+		<filename>en_dorian_death_02</filename>
+	</deadRingerDeath>
+	<deadRingerHammer volume="0.5">
+		<filename>en_dorian_hammer_b_01</filename>
+		<filename>en_dorian_hammer_b_02</filename>
+		<filename>en_dorian_hammer_b_03</filename>
+		<filename>en_dorian_hammer_b_04</filename>
+	</deadRingerHammer>
+	<deadRingerHit volume="0.6">
+		<filename>en_dorian_hurt_01</filename>
+		<filename>en_dorian_hurt_02</filename>
+		<filename>en_dorian_hurt_03</filename>
+		<filename>en_dorian_hurt_04</filename>
+		<filename>en_dorian_hurt_05</filename>
+		<filename>en_dorian_hurt_06</filename>
+	</deadRingerHit>
+	<deadRingerLaugh volume="0.9">
+		<filename>en_dorian_laugh_01</filename>
+		<filename>en_dorian_laugh_02</filename>
+		<filename>en_dorian_laugh_03</filename>
+	</deadRingerLaugh>
+	<deadRingerAngry volume="1.0">
+		<filename>en_dorian_summon_06</filename>
+	</deadRingerAngry>
+	
+	<deathMetal_attack volume="0.6">
+		<filename>en_deathmetal_attack</filename>
+	</deathMetal_attack>
+	<deathMetal_hit volume="0.4">
+		<filename>en_deathmetal_hit_01</filename>
+		<filename>en_deathmetal_hit_02</filename>
+		<filename>en_deathmetal_hit_03</filename>
+	</deathMetal_hit>
+	<deathMetal_death volume="0.5">
+		<filename>en_deathmetal_death</filename>
+	</deathMetal_death>
+	<deathMetal_shieldHit volume="0.6">
+		<filename>en_deathmetal_shieldhit</filename>
+	</deathMetal_shieldHit>
+	<deathMetal_shielddrop volume="0.6">
+		<filename>en_deathmetal_shielddrop</filename>
+	</deathMetal_shielddrop>
+	<deathMetal_welcome volume="0.6">
+		<filename>en_deathmetal_welcome</filename>
+	</deathMetal_welcome>
+	<deathMetal_skels volume="0.5">
+		<filename>en_deathmetal_skels</filename>
+	</deathMetal_skels>
+	<deathMetal_skels2 volume="0.5">
+		<filename>en_deathmetal_skels2</filename>
+	</deathMetal_skels2>
+	<deathMetal_fireball volume="0.5">
+		<filename>en_deathmetal_fireball</filename>
+	</deathMetal_fireball>
+
+	<devilAngry volume="0.5">
+		<filename>en_devil_angry_01</filename>
+		<filename>en_devil_angry_02</filename>
+		<filename>en_devil_angry_03</filename>
+	</devilAngry>
+	<devilAttack volume="0.5">
+		<filename>en_devil_attack_01</filename>
+		<filename>en_devil_attack_02</filename>
+		<filename>en_devil_attack_03</filename>
+	</devilAttack>
+	<devilCrack volume="0.5">
+		<filename>en_devil_crack</filename>
+	</devilCrack>
+	<devilDeath volume="0.5">
+		<filename>en_devil_death_01</filename>
+		<filename>en_devil_death_02</filename>
+		<filename>en_devil_death_03</filename>
+	</devilDeath>
+	<devilHit volume="0.5">
+		<filename>en_devil_hit_01</filename>
+		<filename>en_devil_hit_02</filename>
+		<filename>en_devil_hit_03</filename>
+	</devilHit>
+
+    <dragonAttack volume="0.7">
+        <filename>en_dragon_attack_melee</filename>
+    </dragonAttack>
+    <dragonHit volume="0.7">
+        <filename>en_dragon_hit_01</filename>
+        <filename>en_dragon_hit_02</filename>
+        <filename>en_dragon_hit_03</filename>
+    </dragonHit>
+    <dragonDeath volume="0.8">
+        <filename>en_dragon_death</filename>
+    </dragonDeath>
+    <dragonFire volume="1.0">
+        <filename>en_dragon_attack_fire</filename>
+    </dragonFire>
+	<dragonPrefire volume="0.9">
+        <filename>en_dragon_attack_prefire</filename>
+    </dragonPrefire>
+    <dragonRoar volume="1.0">
+        <filename>en_dragon_cry</filename>
+    </dragonRoar>
+    <dragonWalk>
+        <filename>en_dragon_walk_01</filename>
+        <filename>en_dragon_walk_02</filename>
+        <filename>en_dragon_walk_03</filename>
+    </dragonWalk>
+
+	<elecmageAttackCast volume="0.5">
+		<filename>en_elecmage_attack_cast</filename>
+	</elecmageAttackCast>
+	<elecmageAttackMelee volume="0.5">
+		<filename>en_elecmage_attack_melee</filename>
+	</elecmageAttackMelee>
+	<elecmageDeath volume="0.5">
+		<filename>en_elecmage_death</filename>
+	</elecmageDeath>
+	<elecmageHit volume="0.5">
+		<filename>en_elecmage_hit</filename>
+	</elecmageHit>
+	<elecmageZapPlayer volume="0.5">
+		<filename>en_elecmage_zap_player</filename>
+	</elecmageZapPlayer>
+	<elecmageZapWall volume="0.5">
+		<filename>en_elecmage_zap_wall</filename>
+	</elecmageZapWall>
+
+	<eleczombieAttack volume="0.5">
+		<filename>en_eleczombie_attack</filename>
+	</eleczombieAttack>
+	<eleczombieDeath volume="0.5">
+		<filename>en_eleczombie_death</filename>
+	</eleczombieDeath>
+	<eleczombieParry volume="0.5">
+		<filename>en_eleczombie_parry</filename>
+	</eleczombieParry>
+
+	<elementalFireAttack>
+        <filename>en_elem_fire_attack</filename>
+    </elementalFireAttack>
+    <elementalFireDeath>
+        <filename>en_elem_fire_death</filename>
+    </elementalFireDeath>
+    <elementalFireHit>
+        <filename>en_elem_fire_hit</filename>
+    </elementalFireHit>
+
+	<elementalIceAttack>
+        <filename>en_elem_ice_attack</filename>
+    </elementalIceAttack>
+    <elementalIceDeath>
+        <filename>en_elem_ice_death</filename>
+    </elementalIceDeath>
+    <elementalIceHit>
+        <filename>en_elem_ice_hit</filename>
+    </elementalIceHit>
+
+	<evileyeAttack volume="0.5">
+		<filename>en_evileye_attack</filename>
+	</evileyeAttack>
+	<evileyeDeath volume="0.5">
+		<filename>en_evileye_death</filename>
+	</evileyeDeath>
+	<evileyeHit volume="0.5">
+		<filename>en_evileye_hit</filename>
+	</evileyeHit>
+	<evileyeLeap volume="0.5">
+		<filename>en_evileye_leap</filename>
+	</evileyeLeap>
+	<evileyeWake volume="0.5">
+		<filename>en_evileye_wake</filename>
+	</evileyeWake>
+
+    <fortissimoleLand volume="0.5">
+        <filename>en_fortissimole_land</filename>
+    </fortissimoleLand>
+    <fortissimoleLeap volume="0.5">
+        <filename>en_fortissimole_leap</filename>
+    </fortissimoleLeap>
+    <fortissimoleSplash volume="0.5">
+        <filename>en_fortissimole_splash</filename>
+    </fortissimoleSplash>
+    <fortissimoleVoDeath volume="0.5">
+        <filename>en_fortissimole_vo_death</filename>
+    </fortissimoleVoDeath>
+    <fortissimoleVoHit volume="0.5">
+        <filename>en_fortissimole_vo_hit_01</filename>
+        <filename>en_fortissimole_vo_hit_02</filename>
+        <filename>en_fortissimole_vo_hit_03</filename>
+        <filename>en_fortissimole_vo_hit_04</filename>
+    </fortissimoleVoHit>
+    <fortissimoleVoSplash volume="0.5">
+        <filename>en_fortissimole_vo_splash_01</filename>
+        <filename>en_fortissimole_vo_splash_02</filename>
+        <filename>en_fortissimole_vo_splash_03</filename>
+    </fortissimoleVoSplash>
+
+	<gargoyleAttack volume="0.5">
+		<filename>en_gargoyle_attack</filename>
+	</gargoyleAttack>
+	<gargoyleAwaken volume="0.5">
+		<filename>en_gargoyle_awaken</filename>
+	</gargoyleAwaken>
+	<gargoyleDeath volume="0.5">
+		<filename>en_gargoyle_death</filename>
+	</gargoyleDeath>
+	
+    <generalDeath>
+        <filename>en_general_death</filename>
+    </generalDeath>
+    <generalHit>
+        <filename>en_general_hit</filename>
+    </generalHit>
+
+	<ghastAttack>
+        <filename>en_ghast_attack</filename>
+    </ghastAttack>
+    <ghastCry>
+        <filename>en_ghast_cry</filename>
+    </ghastCry>
+    <ghastDeath>
+        <filename>en_ghast_death</filename>
+    </ghastDeath>
+    <ghastTeleport>
+        <filename>en_ghast_teleport</filename>
+    </ghastTeleport>
+
+    <ghostAttack volume="0.6">
+        <filename>en_ghost_attack</filename>
+    </ghostAttack>
+    <ghostDeath volume="0.6">
+        <filename>en_ghost_death</filename>
+    </ghostDeath>
+
+	<ghoulAttack volume="0.7">
+        <filename>en_ghoul_attack</filename>
+    </ghoulAttack>
+    <ghoulCry volume="0.7">
+        <filename>en_ghoul_cry</filename>
+    </ghoulCry>
+    <ghoulDeath volume="0.7">
+        <filename>en_ghoul_death</filename>
+    </ghoulDeath>
+    <ghoulTeleport volume="0.9">
+        <filename>en_ghoul_teleport</filename>
+    </ghoulTeleport>
+	
+	<goblinCharge volume="0.45">
+        <filename>en_goblin_charge</filename>
+    </goblinCharge>
+	<goblinDig volume="0.35">
+		<filename>en_goblin_dig</filename>
+	</goblinDig>
+	<goblinAwaken volume="0.35">
+		<filename>en_goblin_awaken</filename>
+	</goblinAwaken>
+	<goblinAttack volume="0.5">
+        <filename>en_goblin_attack</filename>
+    </goblinAttack>
+	<goblinHit volume="0.6">
+		<filename>en_goblin_hit</filename>
+	</goblinHit>
+    <goblinAway volume="0.25">
+        <filename>en_goblin_away_01</filename>
+        <filename>en_goblin_away_02</filename>
+        <filename>en_goblin_away_03</filename>
+        <filename>en_goblin_away_04</filename>
+        <filename>en_goblin_away_05</filename>
+        <filename>en_goblin_away_06</filename>
+        <filename>en_goblin_away_07</filename>
+    </goblinAway>
+    <goblinDeath volume="0.6">
+        <filename>en_goblin_death</filename>
+    </goblinDeath>
+    <goblinToward volume="0.25">
+        <filename>en_goblin_toward_01</filename>
+        <filename>en_goblin_toward_02</filename>
+        <filename>en_goblin_toward_03</filename>
+        <filename>en_goblin_toward_04</filename>
+        <filename>en_goblin_toward_05</filename>
+        <filename>en_goblin_toward_06</filename>
+        <filename>en_goblin_toward_07</filename>
+    </goblinToward>
+
+    <golemAttack volume="0.6">
+        <filename>en_golemstone_attack</filename>
+    </golemAttack>
+    <golemHit volume="0.6">
+        <filename>en_golemstone_hit_01</filename>
+        <filename>en_golemstone_hit_02</filename>
+        <filename>en_golemstone_hit_03</filename>
+    </golemHit>
+    <golemDeath volume="0.6">
+        <filename>en_golemstone_death</filename>
+    </golemDeath>
+	<golemChase volume="0.6">
+        <filename>en_golemstone_move_01</filename>
+        <filename>en_golemstone_move_02</filename>
+        <filename>en_golemstone_move_03</filename>
+    </golemChase>
+
+	<gorgonDeath volume="0.5">
+		<filename>en_gorgon_death</filename>
+	</gorgonDeath>
+	<gorgonHit volume="0.5">
+		<filename>en_gorgon_hit</filename>
+	</gorgonHit>
+	<gorgonStone volume="0.5">
+		<filename>en_gorgon_stone</filename>
+	</gorgonStone>
+
+	<harpyAttack volume="0.5">
+		<filename>en_harpy_attack</filename>
+	</harpyAttack>
+	<harpyDeath volume="0.5">
+        <filename>en_harpy_death</filename>
+    </harpyDeath>
+	<harpyHit volume="0.5">
+        <filename>en_harpy_hit</filename>
+    </harpyHit>
+    <harpyFly volume="0.3">
+        <filename>en_harpy_fly_01</filename>
+		<filename>en_harpy_fly_02</filename>
+		<filename>en_harpy_fly_03</filename>
+    </harpyFly>
+	
+	<hellhoundAttack volume="0.6">
+        <filename>en_hellhound_attack</filename>
+    </hellhoundAttack>
+    <hellhoundDeath volume="0.6">
+        <filename>en_hellhound_death</filename>
+    </hellhoundDeath>
+
+	<hephaestusHammer volume="0.2">
+        <filename>sfx_hephaestus_hammer_01</filename>
+        <filename>sfx_hephaestus_hammer_02</filename>
+        <filename>sfx_hephaestus_hammer_03</filename>
+        <filename>sfx_hephaestus_hammer_04</filename>
+	</hephaestusHammer>
+
+    <kingAttack volume="0.4">
+        <filename>en_blues_king_attack_01</filename>
+        <filename>en_blues_king_attack_02</filename>
+        <filename>en_blues_king_attack_03</filename>
+        <filename>en_blues_king_attack_04</filename>
+        <filename>en_blues_king_attack_05</filename>
+        <filename>en_blues_king_attack_06</filename>
+        <filename>en_blues_king_attack_07</filename>
+    </kingAttack>
+    <kingCry volume="0.5">
+        <filename>en_blues_king_cry</filename>
+    </kingCry>
+    <kingDeath volume="0.4">
+        <filename>en_blues_king_death</filename>
+    </kingDeath>
+	<kingHit volume="0.4">
+        <filename>en_blues_king_hit_01</filename>
+        <filename>en_blues_king_hit_02</filename>
+        <filename>en_blues_king_hit_03</filename>
+        <filename>en_blues_king_hit_04</filename>
+    </kingHit>
+
+	<kingCongaAttack volume="0.75">
+        <filename>en_kingconga_attack_01</filename>
+        <filename>en_kingconga_attack_02</filename>
+        <filename>en_kingconga_attack_03</filename>
+    </kingCongaAttack>
+    <kingCongaCry volume="0.6">
+        <filename>en_kingconga_cry_01</filename>
+        <filename>en_kingconga_cry_02</filename>
+    </kingCongaCry>
+    <kingCongaDeath volume="0.6">
+        <filename>en_kingconga_death</filename>
+    </kingCongaDeath>
+	<kingCongaHit volume="0.6">
+        <filename>en_kingconga_hit_01</filename>
+        <filename>en_kingconga_hit_02</filename>
+        <filename>en_kingconga_hit_03</filename>
+    </kingCongaHit>
+
+	<leprechaunAttack volume="0.65">
+        <filename>en_leprechaun_steal_01</filename>
+        <filename>en_leprechaun_steal_02</filename>
+    </leprechaunAttack>
+	<leprechaunSpawn volume="0.4">
+        <filename>en_leprechaun_spawn</filename>
+	</leprechaunSpawn>
+    <leprechaunCry volume="0.4" delayMS="250">
+        <filename>en_leprechaun_spawn_vo_01</filename>
+        <filename>en_leprechaun_spawn_vo_02</filename>
+        <filename>en_leprechaun_spawn_vo_03</filename>
+        <filename>en_leprechaun_spawn_vo_04</filename>
+    </leprechaunCry>
+    <leprechaunDeath volume="0.6">
+        <filename>en_leprechaun_death_01</filename>
+        <filename>en_leprechaun_death_02</filename>
+    </leprechaunDeath>
+	<leprechaunHit volume="0.5">
+        <filename>en_leprechaun_hit_01</filename>
+        <filename>en_leprechaun_hit_02</filename>
+        <filename>en_leprechaun_hit_03</filename>
+        <filename>en_leprechaun_hit_04</filename>
+    </leprechaunHit>
+
+	<lichCast volume="0.6">
+		<filename>en_lich_cast</filename>
+	</lichCast>
+	
+	<luteAttack volume="0.4">
+		<filename>en_luteboss_attack</filename>
+	</luteAttack>
+	<luteCascade volume="0.4">
+		<filename>en_luteboss_cascade</filename>
+	</luteCascade>
+	<luteConfuse volume="0.4">
+		<filename>en_luteboss_confuse</filename>
+	</luteConfuse>
+	<luteCry volume="0.4">
+		<filename>en_luteboss_cry</filename>
+	</luteCry>
+	<luteDeath volume="0.4">
+		<filename>en_luteboss_death</filename>
+	</luteDeath>
+	<luteHitBig volume="0.4">
+		<filename>en_luteboss_hit_big</filename>
+	</luteHitBig>
+	<luteHit volume="0.4">
+		<filename>en_luteboss_hit</filename>
+	</luteHit>
+	<luteInhale volume="0.4">
+		<filename>en_luteboss_inhale</filename>
+	</luteInhale>
+	<luteSummon volume="0.4">
+		<filename>en_luteboss_summon</filename>
+	</luteSummon>
+
+	<metrognomeDeath volume="0.5">
+		<filename>en_metrognome_death</filename>
+	</metrognomeDeath>
+	<metrognomeHit volume="0.5">
+		<filename>en_metrognome_hit_01</filename>
+		<filename>en_metrognome_hit_02</filename>
+		<filename>en_metrognome_hit_03</filename>
+	</metrognomeHit>
+	<metrognomeHitTeleport volume="0.5">
+		<filename>en_metrognome_hit_teleport</filename>
+	</metrognomeHitTeleport>
+	<metrognomeAttack volume="0.5">
+		<filename>en_metrognome_attack_01</filename>
+		<filename>en_metrognome_attack_02</filename>
+		<filename>en_metrognome_attack_03</filename>
+	</metrognomeAttack>
+	<metrognomeAttackPound volume="0.5">
+		<filename>en_metrognome_attack_pound</filename>
+	</metrognomeAttackPound>
+	<metrognomeCry volume="0.5">
+		<filename>en_metrognome_cry</filename>
+	</metrognomeCry>
+	<metrognomeTick volume="0.5">
+		<filename>en_metrognome_tick</filename>
+	</metrognomeTick>
+	<metrognomeTock volume="0.5">
+		<filename>en_metrognome_tock</filename>
+	</metrognomeTock>
+	
+    <mimicAttack volume="0.6">
+        <filename>en_mimic_attack</filename>
+    </mimicAttack>
+    <mimicCry volume="0.4">
+        <filename>en_mimic_cry</filename>
+    </mimicCry>
+    <mimicChase volume="0.4">
+        <filename>en_mimic_chase_01</filename>
+        <filename>en_mimic_chase_02</filename>
+        <filename>en_mimic_chase_03</filename>
+        <filename>en_mimic_chase_04</filename>
+        <filename>en_mimic_chase_05</filename>
+        <filename>en_mimic_chase_06</filename>
+    </mimicChase>
+    <mimicDeath volume="0.6">
+        <filename>en_mimic_death</filename>
+    </mimicDeath>
+
+    <minotaurAttack volume="0.6">
+        <filename>en_minotaur_attack</filename>
+    </minotaurAttack>
+	<minotaurCharge volume="0.6">
+	    <filename>en_minotaur_charge</filename>
+	</minotaurCharge>
+    <minotaurCry volume="0.6">
+        <filename>en_minotaur_cry</filename>
+    </minotaurCry>
+    <minotaurDeath volume="0.6">
+        <filename>en_minotaur_death</filename>
+    </minotaurDeath>
+    <minotaurHit volume="0.6">
+        <filename>en_minotaur_hit_01</filename>
+        <filename>en_minotaur_hit_02</filename>
+        <filename>en_minotaur_hit_03</filename>
+    </minotaurHit>
+    <minotaurWall volume="0.6">
+        <filename>en_minotaur_wallimpact</filename>
+    </minotaurWall>
+
+    <moleAttack volume="0.5">
+        <filename>en_mole_attack</filename>
+    </moleAttack>
+    <moleChase volume="0.6">
+        <filename>en_mole_chase</filename>
+    </moleChase>
+    <moleDeath volume="0.5">
+        <filename>en_mole_death</filename>
+    </moleDeath>
+    <molePopout volume="0.5">
+        <filename>en_mole_popout</filename>
+    </molePopout>
+
+    <monkeyHit>
+        <filename>en_monkey_hit_01</filename>
+        <filename>en_monkey_hit_02</filename>
+        <filename>en_monkey_hit_03</filename>
+    </monkeyHit>
+	<magicMonkeyDeath volume="0.3">
+		<filename>en_magicmonkey_death</filename>
+	</magicMonkeyDeath>
+    <monkeyDeath>
+        <filename>en_monkey_hit_02</filename>
+    </monkeyDeath>
+    <monkeyGrab volume="0.6">
+        <filename>en_monkey_grab</filename>
+    </monkeyGrab>
+
+	<mommyCry volume="0.7">
+		<filename>en_mommy_cry</filename>
+	</mommyCry>
+	<mommyDeath volume="0.6">
+		<filename>en_mommy_death</filename>
+	</mommyDeath>
+	<mommyHit volume="0.6">
+		<filename>en_mommy_hit_01</filename>
+		<filename>en_mommy_hit_02</filename>
+		<filename>en_mommy_hit_03</filename>
+	</mommyHit>
+	<mommySpawn volume="0.6">
+		<filename>en_mommy_spawn</filename>
+	</mommySpawn>
+	<mommySpawnPrep volume="0.6">
+		<filename>en_mommy_spawn_prep</filename>
+	</mommySpawnPrep>
+	<mummyAttack volume="0.7">
+		<filename>en_mummy_attack</filename>
+	</mummyAttack>
+	<mummyDeath volume="0.7">
+		<filename>en_mummy_death</filename>
+	</mummyDeath>
+	
+    <mushroomAttack volume="0.5">
+        <filename>en_mushroom_attack</filename>
+    </mushroomAttack>
+    <mushroomHit volume="0.6">
+        <filename>en_mushroom_hit</filename>
+    </mushroomHit>
+    <mushroomDeath volume="0.5">
+        <filename>en_mushroom_death</filename>
+    </mushroomDeath>
+
+    <nightmareAttack volume="0.8">
+        <filename>en_nightmare_attack</filename>
+    </nightmareAttack>
+    <nightmareCry volume="0.8">
+        <filename>en_nightmare_cry</filename>
+    </nightmareCry>
+    <nightmareDeath volume="0.8">
+        <filename>en_nightmare_death</filename>
+    </nightmareDeath>
+	<nightmareHit volume="0.8">
+        <filename>en_nightmare_hit_01</filename>
+        <filename>en_nightmare_hit_02</filename>
+        <filename>en_nightmare_hit_03</filename>
+    </nightmareHit>
+
+	<ogreAttack volume="0.8">
+		<filename>en_ogre_attack</filename>
+	</ogreAttack>
+	<ogreDeath volume="0.8">
+		<filename>en_ogre_death</filename>
+	</ogreDeath>
+	<ogreHit volume="0.7">
+		<filename>en_ogre_hit_01</filename>
+		<filename>en_ogre_hit_02</filename>
+		<filename>en_ogre_hit_03</filename>
+	</ogreHit>
+	<ogreUpswing volume="0.9">
+		<filename>en_ogre_upswing</filename>
+	</ogreUpswing>
+	<ogreDownswing volume="0.9">
+		<filename>en_ogre_downswing</filename>
+	</ogreDownswing>
+
+	<orcAttack volume="0.5">
+		<filename>en_orc_attack</filename>
+	</orcAttack>
+	<orcDeath volume="0.5">
+		<filename>en_orc_death</filename>
+	</orcDeath>
+	<orcHit volume="0.5">
+		<filename>en_orc_hit</filename>
+	</orcHit>
+	
+	<pixieAttack volume="0.5">
+		<filename>en_pixie_attack</filename>
+	</pixieAttack>
+	<pixieDeath volume="0.3">
+		<filename>en_pixie_death</filename>
+	</pixieDeath>
+	
+	<queenAttack volume="0.4">
+        <filename>en_blues_queen_sing_01</filename>
+        <filename>en_blues_queen_sing_02</filename>
+        <filename>en_blues_queen_sing_03</filename>
+        <filename>en_blues_queen_sing_04</filename>
+        <filename>en_blues_queen_sing_05</filename>
+        <filename>en_blues_queen_sing_06</filename>
+    </queenAttack>
+    <queenDeath volume="0.4">
+        <filename>en_blues_queen_death_01</filename>
+        <filename>en_blues_queen_death_02</filename>
+        <filename>en_blues_queen_death_03</filename>
+    </queenDeath>
+
+	<sarcophagusSpawn volume="0.5">
+        <filename>en_sarcophagus_erupt</filename>
+    </sarcophagusSpawn>
+    <sarcophagusHit volume="0.3">
+        <filename>en_sarcophagus_hit</filename>
+    </sarcophagusHit>
+    <sarcophagusDeath volume="0.4">
+        <filename>en_sarcophagus_death</filename>
+    </sarcophagusDeath>
+	<sarcophagusShake volume="0.4">
+        <filename>en_sarcophagus_shake</filename>
+    </sarcophagusShake>
+	
+	<shopkeeperHit volume="0.6">
+        <filename>en_shopkeep_norm_hit_01</filename>
+        <filename>en_shopkeep_norm_hit_02</filename>
+        <filename>en_shopkeep_norm_hit_03</filename>
+        <filename>en_shopkeep_norm_hit_04</filename>
+        <filename>en_shopkeep_norm_hit_05</filename>
+        <filename>en_shopkeep_norm_hit_06</filename>
+    </shopkeeperHit>
+	<shopkeeperAttack volume="0.6">
+        <filename>en_shopkeep_norm_attack_01</filename>
+        <filename>en_shopkeep_norm_attack_02</filename>
+        <filename>en_shopkeep_norm_attack_03</filename>
+        <filename>en_shopkeep_norm_attack_04</filename>
+    </shopkeeperAttack>
+	<shopkeeperDeath volume="0.6">
+        <filename>en_shopkeep_norm_death_01</filename>
+        <filename>en_shopkeep_norm_death_02</filename>
+        <filename>en_shopkeep_norm_death_03</filename>
+        <filename>en_shopkeep_norm_death_04</filename>
+        <filename>en_shopkeep_norm_death_05</filename>
+    </shopkeeperDeath>
+
+	<shopkeeperMonstrousHit volume="0.6">
+        <filename>en_shopkeep_mons_hit_01</filename>
+        <filename>en_shopkeep_mons_hit_02</filename>
+        <filename>en_shopkeep_mons_hit_03</filename>
+    </shopkeeperMonstrousHit>
+	<shopkeeperMonstrousAttack volume="0.6">
+        <filename>en_shopkeep_mons_attack_01</filename>
+        <filename>en_shopkeep_mons_attack_02</filename>
+        <filename>en_shopkeep_mons_attack_03</filename>
+    </shopkeeperMonstrousAttack>
+	<shopkeeperMonstrousDeath volume="0.6">
+        <filename>en_shopkeep_mons_death_01</filename>
+        <filename>en_shopkeep_mons_death_02</filename>
+        <filename>en_shopkeep_mons_death_03</filename>
+        <filename>en_shopkeep_mons_death_04</filename>
+    </shopkeeperMonstrousDeath>
+	
+	<shopkeeperGhostLoop volume="0.35">
+        <filename>en_spookyshop_loop</filename>
+    </shopkeeperGhostLoop>
+    <shopkeeperGhostDeath volume="0.7">
+        <filename>en_spookyshop_death</filename>
+    </shopkeeperGhostDeath>
+	<shopkeeperCry volume="0.9">
+        <filename>en_vampbat_cry</filename>
+    </shopkeeperCry>
+
+	<shovemonsterShove volume="0.5">
+        <filename>en_shovemonster_shove</filename>
+    </shovemonsterShove>
+    <shovemonsterDeath volume="0.99">
+        <filename>en_shovemonster_death</filename>
+    </shovemonsterDeath>
+
+    <skeletonAttack volume="0.5">
+        <filename>en_skel_attack_melee</filename>
+    </skeletonAttack>
+    <skeletonAttackSpear>
+        <filename>en_skel_attack_spear</filename>
+    </skeletonAttackSpear>
+    <skeletonDeath volume="0.5">
+        <filename>en_skel_death</filename>
+    </skeletonDeath>
+    <skeletonHead volume="0.5">
+        <filename>en_skel_head_loss_01</filename>
+        <filename>en_skel_head_loss_02</filename>
+        <filename>en_skel_head_loss_03</filename>
+    </skeletonHead>
+    <skeletonHit volume="0.5">
+        <filename>en_skel_hit</filename>
+    </skeletonHit>
+    <skeletonShieldHit volume="0.5">
+        <filename>en_skel_shield_hit</filename>
+    </skeletonShieldHit>
+    <skeletonShieldBreak volume="0.5">
+        <filename>en_skel_shield_break</filename>
+    </skeletonShieldBreak>
+
+	<skeletonKnightAttack>
+        <filename>en_skeleton_knight_attack</filename>
+    </skeletonKnightAttack>
+    <skeletonKnightCry>
+        <filename>en_skeleton_knight_cry</filename>
+    </skeletonKnightCry>
+    <skeletonKnightDeath>
+        <filename>en_skeleton_knight_death</filename>
+    </skeletonKnightDeath>
+
+	<skullAttack volume="0.5">
+		<filename>en_skull_attack</filename>
+	</skullAttack>
+	<skullDeath volume="0.5">
+		<filename>en_skull_death</filename>
+	</skullDeath>
+	<skullHit volume="0.5">
+		<filename>en_skull_hit</filename>
+	</skullHit>
+
+    <slimeAttack volume="0.30">
+        <filename>en_slime_attack</filename>
+    </slimeAttack>
+    <slimeHit volume="0.30">
+        <filename>en_slime_hit</filename>
+    </slimeHit>
+    <slimeDeath volume="0.30">
+        <filename>en_slime_death</filename>
+    </slimeDeath>
+
+	<spiderAttack volume="0.55">
+		<filename>en_spider_attack</filename>
+	</spiderAttack>
+	<spiderFall volume="0.55">
+		<filename>en_spider_falloffwall</filename>
+	</spiderFall>
+	<spiderDeath volume="0.55">
+		<filename>en_spider_death</filename>
+	</spiderDeath>
+	
+    <tarMonsterAttack volume="0.6">
+        <filename>en_tarmonster_attack</filename>
+    </tarMonsterAttack>
+	<tarMonsterChase volume="0.6">
+        <filename>en_tarmonster_chase_01</filename>
+        <filename>en_tarmonster_chase_02</filename>
+        <filename>en_tarmonster_chase_03</filename>
+    </tarMonsterChase>
+	<tarMonsterCry volume="0.8">
+        <filename>en_tarmonster_cry</filename>
+    </tarMonsterCry>
+    <tarMonsterHit volume="0.6">
+        <filename>en_tarmonster_hit_01</filename>
+        <filename>en_tarmonster_hit_02</filename>
+        <filename>en_tarmonster_hit_03</filename>
+    </tarMonsterHit>
+    <tarMonsterDeath volume="0.6">
+        <filename>en_tarmonster_death</filename>
+    </tarMonsterDeath>
+    <tarMonsterGrab volume="0.6">
+        <filename>en_tarmonster_grab</filename>
+    </tarMonsterGrab>
+  
+	<tentacleAttack volume="0.9">
+        <filename>en_tentacle_attack</filename>
+    </tentacleAttack>
+    <tentacleHit volume="0.9">
+        <filename>en_tentacle_hit</filename>
+    </tentacleHit>
+    <tentacleDeath volume="0.9">
+        <filename>en_tentacle_death</filename>
+    </tentacleDeath>
+
+    <vampbatCry volume="0.6">
+          <filename>en_vampbat_cry</filename>
+    </vampbatCry>
+     <vampbatAttack volume="0.6">
+        <filename>en_vampbat_attack</filename>
+    </vampbatAttack>
+    <vampbatHit volume="0.6">
+        <filename>en_vampbat_hit_01</filename>
+        <filename>en_vampbat_hit_02</filename>
+        <filename>en_vampbat_hit_03</filename>
+    </vampbatHit>
+    <vampbatDeath volume="0.6">
+        <filename>en_vampbat_death</filename>
+    </vampbatDeath>
+
+	<wallMonsterAttack volume="0.7" delayMS="75">
+		<filename>en_wallmonster_attack</filename>
+	</wallMonsterAttack>
+	<wallMonsterChase volume="0.7">
+		<filename>en_wallmonster_chase_01</filename>
+		<filename>en_wallmonster_chase_02</filename>
+		<filename>en_wallmonster_chase_03</filename>
+	</wallMonsterChase>
+	<wallMonsterCry volume="0.4">
+		<filename>en_wallmonster_cry</filename>
+	</wallMonsterCry>
+	<wallMonsterDeath volume="0.45">
+		<filename>en_wallmonster_death</filename>
+	</wallMonsterDeath>
+	<wallMonsterHit volume="0.4">
+		<filename>en_wallmonster_hit</filename>
+	</wallMonsterHit>
+
+	<warlockAttack volume="0.5">
+        <filename>en_warlock_attack</filename>
+    </warlockAttack>
+    <warlockHit volume="0.5">
+        <filename>en_warlock_hit</filename>
+    </warlockHit>
+    <warlockDeath volume="0.5">
+        <filename>en_warlock_death</filename>
+    </warlockDeath>
+
+	<waterballAttack volume="0.5">
+		<filename>en_waterball_attack</filename>
+	</waterballAttack>
+	<waterballCry volume="0.5">
+		<filename>en_waterball_cry</filename>
+	</waterballCry>
+	<waterballDeath volume="0.5">
+		<filename>en_waterball_death</filename>
+	</waterballDeath>
+	
+    <wightAttack volume="0.4">
+        <filename>en_wight_attack</filename>
+    </wightAttack>
+    <wightCry volume="0.4">
+        <filename>en_wight_cry</filename>
+    </wightCry>
+    <wightDeath volume="0.4">
+        <filename>en_wight_death</filename>
+    </wightDeath>
+
+    <wraithAttack volume="0.7">
+        <filename>en_wraith_attack</filename>
+    </wraithAttack>
+    <wraithCry volume="0.9">
+        <filename>en_wraith_cry</filename>
+    </wraithCry>
+    <wraithDeath volume="0.6">
+        <filename>en_wraith_death</filename>
+    </wraithDeath>
+
+	<yetiAttack>
+        <filename>en_yeti_attack_mel</filename>
+    </yetiAttack>
+    <yetiAOE>
+        <filename>en_yeti_attack_aoe</filename>
+    </yetiAOE>
+    <yetiDeath>
+        <filename>en_yeti_death</filename>
+    </yetiDeath>
+
+    <zombieAttack volume="0.45" delayMS="50">
+		<filename>en_zombie_attack</filename>
+    </zombieAttack>
+    <zombieDeath volume="0.6">
+		<filename>en_zombie_death</filename>
+	</zombieDeath>
+
+    <!--- MOVEMENT SOUNDS --->
+	<coalsDamage>
+		<filename>mov_coals_damage</filename>
+	</coalsDamage>
+	<coalsStep volume="0.2">
+		<filename>mov_coals_step_01</filename>
+		<filename>mov_coals_step_02</filename>
+		<filename>mov_coals_step_03</filename>
+	</coalsStep>
+    <digFail>
+        <filename>mov_dig_fail</filename>
+    </digFail>
+    <digBrick>
+        <filename>mov_dig_brick</filename>
+    </digBrick>
+    <digStone>
+        <filename>mov_dig_stone</filename>
+    </digStone>
+    <digDirt>
+        <filename>mov_dig_dirt</filename>
+    </digDirt>
+    <iceSlip volume="0.3">
+        <filename>mov_ice_slip</filename>
+    </iceSlip>
+    <waterIn>
+        <filename>mov_water_in</filename>
+    </waterIn>
+    <waterOut>
+        <filename>mov_water_out</filename>
+    </waterOut>
+    <tarIn volume="0.6">
+        <filename>mov_tar_in</filename>
+    </tarIn>
+    <tarOut volume="0.6">
+        <filename>mov_tar_out</filename>
+    </tarOut>
+    
+    <!--- OBJECT SOUNDS --->
+    <bounceTrap delayFrames="5">
+        <filename>obj_trap_bounce</filename>
+    </bounceTrap>
+	<bounceFail volume="0.25" delayFrames="5">
+        <filename>obj_trap_bounce_fail</filename>
+    </bounceFail>
+    <chestAppear>
+        <filename>obj_chest_appear_ST</filename>
+    </chestAppear>
+    <chestOpen>
+        <filename>obj_chest_open</filename>
+    </chestOpen>
+	<crateHit volume="0.4">
+        <filename>obj_crate_hit</filename>
+    </crateHit>
+	<crateOpen volume="0.4">
+        <filename>obj_crate_break</filename>
+    </crateOpen>
+	<barrelHit volume="0.4">
+        <filename>obj_barrel_hit</filename>
+    </barrelHit>
+	<barrelOpen volume="0.4">
+        <filename>obj_barrel_break</filename>
+    </barrelOpen>
+	<urnHit volume="0.4">
+        <filename>obj_urn_hit</filename>
+    </urnHit>
+	<urnOpen volume="0.4">
+        <filename>obj_urn_break</filename>
+    </urnOpen>
+	<barrelWall volume="0.5">
+        <filename>obj_barrel_hit</filename>
+    </barrelWall>
+    <doorOpen>
+        <filename>obj_door_open</filename>
+    </doorOpen>
+	<floorRise volume="0.5">
+		<filename>obj_floor_rise</filename>
+	</floorRise>
+	<metalDoorOpen volume="0.4">
+        <filename>obj_door_metal_open</filename>
+    </metalDoorOpen>
+	<metalDoorClose volume="0.4">
+        <filename>obj_door_metal_close</filename>
+    </metalDoorClose>
+    <spikeTrap>
+        <filename>obj_trap_spike</filename>
+    </spikeTrap>
+	<trapdoorOpen>
+        <filename>obj_trap_trapdoor_open</filename>
+    </trapdoorOpen>
+    <trapdoorFall delayFrames="5">
+        <filename>obj_trap_trapdoor_fall</filename>
+    </trapdoorFall>
+	<trapScatter volume="0.5">
+		<filename>obj_trap_scatter</filename>
+	</trapScatter>
+	<wireAttack volume="0.5">
+		<filename>obj_wire_attack_01</filename>
+		<filename>obj_wire_attack_02</filename>
+		<filename>obj_wire_attack_03</filename>
+		<filename>obj_wire_attack_04</filename>
+		<filename>obj_wire_attack_05</filename>
+	</wireAttack>
+	<wireAttackLarge volume="0.5">
+		<filename>obj_wire_attack_large</filename>
+	</wireAttackLarge>
+
+    <!--- WEAPON/SPELL SOUNDS --->
+    <blunderbussShoot>
+		<filename>wep_blunderbuss_shoot</filename>
+	</blunderbussShoot>
+	<blunderbussReload>
+		<filename>wep_blunderbuss_reload</filename>
+	</blunderbussReload>
+	<rifleShoot volume="0.8">
+		<filename>wep_rifle_shot_1</filename>
+	</rifleShoot>
+	<rifleLastshot volume="0.8">
+		<filename>wep_rifle_shot_2</filename>
+	</rifleLastshot>
+	<crossbowReload>
+		<filename>wep_crossbow_reload_ST</filename>
+	</crossbowReload>
+	<crossbowLastshot volume="0.9">
+		<filename>wep_crossbow_lastshot</filename>
+	</crossbowLastshot>
+	<readyThrow volume="0.7">
+		<filename>wep_throwable_loaded</filename>
+	</readyThrow>
+	<doThrow volume="0.7">
+		<filename>wep_throwable_thrown</filename>
+	</doThrow>
+	<throwingStar volume="0.5">
+		<filename>wep_throwingstar</filename>
+	</throwingStar>
+	<cutlassParry volume="0.5">
+		<filename>wep_cutlass_parry_01</filename>
+		<filename>wep_cutlass_parry_02</filename>
+		<filename>wep_cutlass_parry_03</filename>
+	</cutlassParry>
+	<spellBomb volume="0.5">
+		<filename>wep_spell_bomb</filename>
+	</spellBomb>
+	<spellDescend volume="0.5">
+		<filename>wep_spell_descend</filename>
+	</spellDescend>
+	<spellEarth volume="0.5">
+		<filename>wep_spell_earth</filename>
+	</spellEarth>
+	<spellEnchant volume="0.5">
+		<filename>wep_spell_enchant</filename>
+	</spellEnchant>
+	<spellFear volume="0.5">
+		<filename>wep_spell_fear</filename>
+	</spellFear>
+	<spellPulse volume="0.5">
+		<filename>wep_spell_pulse</filename>
+	</spellPulse>
+	<spellFireball>
+		<filename>wep_spell_general_ST</filename>
+	</spellFireball>
+	<spellFreeze>
+		<filename>wep_spell_freeze</filename>
+	</spellFreeze>
+	<spellGeneral>
+		<filename>wep_spell_general_ST</filename>
+	</spellGeneral>
+	<spellGigantism volume="0.8">
+		<filename>wep_spell_gigantism</filename>
+	</spellGigantism>
+	<spellGold volume="0.5">
+		<filename>wep_spell_riches</filename>
+	</spellGold>
+	<spellHeal>
+		<filename>wep_spell_heal</filename>
+	</spellHeal>
+	<spellNeed volume="0.5">
+		<filename>wep_spell_need</filename>
+	</spellNeed>
+	<spellQuake volume="0.5">
+		<filename>wep_spell_quake</filename>
+	</spellQuake>
+	<spellShield volume="0.5">
+		<filename>wep_spell_shield</filename>
+	</spellShield>
+	<spellTransform volume="0.5">
+		<filename>wep_spell_shapeshift</filename>
+	</spellTransform>
+	<spellTransmute volume="0.5">
+		<filename>wep_spell_transmute</filename>
+	</spellTransmute>
+	<spellWind volume="0.7">
+		<filename>wep_spell_wind</filename>
+	</spellWind>
+    
+    <!--- MISCELLANEOUS SOUND EFFECTS -->
+    <bombExplode volume="0.7">
+        <filename>sfx_bomb_explode</filename>
+    </bombExplode>
+    <bombLit volume="0.4">
+        <filename>sfx_bomb_lit</filename>
+    </bombLit>
+    <bossShake>
+        <filename>en_dragon_walk_03</filename>
+    </bossShake>
+    <bossWalls volume="0.3">
+        <filename>boss_zone1_walls</filename>
+    </bossWalls>
+    <cauldronHit volume="0.8">
+        <filename>sfx_cauldron_hit</filename>
+    </cauldronHit>
+	<courage volume="0.4">
+		<filename>sfx_courage</filename>
+	</courage>
+	<giantWalk volume="0.3">
+        <filename>en_golemstone_move_01</filename>
+        <filename>en_golemstone_move_02</filename>
+        <filename>en_golemstone_move_03</filename>
+    </giantWalk>
+    <chainBreak>
+        <filename>sfx_chain_break_ST</filename>
+    </chainBreak>
+    <chainGroove>
+        <filename>sfx_chain_groove_ST</filename>
+    </chainGroove>
+    <countinBeat1>
+        <filename>sfx_countin_beat1</filename>
+    </countinBeat1>
+    <countinOther>
+        <filename>sfx_countin_other</filename>
+    </countinOther>
+    <digDiamond>
+        <filename>sfx_dig_diamond</filename>
+    </digDiamond>
+    <drinkCursedPotion>
+        <filename>sfx_item_cursedpotion</filename>
+    </drinkCursedPotion>
+    <drinkPotion delayMS="100">
+        <filename>sfx_item_potion</filename>
+    </drinkPotion>
+    <eatFood>
+        <filename>sfx_item_food</filename>
+    </eatFood>
+    <error>
+        <filename>sfx_error_ST</filename>
+    </error>
+	<familiarAppear volume="0.5">
+		<filename>sfx_familiar_appear</filename>
+	</familiarAppear>
+	<familiarIce volume="0.5">
+		<filename>sfx_familiar_ice</filename>
+	</familiarIce>
+	<frostMelt volume="0.9">
+		<filename>sfx_frostdagger_melt</filename>
+	</frostMelt>
+	<glassBreak volume="0.6" delayMS="150">
+		<filename>sfx_glass_break</filename>
+	</glassBreak>
+	<holyWater volume="0.6">
+		<filename>sfx_item_holywater</filename>
+	</holyWater>
+	<iceBreak volume="0.3">
+		<filename>sfx_glass_break</filename>
+	</iceBreak>
+	<iceMelt volume="0.9">
+		<filename>sfx_ice_melt</filename>
+	</iceMelt>
+	<minibossShake>
+        <filename>en_dragon_walk_03</filename>
+    </minibossShake>
+    <missedBeat>
+        <filename>sfx_missedbeat</filename>
+    </missedBeat>
+    <mushroomLightHit volume="0.5">
+        <filename>sfx_mushroomlight_hit</filename>
+    </mushroomLightHit>
+    <pickupArmor>
+        <filename>sfx_pickup_armor</filename>
+    </pickupArmor>
+    <pickupGeneral>
+        <filename>sfx_pickup_general_ST</filename>
+    </pickupGeneral>
+    <pickupDiamond>
+        <filename>sfx_pickup_diamond</filename>
+    </pickupDiamond>
+    <pickupGold>
+        <filename>sfx_pickup_gold_01</filename>
+        <filename>sfx_pickup_gold_02</filename>
+        <filename>sfx_pickup_gold_03</filename>
+    </pickupGold>
+    <pickupPurchase>
+        <filename>sfx_pickup_purchase</filename>
+    </pickupPurchase>
+    <pickupWeapon>
+        <filename>sfx_pickup_weapon</filename>
+    </pickupWeapon>
+    <playerDeath>
+        <filename>sfx_player_death_ST</filename>
+    </playerDeath>
+    <playerHit>
+        <filename>sfx_player_hit_ST</filename>
+    </playerHit>
+	<ringofpain volume="0.3">
+		<filename>sfx_ringofpain</filename>
+	</ringofpain>
+	<secretFound>
+		<filename>sfx_secretfound</filename>
+	</secretFound>
+	<shrineActivate volume="0.5">
+        <filename>sfx_shrine_on</filename>
+    </shrineActivate>
+	<shrineDestroy>
+        <filename>sfx_shrine_destroy</filename>
+    </shrineDestroy>
+	<shrineSacrifice>
+        <filename>sfx_shrine_sacrifice</filename>
+    </shrineSacrifice>
+	<spikedearsBreak volume="0.5" delayMS="150">
+		<filename>sfx_spikedears_break</filename>
+	</spikedearsBreak>
+    <teleport volume="0.5">
+        <filename>sfx_teleport</filename>
+    </teleport>
+    <tick>
+        <filename>TEMP_tick</filename>
+    </tick>
+    <UISelectDown volume="0.3">
+        <filename>sfx_ui_select_down</filename>
+    </UISelectDown>
+	<UISelectUp volume="0.3">
+        <filename>sfx_ui_select_up</filename>
+    </UISelectUp>
+    <UIStart volume="0.3">
+        <filename>sfx_ui_start</filename>
+    </UIStart>
+	<UIBack volume="0.3">
+        <filename>sfx_ui_back</filename>
+    </UIBack>
+	<UIToggle volume="0.3">
+        <filename>sfx_ui_toggle</filename>
+    </UIToggle>
+    <unlock volume="0.3">
+        <filename>sfx_use_key_to_unlock</filename>
+    </unlock>
+	<warDrum1>
+		<filename>sfx_wardrum_high</filename>
+	</warDrum1>
+	<warDrum2>
+		<filename>sfx_wardrum_low</filename>
+	</warDrum2>
+    
+	
+    <!--- VOICEOVER SOUNDS --->
+	<announceCharacterUnlocked volume="0.5">
+		<filename>vo_announcer_newcharacter</filename>
+	</announceCharacterUnlocked>
+	<announceCoralRiff volume="0.5">
+		<filename>vo_announcer_coralriff</filename>
+	</announceCoralRiff>
+	<announceDeadRinger volume="0.5">
+		<filename>vo_announcer_deadringer</filename>
+	</announceDeadRinger>
+	<announceDeathMetal volume="0.5">
+		<filename>vo_announcer_deathmetal</filename>
+	</announceDeathMetal>
+	<announceDeepBlues volume="0.5">
+		<filename>vo_announcer_deepblues</filename>
+	</announceDeepBlues>
+	<announceFortissimole volume="0.5">
+		<filename>vo_announcer_fortissimole</filename>
+	</announceFortissimole>
+	<announceFrankensteinway volume="0.5">
+		<filename>vo_announcer_frankensteinway</filename>
+	</announceFrankensteinway>
+	<announceConductor volume="0.5">
+		<filename>vo_announcer_conductor</filename>
+	</announceConductor>
+	<announceGoldenLute volume="0.5">
+		<filename>vo_announcer_goldenlute</filename>
+	</announceGoldenLute>
+	<announceKingConga volume="0.5">
+		<filename>vo_announcer_kingconga</filename>
+	</announceKingConga>
+	<announceNecroDancer volume="0.5">
+		<filename>vo_announcer_thenecrodancer</filename>
+	</announceNecroDancer>
+	<announceNecroDancer2 volume="0.5">
+		<filename>vo_announcer_return</filename>
+	</announceNecroDancer2>
+	
+	<ariaBomb volume="0.5">
+        <filename>vo_ari_castspell_bomb</filename>
+    </ariaBomb>
+    <ariaConfused delayFrames="6" volume="0.4">
+        <filename>vo_ari_confused_01</filename>
+        <filename>vo_ari_confused_02</filename>
+        <filename>vo_ari_confused_03</filename>
+        <filename>vo_ari_confused_04</filename>
+    </ariaConfused>
+    <ariaDeath volume="0.25">
+        <filename>vo_ari_death_01</filename>
+        <filename>vo_ari_death_02</filename>
+        <filename>vo_ari_death_03</filename>
+    </ariaDeath>
+	<ariaDescend volume="0.5">
+        <filename>vo_ari_castspell_descend</filename>
+    </ariaDescend>
+    <ariaDig volume="0.25">
+        <filename>vo_ari_dig_01</filename>
+        <filename>vo_ari_dig_02</filename>
+        <filename>vo_ari_dig_03</filename>
+        <filename>vo_ari_dig_04</filename>
+        <filename>vo_ari_dig_05</filename>
+        <filename>vo_ari_dig_06</filename>
+		<filename>vo_ari_dig_07</filename>
+		<filename>vo_ari_dig_08</filename>
+    </ariaDig>
+	<ariaEnchant volume="0.5">
+        <filename>vo_ari_castspell_enchant</filename>
+    </ariaEnchant>
+    <ariaHurt delayFrames="4" volume="0.5">
+        <filename>vo_ari_hurt_01</filename>
+        <filename>vo_ari_hurt_02</filename>
+        <filename>vo_ari_hurt_03</filename>
+		<filename>vo_ari_hurt_04</filename>
+		<filename>vo_ari_hurt_05</filename>
+    </ariaHurt>
+	<ariaFear volume="0.5">
+        <filename>vo_ari_castspell_fear</filename>
+    </ariaFear>
+	<ariaFireball volume="0.5">
+        <filename>vo_ari_castspell_fire</filename>
+    </ariaFireball>
+    <ariaFreeze volume="0.4">
+        <filename>vo_ari_castspell_freeze</filename>
+    </ariaFreeze>
+	<ariaGold volume="0.5">
+        <filename>vo_ari_castspell_gold</filename>
+    </ariaGold>
+    <ariaGrabbed volume="0.3">
+        <filename>vo_ari_grabbed_01</filename>
+        <filename>vo_ari_grabbed_02</filename>
+        <filename>vo_ari_grabbed_03</filename>
+        <filename>vo_ari_grabbed_04</filename>
+		<filename>vo_ari_grabbed_05</filename>
+    </ariaGrabbed>
+    <ariaHeal volume="0.5">
+        <filename>vo_ari_castspell_heal</filename>
+    </ariaHeal>
+    <ariaHealing volume="0.35" delayMS="325">
+        <filename>vo_ari_heal_01</filename>
+		<filename>vo_ari_heal_02</filename>
+		<filename>vo_ari_heal_03</filename>
+    </ariaHealing>
+    <ariaHi volume="0.4">
+        <filename>vo_ari_hello_01</filename>
+        <filename>vo_ari_hello_02</filename>
+        <filename>vo_ari_hello_03</filename>
+        <filename>vo_ari_hello_04</filename>
+        <filename>vo_ari_hello_05</filename>
+    </ariaHi>
+    <ariaHm delayFrames="12" volume="0.5">
+        <filename>vo_ari_hm_01</filename>
+        <filename>vo_ari_hm_02</filename>
+        <filename>vo_ari_hm_03</filename>
+        <filename>vo_ari_hm_04</filename>
+    </ariaHm>
+	<ariaHm2 volume="0.5">
+        <filename>vo_ari_hm_01</filename>
+        <filename>vo_ari_hm_02</filename>
+        <filename>vo_ari_hm_03</filename>
+        <filename>vo_ari_hm_04</filename>
+    </ariaHm2>
+    <ariaHotCoals delayFrames="2" volume="0.4">
+        <filename>vo_ari_hotcoals_01</filename>
+        <filename>vo_ari_hotcoals_02</filename>
+        <filename>vo_ari_hotcoals_03</filename>
+        <filename>vo_ari_hotcoals_04</filename>
+        <filename>vo_ari_hotcoals_05</filename>
+        <filename>vo_ari_hotcoals_06</filename>
+        <filename>vo_ari_hotcoals_07</filename>
+        <filename>vo_ari_hotcoals_08</filename>
+		<filename>vo_ari_hotcoals_09</filename>
+		<filename>vo_ari_hotcoals_10</filename>
+		<filename>vo_ari_hotcoals_11</filename>
+    </ariaHotCoals>
+    <ariaIceSlide volume="0.35">
+        <filename>vo_ari_iceslip_01</filename>
+        <filename>vo_ari_iceslip_02</filename>
+        <filename>vo_ari_iceslip_03</filename>
+		<filename>vo_ari_iceslip_04</filename>
+		<filename>vo_ari_iceslip_05</filename>
+		<filename>vo_ari_iceslip_06</filename>
+		<filename>vo_ari_iceslip_07</filename>
+		<filename>vo_ari_iceslip_08</filename>
+		<filename>vo_ari_iceslip_09</filename>
+		<filename>vo_ari_iceslip_10</filename>
+    </ariaIceSlide>
+    <ariaMelee1 volume="0.5">
+        <filename>vo_ari_melee_1_01</filename>
+        <filename>vo_ari_melee_1_02</filename>
+        <filename>vo_ari_melee_1_03</filename>
+        <filename>vo_ari_melee_1_04</filename>
+		<filename>vo_ari_melee_1_05</filename>
+    </ariaMelee1>
+    <ariaMelee2 volume="0.5">
+        <filename>vo_ari_melee_2_01</filename>
+        <filename>vo_ari_melee_2_02</filename>
+        <filename>vo_ari_melee_2_03</filename>
+        <filename>vo_ari_melee_2_04</filename>
+		<filename>vo_ari_melee_2_05</filename>
+    </ariaMelee2>
+    <ariaMelee3 volume="0.5">
+        <filename>vo_ari_melee_3_01</filename>
+        <filename>vo_ari_melee_3_02</filename>
+        <filename>vo_ari_melee_3_03</filename>
+        <filename>vo_ari_melee_3_04</filename>
+		<filename>vo_ari_melee_3_05</filename>
+    </ariaMelee3>
+    <ariaMelee4 volume="0.45">
+        <filename>vo_ari_melee_4_01</filename>
+        <filename>vo_ari_melee_4_02</filename>
+        <filename>vo_ari_melee_4_03</filename>
+        <filename>vo_ari_melee_4_04</filename>
+		<filename>vo_ari_melee_4_05</filename>
+    </ariaMelee4>
+	<ariaNeed volume="0.5">
+        <filename>vo_ari_castspell_need</filename>
+    </ariaNeed>
+	<ariaQuake volume="0.5">
+        <filename>vo_ari_castspell_quake</filename>
+    </ariaQuake>
+    <ariaRanged volume="0.3">
+        <filename>vo_ari_ranged_01</filename>
+        <filename>vo_ari_ranged_02</filename>
+        <filename>vo_ari_ranged_03</filename>
+        <filename>vo_ari_ranged_04</filename>
+        <filename>vo_ari_ranged_05</filename>
+    </ariaRanged>
+	<ariaRoar volume="0.5">
+        <filename>vo_ari_castspell_gigantism_01</filename>
+        <filename>vo_ari_castspell_gigantism_02</filename>
+    </ariaRoar>
+	<ariaShield volume="0.5">
+        <filename>vo_ari_castspell_shield</filename>
+    </ariaShield>
+	<ariaSquish delayFrames="4" volume="0.5">
+        <filename>vo_ari_squish_01</filename>
+        <filename>vo_ari_squish_02</filename>
+        <filename>vo_ari_squish_03</filename>
+        <filename>vo_ari_squish_04</filename>
+    </ariaSquish>
+    <ariaTeleport delayFrames="12" volume="0.5">
+        <filename>vo_ari_teleport_01</filename>
+        <filename>vo_ari_teleport_02</filename>
+        <filename>vo_ari_teleport_03</filename>
+        <filename>vo_ari_teleport_04</filename>
+        <filename>vo_ari_teleport_05</filename>
+    </ariaTeleport>
+    <ariaTrapdoor volume="0.4">
+        <filename>vo_ari_trapdoor_01</filename>
+        <filename>vo_ari_trapdoor_02</filename>
+		<filename>vo_ari_trapdoor_03</filename>
+		<filename>vo_ari_trapdoor_04</filename>
+    </ariaTrapdoor>
+	<ariaTransmute volume="0.35">
+        <filename>vo_ari_castspell_transmute</filename>
+    </ariaTransmute>
+    <ariaYeah delayFrames="12" volume="0.45">
+        <filename>vo_ari_yeah_01</filename>
+        <filename>vo_ari_yeah_02</filename>
+        <filename>vo_ari_yeah_03</filename>
+        <filename>vo_ari_yeah_04</filename>
+        <filename>vo_ari_yeah_05</filename>
+    </ariaYeah>
+	
+	<bardBomb volume="0.7">
+        <filename>vo_brd_castspell_bomb</filename>
+    </bardBomb>
+    <bardConfused delayFrames="6" volume="0.6">
+        <filename>vo_brd_confused_01</filename>
+        <filename>vo_brd_confused_02</filename>
+        <filename>vo_brd_confused_03</filename>
+        <filename>vo_brd_confused_04</filename>
+        <filename>vo_brd_confused_05</filename>
+    </bardConfused>
+    <bardDeath volume="0.55">
+        <filename>vo_brd_death_01</filename>
+        <filename>vo_brd_death_02</filename>
+        <filename>vo_brd_death_03</filename>
+    </bardDeath>
+	<bardDescend volume="0.7">
+        <filename>vo_brd_castspell_descend</filename>
+    </bardDescend>
+    <bardDig volume="0.35">
+        <filename>vo_brd_dig_01</filename>
+        <filename>vo_brd_dig_02</filename>
+        <filename>vo_brd_dig_03</filename>
+        <filename>vo_brd_dig_04</filename>
+        <filename>vo_brd_dig_05</filename>
+        <filename>vo_brd_dig_06</filename>
+    </bardDig>
+    <bardHurt delayFrames="4" volume="0.7">
+        <filename>vo_brd_hurt_01</filename>
+        <filename>vo_brd_hurt_02</filename>
+        <filename>vo_brd_hurt_03</filename>
+        <filename>vo_brd_hurt_04</filename>
+        <filename>vo_brd_hurt_05</filename>
+    </bardHurt>
+	<bardEnchant volume="0.7">
+        <filename>vo_brd_castspell_enchant</filename>
+    </bardEnchant>
+	<bardFear volume="0.7">
+        <filename>vo_brd_castspell_fear</filename>
+    </bardFear>
+	<bardFireball volume="0.7">
+        <filename>vo_brd_castspell_fire</filename>
+    </bardFireball>
+    <bardFreeze volume="0.6">
+        <filename>vo_brd_castspell_freeze</filename>
+    </bardFreeze>
+	<bardGold volume="0.7">
+        <filename>vo_brd_castspell_gold</filename>
+    </bardGold>
+    <bardGrabbed volume="0.6">
+        <filename>vo_brd_grabbed_01</filename>
+        <filename>vo_brd_grabbed_02</filename>
+        <filename>vo_brd_grabbed_03</filename>
+        <filename>vo_brd_grabbed_04</filename>
+    </bardGrabbed>
+    <bardHeal volume="0.7">
+        <filename>vo_brd_castspell_heal</filename>
+    </bardHeal>
+    <bardHealing volume="0.55" delayMS="325">
+        <filename>vo_brd_heal_01</filename>
+        <filename>vo_brd_heal_02</filename>
+        <filename>vo_brd_heal_03</filename>
+    </bardHealing>
+    <bardHi volume="0.65">
+        <filename>vo_brd_hello_01</filename>
+        <filename>vo_brd_hello_02</filename>
+        <filename>vo_brd_hello_03</filename>
+        <filename>vo_brd_hello_04</filename>
+        <filename>vo_brd_hello_05</filename>
+    </bardHi>
+    <bardHm delayFrames="12" volume="0.7">
+        <filename>vo_brd_hm_01</filename>
+        <filename>vo_brd_hm_02</filename>
+        <filename>vo_brd_hm_03</filename>
+        <filename>vo_brd_hm_04</filename>
+    </bardHm>
+	<bardHm2 volume="0.7">
+        <filename>vo_brd_hm_01</filename>
+        <filename>vo_brd_hm_02</filename>
+        <filename>vo_brd_hm_03</filename>
+        <filename>vo_brd_hm_04</filename>
+    </bardHm2>
+    <bardHotCoals delayFrames="2" volume="0.6">
+        <filename>vo_brd_hotcoals_01</filename>
+        <filename>vo_brd_hotcoals_02</filename>
+        <filename>vo_brd_hotcoals_03</filename>
+        <filename>vo_brd_hotcoals_04</filename>
+        <filename>vo_brd_hotcoals_05</filename>
+        <filename>vo_brd_hotcoals_06</filename>
+        <filename>vo_brd_hotcoals_07</filename>
+        <filename>vo_brd_hotcoals_08</filename>
+		<filename>vo_brd_hotcoals_09</filename>
+    </bardHotCoals>
+    <bardIceSlide volume="0.5">
+        <filename>vo_brd_iceslip_01</filename>
+        <filename>vo_brd_iceslip_02</filename>
+        <filename>vo_brd_iceslip_03</filename>
+        <filename>vo_brd_iceslip_04</filename>
+        <filename>vo_brd_iceslip_05</filename>
+        <filename>vo_brd_iceslip_06</filename>
+    </bardIceSlide>
+    <bardMelee1 volume="0.6">
+        <filename>vo_brd_melee_1_01</filename>
+        <filename>vo_brd_melee_1_02</filename>
+        <filename>vo_brd_melee_1_03</filename>
+        <filename>vo_brd_melee_1_04</filename>
+    </bardMelee1>
+    <bardMelee2 volume="0.6">
+        <filename>vo_brd_melee_2_01</filename>
+        <filename>vo_brd_melee_2_02</filename>
+        <filename>vo_brd_melee_2_03</filename>
+        <filename>vo_brd_melee_2_04</filename>
+    </bardMelee2>
+    <bardMelee3 volume="0.6">
+        <filename>vo_brd_melee_3_01</filename>
+        <filename>vo_brd_melee_3_02</filename>
+        <filename>vo_brd_melee_3_03</filename>
+        <filename>vo_brd_melee_3_04</filename>
+    </bardMelee3>
+    <bardMelee4 volume="0.5">
+        <filename>vo_brd_melee_4_01</filename>
+        <filename>vo_brd_melee_4_02</filename>
+        <filename>vo_brd_melee_4_03</filename>
+        <filename>vo_brd_melee_4_04</filename>
+    </bardMelee4>
+	<bardNeed volume="0.7">
+        <filename>vo_brd_castspell_need</filename>
+    </bardNeed>
+	<bardQuake volume="0.7">
+        <filename>vo_brd_castspell_quake</filename>
+    </bardQuake>
+    <bardRanged volume="0.4">
+        <filename>vo_brd_dig_01</filename>
+        <filename>vo_brd_dig_02</filename>
+        <filename>vo_brd_dig_03</filename>
+        <filename>vo_brd_dig_04</filename>
+        <filename>vo_brd_dig_05</filename>
+        <filename>vo_brd_dig_06</filename>
+    </bardRanged>
+	<bardRoar volume="0.7">
+        <filename>vo_brd_castspell_gigantism_01</filename>
+        <filename>vo_brd_castspell_gigantism_02</filename>
+    </bardRoar>
+	<bardShield volume="0.7">
+        <filename>vo_brd_castspell_shield</filename>
+    </bardShield>
+	<bardSquish delayFrames="4" volume="0.7">
+        <filename>vo_brd_squish_01</filename>
+        <filename>vo_brd_squish_02</filename>
+        <filename>vo_brd_squish_03</filename>
+        <filename>vo_brd_squish_04</filename>
+        <filename>vo_brd_squish_05</filename>
+    </bardSquish>
+    <bardTeleport delayFrames="12" volume="0.7">
+        <filename>vo_brd_teleport_01</filename>
+        <filename>vo_brd_teleport_02</filename>
+        <filename>vo_brd_teleport_03</filename>
+        <filename>vo_brd_teleport_04</filename>
+        <filename>vo_brd_teleport_05</filename>
+        <filename>vo_brd_teleport_06</filename>
+    </bardTeleport>
+    <bardTrapdoor volume="0.7">
+        <filename>vo_brd_trapdoor_01</filename>
+        <filename>vo_brd_trapdoor_02</filename>
+    </bardTrapdoor>
+	<bardTransmute volume="0.5">
+        <filename>vo_brd_castspell_transmute</filename>
+    </bardTransmute>
+    <bardYeah delayFrames="12" volume="0.75">
+        <filename>vo_brd_yeah_01</filename>
+        <filename>vo_brd_yeah_02</filename>
+        <filename>vo_brd_yeah_03</filename>
+        <filename>vo_brd_yeah_04</filename>
+        <filename>vo_brd_yeah_05</filename>
+    </bardYeah>
+
+	<boltBomb volume="0.5">
+        <filename>vo_blt_castspell_bomb</filename>
+    </boltBomb>
+    <boltConfused delayFrames="6" volume="0.4">
+        <filename>vo_blt_confused_01</filename>
+        <filename>vo_blt_confused_02</filename>
+        <filename>vo_blt_confused_03</filename>
+        <filename>vo_blt_confused_04</filename>
+        <filename>vo_blt_confused_05</filename>
+    </boltConfused>
+    <boltDeath volume="0.25">
+        <filename>vo_blt_death_01</filename>
+        <filename>vo_blt_death_02</filename>
+        <filename>vo_blt_death_03</filename>
+    </boltDeath>
+	<boltDescend volume="0.5">
+        <filename>vo_blt_castspell_descend</filename>
+    </boltDescend>
+    <boltDig volume="0.25">
+        <filename>vo_blt_dig_01</filename>
+        <filename>vo_blt_dig_02</filename>
+        <filename>vo_blt_dig_03</filename>
+        <filename>vo_blt_dig_04</filename>
+        <filename>vo_blt_dig_05</filename>
+    </boltDig>
+	<boltEnchant volume="0.5">
+        <filename>vo_blt_castspell_enchant</filename>
+    </boltEnchant>
+    <boltHurt delayFrames="4" volume="0.5">
+        <filename>vo_blt_hurt_01</filename>
+        <filename>vo_blt_hurt_02</filename>
+        <filename>vo_blt_hurt_03</filename>
+		<filename>vo_blt_hurt_04</filename>
+		<filename>vo_blt_hurt_05</filename>
+    </boltHurt>
+	<boltFear volume="0.5">
+        <filename>vo_blt_castspell_fear</filename>
+    </boltFear>
+	<boltFireball volume="0.5">
+        <filename>vo_blt_castspell_fire</filename>
+    </boltFireball>
+    <boltFreeze volume="0.4">
+        <filename>vo_blt_castspell_freeze</filename>
+    </boltFreeze>
+	<boltGold volume="0.5">
+        <filename>vo_blt_castspell_gold</filename>
+    </boltGold>
+    <boltGrabbed volume="0.3">
+        <filename>vo_blt_grabbed_01</filename>
+        <filename>vo_blt_grabbed_02</filename>
+        <filename>vo_blt_grabbed_03</filename>
+    </boltGrabbed>
+    <boltHeal volume="0.5">
+        <filename>vo_blt_castspell_heal</filename>
+    </boltHeal>
+    <boltHealing volume="0.35" delayMS="325">
+        <filename>vo_blt_heal_01</filename>
+		<filename>vo_blt_heal_02</filename>
+		<filename>vo_blt_heal_03</filename>
+    </boltHealing>
+    <boltHi volume="0.4">
+        <filename>vo_blt_hello_01</filename>
+        <filename>vo_blt_hello_02</filename>
+        <filename>vo_blt_hello_03</filename>
+        <filename>vo_blt_hello_04</filename>
+        <filename>vo_blt_hello_05</filename>
+    </boltHi>
+    <boltHm delayFrames="12" volume="0.5">
+        <filename>vo_blt_hm_01</filename>
+        <filename>vo_blt_hm_02</filename>
+        <filename>vo_blt_hm_03</filename>
+        <filename>vo_blt_hm_04</filename>
+    </boltHm>
+	<boltHm2 volume="0.5">
+        <filename>vo_blt_hm_01</filename>
+        <filename>vo_blt_hm_02</filename>
+        <filename>vo_blt_hm_03</filename>
+        <filename>vo_blt_hm_04</filename>
+    </boltHm2>
+    <boltHotCoals delayFrames="2" volume="0.4">
+        <filename>vo_blt_hotcoals_01</filename>
+        <filename>vo_blt_hotcoals_02</filename>
+        <filename>vo_blt_hotcoals_03</filename>
+        <filename>vo_blt_hotcoals_04</filename>
+        <filename>vo_blt_hotcoals_05</filename>
+        <filename>vo_blt_hotcoals_06</filename>
+        <filename>vo_blt_hotcoals_07</filename>
+    </boltHotCoals>
+    <boltIceSlide volume="0.35">
+        <filename>vo_blt_iceslip_01</filename>
+        <filename>vo_blt_iceslip_02</filename>
+        <filename>vo_blt_iceslip_03</filename>
+		<filename>vo_blt_iceslip_04</filename>
+		<filename>vo_blt_iceslip_05</filename>
+		<filename>vo_blt_iceslip_06</filename>
+		<filename>vo_blt_iceslip_07</filename>
+		<filename>vo_blt_iceslip_08</filename>
+		<filename>vo_blt_iceslip_09</filename>
+    </boltIceSlide>
+    <boltMelee1 volume="0.5">
+        <filename>vo_blt_melee_1_01</filename>
+        <filename>vo_blt_melee_1_02</filename>
+        <filename>vo_blt_melee_1_03</filename>
+        <filename>vo_blt_melee_1_04</filename>
+    </boltMelee1>
+    <boltMelee2 volume="0.5">
+        <filename>vo_blt_melee_2_01</filename>
+        <filename>vo_blt_melee_2_02</filename>
+        <filename>vo_blt_melee_2_03</filename>
+        <filename>vo_blt_melee_2_04</filename>
+    </boltMelee2>
+    <boltMelee3 volume="0.5">
+        <filename>vo_blt_melee_3_01</filename>
+        <filename>vo_blt_melee_3_02</filename>
+        <filename>vo_blt_melee_3_03</filename>
+        <filename>vo_blt_melee_3_04</filename>
+    </boltMelee3>
+    <boltMelee4 volume="0.45">
+        <filename>vo_blt_melee_4_01</filename>
+        <filename>vo_blt_melee_4_02</filename>
+        <filename>vo_blt_melee_4_03</filename>
+        <filename>vo_blt_melee_4_04</filename>
+    </boltMelee4>
+	<boltNeed volume="0.5">
+        <filename>vo_blt_castspell_need</filename>
+    </boltNeed>
+	<boltQuake volume="0.5">
+        <filename>vo_blt_castspell_quake</filename>
+    </boltQuake>
+    <boltRanged volume="0.3">
+        <filename>vo_blt_ranged_01</filename>
+        <filename>vo_blt_ranged_02</filename>
+        <filename>vo_blt_ranged_03</filename>
+        <filename>vo_blt_ranged_04</filename>
+        <filename>vo_blt_ranged_05</filename>
+    </boltRanged>
+	<boltRoar volume="0.5">
+        <filename>vo_blt_castspell_gigantism_01</filename>
+        <filename>vo_blt_castspell_gigantism_02</filename>
+    </boltRoar>
+	<boltShield volume="0.5">
+        <filename>vo_blt_castspell_shield</filename>
+    </boltShield>
+	<boltSquish delayFrames="4" volume="0.5">
+        <filename>vo_blt_squished_01</filename>
+        <filename>vo_blt_squished_02</filename>
+        <filename>vo_blt_squished_03</filename>
+        <filename>vo_blt_squished_04</filename>
+        <filename>vo_blt_squished_05</filename>
+    </boltSquish>
+    <boltTeleport delayFrames="12" volume="0.5">
+        <filename>vo_blt_teleport_01</filename>
+        <filename>vo_blt_teleport_02</filename>
+        <filename>vo_blt_teleport_03</filename>
+        <filename>vo_blt_teleport_04</filename>
+        <filename>vo_blt_teleport_05</filename>
+    </boltTeleport>
+    <boltTrapdoor volume="0.4">
+        <filename>vo_blt_trapdoor_01</filename>
+        <filename>vo_blt_trapdoor_02</filename>
+		<filename>vo_blt_trapdoor_03</filename>
+    </boltTrapdoor>
+	<boltTransmute volume="0.35">
+        <filename>vo_blt_castspell_transmute</filename>
+    </boltTransmute>
+    <boltYeah delayFrames="12" volume="0.45">
+        <filename>vo_blt_yeah_01</filename>
+        <filename>vo_blt_yeah_02</filename>
+        <filename>vo_blt_yeah_03</filename>
+        <filename>vo_blt_yeah_04</filename>
+        <filename>vo_blt_yeah_05</filename>
+    </boltYeah>
+
+	<codaBomb volume="0.5">
+        <filename>vo_cod_castspell_bomb</filename>
+    </codaBomb>
+    <codaConfused delayFrames="6" volume="0.4">
+        <filename>vo_cod_confused_01</filename>
+        <filename>vo_cod_confused_02</filename>
+        <filename>vo_cod_confused_03</filename>
+        <filename>vo_cod_confused_04</filename>
+        <filename>vo_cod_confused_05</filename>
+    </codaConfused>
+    <codaDeath volume="0.25">
+        <filename>vo_cod_death_01</filename>
+        <filename>vo_cod_death_02</filename>
+        <filename>vo_cod_death_03</filename>
+        <filename>vo_cod_death_04</filename>
+        <filename>vo_cod_death_05</filename>
+    </codaDeath>
+	<codaDescend volume="0.5">
+        <filename>vo_cod_castspell_descend</filename>
+    </codaDescend>
+    <codaDig volume="0.25">
+        <filename>vo_cod_dig_01</filename>
+        <filename>vo_cod_dig_02</filename>
+        <filename>vo_cod_dig_03</filename>
+        <filename>vo_cod_dig_04</filename>
+        <filename>vo_cod_dig_05</filename>
+    </codaDig>
+	<codaEnchant volume="0.5">
+        <filename>vo_cod_castspell_enchant</filename>
+    </codaEnchant>
+    <codaHurt delayFrames="4" volume="0.5">
+        <filename>vo_cod_hurt_01</filename>
+        <filename>vo_cod_hurt_02</filename>
+        <filename>vo_cod_hurt_03</filename>
+    </codaHurt>
+	<codaFear volume="0.5">
+        <filename>vo_cod_castspell_fear</filename>
+    </codaFear>
+	<codaFireball volume="0.5">
+        <filename>vo_cod_castspell_fire</filename>
+    </codaFireball>
+    <codaFreeze volume="0.4">
+        <filename>vo_cod_castspell_freeze</filename>
+    </codaFreeze>
+	<codaGold volume="0.5">
+        <filename>vo_cod_castspell_gold</filename>
+    </codaGold>
+    <codaGrabbed volume="0.3">
+        <filename>vo_cod_grabbed_01</filename>
+        <filename>vo_cod_grabbed_02</filename>
+        <filename>vo_cod_grabbed_03</filename>
+    </codaGrabbed>
+    <codaHeal volume="0.5">
+        <filename>vo_cod_castspell_heal</filename>
+    </codaHeal>
+    <codaHealing volume="0.35" delayMS="325">
+        <filename>vo_cod_heal</filename>
+    </codaHealing>
+    <codaHi volume="0.4">
+        <filename>vo_cod_hello_01</filename>
+        <filename>vo_cod_hello_02</filename>
+        <filename>vo_cod_hello_03</filename>
+        <filename>vo_cod_hello_04</filename>
+        <filename>vo_cod_hello_05</filename>
+        <filename>vo_cod_hello_06</filename>
+    </codaHi>
+    <codaHm delayFrames="12" volume="0.5">
+        <filename>vo_cod_hm_01</filename>
+        <filename>vo_cod_hm_02</filename>
+        <filename>vo_cod_hm_03</filename>
+        <filename>vo_cod_hm_04</filename>
+    </codaHm>
+	<codaHm2 volume="0.5">
+        <filename>vo_cod_hm_01</filename>
+        <filename>vo_cod_hm_02</filename>
+        <filename>vo_cod_hm_03</filename>
+        <filename>vo_cod_hm_04</filename>
+    </codaHm2>
+    <codaHotCoals delayFrames="2" volume="0.4">
+        <filename>vo_cod_hotcoals_01</filename>
+        <filename>vo_cod_hotcoals_02</filename>
+        <filename>vo_cod_hotcoals_03</filename>
+        <filename>vo_cod_hotcoals_04</filename>
+        <filename>vo_cod_hotcoals_05</filename>
+        <filename>vo_cod_hotcoals_06</filename>
+        <filename>vo_cod_hotcoals_07</filename>
+        <filename>vo_cod_hotcoals_08</filename>
+    </codaHotCoals>
+    <codaIceSlide volume="0.35">
+        <filename>vo_cod_iceslip_01</filename>
+        <filename>vo_cod_iceslip_02</filename>
+        <filename>vo_cod_iceslip_03</filename>
+		<filename>vo_cod_iceslip_04</filename>
+		<filename>vo_cod_iceslip_05</filename>
+		<filename>vo_cod_iceslip_06</filename>
+		<filename>vo_cod_iceslip_07</filename>
+		<filename>vo_cod_iceslip_08</filename>
+		<filename>vo_cod_iceslip_09</filename>
+    </codaIceSlide>
+    <codaMelee1 volume="0.5">
+        <filename>vo_cod_melee_1_01</filename>
+        <filename>vo_cod_melee_1_02</filename>
+        <filename>vo_cod_melee_1_03</filename>
+        <filename>vo_cod_melee_1_04</filename>
+    </codaMelee1>
+    <codaMelee2 volume="0.5">
+        <filename>vo_cod_melee_2_01</filename>
+        <filename>vo_cod_melee_2_02</filename>
+        <filename>vo_cod_melee_2_03</filename>
+        <filename>vo_cod_melee_2_04</filename>
+    </codaMelee2>
+    <codaMelee3 volume="0.5">
+        <filename>vo_cod_melee_3_01</filename>
+        <filename>vo_cod_melee_3_02</filename>
+        <filename>vo_cod_melee_3_03</filename>
+        <filename>vo_cod_melee_3_04</filename>
+    </codaMelee3>
+    <codaMelee4 volume="0.45">
+        <filename>vo_cod_melee_4_01</filename>
+        <filename>vo_cod_melee_4_02</filename>
+        <filename>vo_cod_melee_4_03</filename>
+        <filename>vo_cod_melee_4_04</filename>
+        <filename>vo_cod_melee_4_05</filename>
+    </codaMelee4>
+	<codaNeed volume="0.5">
+        <filename>vo_cod_castspell_need</filename>
+    </codaNeed>
+	<codaQuake volume="0.5">
+        <filename>vo_cod_castspell_quake</filename>
+    </codaQuake>
+    <codaRanged volume="0.3">
+        <filename>vo_cod_ranged_01</filename>
+        <filename>vo_cod_ranged_02</filename>
+        <filename>vo_cod_ranged_03</filename>
+        <filename>vo_cod_ranged_04</filename>
+        <filename>vo_cod_ranged_05</filename>
+    </codaRanged>
+	<codaRoar volume="0.5">
+        <filename>vo_cod_castspell_gigantism_01</filename>
+        <filename>vo_cod_castspell_gigantism_02</filename>
+    </codaRoar>
+	<codaShield volume="0.5">
+        <filename>vo_cod_castspell_shield</filename>
+    </codaShield>
+	<codaSquish delayFrames="4" volume="0.5">
+        <filename>vo_cod_squished_01</filename>
+        <filename>vo_cod_squished_02</filename>
+        <filename>vo_cod_squished_03</filename>
+        <filename>vo_cod_squished_04</filename>
+        <filename>vo_cod_squished_05</filename>
+    </codaSquish>
+    <codaTeleport delayFrames="12" volume="0.5">
+        <filename>vo_cod_teleport_01</filename>
+        <filename>vo_cod_teleport_02</filename>
+        <filename>vo_cod_teleport_03</filename>
+        <filename>vo_cod_teleport_04</filename>
+        <filename>vo_cod_teleport_05</filename>
+    </codaTeleport>
+    <codaTrapdoor volume="0.4">
+        <filename>vo_cod_trapdoor_01</filename>
+        <filename>vo_cod_trapdoor_02</filename>
+		<filename>vo_cod_trapdoor_03</filename>
+    </codaTrapdoor>
+	<codaTransmute volume="0.35">
+        <filename>vo_cod_castspell_transmute</filename>
+    </codaTransmute>
+    <codaYeah delayFrames="12" volume="0.45">
+        <filename>vo_cod_yeah_01</filename>
+        <filename>vo_cod_yeah_02</filename>
+        <filename>vo_cod_yeah_03</filename>
+        <filename>vo_cod_yeah_04</filename>
+        <filename>vo_cod_yeah_05</filename>
+    </codaYeah>
+
+	<cadenceBomb volume="0.5">
+        <filename>vo_cad_castspell_bomb</filename>
+    </cadenceBomb>
+    <cadenceConfused delayFrames="6" volume="0.5">
+        <filename>vo_cad_confused_01</filename>
+        <filename>vo_cad_confused_02</filename>
+        <filename>vo_cad_confused_03</filename>
+        <filename>vo_cad_confused_04</filename>
+    </cadenceConfused>
+    <cadenceDeath volume="0.4">
+        <filename>vo_cad_death_01</filename>
+        <filename>vo_cad_death_02</filename>
+        <filename>vo_cad_death_03</filename>
+    </cadenceDeath>
+	<cadenceDescend volume="0.5">
+        <filename>vo_cad_castspell_descend</filename>
+    </cadenceDescend>
+    <cadenceDig volume="0.25">
+        <filename>vo_cad_dig_01</filename>
+        <filename>vo_cad_dig_02</filename>
+        <filename>vo_cad_dig_03</filename>
+        <filename>vo_cad_dig_04</filename>
+        <filename>vo_cad_dig_05</filename>
+        <filename>vo_cad_dig_06</filename>
+    </cadenceDig>
+	<cadenceEnchant volume="0.7">
+        <filename>vo_cad_castspell_enchant</filename>
+    </cadenceEnchant>
+    <cadenceHurt delayFrames="4" volume="0.9">
+        <filename>vo_cad_hurt_01</filename>
+        <filename>vo_cad_hurt_02</filename>
+        <filename>vo_cad_hurt_03</filename>
+        <filename>vo_cad_hurt_04</filename>
+        <filename>vo_cad_hurt_05</filename>
+        <filename>vo_cad_hurt_06</filename>
+    </cadenceHurt>
+	<cadenceFear volume="0.5">
+        <filename>vo_cad_castspell_fear</filename>
+    </cadenceFear>
+	<cadenceFireball volume="0.5">
+        <filename>vo_cad_castspell_fire</filename>
+    </cadenceFireball>
+    <cadenceFreeze volume="0.5">
+        <filename>vo_cad_castspell_freeze</filename>
+    </cadenceFreeze>
+	<cadenceGold volume="0.5">
+        <filename>vo_cad_castspell_gold</filename>
+    </cadenceGold>
+    <cadenceGrabbed volume="0.5">
+        <filename>vo_cad_grabbed_01</filename>
+        <filename>vo_cad_grabbed_02</filename>
+        <filename>vo_cad_grabbed_03</filename>
+        <filename>vo_cad_grabbed_04</filename>
+    </cadenceGrabbed>
+    <cadenceHeal volume="0.5">
+        <filename>vo_cad_castspell_heal</filename>
+    </cadenceHeal>
+    <cadenceHealing volume="0.4" delayMS="325">
+        <filename>vo_cad_heal_03</filename>
+    </cadenceHealing>
+    <cadenceHi volume="0.45">
+        <filename>vo_cad_hello_01</filename>
+        <filename>vo_cad_hello_02</filename>
+        <filename>vo_cad_hello_03</filename>
+        <filename>vo_cad_hello_04</filename>
+        <filename>vo_cad_hello_05</filename>
+    </cadenceHi>
+    <cadenceHm delayFrames="12" volume="0.5">
+        <filename>vo_cad_hm_01</filename>
+        <filename>vo_cad_hm_02</filename>
+        <filename>vo_cad_hm_03</filename>
+    </cadenceHm>
+	<cadenceHm2 volume="0.5">
+        <filename>vo_cad_hm_01</filename>
+        <filename>vo_cad_hm_02</filename>
+        <filename>vo_cad_hm_03</filename>
+    </cadenceHm2>
+    <cadenceHotCoals delayFrames="2" volume="0.4">
+        <filename>vo_cad_hotcoals_01</filename>
+        <filename>vo_cad_hotcoals_02</filename>
+        <filename>vo_cad_hotcoals_03</filename>
+        <filename>vo_cad_hotcoals_04</filename>
+        <filename>vo_cad_hotcoals_05</filename>
+        <filename>vo_cad_hotcoals_06</filename>
+        <filename>vo_cad_hotcoals_07</filename>
+        <filename>vo_cad_hotcoals_08</filename>
+		<filename>vo_cad_hotcoals_09</filename>
+		<filename>vo_cad_hotcoals_10</filename>
+        <filename>vo_cad_hotcoals_11</filename>
+        <filename>vo_cad_hotcoals_12</filename>
+    </cadenceHotCoals>
+    <cadenceIceSlide volume="0.3">
+        <filename>vo_cad_iceslip_01</filename>
+        <filename>vo_cad_iceslip_02</filename>
+        <filename>vo_cad_iceslip_03</filename>
+        <filename>vo_cad_iceslip_04</filename>
+        <filename>vo_cad_iceslip_05</filename>
+        <filename>vo_cad_iceslip_06</filename>
+        <filename>vo_cad_iceslip_07</filename>
+        <filename>vo_cad_iceslip_08</filename>
+    </cadenceIceSlide>
+    <cadenceMelee1 volume="0.7">
+        <filename>vo_cad_melee_1_01</filename>
+        <filename>vo_cad_melee_1_02</filename>
+        <filename>vo_cad_melee_1_03</filename>
+        <filename>vo_cad_melee_1_04</filename>
+    </cadenceMelee1>
+    <cadenceMelee2 volume="0.7">
+        <filename>vo_cad_melee_2_01</filename>
+        <filename>vo_cad_melee_2_02</filename>
+        <filename>vo_cad_melee_2_03</filename>
+        <filename>vo_cad_melee_2_04</filename>
+    </cadenceMelee2>
+    <cadenceMelee3 volume="0.7">
+        <filename>vo_cad_melee_3_01</filename>
+        <filename>vo_cad_melee_3_02</filename>
+        <filename>vo_cad_melee_3_03</filename>
+        <filename>vo_cad_melee_3_04</filename>
+    </cadenceMelee3>
+    <cadenceMelee4 volume="0.6">
+        <filename>vo_cad_melee_4_01</filename>
+        <filename>vo_cad_melee_4_02</filename>
+        <filename>vo_cad_melee_4_03</filename>
+        <filename>vo_cad_melee_4_04</filename>
+        <filename>vo_cad_melee_4_05</filename>
+    </cadenceMelee4>
+	<cadenceNeed volume="0.7">
+        <filename>vo_cad_castspell_need</filename>
+    </cadenceNeed>
+	<cadenceQuake volume="0.5">
+        <filename>vo_cad_castspell_quake</filename>
+    </cadenceQuake>
+    <cadenceRanged volume="0.3">
+        <filename>vo_cad_ranged_01</filename>
+        <filename>vo_cad_ranged_02</filename>
+        <filename>vo_cad_ranged_03</filename>
+        <filename>vo_cad_ranged_04</filename>
+        <filename>vo_cad_ranged_05</filename>
+        <filename>vo_cad_ranged_06</filename>
+        <filename>vo_cad_ranged_07</filename>
+    </cadenceRanged>
+	<cadenceRoar volume="0.5">
+        <filename>vo_cad_castspell_gigantism_01</filename>
+        <filename>vo_cad_castspell_gigantism_02</filename>
+    </cadenceRoar>
+	<cadenceShield volume="0.7">
+        <filename>vo_cad_castspell_shield</filename>
+    </cadenceShield>
+	<cadenceSquish delayFrames="4" volume="0.6">
+        <filename>vo_cad_squish_01</filename>
+        <filename>vo_cad_squish_02</filename>
+        <filename>vo_cad_squish_03</filename>
+        <filename>vo_cad_squish_04</filename>
+        <filename>vo_cad_squish_05</filename>
+    </cadenceSquish>
+    <cadenceTeleport delayFrames="12" volume="0.5">
+        <filename>vo_cad_teleport_01</filename>
+        <filename>vo_cad_teleport_02</filename>
+        <filename>vo_cad_teleport_03</filename>
+        <filename>vo_cad_teleport_04</filename>
+        <filename>vo_cad_teleport_05</filename>
+    </cadenceTeleport>
+    <cadenceTrapdoor volume="0.5">
+        <filename>vo_cad_trapdoor_01</filename>
+        <filename>vo_cad_trapdoor_02</filename>
+        <filename>vo_cad_trapdoor_03</filename>
+        <filename>vo_cad_trapdoor_04</filename>
+        <filename>vo_cad_trapdoor_05</filename>
+    </cadenceTrapdoor>
+	<cadenceTransmute volume="0.5">
+        <filename>vo_cad_castspell_transmute</filename>
+    </cadenceTransmute>
+	<cadenceTutorial1 delayFrames="60" volume="0.75">
+        <filename>vo_tutorial_cad_01</filename>
+    </cadenceTutorial1>
+	<cadenceTutorial2 delayFrames="120" volume="1.0">
+        <filename>vo_tutorial_cad_02</filename>
+    </cadenceTutorial2>
+	<cadenceTutorial3 delayFrames="60" volume="1.0">
+        <filename>vo_tutorial_cad_03</filename>
+    </cadenceTutorial3>
+	<cadenceTutorial4 delayFrames="120" volume="1.0">
+        <filename>vo_tutorial_cad_04</filename>
+    </cadenceTutorial4>
+	<cadenceTutorial5 volume="1.0">
+        <filename>vo_tutorial_cad_05</filename>
+    </cadenceTutorial5>
+	<cadenceTutorial6 delayFrames="30" volume="1.0">
+        <filename>vo_tutorial_cad_06</filename>
+    </cadenceTutorial6>
+    <cadenceYeah delayFrames="12" volume="0.5">
+        <filename>vo_cad_yeah_01</filename>
+        <filename>vo_cad_yeah_02</filename>
+        <filename>vo_cad_yeah_03</filename>
+        <filename>vo_cad_yeah_04</filename>
+        <filename>vo_cad_yeah_05</filename>
+    </cadenceYeah>
+
+	<dorianBomb volume="0.5">
+        <filename>vo_dor_castspell_bomb</filename>
+    </dorianBomb>
+    <dorianConfused delayFrames="6" volume="0.4">
+        <filename>vo_dor_confused_01</filename>
+        <filename>vo_dor_confused_02</filename>
+        <filename>vo_dor_confused_03</filename>
+        <filename>vo_dor_confused_04</filename>
+		<filename>vo_dor_confused_05</filename>
+    </dorianConfused>
+    <dorianDeath volume="0.4">
+        <filename>vo_dor_death_01</filename>
+        <filename>vo_dor_death_02</filename>
+        <filename>vo_dor_death_03</filename>
+    </dorianDeath>
+	<dorianDescend volume="0.4">
+        <filename>vo_dor_castspell_descend</filename>
+    </dorianDescend>
+    <dorianDig volume="0.25">
+        <filename>vo_dor_dig_01</filename>
+        <filename>vo_dor_dig_02</filename>
+        <filename>vo_dor_dig_03</filename>
+        <filename>vo_dor_dig_04</filename>
+        <filename>vo_dor_dig_05</filename>
+        <filename>vo_dor_dig_06</filename>
+		<filename>vo_dor_dig_07</filename>
+    </dorianDig>
+	<dorianEnchant volume="0.5">
+        <filename>vo_dor_castspell_enchant</filename>
+    </dorianEnchant>
+    <dorianHurt delayFrames="4" volume="0.5">
+        <filename>vo_dor_hurt_01</filename>
+        <filename>vo_dor_hurt_02</filename>
+        <filename>vo_dor_hurt_03</filename>
+		<filename>vo_dor_hurt_04</filename>
+		<filename>vo_dor_hurt_05</filename>
+		<filename>vo_dor_hurt_06</filename>
+    </dorianHurt>
+	<dorianFear volume="0.5">
+        <filename>vo_dor_castspell_fear</filename>
+    </dorianFear>
+	<dorianFireball volume="0.5">
+        <filename>vo_dor_castspell_fire</filename>
+    </dorianFireball>
+    <dorianFreeze volume="0.4">
+        <filename>vo_dor_castspell_freeze</filename>
+    </dorianFreeze>
+	<dorianGold volume="0.5">
+        <filename>vo_dor_castspell_gold</filename>
+    </dorianGold>
+    <dorianGrabbed volume="0.4">
+        <filename>vo_dor_grabbed_01</filename>
+        <filename>vo_dor_grabbed_02</filename>
+        <filename>vo_dor_grabbed_03</filename>
+        <filename>vo_dor_grabbed_04</filename>
+		<filename>vo_dor_grabbed_05</filename>
+		<filename>vo_dor_grabbed_06</filename>
+    </dorianGrabbed>
+    <dorianHeal volume="0.5">
+        <filename>vo_dor_castspell_heal</filename>
+    </dorianHeal>
+    <dorianHealing volume="0.4" delayMS="325">
+        <filename>vo_dor_heal_01</filename>
+		<filename>vo_dor_heal_02</filename>
+		<filename>vo_dor_heal_03</filename>
+    </dorianHealing>
+    <dorianHi volume="0.4">
+        <filename>vo_dor_hello_01</filename>
+        <filename>vo_dor_hello_02</filename>
+        <filename>vo_dor_hello_03</filename>
+        <filename>vo_dor_hello_04</filename>
+        <filename>vo_dor_hello_05</filename>
+		<filename>vo_dor_hello_06</filename>
+    </dorianHi>
+    <dorianHm delayFrames="12" volume="0.5">
+        <filename>vo_dor_hm_01</filename>
+        <filename>vo_dor_hm_02</filename>
+        <filename>vo_dor_hm_03</filename>
+        <filename>vo_dor_hm_04</filename>
+		<filename>vo_dor_hm_05</filename>
+    </dorianHm>
+	<dorianHm2 volume="0.5">
+        <filename>vo_dor_hm_01</filename>
+        <filename>vo_dor_hm_02</filename>
+        <filename>vo_dor_hm_03</filename>
+        <filename>vo_dor_hm_04</filename>
+		<filename>vo_dor_hm_05</filename>
+    </dorianHm2>
+    <dorianHotCoals delayFrames="2" volume="0.4">
+        <filename>vo_dor_hotcoals_01</filename>
+        <filename>vo_dor_hotcoals_02</filename>
+        <filename>vo_dor_hotcoals_03</filename>
+        <filename>vo_dor_hotcoals_04</filename>
+        <filename>vo_dor_hotcoals_05</filename>
+        <filename>vo_dor_hotcoals_06</filename>
+        <filename>vo_dor_hotcoals_07</filename>
+        <filename>vo_dor_hotcoals_08</filename>
+		<filename>vo_dor_hotcoals_09</filename>
+		<filename>vo_dor_hotcoals_10</filename>
+		<filename>vo_dor_hotcoals_11</filename>
+    </dorianHotCoals>
+    <dorianIceSlide volume="0.4">
+        <filename>vo_dor_iceslip_01</filename>
+        <filename>vo_dor_iceslip_02</filename>
+        <filename>vo_dor_iceslip_03</filename>
+		<filename>vo_dor_iceslip_04</filename>
+		<filename>vo_dor_iceslip_05</filename>
+		<filename>vo_dor_iceslip_06</filename>
+		<filename>vo_dor_iceslip_07</filename>
+		<filename>vo_dor_iceslip_08</filename>
+		<filename>vo_dor_iceslip_09</filename>
+		<filename>vo_dor_iceslip_10</filename>
+		<filename>vo_dor_iceslip_11</filename>
+    </dorianIceSlide>
+    <dorianMelee1 volume="0.5">
+        <filename>vo_dor_melee_1_01</filename>
+        <filename>vo_dor_melee_1_02</filename>
+        <filename>vo_dor_melee_1_03</filename>
+        <filename>vo_dor_melee_1_04</filename>
+		<filename>vo_dor_melee_1_05</filename>
+    </dorianMelee1>
+    <dorianMelee2 volume="0.5">
+        <filename>vo_dor_melee_2_01</filename>
+        <filename>vo_dor_melee_2_02</filename>
+        <filename>vo_dor_melee_2_03</filename>
+        <filename>vo_dor_melee_2_04</filename>
+		<filename>vo_dor_melee_2_05</filename>
+    </dorianMelee2>
+    <dorianMelee3 volume="0.5">
+        <filename>vo_dor_melee_3_01</filename>
+        <filename>vo_dor_melee_3_02</filename>
+        <filename>vo_dor_melee_3_03</filename>
+        <filename>vo_dor_melee_3_04</filename>
+		<filename>vo_dor_melee_3_05</filename>
+    </dorianMelee3>
+    <dorianMelee4 volume="0.45">
+        <filename>vo_dor_melee_4_01</filename>
+        <filename>vo_dor_melee_4_02</filename>
+        <filename>vo_dor_melee_4_03</filename>
+        <filename>vo_dor_melee_4_04</filename>
+		<filename>vo_dor_melee_4_05</filename>
+    </dorianMelee4>
+	<dorianNeed volume="0.5">
+        <filename>vo_dor_castspell_need</filename>
+    </dorianNeed>
+	<dorianQuake volume="0.5">
+        <filename>vo_dor_castspell_quake</filename>
+    </dorianQuake>
+    <dorianRanged volume="0.3">
+        <filename>vo_dor_ranged_01</filename>
+        <filename>vo_dor_ranged_02</filename>
+        <filename>vo_dor_ranged_03</filename>
+        <filename>vo_dor_ranged_04</filename>
+        <filename>vo_dor_ranged_05</filename>
+    </dorianRanged>
+	<dorianRoar volume="0.5">
+        <filename>vo_dor_castspell_gigantism_01</filename>
+        <filename>vo_dor_castspell_gigantism_02</filename>
+		<filename>vo_dor_castspell_gigantism_03</filename>
+    </dorianRoar>
+	<dorianShield volume="0.5">
+        <filename>vo_dor_castspell_shield</filename>
+    </dorianShield>
+	<dorianSquish delayFrames="4" volume="0.5">
+        <filename>vo_dor_squish_01</filename>
+        <filename>vo_dor_squish_02</filename>
+        <filename>vo_dor_squish_03</filename>
+        <filename>vo_dor_squish_04</filename>
+		<filename>vo_dor_squish_05</filename>
+		<filename>vo_dor_squish_06</filename>
+    </dorianSquish>
+    <dorianTeleport delayFrames="12" volume="0.5">
+        <filename>vo_dor_teleport_01</filename>
+        <filename>vo_dor_teleport_02</filename>
+        <filename>vo_dor_teleport_03</filename>
+        <filename>vo_dor_teleport_04</filename>
+        <filename>vo_dor_teleport_05</filename>
+		<filename>vo_dor_teleport_06</filename>
+		<filename>vo_dor_teleport_07</filename>
+    </dorianTeleport>
+    <dorianTrapdoor volume="0.5">
+        <filename>vo_dor_trapdoor_01</filename>
+        <filename>vo_dor_trapdoor_02</filename>
+		<filename>vo_dor_trapdoor_03</filename>
+		<filename>vo_dor_trapdoor_04</filename>
+    </dorianTrapdoor>
+	<dorianTransmute volume="0.4">
+        <filename>vo_dor_castspell_transmute</filename>
+    </dorianTransmute>
+    <dorianYeah delayFrames="12" volume="0.4">
+        <filename>vo_dor_yeah_01</filename>
+        <filename>vo_dor_yeah_02</filename>
+        <filename>vo_dor_yeah_03</filename>
+        <filename>vo_dor_yeah_04</filename>
+        <filename>vo_dor_yeah_05</filename>
+		<filename>vo_dor_yeah_06</filename>
+    </dorianYeah>
+
+	<doveBomb volume="0.5">
+        <filename>vo_dov_castspell_bomb</filename>
+    </doveBomb>
+    <doveConfused delayFrames="6" volume="0.4">
+        <filename>vo_dov_confused_01</filename>
+        <filename>vo_dov_confused_02</filename>
+        <filename>vo_dov_confused_03</filename>
+        <filename>vo_dov_confused_04</filename>
+		<filename>vo_dov_confused_05</filename>
+		<filename>vo_dov_confused_06</filename>
+    </doveConfused>
+    <doveDeath volume="0.4">
+        <filename>vo_dov_death_01</filename>
+        <filename>vo_dov_death_02</filename>
+        <filename>vo_dov_death_03</filename>
+    </doveDeath>
+	<doveDescend volume="0.4">
+        <filename>vo_dov_castspell_descend</filename>
+    </doveDescend>
+    <doveDig volume="0.4">
+        <filename>vo_dov_dig_01</filename>
+        <filename>vo_dov_dig_02</filename>
+        <filename>vo_dov_dig_04</filename>
+        <filename>vo_dov_dig_05</filename>
+        <filename>vo_dov_dig_06</filename>
+    </doveDig>
+	<doveEnchant volume="0.5">
+        <filename>vo_dov_castspell_enchant</filename>
+    </doveEnchant>
+    <doveHurt delayFrames="4" volume="0.5">
+        <filename>vo_dov_hurt_01</filename>
+        <filename>vo_dov_hurt_02</filename>
+        <filename>vo_dov_hurt_03</filename>
+		<filename>vo_dov_hurt_04</filename>
+		<filename>vo_dov_hurt_05</filename>
+    </doveHurt>
+	<doveFear volume="0.5">
+        <filename>vo_dov_castspell_fear</filename>
+    </doveFear>
+	<doveFireball volume="0.5">
+        <filename>vo_dov_castspell_fire</filename>
+    </doveFireball>
+    <doveFreeze volume="0.4">
+        <filename>vo_dov_castspell_freeze</filename>
+    </doveFreeze>
+	<doveGold volume="0.5">
+        <filename>vo_dov_castspell_gold</filename>
+    </doveGold>
+    <doveGrabbed volume="0.4">
+        <filename>vo_dov_grabbed_01</filename>
+        <filename>vo_dov_grabbed_02</filename>
+        <filename>vo_dov_grabbed_03</filename>
+        <filename>vo_dov_grabbed_04</filename>
+    </doveGrabbed>
+    <doveHeal volume="0.5">
+        <filename>vo_dov_castspell_heal</filename>
+    </doveHeal>
+    <doveHealing volume="0.4" delayMS="325">
+        <filename>vo_dov_heal_01</filename>
+		<filename>vo_dov_heal_02</filename>
+		<filename>vo_dov_heal_03</filename>
+    </doveHealing>
+    <doveHi volume="0.4">
+        <filename>vo_dov_hello_01</filename>
+        <filename>vo_dov_hello_02</filename>
+        <filename>vo_dov_hello_03</filename>
+        <filename>vo_dov_hello_04</filename>
+        <filename>vo_dov_hello_05</filename>
+		<filename>vo_dov_hello_06</filename>
+		<filename>vo_dov_hello_07</filename>
+    </doveHi>
+    <doveHm delayFrames="12" volume="0.5">
+        <filename>vo_dov_hm_01</filename>
+        <filename>vo_dov_hm_02</filename>
+        <filename>vo_dov_hm_03</filename>
+        <filename>vo_dov_hm_04</filename>
+    </doveHm>
+	<doveHm2 volume="0.5">
+        <filename>vo_dov_hm_01</filename>
+        <filename>vo_dov_hm_02</filename>
+        <filename>vo_dov_hm_03</filename>
+        <filename>vo_dov_hm_04</filename>
+    </doveHm2>
+    <doveHotCoals delayFrames="2" volume="0.4">
+        <filename>vo_dov_hotcoals_01</filename>
+        <filename>vo_dov_hotcoals_02</filename>
+        <filename>vo_dov_hotcoals_03</filename>
+        <filename>vo_dov_hotcoals_04</filename>
+        <filename>vo_dov_hotcoals_05</filename>
+        <filename>vo_dov_hotcoals_06</filename>
+        <filename>vo_dov_hotcoals_07</filename>
+        <filename>vo_dov_hotcoals_08</filename>
+		<filename>vo_dov_hotcoals_09</filename>
+    </doveHotCoals>
+    <doveIceSlide volume="0.4">
+        <filename>vo_dov_iceslip_01</filename>
+        <filename>vo_dov_iceslip_02</filename>
+        <filename>vo_dov_iceslip_03</filename>
+		<filename>vo_dov_iceslip_04</filename>
+		<filename>vo_dov_iceslip_05</filename>
+		<filename>vo_dov_iceslip_06</filename>
+		<filename>vo_dov_iceslip_07</filename>
+		<filename>vo_dov_iceslip_08</filename>
+		<filename>vo_dov_iceslip_09</filename>
+    </doveIceSlide>
+    <doveMelee1 volume="0.7">
+        <filename>vo_dov_melee_1_01</filename>
+        <filename>vo_dov_melee_1_02</filename>
+        <filename>vo_dov_melee_1_03</filename>
+        <filename>vo_dov_melee_1_04</filename>
+    </doveMelee1>
+    <doveMelee2 volume="0.6">
+        <filename>vo_dov_melee_2_01</filename>
+        <filename>vo_dov_melee_2_02</filename>
+        <filename>vo_dov_melee_2_03</filename>
+        <filename>vo_dov_melee_2_04</filename>
+    </doveMelee2>
+    <doveMelee3 volume="0.6">
+        <filename>vo_dov_melee_3_01</filename>
+        <filename>vo_dov_melee_3_02</filename>
+        <filename>vo_dov_melee_3_03</filename>
+        <filename>vo_dov_melee_3_04</filename>
+    </doveMelee3>
+    <doveMelee4 volume="0.55">
+        <filename>vo_dov_melee_4_01</filename>
+        <filename>vo_dov_melee_4_02</filename>
+        <filename>vo_dov_melee_4_03</filename>
+        <filename>vo_dov_melee_4_04</filename>
+		<filename>vo_dov_melee_4_05</filename>
+    </doveMelee4>
+	<doveNeed volume="0.5">
+        <filename>vo_dov_castspell_need</filename>
+    </doveNeed>
+	<doveQuake volume="0.5">
+        <filename>vo_dov_castspell_quake</filename>
+    </doveQuake>
+    <doveRanged volume="0.3">
+        <filename>vo_dov_melee_1_01</filename>
+    </doveRanged>
+	<doveRoar volume="0.5">
+        <filename>vo_dov_castspell_gigantism_01</filename>
+        <filename>vo_dov_castspell_gigantism_02</filename>
+    </doveRoar>
+	<doveShield volume="0.5">
+        <filename>vo_dov_castspell_shield</filename>
+    </doveShield>
+	<doveSquish delayFrames="4" volume="0.5">
+        <filename>vo_dov_squished_01</filename>
+        <filename>vo_dov_squished_02</filename>
+        <filename>vo_dov_squished_03</filename>
+        <filename>vo_dov_squished_04</filename>
+    </doveSquish>
+    <doveTeleport delayFrames="12" volume="0.5">
+        <filename>vo_dov_teleport_01</filename>
+        <filename>vo_dov_teleport_02</filename>
+        <filename>vo_dov_teleport_03</filename>
+        <filename>vo_dov_teleport_04</filename>
+        <filename>vo_dov_teleport_05</filename>
+    </doveTeleport>
+    <doveTrapdoor volume="0.5">
+        <filename>vo_dov_trapdoor_01</filename>
+        <filename>vo_dov_trapdoor_02</filename>
+		<filename>vo_dov_trapdoor_03</filename>
+    </doveTrapdoor>
+	<doveTransmute volume="0.4">
+        <filename>vo_dov_castspell_transmute</filename>
+    </doveTransmute>
+    <doveYeah delayFrames="12" volume="0.4">
+        <filename>vo_dov_melee_4_05</filename>
+    </doveYeah>
+	<doveOhNo volume="0.5">
+        <filename>vo_dov_ohnooo_01</filename>
+        <filename>vo_dov_ohnooo_02</filename>
+        <filename>vo_dov_ohnooo_03</filename>
+        <filename>vo_dov_ohnooo_04</filename>
+        <filename>vo_dov_ohnooo_05</filename>
+        <filename>vo_dov_ohnooo_06</filename>
+        <filename>vo_dov_ohnooo_07</filename>
+        <filename>vo_dov_ohnooo_08</filename>
+        <filename>vo_dov_ohnooo_09</filename>
+        <filename>vo_dov_ohnooo_10</filename>
+        <filename>vo_dov_ohnooo_11</filename>
+        <filename>vo_dov_ohnooo_12</filename>
+        <filename>vo_dov_ohnooo_13</filename>
+    </doveOhNo>
+	
+	<eliBomb volume="0.7">
+        <filename>vo_eli_castspell_bomb</filename>
+    </eliBomb>
+    <eliConfused delayFrames="6" volume="0.6">
+        <filename>vo_eli_confused_01</filename>
+        <filename>vo_eli_confused_02</filename>
+        <filename>vo_eli_confused_03</filename>
+        <filename>vo_eli_confused_04</filename>
+    </eliConfused>
+    <eliDeath volume="0.55">
+        <filename>vo_eli_death_01</filename>
+        <filename>vo_eli_death_02</filename>
+        <filename>vo_eli_death_03</filename>
+    </eliDeath>
+	<eliDescend volume="0.7">
+        <filename>vo_eli_castspell_descend</filename>
+    </eliDescend>
+    <eliDig volume="0.35">
+        <filename>vo_eli_dig_01</filename>
+        <filename>vo_eli_dig_02</filename>
+        <filename>vo_eli_dig_03</filename>
+        <filename>vo_eli_dig_04</filename>
+        <filename>vo_eli_dig_05</filename>
+        <filename>vo_eli_dig_06</filename>
+    </eliDig>
+	<eliEnchant volume="0.7">
+        <filename>vo_eli_castspell_enchant</filename>
+    </eliEnchant>
+    <eliHurt delayFrames="4" volume="0.7">
+        <filename>vo_eli_hurt_01</filename>
+        <filename>vo_eli_hurt_02</filename>
+        <filename>vo_eli_hurt_03</filename>
+    </eliHurt>
+	<eliFear volume="0.7">
+        <filename>vo_eli_castspell_fear</filename>
+    </eliFear>
+	<eliFireball volume="0.7">
+        <filename>vo_eli_castspell_fire</filename>
+    </eliFireball>
+    <eliFreeze volume="0.6">
+        <filename>vo_eli_castspell_freeze</filename>
+    </eliFreeze>
+	<eliGold volume="0.7">
+        <filename>vo_eli_castspell_gold</filename>
+    </eliGold>
+    <eliGrabbed volume="0.6">
+        <filename>vo_eli_grabbed_01</filename>
+        <filename>vo_eli_grabbed_02</filename>
+        <filename>vo_eli_grabbed_03</filename>
+        <filename>vo_eli_grabbed_04</filename>
+    </eliGrabbed>
+    <eliHeal volume="0.7">
+        <filename>vo_eli_castspell_heal</filename>
+    </eliHeal>
+    <eliHealing volume="0.55" delayMS="325">
+        <filename>vo_eli_heal_01</filename>
+    </eliHealing>
+    <eliHi volume="0.65">
+        <filename>vo_eli_hello_01</filename>
+        <filename>vo_eli_hello_02</filename>
+        <filename>vo_eli_hello_03</filename>
+        <filename>vo_eli_hello_04</filename>
+        <filename>vo_eli_hello_05</filename>
+    </eliHi>
+    <eliHm delayFrames="12" volume="0.7">
+        <filename>vo_eli_hm_01</filename>
+        <filename>vo_eli_hm_02</filename>
+        <filename>vo_eli_hm_03</filename>
+        <filename>vo_eli_hm_04</filename>
+    </eliHm>
+	<eliHm2 volume="0.7">
+        <filename>vo_eli_hm_01</filename>
+        <filename>vo_eli_hm_02</filename>
+        <filename>vo_eli_hm_03</filename>
+        <filename>vo_eli_hm_04</filename>
+    </eliHm2>
+    <eliHotCoals delayFrames="2" volume="0.6">
+        <filename>vo_eli_hotcoals_01</filename>
+        <filename>vo_eli_hotcoals_02</filename>
+        <filename>vo_eli_hotcoals_03</filename>
+        <filename>vo_eli_hotcoals_04</filename>
+        <filename>vo_eli_hotcoals_05</filename>
+        <filename>vo_eli_hotcoals_06</filename>
+        <filename>vo_eli_hotcoals_07</filename>
+        <filename>vo_eli_hotcoals_08</filename>
+    </eliHotCoals>
+    <eliIceSlide volume="0.5">
+        <filename>vo_eli_iceslip_01</filename>
+        <filename>vo_eli_iceslip_02</filename>
+        <filename>vo_eli_iceslip_03</filename>
+    </eliIceSlide>
+    <eliMelee1 volume="0.8">
+        <filename>vo_eli_melee_1_01</filename>
+        <filename>vo_eli_melee_1_02</filename>
+        <filename>vo_eli_melee_1_03</filename>
+        <filename>vo_eli_melee_1_04</filename>
+    </eliMelee1>
+    <eliMelee2 volume="0.8">
+        <filename>vo_eli_melee_2_01</filename>
+        <filename>vo_eli_melee_2_02</filename>
+        <filename>vo_eli_melee_2_03</filename>
+        <filename>vo_eli_melee_2_04</filename>
+    </eliMelee2>
+    <eliMelee3 volume="0.8">
+        <filename>vo_eli_melee_3_01</filename>
+        <filename>vo_eli_melee_3_02</filename>
+        <filename>vo_eli_melee_3_03</filename>
+        <filename>vo_eli_melee_3_04</filename>
+    </eliMelee3>
+    <eliMelee4 volume="0.7">
+        <filename>vo_eli_melee_4_01</filename>
+        <filename>vo_eli_melee_4_02</filename>
+        <filename>vo_eli_melee_4_03</filename>
+        <filename>vo_eli_melee_4_04</filename>
+    </eliMelee4>
+	<eliNeed volume="0.7">
+        <filename>vo_eli_castspell_need</filename>
+    </eliNeed>
+	<eliQuake volume="0.7">
+        <filename>vo_eli_castspell_quake</filename>
+    </eliQuake>
+    <eliRanged volume="0.4">
+        <filename>vo_eli_dig_01</filename>
+        <filename>vo_eli_dig_02</filename>
+        <filename>vo_eli_dig_03</filename>
+        <filename>vo_eli_dig_04</filename>
+        <filename>vo_eli_dig_05</filename>
+        <filename>vo_eli_dig_06</filename>
+    </eliRanged>
+	<eliRoar volume="0.7">
+        <filename>vo_eli_castspell_gigantism_01</filename>
+        <filename>vo_eli_castspell_gigantism_02</filename>
+		<filename>vo_eli_castspell_gigantism_03</filename>
+        <filename>vo_eli_castspell_gigantism_04</filename>
+    </eliRoar>
+	<eliShield volume="0.7">
+        <filename>vo_eli_castspell_shield</filename>
+    </eliShield>
+	<eliSquish delayFrames="4" volume="0.7">
+        <filename>vo_eli_squish_01</filename>
+        <filename>vo_eli_squish_02</filename>
+        <filename>vo_eli_squish_03</filename>
+        <filename>vo_eli_squish_04</filename>
+    </eliSquish>
+    <eliTeleport delayFrames="12" volume="0.7">
+        <filename>vo_eli_teleport_01</filename>
+        <filename>vo_eli_teleport_02</filename>
+        <filename>vo_eli_teleport_03</filename>
+        <filename>vo_eli_teleport_04</filename>
+        <filename>vo_eli_teleport_05</filename>
+    </eliTeleport>
+    <eliTrapdoor volume="0.7">
+        <filename>vo_eli_trapdoor_01</filename>
+        <filename>vo_eli_trapdoor_02</filename>
+		<filename>vo_eli_trapdoor_03</filename>
+    </eliTrapdoor>
+	<eliTransmute volume="0.5">
+        <filename>vo_eli_castspell_transmute</filename>
+    </eliTransmute>
+    <eliYeah delayFrames="12" volume="0.75">
+        <filename>vo_eli_yeah_01</filename>
+        <filename>vo_eli_yeah_02</filename>
+        <filename>vo_eli_yeah_03</filename>
+        <filename>vo_eli_yeah_04</filename>
+        <filename>vo_eli_yeah_05</filename>
+    </eliYeah>
+	
+	<melodyBomb volume="0.5">
+        <filename>vo_mel_castspell_bomb</filename>
+    </melodyBomb>
+    <melodyConfused delayFrames="6" volume="0.4">
+        <filename>vo_mel_confused_01</filename>
+        <filename>vo_mel_confused_02</filename>
+        <filename>vo_mel_confused_03</filename>
+        <filename>vo_mel_confused_04</filename>
+		<filename>vo_mel_confused_05</filename>
+    </melodyConfused>
+    <melodyDeath volume="0.3">
+        <filename>vo_mel_death_01</filename>
+        <filename>vo_mel_death_02</filename>
+        <filename>vo_mel_death_03</filename>
+    </melodyDeath>
+	<melodyDescend volume="0.4">
+        <filename>vo_mel_castspell_descend</filename>
+    </melodyDescend>
+    <melodyDig volume="0.2">
+        <filename>vo_mel_dig_01</filename>
+        <filename>vo_mel_dig_02</filename>
+        <filename>vo_mel_dig_03</filename>
+        <filename>vo_mel_dig_04</filename>
+        <filename>vo_mel_dig_05</filename>
+        <filename>vo_mel_dig_06</filename>
+		<filename>vo_mel_dig_07</filename>
+    </melodyDig>
+	<melodyEnchant volume="0.5">
+        <filename>vo_mel_castspell_enchant</filename>
+    </melodyEnchant>
+    <melodyHurt delayFrames="4" volume="0.5">
+        <filename>vo_mel_hurt_01</filename>
+        <filename>vo_mel_hurt_02</filename>
+        <filename>vo_mel_hurt_03</filename>
+		<filename>vo_mel_hurt_04</filename>
+		<filename>vo_mel_hurt_05</filename>
+    </melodyHurt>
+	<melodyFear volume="0.5">
+        <filename>vo_mel_castspell_fear</filename>
+    </melodyFear>
+	<melodyFireball volume="0.5">
+        <filename>vo_mel_castspell_fire</filename>
+    </melodyFireball>
+    <melodyFreeze volume="0.4">
+        <filename>vo_mel_castspell_freeze</filename>
+    </melodyFreeze>
+	<melodyGold volume="0.5">
+        <filename>vo_mel_castspell_gold</filename>
+    </melodyGold>
+    <melodyGrabbed volume="0.3">
+        <filename>vo_mel_grabbed_01</filename>
+        <filename>vo_mel_grabbed_02</filename>
+        <filename>vo_mel_grabbed_03</filename>
+        <filename>vo_mel_grabbed_04</filename>
+		<filename>vo_mel_grabbed_05</filename>
+    </melodyGrabbed>
+    <melodyHeal volume="0.5">
+        <filename>vo_mel_castspell_heal</filename>
+    </melodyHeal>
+    <melodyHealing volume="0.4" delayMS="325">
+        <filename>vo_mel_heal_01</filename>
+		<filename>vo_mel_heal_02</filename>
+		<filename>vo_mel_heal_03</filename>
+    </melodyHealing>
+    <melodyHi volume="0.3">
+        <filename>vo_mel_hello_01</filename>
+        <filename>vo_mel_hello_02</filename>
+        <filename>vo_mel_hello_03</filename>
+        <filename>vo_mel_hello_04</filename>
+        <filename>vo_mel_hello_05</filename>
+    </melodyHi>
+    <melodyHm delayFrames="12" volume="0.4">
+        <filename>vo_mel_hm_01</filename>
+        <filename>vo_mel_hm_02</filename>
+        <filename>vo_mel_hm_03</filename>
+        <filename>vo_mel_hm_04</filename>
+    </melodyHm>
+	<melodyHm2 volume="0.5">
+        <filename>vo_mel_hm_01</filename>
+        <filename>vo_mel_hm_02</filename>
+        <filename>vo_mel_hm_03</filename>
+        <filename>vo_mel_hm_04</filename>
+    </melodyHm2>
+    <melodyHotCoals delayFrames="2" volume="0.4">
+        <filename>vo_mel_hotcoals_01</filename>
+        <filename>vo_mel_hotcoals_02</filename>
+        <filename>vo_mel_hotcoals_03</filename>
+        <filename>vo_mel_hotcoals_04</filename>
+        <filename>vo_mel_hotcoals_05</filename>
+        <filename>vo_mel_hotcoals_06</filename>
+        <filename>vo_mel_hotcoals_07</filename>
+        <filename>vo_mel_hotcoals_08</filename>
+		<filename>vo_mel_hotcoals_09</filename>
+		<filename>vo_mel_hotcoals_10</filename>
+    </melodyHotCoals>
+    <melodyIceSlide volume="0.3">
+        <filename>vo_mel_iceslip_01</filename>
+        <filename>vo_mel_iceslip_02</filename>
+        <filename>vo_mel_iceslip_03</filename>
+		<filename>vo_mel_iceslip_04</filename>
+		<filename>vo_mel_iceslip_05</filename>
+		<filename>vo_mel_iceslip_06</filename>
+		<filename>vo_mel_iceslip_07</filename>
+		<filename>vo_mel_iceslip_08</filename>
+		<filename>vo_mel_iceslip_09</filename>
+		<filename>vo_mel_iceslip_10</filename>
+    </melodyIceSlide>
+    <melodyMelee1 volume="0.5">
+        <filename>vo_mel_melee_1_01</filename>
+        <filename>vo_mel_melee_1_02</filename>
+        <filename>vo_mel_melee_1_03</filename>
+        <filename>vo_mel_melee_1_04</filename>
+		<filename>vo_mel_melee_1_05</filename>
+    </melodyMelee1>
+    <melodyMelee2 volume="0.5">
+        <filename>vo_mel_melee_2_01</filename>
+        <filename>vo_mel_melee_2_02</filename>
+        <filename>vo_mel_melee_2_03</filename>
+        <filename>vo_mel_melee_2_04</filename>
+		<filename>vo_mel_melee_2_05</filename>
+    </melodyMelee2>
+    <melodyMelee3 volume="0.5">
+        <filename>vo_mel_melee_3_01</filename>
+        <filename>vo_mel_melee_3_02</filename>
+        <filename>vo_mel_melee_3_03</filename>
+        <filename>vo_mel_melee_3_04</filename>
+		<filename>vo_mel_melee_3_05</filename>
+    </melodyMelee3>
+    <melodyMelee4 volume="0.45">
+        <filename>vo_mel_melee_4_01</filename>
+        <filename>vo_mel_melee_4_02</filename>
+        <filename>vo_mel_melee_4_03</filename>
+        <filename>vo_mel_melee_4_04</filename>
+    </melodyMelee4>
+	<melodyNeed volume="0.5">
+        <filename>vo_mel_castspell_need</filename>
+    </melodyNeed>
+	<melodyQuake volume="0.5">
+        <filename>vo_mel_castspell_quake</filename>
+    </melodyQuake>
+    <melodyRanged volume="0.3">
+        <filename>vo_mel_ranged_01</filename>
+        <filename>vo_mel_ranged_02</filename>
+        <filename>vo_mel_ranged_03</filename>
+        <filename>vo_mel_ranged_04</filename>
+        <filename>vo_mel_ranged_05</filename>
+    </melodyRanged>
+	<melodyRoar volume="0.5">
+        <filename>vo_mel_castspell_gigantism_01</filename>
+        <filename>vo_mel_castspell_gigantism_02</filename>
+    </melodyRoar>
+	<melodyShield volume="0.5">
+        <filename>vo_mel_castspell_shield</filename>
+    </melodyShield>
+	<melodySquish delayFrames="4" volume="0.5">
+        <filename>vo_mel_squish_01</filename>
+        <filename>vo_mel_squish_02</filename>
+        <filename>vo_mel_squish_03</filename>
+        <filename>vo_mel_squish_04</filename>
+    </melodySquish>
+    <melodyTeleport delayFrames="12" volume="0.5">
+        <filename>vo_mel_teleport_01</filename>
+        <filename>vo_mel_teleport_02</filename>
+        <filename>vo_mel_teleport_03</filename>
+        <filename>vo_mel_teleport_04</filename>
+    </melodyTeleport>
+    <melodyTrapdoor volume="0.3">
+        <filename>vo_mel_trapdoor_01</filename>
+        <filename>vo_mel_trapdoor_02</filename>
+		<filename>vo_mel_trapdoor_03</filename>
+    </melodyTrapdoor>
+	<melodyTransmute volume="0.4">
+        <filename>vo_mel_castspell_transmute</filename>
+    </melodyTransmute>
+    <melodyYeah delayFrames="12" volume="0.5">
+        <filename>vo_mel_yeah_01</filename>
+        <filename>vo_mel_yeah_02</filename>
+        <filename>vo_mel_yeah_04</filename>
+    </melodyYeah>
+
+	<nocturnaBomb volume="0.5">
+        <filename>vo_noc_castspell_bomb</filename>
+    </nocturnaBomb>
+    <nocturnaConfused delayFrames="6" volume="0.5">
+        <filename>vo_noc_confused_01</filename>
+        <filename>vo_noc_confused_02</filename>
+        <filename>vo_noc_confused_03</filename>
+        <filename>vo_noc_confused_04</filename>
+    </nocturnaConfused>
+    <nocturnaDeath volume="0.5">
+        <filename>vo_noc_death_01</filename>
+        <filename>vo_noc_death_02</filename>
+        <filename>vo_noc_death_03</filename>
+    </nocturnaDeath>
+    <nocturnaDig volume="0.5">
+        <filename>vo_noc_dig_01</filename>
+        <filename>vo_noc_dig_02</filename>
+        <filename>vo_noc_dig_03</filename>
+        <filename>vo_noc_dig_04</filename>
+        <filename>vo_noc_dig_05</filename>
+    </nocturnaDig>
+	<nocturnaEarth volume="0.5">
+		<filename>vo_noc_castspell_earth</filename>
+	</nocturnaEarth>
+	<nocturnaEnchant volume="0.5">
+        <filename>vo_noc_castspell_enchant</filename>
+    </nocturnaEnchant>
+    <nocturnaHurt delayFrames="4" volume="0.5">
+        <filename>vo_noc_hurt_01</filename>
+        <filename>vo_noc_hurt_02</filename>
+        <filename>vo_noc_hurt_03</filename>
+        <filename>vo_noc_hurt_04</filename>
+    </nocturnaHurt>
+	<nocturnaFear volume="0.5">
+        <filename>vo_noc_castspell_fear</filename>
+    </nocturnaFear>
+	<nocturnaFireball volume="0.5">
+        <filename>vo_noc_castspell_fire</filename>
+    </nocturnaFireball>
+    <nocturnaFreeze volume="0.5">
+        <filename>vo_noc_castspell_freeze</filename>
+    </nocturnaFreeze>
+	<nocturnaGold volume="0.5">
+        <filename>vo_noc_castspell_gold</filename>
+    </nocturnaGold>
+    <nocturnaGrabbed volume="0.5">
+        <filename>vo_noc_grabbed_01</filename>
+        <filename>vo_noc_grabbed_02</filename>
+        <filename>vo_noc_grabbed_03</filename>
+        <filename>vo_noc_grabbed_04</filename>
+        <filename>vo_noc_grabbed_05</filename>
+        <filename>vo_noc_grabbed_06</filename>
+    </nocturnaGrabbed>
+    <nocturnaHeal volume="0.5">
+        <filename>vo_noc_castspell_heal</filename>
+    </nocturnaHeal>
+    <nocturnaHealing volume="0.5" delayMS="325">
+        <filename>vo_noc_heal_01</filename>
+        <filename>vo_noc_heal_02</filename>
+        <filename>vo_noc_heal_03</filename>
+    </nocturnaHealing>
+    <nocturnaHi volume="0.5">
+        <filename>vo_noc_hello_01</filename>
+        <filename>vo_noc_hello_02</filename>
+        <filename>vo_noc_hello_03</filename>
+        <filename>vo_noc_hello_04</filename>
+    </nocturnaHi>
+    <nocturnaHm delayFrames="12" volume="0.5">
+        <filename>vo_noc_hm_01</filename>
+        <filename>vo_noc_hm_02</filename>
+        <filename>vo_noc_hm_03</filename>
+        <filename>vo_noc_hm_04</filename>
+    </nocturnaHm>
+	<nocturnaHm2 volume="0.5">
+        <filename>vo_noc_hm_01</filename>
+        <filename>vo_noc_hm_02</filename>
+        <filename>vo_noc_hm_03</filename>
+        <filename>vo_noc_hm_04</filename>
+    </nocturnaHm2>
+    <nocturnaHotCoals delayFrames="2" volume="0.5">
+        <filename>vo_noc_hotcoals_01</filename>
+        <filename>vo_noc_hotcoals_02</filename>
+        <filename>vo_noc_hotcoals_03</filename>
+        <filename>vo_noc_hotcoals_04</filename>
+        <filename>vo_noc_hotcoals_05</filename>
+        <filename>vo_noc_hotcoals_06</filename>
+        <filename>vo_noc_hotcoals_07</filename>
+        <filename>vo_noc_hotcoals_08</filename>
+		<filename>vo_noc_hotcoals_09</filename>
+		<filename>vo_noc_hotcoals_10</filename>
+    </nocturnaHotCoals>
+    <nocturnaIceSlide volume="0.5">
+        <filename>vo_noc_iceslip_01</filename>
+        <filename>vo_noc_iceslip_02</filename>
+        <filename>vo_noc_iceslip_03</filename>
+        <filename>vo_noc_iceslip_04</filename>
+        <filename>vo_noc_iceslip_05</filename>
+        <filename>vo_noc_iceslip_06</filename>
+        <filename>vo_noc_iceslip_07</filename>
+        <filename>vo_noc_iceslip_08</filename>
+        <filename>vo_noc_iceslip_09</filename>
+        <filename>vo_noc_iceslip_10</filename>
+    </nocturnaIceSlide>
+    <nocturnaMelee1 volume="0.5">
+        <filename>vo_noc_melee_1_01</filename>
+        <filename>vo_noc_melee_1_02</filename>
+        <filename>vo_noc_melee_1_03</filename>
+        <filename>vo_noc_melee_1_04</filename>
+        <filename>vo_noc_melee_1_05</filename>
+    </nocturnaMelee1>
+    <nocturnaMelee2 volume="0.5">
+        <filename>vo_noc_melee_2_01</filename>
+        <filename>vo_noc_melee_2_02</filename>
+        <filename>vo_noc_melee_2_03</filename>
+        <filename>vo_noc_melee_2_04</filename>
+        <filename>vo_noc_melee_2_05</filename>
+    </nocturnaMelee2>
+    <nocturnaMelee3 volume="0.5">
+        <filename>vo_noc_melee_3_01</filename>
+        <filename>vo_noc_melee_3_02</filename>
+        <filename>vo_noc_melee_3_03</filename>
+        <filename>vo_noc_melee_3_04</filename>
+        <filename>vo_noc_melee_3_05</filename>
+    </nocturnaMelee3>
+    <nocturnaMelee4 volume="0.5">
+        <filename>vo_noc_melee_4_01</filename>
+        <filename>vo_noc_melee_4_02</filename>
+        <filename>vo_noc_melee_4_03</filename>
+        <filename>vo_noc_melee_4_04</filename>
+        <filename>vo_noc_melee_4_05</filename>
+    </nocturnaMelee4>
+	<nocturnaNeed volume="0.5">
+        <filename>vo_noc_castspell_need</filename>
+    </nocturnaNeed>
+	<nocturnaQuake volume="0.5">
+        <filename>vo_noc_castspell_quake</filename>
+    </nocturnaQuake>
+    <nocturnaRanged volume="0.5">
+        <filename>vo_noc_ranged_01</filename>
+        <filename>vo_noc_ranged_02</filename>
+        <filename>vo_noc_ranged_03</filename>
+    </nocturnaRanged>
+	<nocturnaRoar volume="0.5">
+        <filename>vo_noc_castspell_gigantism_01</filename>
+        <filename>vo_noc_castspell_gigantism_02</filename>
+    </nocturnaRoar>
+	<nocturnaShield volume="0.5">
+        <filename>vo_noc_castspell_shield</filename>
+    </nocturnaShield>
+	<nocturnaSquish delayFrames="4" volume="0.5">
+        <filename>vo_noc_squish_01</filename>
+        <filename>vo_noc_squish_02</filename>
+        <filename>vo_noc_squish_03</filename>
+        <filename>vo_noc_squish_04</filename>
+        <filename>vo_noc_squish_05</filename>
+    </nocturnaSquish>
+    <nocturnaTeleport delayFrames="12" volume="0.5">
+        <filename>vo_noc_teleport_01</filename>
+        <filename>vo_noc_teleport_02</filename>
+        <filename>vo_noc_teleport_03</filename>
+    </nocturnaTeleport>
+    <nocturnaTrapdoor volume="0.5">
+        <filename>vo_noc_trapdoor_01</filename>
+        <filename>vo_noc_trapdoor_02</filename>
+        <filename>vo_noc_trapdoor_03</filename>
+    </nocturnaTrapdoor>
+	<nocturnaTransform volume="0.5">
+		<filename>vo_noc_castspell_transform</filename>
+	</nocturnaTransform>
+	<nocturnaTransmute volume="0.5">
+        <filename>vo_noc_castspell_transmute</filename>
+    </nocturnaTransmute>
+    <nocturnaYeah delayFrames="12" volume="0.5">
+        <filename>vo_noc_yeah_01</filename>
+        <filename>vo_noc_yeah_02</filename>
+        <filename>vo_noc_yeah_03</filename>
+        <filename>vo_noc_yeah_04</filename>
+        <filename>vo_noc_yeah_05</filename>
+    </nocturnaYeah>
+
+	<diamondBomb volume="0.5">
+        <filename>vo_dia_castspell_bomb</filename>
+    </diamondBomb>
+    <diamondEarth volume="0.5">
+		<filename>vo_dia_castspell_earth</filename>
+	</diamondEarth>
+	<diamondEnchant volume="0.5">
+        <filename>vo_dia_castspell_enchant</filename>
+    </diamondEnchant>
+	<diamondFear volume="0.5">
+        <filename>vo_dia_castspell_fear</filename>
+    </diamondFear>
+	<diamondFireball volume="0.5">
+        <filename>vo_dia_castspell_fire</filename>
+    </diamondFireball>
+    <diamondFreeze volume="0.5">
+        <filename>vo_dia_castspell_freeze</filename>
+    </diamondFreeze>
+	<diamondGold volume="0.5">
+        <filename>vo_dia_castspell_gold</filename>
+    </diamondGold>
+	<diamondConfused delayFrames="6" volume="0.5">
+        <filename>vo_dia_confused_01</filename>
+        <filename>vo_dia_confused_02</filename>
+        <filename>vo_dia_confused_03</filename>
+    </diamondConfused>
+    <diamondDeath volume="0.5">
+        <filename>vo_dia_death_01</filename>
+        <filename>vo_dia_death_02</filename>
+        <filename>vo_dia_death_03</filename>
+    </diamondDeath>
+    <diamondDig volume="0.5">
+        <filename>vo_dia_dig_01</filename>
+        <filename>vo_dia_dig_02</filename>
+        <filename>vo_dia_dig_03</filename>
+        <filename>vo_dia_dig_04</filename>
+        <filename>vo_dia_dig_05</filename>
+		<filename>vo_dia_dig_06</filename>
+		<filename>vo_dia_dig_07</filename>
+		<filename>vo_dia_dig_08</filename>
+    </diamondDig>
+    <diamondHurt delayFrames="4" volume="0.5">
+        <filename>vo_dia_hurt_01</filename>
+        <filename>vo_dia_hurt_02</filename>
+        <filename>vo_dia_hurt_03</filename>
+        <filename>vo_dia_hurt_04</filename>
+    </diamondHurt>
+    <diamondGrabbed volume="0.5">
+        <filename>vo_dia_grabbed_01</filename>
+        <filename>vo_dia_grabbed_02</filename>
+        <filename>vo_dia_grabbed_03</filename>
+        <filename>vo_dia_grabbed_04</filename>
+        <filename>vo_dia_grabbed_05</filename>
+    </diamondGrabbed>
+    <diamondHeal volume="0.5">
+        <filename>vo_dia_castspell_heal</filename>
+    </diamondHeal>
+    <diamondHealing volume="0.5" delayMS="325">
+        <filename>vo_dia_heal_01</filename>
+        <filename>vo_dia_heal_02</filename>
+        <filename>vo_dia_heal_03</filename>
+    </diamondHealing>
+    <diamondHi volume="0.5">
+        <filename>vo_dia_hello_01</filename>
+        <filename>vo_dia_hello_02</filename>
+        <filename>vo_dia_hello_03</filename>
+        <filename>vo_dia_hello_04</filename>
+		<filename>vo_dia_hello_05</filename>
+		<filename>vo_dia_hello_06</filename>
+		<filename>vo_dia_hello_07</filename>
+    </diamondHi>
+    <diamondHm delayFrames="12" volume="0.5">
+        <filename>vo_dia_hm_01</filename>
+        <filename>vo_dia_hm_02</filename>
+        <filename>vo_dia_hm_03</filename>
+        <filename>vo_dia_hm_04</filename>
+    </diamondHm>
+	<diamondHm2 volume="0.5">
+        <filename>vo_dia_hm_01</filename>
+        <filename>vo_dia_hm_02</filename>
+        <filename>vo_dia_hm_03</filename>
+        <filename>vo_dia_hm_04</filename>
+    </diamondHm2>
+    <diamondHotCoals delayFrames="2" volume="0.5">
+        <filename>vo_dia_hotcoals_01</filename>
+        <filename>vo_dia_hotcoals_02</filename>
+        <filename>vo_dia_hotcoals_03</filename>
+        <filename>vo_dia_hotcoals_04</filename>
+        <filename>vo_dia_hotcoals_05</filename>
+        <filename>vo_dia_hotcoals_06</filename>
+        <filename>vo_dia_hotcoals_07</filename>
+        <filename>vo_dia_hotcoals_08</filename>
+		<filename>vo_dia_hotcoals_09</filename>
+		<filename>vo_dia_hotcoals_10</filename>
+    </diamondHotCoals>
+    <diamondIceSlide volume="0.5">
+        <filename>vo_dia_iceslip_01</filename>
+        <filename>vo_dia_iceslip_02</filename>
+        <filename>vo_dia_iceslip_03</filename>
+        <filename>vo_dia_iceslip_04</filename>
+        <filename>vo_dia_iceslip_05</filename>
+        <filename>vo_dia_iceslip_06</filename>
+        <filename>vo_dia_iceslip_07</filename>
+        <filename>vo_dia_iceslip_08</filename>
+        <filename>vo_dia_iceslip_09</filename>
+    </diamondIceSlide>
+    <diamondMelee1 volume="0.5">
+        <filename>vo_dia_melee_1_01</filename>
+        <filename>vo_dia_melee_1_02</filename>
+        <filename>vo_dia_melee_1_03</filename>
+        <filename>vo_dia_melee_1_04</filename>
+        <filename>vo_dia_melee_1_05</filename>
+    </diamondMelee1>
+    <diamondMelee2 volume="0.5">
+        <filename>vo_dia_melee_2_01</filename>
+        <filename>vo_dia_melee_2_02</filename>
+        <filename>vo_dia_melee_2_03</filename>
+        <filename>vo_dia_melee_2_04</filename>
+        <filename>vo_dia_melee_2_05</filename>
+    </diamondMelee2>
+    <diamondMelee3 volume="0.5">
+        <filename>vo_dia_melee_3_01</filename>
+        <filename>vo_dia_melee_3_02</filename>
+        <filename>vo_dia_melee_3_03</filename>
+        <filename>vo_dia_melee_3_04</filename>
+        <filename>vo_dia_melee_3_05</filename>
+    </diamondMelee3>
+    <diamondMelee4 volume="0.5">
+        <filename>vo_dia_melee_4_01</filename>
+        <filename>vo_dia_melee_4_02</filename>
+        <filename>vo_dia_melee_4_03</filename>
+        <filename>vo_dia_melee_4_04</filename>
+        <filename>vo_dia_melee_4_05</filename>
+    </diamondMelee4>
+	<diamondNeed volume="0.5">
+        <filename>vo_dia_castspell_need</filename>
+    </diamondNeed>
+	<diamondQuake volume="0.5">
+        <filename>vo_dia_castspell_quake</filename>
+    </diamondQuake>
+    <diamondRanged volume="0.5">
+        <filename>vo_dia_ranged_01</filename>
+        <filename>vo_dia_ranged_02</filename>
+        <filename>vo_dia_ranged_03</filename>
+		<filename>vo_dia_ranged_04</filename>
+		<filename>vo_dia_ranged_05</filename>
+    </diamondRanged>
+	<diamondRoar volume="0.5">
+        <filename>vo_dia_castspell_gigantism_01</filename>
+        <filename>vo_dia_castspell_gigantism_02</filename>
+		<filename>vo_dia_castspell_gigantism_03</filename>
+    </diamondRoar>
+	<diamondShield volume="0.5">
+        <filename>vo_dia_castspell_shield</filename>
+    </diamondShield>
+	<diamondSquish delayFrames="4" volume="0.5">
+        <filename>vo_dia_squish_01</filename>
+        <filename>vo_dia_squish_02</filename>
+        <filename>vo_dia_squish_03</filename>
+        <filename>vo_dia_squish_04</filename>
+    </diamondSquish>
+    <diamondTeleport delayFrames="12" volume="0.5">
+        <filename>vo_dia_teleport_01</filename>
+        <filename>vo_dia_teleport_02</filename>
+        <filename>vo_dia_teleport_03</filename>
+		<filename>vo_dia_teleport_04</filename>
+		<filename>vo_dia_teleport_05</filename>
+		<filename>vo_dia_teleport_06</filename>
+		<filename>vo_dia_teleport_07</filename>
+    </diamondTeleport>
+    <diamondTrapdoor volume="0.5">
+        <filename>vo_dia_trapdoor_01</filename>
+        <filename>vo_dia_trapdoor_02</filename>
+        <filename>vo_dia_trapdoor_03</filename>
+		<filename>vo_dia_trapdoor_04</filename>
+    </diamondTrapdoor>
+	<diamondPulse volume="0.5">
+		<filename>vo_dia_castspell_pulse</filename>
+	</diamondPulse>
+	<diamondTransmute volume="0.5">
+        <filename>vo_dia_castspell_transmute</filename>
+    </diamondTransmute>
+    <diamondYeah delayFrames="12" volume="0.5">
+        <filename>vo_dia_yeah_01</filename>
+        <filename>vo_dia_yeah_02</filename>
+        <filename>vo_dia_yeah_03</filename>
+        <filename>vo_dia_yeah_04</filename>
+        <filename>vo_dia_yeah_05</filename>
+		<filename>vo_dia_yeah_06</filename>
+		<filename>vo_dia_yeah_07</filename>
+		<filename>vo_dia_yeah_08</filename>
+		<filename>vo_dia_yeah_09</filename>
+    </diamondYeah>
+	
+	<maryBomb volume="0.5">
+        <filename>vo_mar_castspell_bomb</filename>
+    </maryBomb>
+    <maryEarth volume="0.5">
+		<filename>vo_mar_castspell_earth</filename>
+	</maryEarth>
+	<maryEnchant volume="0.5">
+        <filename>vo_mar_castspell_enchant</filename>
+    </maryEnchant>
+	<maryFear volume="0.5">
+        <filename>vo_mar_castspell_fear</filename>
+    </maryFear>
+	<maryFireball volume="0.5">
+        <filename>vo_mar_castspell_fire</filename>
+    </maryFireball>
+    <maryFreeze volume="0.5">
+        <filename>vo_mar_castspell_freeze</filename>
+    </maryFreeze>
+	<maryGold volume="0.5">
+        <filename>vo_mar_castspell_gold</filename>
+    </maryGold>
+	<maryConfused delayFrames="6" volume="0.5">
+        <filename>vo_mar_confused_01</filename>
+        <filename>vo_mar_confused_02</filename>
+        <filename>vo_mar_confused_03</filename>
+		<filename>vo_mar_confused_04</filename>
+		<filename>vo_mar_confused_05</filename>
+    </maryConfused>
+    <maryDeath volume="0.5">
+        <filename>vo_mar_death_01</filename>
+        <filename>vo_mar_death_02</filename>
+        <filename>vo_mar_death_03</filename>
+		<filename>vo_mar_death_04</filename>
+    </maryDeath>
+    <maryDig volume="0.5">
+        <filename>vo_mar_dig_01</filename>
+        <filename>vo_mar_dig_02</filename>
+        <filename>vo_mar_dig_03</filename>
+        <filename>vo_mar_dig_04</filename>
+        <filename>vo_mar_dig_05</filename>
+		<filename>vo_mar_dig_06</filename>
+    </maryDig>
+    <maryHurt delayFrames="4" volume="0.5">
+        <filename>vo_mar_hurt_01</filename>
+        <filename>vo_mar_hurt_02</filename>
+        <filename>vo_mar_hurt_03</filename>
+        <filename>vo_mar_hurt_04</filename>
+    </maryHurt>
+    <maryGrabbed volume="0.5">
+        <filename>vo_mar_grabbed_01</filename>
+        <filename>vo_mar_grabbed_02</filename>
+        <filename>vo_mar_grabbed_03</filename>
+        <filename>vo_mar_grabbed_04</filename>
+    </maryGrabbed>
+    <maryHeal volume="0.5">
+        <filename>vo_mar_castspell_heal</filename>
+    </maryHeal>
+    <maryHealing volume="0.5" delayMS="325">
+        <filename>vo_mar_heal_01</filename>
+        <filename>vo_mar_heal_02</filename>
+        <filename>vo_mar_heal_03</filename>
+    </maryHealing>
+    <maryHi volume="0.5">
+        <filename>vo_mar_hello_01</filename>
+        <filename>vo_mar_hello_02</filename>
+        <filename>vo_mar_hello_03</filename>
+        <filename>vo_mar_hello_04</filename>
+		<filename>vo_mar_hello_05</filename>
+    </maryHi>
+	<maryHiAlt volume="0.5">
+        <filename>vo_mar_hello_alt_01</filename>
+        <filename>vo_mar_hello_alt_02</filename>
+        <filename>vo_mar_hello_alt_03</filename>
+    </maryHiAlt>
+    <maryHm delayFrames="12" volume="0.5">
+        <filename>vo_mar_hm_01</filename>
+        <filename>vo_mar_hm_02</filename>
+        <filename>vo_mar_hm_03</filename>
+    </maryHm>
+    <maryHotCoals delayFrames="2" volume="0.5">
+        <filename>vo_mar_hotcoals_01</filename>
+        <filename>vo_mar_hotcoals_02</filename>
+        <filename>vo_mar_hotcoals_03</filename>
+        <filename>vo_mar_hotcoals_04</filename>
+        <filename>vo_mar_hotcoals_05</filename>
+        <filename>vo_mar_hotcoals_06</filename>
+        <filename>vo_mar_hotcoals_07</filename>
+        <filename>vo_mar_hotcoals_08</filename>
+		<filename>vo_mar_hotcoals_09</filename>
+		<filename>vo_mar_hotcoals_10</filename>
+		<filename>vo_mar_hotcoals_11</filename>
+		<filename>vo_mar_hotcoals_12</filename>
+		<filename>vo_mar_hotcoals_13</filename>
+    </maryHotCoals>
+    <maryIceSlide volume="0.5">
+        <filename>vo_mar_iceslip_01</filename>
+        <filename>vo_mar_iceslip_02</filename>
+        <filename>vo_mar_iceslip_03</filename>
+        <filename>vo_mar_iceslip_04</filename>
+        <filename>vo_mar_iceslip_05</filename>
+        <filename>vo_mar_iceslip_06</filename>
+        <filename>vo_mar_iceslip_07</filename>
+        <filename>vo_mar_iceslip_08</filename>
+        <filename>vo_mar_iceslip_09</filename>
+    </maryIceSlide>
+    <maryMelee1 volume="0.5">
+        <filename>vo_mar_melee_1_01</filename>
+        <filename>vo_mar_melee_1_02</filename>
+        <filename>vo_mar_melee_1_03</filename>
+        <filename>vo_mar_melee_1_04</filename>
+    </maryMelee1>
+    <maryMelee2 volume="0.5">
+        <filename>vo_mar_melee_2_01</filename>
+        <filename>vo_mar_melee_2_02</filename>
+        <filename>vo_mar_melee_2_03</filename>
+        <filename>vo_mar_melee_2_04</filename>
+    </maryMelee2>
+    <maryMelee3 volume="0.5">
+        <filename>vo_mar_melee_3_01</filename>
+        <filename>vo_mar_melee_3_02</filename>
+        <filename>vo_mar_melee_3_03</filename>
+        <filename>vo_mar_melee_3_04</filename>
+    </maryMelee3>
+    <maryMelee4 volume="0.5">
+        <filename>vo_mar_melee_4_01</filename>
+        <filename>vo_mar_melee_4_02</filename>
+        <filename>vo_mar_melee_4_03</filename>
+        <filename>vo_mar_melee_4_04</filename>
+    </maryMelee4>
+	<maryMelee3Alt volume="0.5">
+        <filename>vo_mar_melee_3_alt_01</filename>
+        <filename>vo_mar_melee_3_alt_02</filename>
+        <filename>vo_mar_melee_3_alt_03</filename>
+        <filename>vo_mar_melee_3_alt_04</filename>
+		<filename>vo_mar_melee_3_alt_05</filename>
+    </maryMelee3Alt>
+    <maryMelee4Alt volume="0.5">
+        <filename>vo_mar_melee_4_alt_01</filename>
+        <filename>vo_mar_melee_4_alt_02</filename>
+        <filename>vo_mar_melee_4_alt_03</filename>
+        <filename>vo_mar_melee_4_alt_04</filename>
+		<filename>vo_mar_melee_4_alt_05</filename>
+		<filename>vo_mar_melee_4_alt_06</filename>
+    </maryMelee4Alt>
+	<maryNeed volume="0.5">
+        <filename>vo_mar_castspell_need</filename>
+    </maryNeed>
+	<maryQuake volume="0.5">
+        <filename>vo_mar_castspell_quake</filename>
+    </maryQuake>
+    <maryRanged volume="0.5">
+        <filename>vo_mar_ranged_01</filename>
+        <filename>vo_mar_ranged_02</filename>
+        <filename>vo_mar_ranged_03</filename>
+		<filename>vo_mar_ranged_04</filename>
+    </maryRanged>
+	<maryRoar volume="0.5">
+        <filename>vo_mar_castspell_gigantism_01</filename>
+        <filename>vo_mar_castspell_gigantism_02</filename>
+		<filename>vo_mar_castspell_gigantism_03</filename>
+    </maryRoar>
+	<maryShield volume="0.5">
+        <filename>vo_mar_castspell_shield</filename>
+    </maryShield>
+	<marySquish delayFrames="4" volume="0.5">
+        <filename>vo_mar_squish_01</filename>
+        <filename>vo_mar_squish_02</filename>
+        <filename>vo_mar_squish_03</filename>
+        <filename>vo_mar_squish_04</filename>
+    </marySquish>
+    <maryTeleport delayFrames="12" volume="0.5">
+        <filename>vo_mar_teleport_01</filename>
+        <filename>vo_mar_teleport_02</filename>
+        <filename>vo_mar_teleport_03</filename>
+		<filename>vo_mar_teleport_04</filename>
+		<filename>vo_mar_teleport_05</filename>
+		<filename>vo_mar_teleport_06</filename>
+		<filename>vo_mar_teleport_07</filename>
+    </maryTeleport>
+    <maryTrapdoor volume="0.5">
+        <filename>vo_mar_trapdoor_01</filename>
+        <filename>vo_mar_trapdoor_02</filename>
+        <filename>vo_mar_trapdoor_03</filename>
+		<filename>vo_mar_trapdoor_04</filename>
+    </maryTrapdoor>
+	<maryPulse volume="0.5">
+		<filename>vo_mar_castspell_pulse</filename>
+	</maryPulse>
+	<maryTransmute volume="0.5">
+        <filename>vo_mar_castspell_transmute</filename>
+    </maryTransmute>
+    <maryYeah delayFrames="12" volume="0.5">
+        <filename>vo_mar_yeah_01</filename>
+        <filename>vo_mar_yeah_02</filename>
+        <filename>vo_mar_yeah_03</filename>
+        <filename>vo_mar_yeah_04</filename>
+        <filename>vo_mar_yeah_05</filename>
+		<filename>vo_mar_yeah_06</filename>
+		<filename>vo_mar_yeah_07</filename>
+		<filename>vo_mar_yeah_08</filename>
+    </maryYeah>
+	<maryYeahAlt delayFrames="12" volume="0.5">
+        <filename>vo_mar_yeah_alt_01</filename>
+        <filename>vo_mar_yeah_alt_02</filename>
+        <filename>vo_mar_yeah_alt_03</filename>
+        <filename>vo_mar_yeah_alt_04</filename>
+        <filename>vo_mar_yeah_alt_05</filename>
+    </maryYeahAlt>
+	<maryGrief1 volume="0.5">
+		<filename>vo_mar_grief_1_01</filename>
+        <filename>vo_mar_grief_1_02</filename>
+		<filename>vo_mar_grief_1_03</filename>
+		<filename>vo_mar_grief_1_04</filename>
+	</maryGrief1>
+	<maryGrief2 volume="0.5">
+		<filename>vo_mar_grief_2_01</filename>
+        <filename>vo_mar_grief_2_02</filename>
+		<filename>vo_mar_grief_2_03</filename>
+		<filename>vo_mar_grief_2_04</filename>
+	</maryGrief2>
+	<maryGrief3 volume="0.5">
+		<filename>vo_mar_grief_3_01</filename>
+        <filename>vo_mar_grief_3_02</filename>
+		<filename>vo_mar_grief_3_03</filename>
+		<filename>vo_mar_grief_3_04</filename>
+	</maryGrief3>
+	<maryGrief4 volume="0.5">
+		<filename>vo_mar_grief_4_01</filename>
+        <filename>vo_mar_grief_4_02</filename>
+		<filename>vo_mar_grief_4_03</filename>
+		<filename>vo_mar_grief_4_04</filename>
+	</maryGrief4>
+
+	<tempoBomb volume="0.5">
+        <filename>vo_tem_castspell_bomb</filename>
+    </tempoBomb>
+    <tempoEarth volume="0.5">
+		<filename>vo_tem_castspell_earth</filename>
+	</tempoEarth>
+	<tempoEnchant volume="0.5">
+        <filename>vo_tem_castspell_enchant</filename>
+    </tempoEnchant>
+	<tempoFear volume="0.5">
+        <filename>vo_tem_castspell_fear</filename>
+    </tempoFear>
+	<tempoFireball volume="0.5">
+        <filename>vo_tem_castspell_fire</filename>
+    </tempoFireball>
+    <tempoFreeze volume="0.5">
+        <filename>vo_tem_castspell_freeze</filename>
+    </tempoFreeze>
+	<tempoGold volume="0.5">
+        <filename>vo_tem_castspell_gold</filename>
+    </tempoGold>
+	<tempoConfused delayFrames="6" volume="0.5">
+        <filename>vo_tem_confused_01</filename>
+        <filename>vo_tem_confused_02</filename>
+        <filename>vo_tem_confused_03</filename>
+		<filename>vo_tem_confused_04</filename>
+    </tempoConfused>
+    <tempoDeath volume="0.5">
+        <filename>vo_tem_death_01</filename>
+        <filename>vo_tem_death_02</filename>
+        <filename>vo_tem_death_03</filename>
+    </tempoDeath>
+    <tempoDig volume="0.5">
+        <filename>vo_tem_dig_01</filename>
+        <filename>vo_tem_dig_02</filename>
+        <filename>vo_tem_dig_03</filename>
+        <filename>vo_tem_dig_04</filename>
+        <filename>vo_tem_dig_05</filename>
+		<filename>vo_tem_dig_06</filename>
+    </tempoDig>
+    <tempoHurt delayFrames="4" volume="0.5">
+        <filename>vo_tem_hurt_01</filename>
+        <filename>vo_tem_hurt_02</filename>
+        <filename>vo_tem_hurt_03</filename>
+        <filename>vo_tem_hurt_04</filename>
+    </tempoHurt>
+    <tempoGrabbed volume="0.5">
+        <filename>vo_tem_grabbed_01</filename>
+        <filename>vo_tem_grabbed_02</filename>
+        <filename>vo_tem_grabbed_03</filename>
+    </tempoGrabbed>
+    <tempoHeal volume="0.5">
+        <filename>vo_tem_castspell_heal</filename>
+    </tempoHeal>
+    <tempoHealing volume="0.5" delayMS="325">
+        <filename>vo_tem_heal_01</filename>
+        <filename>vo_tem_heal_02</filename>
+    </tempoHealing>
+    <tempoHi volume="0.5">
+        <filename>vo_tem_hello_01</filename>
+        <filename>vo_tem_hello_02</filename>
+        <filename>vo_tem_hello_03</filename>
+        <filename>vo_tem_hello_04</filename>
+		<filename>vo_tem_hello_05</filename>
+		<filename>vo_tem_hello_06</filename>
+		<filename>vo_tem_hello_07</filename>
+		<filename>vo_tem_hello_08</filename>
+		<filename>vo_tem_hello_09</filename>
+    </tempoHi>
+    <tempoHm delayFrames="12" volume="0.5">
+        <filename>vo_tem_hm_01</filename>
+        <filename>vo_tem_hm_02</filename>
+        <filename>vo_tem_hm_03</filename>
+		<filename>vo_tem_hm_04</filename>
+		<filename>vo_tem_hm_05</filename>
+		<filename>vo_tem_hm_06</filename>
+    </tempoHm>
+    <tempoHotCoals delayFrames="2" volume="0.5">
+        <filename>vo_tem_hotcoals_01</filename>
+        <filename>vo_tem_hotcoals_02</filename>
+        <filename>vo_tem_hotcoals_03</filename>
+        <filename>vo_tem_hotcoals_04</filename>
+        <filename>vo_tem_hotcoals_05</filename>
+        <filename>vo_tem_hotcoals_06</filename>
+        <filename>vo_tem_hotcoals_07</filename>
+        <filename>vo_tem_hotcoals_08</filename>
+		<filename>vo_tem_hotcoals_09</filename>
+		<filename>vo_tem_hotcoals_10</filename>
+		<filename>vo_tem_hotcoals_11</filename>
+    </tempoHotCoals>
+    <tempoIceSlide volume="0.5">
+        <filename>vo_tem_iceslip_01</filename>
+        <filename>vo_tem_iceslip_02</filename>
+        <filename>vo_tem_iceslip_03</filename>
+        <filename>vo_tem_iceslip_04</filename>
+        <filename>vo_tem_iceslip_05</filename>
+    </tempoIceSlide>
+    <tempoMelee1 volume="0.5">
+        <filename>vo_tem_melee_1_01</filename>
+        <filename>vo_tem_melee_1_02</filename>
+        <filename>vo_tem_melee_1_03</filename>
+        <filename>vo_tem_melee_1_04</filename>
+    </tempoMelee1>
+    <tempoMelee2 volume="0.5">
+        <filename>vo_tem_melee_2_01</filename>
+        <filename>vo_tem_melee_2_02</filename>
+        <filename>vo_tem_melee_2_03</filename>
+        <filename>vo_tem_melee_2_04</filename>
+    </tempoMelee2>
+    <tempoMelee3 volume="0.5">
+        <filename>vo_tem_melee_3_01</filename>
+        <filename>vo_tem_melee_3_02</filename>
+        <filename>vo_tem_melee_3_03</filename>
+        <filename>vo_tem_melee_3_04</filename>
+    </tempoMelee3>
+    <tempoMelee4 volume="0.5">
+        <filename>vo_tem_melee_4_01</filename>
+        <filename>vo_tem_melee_4_02</filename>
+        <filename>vo_tem_melee_4_03</filename>
+        <filename>vo_tem_melee_4_04</filename>
+    </tempoMelee4>
+	<tempoNeed volume="0.5">
+        <filename>vo_tem_castspell_need</filename>
+    </tempoNeed>
+	<tempoQuake volume="0.5">
+        <filename>vo_tem_castspell_quake</filename>
+    </tempoQuake>
+    <tempoRanged volume="0.5">
+        <filename>vo_tem_ranged_01</filename>
+        <filename>vo_tem_ranged_02</filename>
+        <filename>vo_tem_ranged_03</filename>
+		<filename>vo_tem_ranged_04</filename>
+    </tempoRanged>
+	<tempoRoar volume="0.5">
+        <filename>vo_tem_castspell_gigantism_01</filename>
+        <filename>vo_tem_castspell_gigantism_02</filename>
+		<filename>vo_tem_castspell_gigantism_03</filename>
+    </tempoRoar>
+	<tempoShield volume="0.5">
+        <filename>vo_tem_castspell_shield</filename>
+    </tempoShield>
+	<tempoSquish delayFrames="4" volume="0.5">
+        <filename>vo_tem_squish_01</filename>
+        <filename>vo_tem_squish_02</filename>
+        <filename>vo_tem_squish_03</filename>
+    </tempoSquish>
+    <tempoTeleport delayFrames="12" volume="0.5">
+        <filename>vo_tem_teleport_01</filename>
+        <filename>vo_tem_teleport_02</filename>
+        <filename>vo_tem_teleport_03</filename>
+		<filename>vo_tem_teleport_04</filename>
+		<filename>vo_tem_teleport_05</filename>
+    </tempoTeleport>
+    <tempoTrapdoor volume="0.5">
+        <filename>vo_tem_trapdoor_01</filename>
+        <filename>vo_tem_trapdoor_02</filename>
+        <filename>vo_tem_trapdoor_03</filename>
+    </tempoTrapdoor>
+	<tempoPulse volume="0.5">
+		<filename>vo_tem_castspell_pulse</filename>
+	</tempoPulse>
+	<tempoTransmute volume="0.5">
+        <filename>vo_tem_castspell_transmute</filename>
+    </tempoTransmute>
+    <tempoYeah delayFrames="12" volume="0.5">
+        <filename>vo_tem_yeah_01</filename>
+        <filename>vo_tem_yeah_02</filename>
+        <filename>vo_tem_yeah_03</filename>
+        <filename>vo_tem_yeah_04</filename>
+        <filename>vo_tem_yeah_05</filename>
+    </tempoYeah>
+	<tempoTick1 volume="0.6">
+		<filename>sfx_tempo_ticking_1</filename>
+	</tempoTick1>
+	<tempoTick2 volume="0.6">
+		<filename>sfx_tempo_ticking_2</filename>
+	</tempoTick2>
+	<tempoTick3 volume="0.6">
+		<filename>sfx_tempo_ticking_3</filename>
+	</tempoTick3>
+	<tempoTick4 volume="0.6">
+		<filename>sfx_tempo_ticking_4</filename>
+	</tempoTick4>
+	
+	<lambBaa volume="0.6">
+		<filename>sfx_lamb_baa_01</filename>
+        <filename>sfx_lamb_baa_02</filename>
+        <filename>sfx_lamb_baa_03</filename>
+        <filename>sfx_lamb_baa_04</filename>
+        <filename>sfx_lamb_baa_05</filename>
+	</lambBaa>
+	<lambDeath volume="0.6">
+		<filename>sfx_lamb_death_01</filename>
+		<filename>sfx_lamb_death_02</filename>
+		<filename>sfx_lamb_death_03</filename>
+		<filename>sfx_lamb_death_04</filename>
+		<filename>sfx_lamb_death_05</filename>
+	</lambDeath>
+	<soulAttack volume="0.5">
+		<filename>sfx_soul_attack_01</filename>
+		<filename>sfx_soul_attack_02</filename>
+		<filename>sfx_soul_attack_03</filename>
+		<filename>sfx_soul_attack_04</filename>
+	</soulAttack>
+	<soulDeath volume="0.5">
+		<filename>sfx_soul_death_01</filename>
+		<filename>sfx_soul_death_02</filename>
+		<filename>sfx_soul_death_03</filename>
+		<filename>sfx_soul_death_04</filename>
+	</soulDeath>
+
+	<necrodancerGiveMeThatLute volume="0.6" delayMS="400">
+        <filename>vo_nec_dia_givelute</filename>
+    </necrodancerGiveMeThatLute>
+	<necrodancerLuteIsMine volume="0.7" delayMS="1000">
+        <filename>vo_nec_dia_luteismine</filename>
+    </necrodancerLuteIsMine>
+	<necrodancerCurseYou volume="0.6" delayMS="500">
+        <filename>vo_nec_dia_curseyou</filename>
+    </necrodancerCurseYou>
+	<necrodancerAttack volume="0.5">
+        <filename>vo_nec_att_v3_01</filename>
+        <filename>vo_nec_att_v3_02</filename>
+        <filename>vo_nec_att_v3_03</filename>
+    </necrodancerAttack>
+	<necrodancerDeath volume="0.5">
+        <filename>vo_nec_death</filename>
+    </necrodancerDeath>
+	<necrodancerTryAgain volume="0.9" delayMS="1500">
+        <filename>vo_nec_dia_tryagain</filename>
+    </necrodancerTryAgain>
+	<necrodancerTryAgain2 volume="0.8" delayMS="1500">
+        <filename>vo_nec_dia_tryagain2</filename>
+    </necrodancerTryAgain2>
+	<necrodancerHit volume="0.5">
+        <filename>vo_nec_hurt_01</filename>
+        <filename>vo_nec_hurt_03</filename>
+    </necrodancerHit>
+	<necrodancerHitQuiet volume="0.25">
+        <filename>vo_nec_hurt_01</filename>
+        <filename>vo_nec_hurt_03</filename>
+    </necrodancerHitQuiet>
+	<necrodancerLaugh volume="0.65">
+        <filename>vo_nec_laugh_01</filename>
+        <filename>vo_nec_laugh_02</filename>
+    </necrodancerLaugh>
+	<necrodancerRise volume="0.65">
+        <filename>vo_nec_dia_rise_01</filename>
+        <filename>vo_nec_dia_rise_02</filename>
+    </necrodancerRise>
+	<necrodancerReanimate volume="0.55">
+        <filename>vo_nec_dia_reanimate</filename>
+        <filename>vo_nec_dia_reanimate_02</filename>
+        <filename>vo_nec_dia_reanimate_03</filename>
+    </necrodancerReanimate>
+	
+	<frankAttack volume="0.5">
+        <filename>en_frank_vo_attack_01</filename>
+        <filename>en_frank_vo_attack_02</filename>
+        <filename>en_frank_vo_attack_03</filename>
+		<filename>en_frank_vo_attack_04</filename>
+		<filename>en_frank_vo_attack_05</filename>
+    </frankAttack>
+	<frankDeath volume="0.5">
+        <filename>en_frank_vo_death</filename>
+    </frankDeath>
+	<frankHit volume="0.5">
+        <filename>en_frank_vo_hit_01</filename>
+        <filename>en_frank_vo_hit_02</filename>
+		<filename>en_frank_vo_hit_03</filename>
+		<filename>en_frank_vo_hit_04</filename>
+		<filename>en_frank_vo_hit_05</filename>
+    </frankHit>
+	
+	<frankIntro volume="0.6">
+		<filename>en_frank_vo_intro</filename>
+	</frankIntro>
+	<frankDash volume="0.6">
+		<filename>en_frank_vo_dash_01</filename>
+		<filename>en_frank_vo_dash_02</filename>
+		<filename>en_frank_vo_dash_03</filename>
+		<filename>en_frank_vo_dash_04</filename>
+		<filename>en_frank_vo_dash_05</filename>
+	</frankDash>
+	<frankImpact volume="0.5" delayFrames="7">
+		<filename>en_frank_impact_01</filename>
+		<filename>en_frank_impact_02</filename>
+		<filename>en_frank_impact_03</filename>
+		<filename>en_frank_impact_04</filename>
+		<filename>en_frank_impact_05</filename>
+		<filename>en_frank_impact_06</filename>
+	</frankImpact>
+	<frankFlash1 volume="0.5">
+		<filename>en_frank_floorflash_1</filename>
+	</frankFlash1>
+	<frankFlash2 volume="0.5">
+		<filename>en_frank_floorflash_2</filename>
+	</frankFlash2>
+	<frankFlash3 volume="0.5">
+		<filename>en_frank_floorflash_3</filename>
+	</frankFlash3>
+	<frankZap volume="0.3">
+		<filename>en_frank_floorflash_zap_01</filename>
+		<filename>en_frank_floorflash_zap_02</filename>
+		<filename>en_frank_floorflash_zap_03</filename>
+		<filename>en_frank_floorflash_zap_04</filename>
+	</frankZap>
+	<frankBulbActivate volume="0.6">
+		<filename>obj_bulb_activate</filename>
+	</frankBulbActivate>
+	<frankPhaseChange volume="0.7">
+		<filename>en_frank_vo_phase_change_01</filename>
+		<filename>en_frank_vo_phase_change_02</filename>
+	</frankPhaseChange>
+	<frankPhaseFinal volume="0.7">
+		<filename>en_frank_vo_phase_final</filename>
+	</frankPhaseFinal>
+	<frankBulbActivate volume="0.5">
+		<filename>obj_bulb_activate</filename>
+	</frankBulbActivate>
+	<frankBulbDeactivate volume="0.5">
+		<filename>obj_bulb_deactivate</filename>
+	</frankBulbDeactivate>
+	<frankBulbBreak volume="0.5">
+		<filename>obj_bulb_break</filename>
+	</frankBulbBreak>
+	
+	<conductorInstrumentBreak volume="0.6">
+		<filename>obj_instrument_break</filename>
+	</conductorInstrumentBreak>
+	<conductorAngry1 volume="0.6" delayMS="500">
+		<filename>en_conductor_angry_01</filename>
+	</conductorAngry1>
+	<conductorAngry2 volume="0.6" delayMS="500">
+		<filename>en_conductor_angry_02</filename>
+	</conductorAngry2>
+	<conductorAngry3 volume="0.6" delayMS="500">
+		<filename>en_conductor_angry_03</filename>
+	</conductorAngry3>
+	<conductorAngry4 volume="0.6" delayMS="500">
+		<filename>en_conductor_angry_04</filename>
+	</conductorAngry4>
+	<conductorAngry5 volume="0.6" delayMS="500">
+		<filename>en_conductor_angry_05</filename>
+	</conductorAngry5>
+	<conductorAngry6 volume="0.6" delayMS="500">
+		<filename>en_conductor_angry_06</filename>
+	</conductorAngry6>
+	<conductorAngry7 volume="0.6" delayMS="500">
+		<filename>en_conductor_angry_07</filename>
+	</conductorAngry7>
+	<conductorAttack volume="0.5">
+		<filename>en_conductor_attack_01</filename>
+		<filename>en_conductor_attack_02</filename>
+		<filename>en_conductor_attack_03</filename>
+	</conductorAttack>
+	<conductorDeath volume="0.6">
+		<filename>en_conductor_death_01</filename>
+		<filename>en_conductor_death_02</filename>
+		<filename>en_conductor_death_03</filename>
+	</conductorDeath>
+	<conductorHit volume="0.6">
+		<filename>en_conductor_hit_01</filename>
+		<filename>en_conductor_hit_02</filename>
+		<filename>en_conductor_hit_03</filename>
+		<filename>en_conductor_hit_04</filename>
+	</conductorHit>
+	<conductorInstruments volume="0.6" delayMS="500">
+		<filename>en_conductor_instruments_cry</filename>
+	</conductorInstruments>
+	<conductorSummon1 volume="0.6">
+		<filename>en_conductor_summon_arise_01</filename>
+		<filename>en_conductor_summon_arise_02</filename>
+		<filename>en_conductor_summon_arise_03</filename>
+	</conductorSummon1>
+	<conductorSummon2 volume="0.6">
+		<filename>en_conductor_summon_reanimate_01</filename>
+		<filename>en_conductor_summon_reanimate_02</filename>
+		<filename>en_conductor_summon_reanimate_03</filename>
+	</conductorSummon2>
+	<conductorSummon3 volume="0.6">
+		<filename>en_conductor_summon_awaken_01</filename>
+		<filename>en_conductor_summon_awaken_02</filename>
+		<filename>en_conductor_summon_awaken_03</filename>
+	</conductorSummon3>
+	<conductorSpellWarning volume="0.7">
+		<filename>en_conductor_attack_02</filename>
+	</conductorSpellWarning>
+	<conductorCastSpell volume="0.7">
+		<filename>en_conductor_attack_01</filename>
+		<filename>en_conductor_attack_03</filename>
+	</conductorCastSpell>
+	
+    <medicGroove>
+        <filename>vo_healthbro_groove_1</filename>
+        <filename>vo_healthbro_groove_2</filename>
+        <filename>vo_healthbro_groove_3</filename>
+        <filename>vo_healthbro_groove_4</filename>
+        <filename>vo_healthbro_groove_5</filename>
+        <filename>vo_healthbro_groove_6</filename>
+        <filename>vo_healthbro_groove_7</filename>
+        <filename>vo_healthbro_groove_8</filename>
+        <filename>vo_healthbro_groove_9</filename>
+        <filename>vo_healthbro_groove_10</filename>
+        <filename>vo_healthbro_groove_11</filename>
+        <filename>vo_healthbro_groove_12</filename>
+        <filename>vo_healthbro_groove_13</filename>
+        <filename>vo_healthbro_groove_14</filename>
+        <filename>vo_healthbro_groove_15</filename>
+        <filename>vo_healthbro_groove_16</filename>
+    </medicGroove>
+    <shopkeepGroove>
+        <filename>vo_shopkeep_groove_1</filename>
+        <filename>vo_shopkeep_groove_2</filename>
+        <filename>vo_shopkeep_groove_3</filename>
+        <filename>vo_shopkeep_groove_4</filename>
+        <filename>vo_shopkeep_groove_5</filename>
+        <filename>vo_shopkeep_groove_6</filename>
+        <filename>vo_shopkeep_groove_7</filename>
+        <filename>vo_shopkeep_groove_8</filename>
+        <filename>vo_shopkeep_groove_9</filename>
+        <filename>vo_shopkeep_groove_10</filename>
+        <filename>vo_shopkeep_groove_11</filename>
+        <filename>vo_shopkeep_groove_12</filename>
+        <filename>vo_shopkeep_groove_13</filename>
+        <filename>vo_shopkeep_groove_14</filename>
+    </shopkeepGroove>
+</sounds>
