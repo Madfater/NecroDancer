@@ -83,10 +83,16 @@
     <ClInclude Include="Source\Core\StdAfx.h">
       <Filter>MFC</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Game\config.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\img_path.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Game\mygame.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Game\config.h">
+    <ClInclude Include="Source\Game\game_map.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

@@ -32,30 +32,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
-	for (int y = 0; y < 9; y++)
-	{
-		for (int x = 0; x < 15; x++)
-		{
-			background[x][y].LoadBitmapByString({ "resources/wall.bmp","resources/floor.bmp","resources/wall_cut.bmp" });
-
-
-			if (y == 0)
-			{
-				background[x][y].SetTopLeft(x * 60, y * 60);
-				background[x][y].SetFrameIndexOfBitmap(2);
-			}
-			else if (y == 2)
-			{
-				background[x][y].SetTopLeft(x * 60, (y * 60) - 38);
-				background[x][y].SetFrameIndexOfBitmap(0);
-			}
-			else
-			{
-				background[x][y].SetTopLeft(x * 60, y * 60);
-				background[x][y].SetFrameIndexOfBitmap(1);
-			}
-		}
-	}
+	
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -90,11 +67,5 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動
 
 void CGameStateRun::OnShow()
 {
-	for (int y = 0; y < 9; y++)
-	{
-		for (int x = 0; x < 15; x++)
-		{
-			background[x][y].ShowBitmap();
-		}
-	}
+	
 }
