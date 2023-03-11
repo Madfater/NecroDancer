@@ -91,6 +91,9 @@ namespace game_framework {
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
 		CMovingBitmap background[15][9];
+		CMovingBitmap character;
+		int jump = 0;
+		int isfalling = 0;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
