@@ -1,6 +1,9 @@
 /*
-	³]©w©Ò¦³¹Ï¤ùªº¸ô®|
+	è¨­å®šæ‰€æœ‰åœ–ç‰‡çš„è·¯å¾‘
 */
-constexpr auto img_wall ="resources/wall.bmp";
-constexpr auto img_wall_half = "resources/wall_cut.bmp";
-constexpr auto img_floor = "resources/floor.bmp";
+#pragma once
+#include <string>
+
+const string img_wall ="resources/wall.bmp";
+const string img_wall_half = "resources/wall_cut.bmp";
+const string img_floor = "resources/floor.bmp";
