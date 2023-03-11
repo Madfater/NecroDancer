@@ -116,7 +116,7 @@ void CGameStateRun::OnShow()
 	if (jump == 1) {
 		if (isfalling == 0) {
 			character.SetTopLeft(character.GetLeft(), character.GetTop() - 5); //控制上升速度
-			if (character.GetTop() <= 240) //上升高度
+			if (character.GetTop() <= 240) //跳躍高度
 				isfalling = 1;
 		}
 		if (isfalling == 1) {
