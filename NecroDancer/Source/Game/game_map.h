@@ -3,6 +3,7 @@
 #include "../Library/gameutil.h"
 #include "character.h"
 #include "img_path.h"
+#include <string>
 
 
 class camera
@@ -10,8 +11,9 @@ class camera
 	public:
 		void init();
 		void show();
+		void keydown(string key);
 	private:
-		game_framework::CMovingBitmap view[9][15];
+		game_framework::CMovingBitmap camera[9][15];
 		int _map[9][15] = {
 							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
@@ -23,5 +25,6 @@ class camera
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 						 };
-		character player;
+		character* player;
+		bool is_moving=false;
 };

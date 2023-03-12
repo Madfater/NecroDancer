@@ -2,6 +2,7 @@
 #include "../Core/Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
+#include <string>
 #include "../Library/audio.h"
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
@@ -42,12 +43,16 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	switch (nChar)
 	{
 		case 37:
+			camera.keydown("left");
 			break;
 		case 38:
+			camera.keydown("up");
 			break;
 		case 39:
+			camera.keydown("right");
 			break;
 		case 40:
+			camera.keydown("down");
 			break;
 		default:
 			break;

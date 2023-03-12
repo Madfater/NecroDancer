@@ -11,12 +11,12 @@ class  character
 		int get_x();
 		int get_y();
 		void show();
+		virtual bool move() = 0;
 		virtual ~character();
 	protected:
 		int HP;
-		int x;
-		int y;
 		game_framework::CMovingBitmap img;
+		bool is_falling =false;
 };
 
 class main_character : public character
@@ -24,7 +24,7 @@ class main_character : public character
 	public:
 		main_character(int HP, int x, int y, vector<string> files) : character(HP, x, y, files) {};
 		main_character(int HP, int x, int y, vector<string> files, COLORREF color) : character(HP, x, y, files,color) {};
-		void move();
+		bool move();
 	private:
-		bool is_falling = false;
+
 };
