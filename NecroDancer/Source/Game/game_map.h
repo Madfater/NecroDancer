@@ -1,6 +1,6 @@
 #pragma once
+
 #include "../Library/gameutil.h"
-#include "img_path.h"
 
 #define _wall 1
 #define _floor 0

@@ -5,12 +5,12 @@
 class  character
 {
 	public:
-		character(int HP,int x,int y, game_framework::CMovingBitmap img);
+		character::character(int, int, int, vector<string>, COLORREF = CLR_INVALID);
 		int get_x();
 		int get_y();
 		void show();
 		virtual ~character();
-	private:
+	protected:
 		int HP;
 		int x;
 		int y;
@@ -20,11 +20,9 @@ class  character
 class main_character : character
 {
 	public:
-		main_character(int HP, int x, int y, game_framework::CMovingBitmap img) : character(HP, x, y, img) {};
+		main_character(int HP, int x, int y, vector<string> files, COLORREF color) : character(HP, x, y, files,color) {};
 		void move();
 	private:
-		int jump = 0;
-		int isfalling = 0;
-
-
+		bool is_jumping = 0;
+		bool is_falling = 0;
 };

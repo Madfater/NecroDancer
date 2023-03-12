@@ -1,8 +1,10 @@
 #pragma once
+
 #include "stdafx.h"
 #include "../Library/gameutil.h"
-#include "game_map.h"
 #include "img_path.h"
+
+#include "game_map.h"
 
 #define _wall 1
 #define _floor 0
