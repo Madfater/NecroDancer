@@ -7,6 +7,9 @@
 
 class game_map
 {
+	public:
+		void sight_generate();
+		void sight_show();
 	private:
 		game_framework::CMovingBitmap view[9][15];
 		int _map[9][15] = {
@@ -20,6 +23,5 @@ class game_map
 							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
 							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 						 };
-		void sight_generate();
-		void sight_show();
+		
 };
