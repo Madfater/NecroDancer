@@ -39,7 +39,8 @@
 */
 
 
-#include "../Game/game_map.h"
+#include "game_map.h"
+#include "character.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -91,11 +92,7 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		game_map _map;
-		CMovingBitmap background[15][9];
-		CMovingBitmap character;
-		int jump = 0;
-		int isfalling = 0;
+		camera camera;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
