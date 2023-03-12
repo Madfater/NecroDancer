@@ -39,11 +39,12 @@
 */
 
 
+#include "../Game/game_map.h"
+
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
 	// Constants
 	/////////////////////////////////////////////////////////////////////////////
-
 	enum AUDIO_ID {				// 定義各種音效的編號
 		AUDIO_DING,				// 0
 		AUDIO_LAKE,				// 1
@@ -90,6 +91,7 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
+		game_map _map;
 		CMovingBitmap background[15][9];
 		CMovingBitmap character;
 		int jump = 0;
