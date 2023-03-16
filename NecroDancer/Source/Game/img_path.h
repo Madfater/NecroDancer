@@ -8,7 +8,7 @@
 const string img_wall ="resources/wall.bmp";
 const string img_wall_half = "resources/wall_cut.bmp";
 const string img_floor = "resources/floor.bmp";
-
+const string img_menu = "resources/mainmenu.bmp";
 const vector<string> img_player = { "resources/player1.bmp",
 									"resources/player2.bmp",
 									"resources/player3.bmp",
