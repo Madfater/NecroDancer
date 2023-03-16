@@ -26,5 +26,7 @@ class camera
 							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 						 };
 		character* player;
+		character* bat;
+		character* dragon;
 		bool is_moving=false;
 };

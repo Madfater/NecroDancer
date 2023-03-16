@@ -13,6 +13,8 @@
 void camera::init()
 {
 	player = new main_character(3, 7, 4, img_player,RGB(0,0,0));
+	dragon = new main_character(3, 4, 2, img_dragon, RGB(0, 0, 0));
+	bat = new main_character(3, 9, 4, img_bat, RGB(0, 0, 0));
 	for (int y = 0; y < 9; y++)
 	{
 		for (int x = 0; x < 15; x++)
@@ -52,7 +54,8 @@ void camera::show()
 				player->show();
 		}
 	}
-
+	dragon->show();
+	bat->show();
 	if (is_moving)
 	{
 		is_moving = player->move();
