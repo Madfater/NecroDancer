@@ -6,6 +6,7 @@
 #include "../Library/gameutil.h"
 #include "../Library/gamecore.h"
 #include "mygame.h"
+#include "img_path.h"
 
 using namespace game_framework;
 /////////////////////////////////////////////////////////////////////////////
@@ -18,6 +19,9 @@ CGameStateInit::CGameStateInit(CGame *g) : CGameState(g)
 
 void CGameStateInit::OnInit()
 {
+	
+	menu.LoadBitmapByString({ img_menu }, RGB(0, 0, 0));
+	menu.SetTopLeft(0, 0);
 	//
 	// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 	//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
@@ -47,4 +51,5 @@ void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CGameStateInit::OnShow()
 {
+	menu.ShowBitmap();
 }
