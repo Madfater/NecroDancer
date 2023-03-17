@@ -33,14 +33,14 @@ bool main_character::move()
 {
 	if (is_falling == false) 
 	{
-		img.SetTopLeft(img.GetLeft(), img.GetTop() - 8); //控制上升速度
+		img.SetTopLeft(img.GetLeft(), img.GetTop() - 8); 
 		if (img.GetTop() <= y * 60 - 60) //跳躍高度
-			is_falling = true;;
+			is_falling = true;
 	}
 	else 
 	{
-		img.SetTopLeft(img.GetLeft(), img.GetTop() + 8); //控制下降速度
-		if (img.GetTop() >= y * 60 - 30)//下降高度
+		img.SetTopLeft(img.GetLeft(), img.GetTop() + 8); 
+		if (img.GetTop() >= y * 60 - 30)//原位
 		{
 			is_falling = false;
 			return false;
