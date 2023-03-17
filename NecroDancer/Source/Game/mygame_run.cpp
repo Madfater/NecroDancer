@@ -40,24 +40,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	switch (nChar)
-	{
-		case 37:
-			camera.keydown("left");
-			break;
-		case 38:
-			camera.keydown("up");
-			break;
-		case 39:
-			camera.keydown("right");
-			break;
-		case 40:
-			camera.keydown("down");
-			break;
-		default:
-			break;
-	}
-
+	camera.keydown(nChar);
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)

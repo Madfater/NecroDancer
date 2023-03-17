@@ -11,7 +11,7 @@ class camera
 	public:
 		void init();
 		void show();
-		void keydown(string key);
+		void keydown(UINT key);
 	private:
 		game_framework::CMovingBitmap camera[9][15];
 		int _map[9][15] = {
@@ -26,7 +26,7 @@ class camera
 							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 						 };
 		character* player;
-		character* bat;
-		character* dragon;
+		//character* bat;
+		//character* dragon;
 		bool is_moving=false;
 };
