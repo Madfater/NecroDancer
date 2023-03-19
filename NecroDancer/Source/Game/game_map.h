@@ -11,7 +11,7 @@ class game_map
 {
 	private:
 		int _map[10][20] = {
-							{1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1},
+							{1,1,1,1,1,1,1,01,1,1,1,1,1,1,1,1,1,1,1,1},
 							{1,0,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1},
 							{1,0,0,0,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,1},
 							{1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,1,1,1},
@@ -26,8 +26,6 @@ class game_map
 	public:
 		int* get_start_position();
 		int get_block_info(int x, int y);
-
-
 };
 
 class camera
@@ -35,7 +33,7 @@ class camera
 	public:
 		void init();
 		void show();
-		void keydown(string key);
+		void keydown(UINT nChar);
 	private:
 		game_map g;
 		game_framework::CMovingBitmap camera[9][15];
