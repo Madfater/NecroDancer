@@ -48,9 +48,9 @@ class camera
 struct block
 {
 	character* monster;
-	bool has_torch;//¹w©w
-	bool has_trap;//¹w©w
-	bool has_item;//¹w©w
+	bool has_torch;//ï¿½wï¿½w
+	bool has_trap;//ï¿½wï¿½w
+	bool has_item;//ï¿½wï¿½w
 	bool has_chest;
 	int brightness;
 	int type;
