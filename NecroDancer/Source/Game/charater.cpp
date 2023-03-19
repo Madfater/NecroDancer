@@ -43,14 +43,14 @@ bool main_character::move()
 {
 	if (is_falling == false) 
 	{
-		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 8); //±±¨î¤W¤É³t«×
-		if (img[is_faceright].GetTop() <= y * 60 - 60) //¸õÅD°ª«×
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 8); //Â±Â±Â¨Ã®Â¤WÂ¤Ã‰Â³tÂ«Ã—
+		if (img[is_faceright].GetTop() <= y * 60 - 60) //Â¸ÃµÃ…DÂ°ÂªÂ«Ã—
 			is_falling = true;
 	}
 	else 
 	{
-		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 8); //±±¨î¤U­°³t«×
-		if (img[is_faceright].GetTop() >= y * 60 - 30)//¤U­°°ª«×
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 8); //Â±Â±Â¨Ã®Â¤UÂ­Â°Â³tÂ«Ã—
+		if (img[is_faceright].GetTop() >= y * 60 - 30)//Â¤UÂ­Â°Â°ÂªÂ«Ã—
 		{
 			is_falling = false;
 			return false;
