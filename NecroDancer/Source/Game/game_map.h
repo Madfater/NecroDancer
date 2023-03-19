@@ -33,7 +33,7 @@ class camera
 	public:
 		void init();
 		void show();
-		void keydown(UINT nChar);
+		void keydown(UINT key);
 	private:
 		game_map g;
 		game_framework::CMovingBitmap camera[9][15];

@@ -5,23 +5,29 @@
 class character
 {
 	public:
-		character::character(int, int, int, vector<string>, COLORREF);
+		character::character(int, int, int,bool,vector<vector<string>>, COLORREF);
 		int get_x();
 		int get_y();
+		bool get_faceright();
 		void show();
+		void set_faceright(bool _is_faceright);
 		virtual bool move() = 0;
 		virtual ~character() = default;
 	protected:
 		int HP;
 		int x;
 		int y;
-		game_framework::CMovingBitmap img;
+		bool is_faceright;
+		game_framework::CMovingBitmap img_left;
+		game_framework::CMovingBitmap img_right;
+		vector<game_framework::CMovingBitmap> img = { img_left ,img_right };
+
 };
 
 class main_character : public character
 {
 	public:
-		main_character(int HP, int x, int y, vector<string> files, COLORREF color) : character(HP, x, y, files,color) {};
+		main_character(int HP, int x, int y,bool _is_faceright, vector<vector<string>> files,  COLORREF color) : character(HP, x, y, _is_faceright, files,color) {};
 		bool move();
 	private:
 		bool is_falling = false;
