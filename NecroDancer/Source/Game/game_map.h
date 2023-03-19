@@ -4,29 +4,55 @@
 #include "character.h"
 #include "img_path.h"
 #include <string>
+#include <vector>
 
+
+class game_map
+{
+	private:
+		int _map[10][20] = {
+							{1,1,1,1,1,1,1,01,1,1,1,1,1,1,1,1,1,1,1,1},
+							{1,0,0,0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1},
+							{1,0,0,0,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,1},
+							{1,0,0,0,0,0,0,0,0,1,1,1,0,0,1,0,0,1,1,1},
+							{1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1},
+							{1,1,1,1,1,1,1,0,0,0,1,1,0,0,0,0,0,1,1,1},
+							{1,1,1,1,1,1,1,0,0,0,1,1,0,0,1,1,1,1,1,1},
+							{1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1},
+							{1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1},
+							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
+						  };
+		int start[2] = {1,1};
+	public:
+		int* get_start_position();
+		int get_block_info(int x, int y);
+};
 
 class camera
 {
 	public:
 		void init();
 		void show();
-		void keydown(string key);
+		void keydown(UINT nChar);
 	private:
+		game_map g;
 		game_framework::CMovingBitmap camera[9][15];
-		int _map[9][15] = {
-							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,1,1,1,0,0,0,0,0,1},
-							{1,0,0,0,0,0,1,0,1,0,0,0,0,0,1},
-							{1,0,0,0,0,0,1,1,1,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
-							{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
-						 };
 		character* player;
-		character* bat;
-		character* dragon;
+		vector<character*> monster;
+		int position_x=-1;
+		int position_y=-1;
 		bool is_moving=false;
 };
+
+/*
+struct block
+{
+	character* monster;
+	bool has_torch;//�w�w
+	bool has_trap;//�w�w
+	bool has_item;//�w�w
+	bool has_chest;
+	int brightness;
+	int type;
+};
+*/
