@@ -5,7 +5,7 @@
 class character
 {
 	public:
-		character::character(int, int, int,bool,vector<vector<string>>, COLORREF);
+		character::character(int, int, int,vector<vector<string>>, COLORREF);
 		int get_x();
 		int get_y();
 		bool get_faceright();
@@ -27,7 +27,7 @@ class character
 class main_character : public character
 {
 	public:
-		main_character(int HP, int x, int y,bool _is_faceright, vector<vector<string>> files,  COLORREF color) : character(HP, x, y, _is_faceright, files,color) {};
+		main_character(int HP, int x, int y, vector<vector<string>> files,  COLORREF color) : character(HP, x, y, files,color) {};
 		bool move();
 	private:
 		bool is_falling = false;

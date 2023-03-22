@@ -4,7 +4,7 @@
 #include "../Library/gameutil.h"
 #include "character.h"
 
-character::character(int _HP, int _x, int _y,bool _is_faceright,vector<vector<string>> files, COLORREF color)
+character::character(int _HP, int _x, int _y,vector<vector<string>> files, COLORREF color)
 {
 	HP = _HP;
 	for (int i = 0; i < 2; i++)
@@ -13,7 +13,7 @@ character::character(int _HP, int _x, int _y,bool _is_faceright,vector<vector<st
 		img[i].SetTopLeft(_x * 60, _y * 60 - 30);
 		img[i].SetAnimation(120, false);
 	}
-	is_faceright = _is_faceright;
+	is_faceright = true;
 	x = _x;
 	y = _y;
 }

@@ -2,6 +2,8 @@
 
 #include "stdafx.h"
 #include "../Library/gameutil.h"
+#include "../Library/audio.h"
+//#include "../Library/gamecore.h"
 #include "img_path.h"
 #include <string>
 
@@ -10,12 +12,14 @@
 #define _wall 1
 #define _floor 0
 
+using namespace game_framework;
+
 void camera::init()
 {
-	player = new main_character(3, 7, 4,true, img_player, RGB(0, 0, 0));
+	//CSpecialEffect time;
+	player = new main_character(3, 7, 4, img_player, RGB(0, 0, 0));
 	position_x = g.get_start_position()[0];
 	position_y = g.get_start_position()[1];
-	player = new main_character(3, 7, 4, img_player,RGB(0,0,0));
 
 	for (int y = 0; y < 9; y++)
 		for (int x = 0; x < 15; x++)
@@ -67,11 +71,13 @@ void camera::show()
 
 void camera::keydown(UINT nChar)
 {
-	is_moving = true;
+	
 	switch (nChar)
 	{
 		case 37:
 			//left
+			is_moving = true;
+			player->set_faceright(false);
 			if (g.get_block_info(position_x - 1, position_y) == _wall)
 				is_moving = false;
 			else
@@ -82,6 +88,7 @@ void camera::keydown(UINT nChar)
 			break;
 		case 38:
 			//up
+			is_moving = true;
 			if (g.get_block_info(position_x, position_y - 1) == _wall)
 				is_moving = false;
 			else
@@ -92,6 +99,8 @@ void camera::keydown(UINT nChar)
 			break;
 		case 39:
 			//right
+			is_moving = true;
+			player->set_faceright(true);
 			if (g.get_block_info(position_x + 1, position_y) == _wall)
 				is_moving = false;
 			else
@@ -102,6 +111,7 @@ void camera::keydown(UINT nChar)
 			break;
 		case 40:
 			//down
+			is_moving = true;
 			if (g.get_block_info(position_x, position_y + 1) == _wall)
 				is_moving = false;
 			else
