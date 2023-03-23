@@ -24,6 +24,7 @@ CGameStateRun::~CGameStateRun()
 {
 }
 
+
 void CGameStateRun::OnBeginState()
 {
 }
@@ -35,12 +36,28 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
-	camera.init();
+	m.init();
+	c.init(&m);
 }
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	camera.keydown(nChar);
+	int direction = nChar - 37;
+	character* player = m.characters[0];
+	if(direction>=0 && direction<=3)
+	{
+		
+		if (direction == 0)
+			player->set_faceright(false);
+		else if (direction == 2)
+			player->set_faceright(true);
+
+		if (m.get_block_info(player->get_x() + direction_x[direction], player->get_y() + direction_y[direction])->type == 0)
+		{
+			player->set_is_moving();
+			player->set_position_map(player->get_x() + direction_x[direction],player->get_y() + direction_y[direction]);
+		}
+	}
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -70,5 +87,5 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動
 
 void CGameStateRun::OnShow()
 {
-	camera.show();
+	c.show();
 }

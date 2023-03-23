@@ -1,19 +1,27 @@
-#pragma once
-
 #include "stdafx.h"
 #include "../Library/gameutil.h"
 #include "character.h"
+#include "img_path.h"
 
-character::character(int _HP, int _x, int _y,bool _is_faceright,vector<vector<string>> files, COLORREF color)
+character::character(int _HP, vector<vector<string>> files, COLORREF color)
 {
 	HP = _HP;
 	for (int i = 0; i < 2; i++)
 	{
 		img[i].LoadBitmapByString(files[i], color);
-		img[i].SetTopLeft(_x * 60, _y * 60 - 30);
 		img[i].SetAnimation(120, false);
 	}
-	is_faceright = _is_faceright;
+	is_faceright = true;
+}
+
+void character::set_position_camera(int camera_x, int camera_y)
+{
+	for (int i = 0; i < 2; i++)
+		img[i].SetTopLeft(camera_x * 60, camera_y * 60 - 10);
+}
+
+void character::set_position_map(int _x, int _y)
+{
 	x = _x;
 	y = _y;
 }
@@ -27,9 +35,21 @@ int character::get_y()
 {
 	return y;
 }
+
+void character::set_is_moving()
+{
+	is_moving = true;
+}
+
+bool character::get_is_moving()
+{
+	return is_moving;
+}
+
 bool character::get_faceright() {
 	return is_faceright;
 }
+
 void character::set_faceright(bool _is_faceright) {
 	is_faceright = _is_faceright;
 }
@@ -39,22 +59,43 @@ void character::show()
 	img[is_faceright].ShowBitmap();
 }
 
-bool main_character::move()
+
+void main_character::move()
 {
 	if (is_falling == false) 
 	{
-		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 8); //±±¨î¤W¤É³t«×
-		if (img[is_faceright].GetTop() <= y * 60 - 60) //¸õÅD°ª«×
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 8); 
+		if (img[is_faceright].GetTop() <= 4 * 60 - 40) 
 			is_falling = true;
 	}
 	else 
 	{
-		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 8); //±±¨î¤U­°³t«×
-		if (img[is_faceright].GetTop() >= y * 60 - 30)//¤U­°°ª«×
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 8); 
+		if (img[is_faceright].GetTop() >= 4 * 60-10)
 		{
 			is_falling = false;
-			return false;
+			is_moving = false;
 		}
 	}
-	return true;
 }
+
+void monster::move()
+{
+	if (is_falling == false)
+	{
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 8);
+		if (img[is_faceright].GetTop() <= y * 60 - 40)
+			is_falling = true;
+	}
+	else
+	{
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 8);
+		if (img[is_faceright].GetTop() >= y * 60 - 10)
+		{
+			is_falling = false;
+			is_moving = false;
+		}
+	}
+}
+
+

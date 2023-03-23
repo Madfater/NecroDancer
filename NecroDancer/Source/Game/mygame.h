@@ -40,6 +40,7 @@
 
 
 #include "game_map.h"
+#include "camera.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -92,7 +93,9 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		camera camera;
+		game_map m ;
+		camera c ;
+		bool is_moving = false;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
