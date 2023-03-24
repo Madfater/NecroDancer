@@ -7,8 +7,9 @@ class character
 {
 	protected:
 		int HP;
-		int x;
-		int y;
+		int map_x;
+		int map_y;
+		int move_position = -1;
 		bool is_faceright;
 		bool is_falling = false;
 		bool is_moving = false;
@@ -17,17 +18,18 @@ class character
 		vector<game_framework::CMovingBitmap> img = { img_left ,img_right };
 	public:
 		character::character(int, vector<vector<string>>, COLORREF);
+		virtual ~character() = default;
+		virtual void move() = 0;
 		int get_x();
 		int get_y();
-		void set_is_moving();
 		bool get_is_moving();
 		bool get_faceright();
-		void show();
+		void set_move_position(int);
 		void set_position_camera(int, int);
 		void set_position_map(int, int);
 		void set_faceright(bool);
-		virtual void move() = 0;
-		virtual ~character() = default;
+		void moving();
+		void show();
 
 };
 

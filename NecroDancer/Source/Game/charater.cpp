@@ -22,21 +22,21 @@ void character::set_position_camera(int camera_x, int camera_y)
 
 void character::set_position_map(int _x, int _y)
 {
-	x = _x;
-	y = _y;
+	map_x = _x;
+	map_y = _y;
 }
 
 int character::get_x()
 {
-	return x;
+	return map_x;
 }
 
 int character::get_y()
 {
-	return y;
+	return map_y;
 }
 
-void character::set_is_moving()
+void character::moving()
 {
 	is_moving = true;
 }
@@ -48,6 +48,11 @@ bool character::get_is_moving()
 
 bool character::get_faceright() {
 	return is_faceright;
+}
+
+void character::set_move_position(int position)
+{
+	move_position = position;
 }
 
 void character::set_faceright(bool _is_faceright) {
@@ -65,13 +70,13 @@ void main_character::move()
 	if (is_falling == false) 
 	{
 		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 8); 
-		if (img[is_faceright].GetTop() <= 4 * 60 - 40) 
+		if (img[is_faceright].GetTop() <= move_position * 60 - 40)
 			is_falling = true;
 	}
 	else 
 	{
 		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 8); 
-		if (img[is_faceright].GetTop() >= 4 * 60-10)
+		if (img[is_faceright].GetTop() >= move_position * 60-10)
 		{
 			is_falling = false;
 			is_moving = false;
@@ -84,13 +89,13 @@ void monster::move()
 	if (is_falling == false)
 	{
 		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 8);
-		if (img[is_faceright].GetTop() <= y * 60 - 40)
+		if (img[is_faceright].GetTop() <= move_position * 60 - 40)
 			is_falling = true;
 	}
 	else
 	{
 		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 8);
-		if (img[is_faceright].GetTop() >= y * 60 - 10)
+		if (img[is_faceright].GetTop() >= move_position * 60 - 10)
 		{
 			is_falling = false;
 			is_moving = false;

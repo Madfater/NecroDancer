@@ -19,7 +19,6 @@ void game_map::init()
 
 	characters.push_back(new main_character{ 3,img_player,RGB(0,0,0) });//player
 	characters[0]->set_position_map(start_x, start_y);
-	characters[0]->set_position_camera(7, 4);
 	
 	characters.push_back(new monster{ 3,img_monsters[0],RGB(0,0,0) });
 	characters[1]->set_position_map(1, 1);

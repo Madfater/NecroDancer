@@ -39,23 +39,36 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	m.init();
 	c.init(&m);
 }
+bool is_collide(character* chr,vector<character*> chrs,int d)
+{
+	for (character* &i : chrs)
+		if (i->get_x() == chr->get_x() + direction_x[d] && i->get_y() == chr->get_y() + direction_y[d])
+			return false;
+	return true;
+}
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	int direction = nChar - 37;
-	character* player = m.characters[0];
 	if(direction>=0 && direction<=3)
 	{
-		
+		character* player = m.characters[0];
+
 		if (direction == 0)
 			player->set_faceright(false);
 		else if (direction == 2)
 			player->set_faceright(true);
 
-		if (m.get_block_info(player->get_x() + direction_x[direction], player->get_y() + direction_y[direction])->type == 0)
+		for (auto &i : m.characters)
 		{
-			player->set_is_moving();
-			player->set_position_map(player->get_x() + direction_x[direction],player->get_y() + direction_y[direction]);
+			if (m.get_block_info(i->get_x() + direction_x[direction], i->get_y() + direction_y[direction])->type == 0 && is_collide(i, m.characters, direction))
+			{
+				i->set_position_map(i->get_x() + direction_x[direction], i->get_y() + direction_y[direction]);
+				i->set_move_position(4 - (player->get_y() - i->get_y()));
+				i->moving();
+				for (auto &j : m.characters)
+					j->set_position_camera(7 - (player->get_x() - j->get_x()), 4 - (player->get_y() - j->get_y()));
+			}
 		}
 	}
 }

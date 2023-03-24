@@ -95,7 +95,6 @@ namespace game_framework {
 	private:
 		game_map m ;
 		camera c ;
-		bool is_moving = false;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
