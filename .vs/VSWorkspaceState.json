@@ -3,10 +3,8 @@
     "",
     "\\NecroDancer",
     "\\NecroDancer\\Source",
-    "\\NecroDancer\\Source\\Core",
-    "\\NecroDancer\\Source\\Game",
-    "\\NecroDancer\\Source\\Library"
+    "\\NecroDancer\\Source\\Game"
   ],
-  "SelectedNode": "\\NecroDancer\\Source\\Core\\StdAfx.cpp",
+  "SelectedNode": "\\NecroDancer\\game.sln",
   "PreviewInSolutionExplorer": false
 }

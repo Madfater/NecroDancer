@@ -40,7 +40,7 @@
 
 
 #include "game_map.h"
-
+#include "tempo.h"
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
 	// Constants
@@ -93,6 +93,8 @@ namespace game_framework {
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
 		camera camera;
+		tempo tempo;
+		int show_count = 0;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

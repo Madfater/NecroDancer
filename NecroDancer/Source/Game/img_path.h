@@ -9,6 +9,8 @@ const string img_wall ="resources/picture/wall.bmp";
 const string img_wall_half = "resources/picture/wall_cut.bmp";
 const string img_floor = "resources/picture/floor.bmp";
 const string img_menu = "resources/picture/mainmenu.bmp";
+const string img_beat = "resources/picture/beat.bmp";
+const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/picture/heart2.bmp"	 };
 const vector<vector<string>> img_player = 
 { 
 	{	
