@@ -9,9 +9,8 @@ class tempo
 		vector<game_framework::CMovingBitmap> beats_left;
 		vector<game_framework::CMovingBitmap> beats_right;
 		game_framework::CMovingBitmap heart;
-		bool _is_touched = true;
-		bool _is_jumped = false;
-		bool is_touched();
+		bool _has_moved = false; //only jump once this determine if player has jumped
+		bool if_shouldjump();
 		void init();
 		void beatspawn();
 		void show();

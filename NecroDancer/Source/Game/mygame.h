@@ -94,7 +94,6 @@ namespace game_framework {
 	private:
 		camera camera;
 		tempo tempo;
-		int show_count = 0;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

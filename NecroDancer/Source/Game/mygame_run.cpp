@@ -43,11 +43,9 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	if (tempo.is_touched() && !tempo._is_jumped)
+	if (tempo.if_shouldjump())
 	{
 		camera.keydown(nChar);
-		tempo._is_touched = false;
-		tempo._is_jumped = true;
 	}
 }
 
@@ -78,11 +76,6 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動
 
 void CGameStateRun::OnShow()
 {
-	show_count++;
-	if (show_count > 150) {
-		tempo._is_touched = false;
-		show_count = 0;
-	}
 	camera.show();
 	tempo.show();
 }
