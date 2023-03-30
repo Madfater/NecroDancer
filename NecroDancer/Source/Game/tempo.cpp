@@ -3,8 +3,8 @@
 #include "tempo.h"
 #include "img_path.h"
 
-#define _interval_right 20
-#define _interval_left 380
+#define interval_right 20
+#define interval_left 380
 #define left_beat_start_pos 0
 #define left_beat_end_pos 400
 #define right_beat_start_pos 900
@@ -46,7 +46,7 @@ void tempo::beatspawn()
 bool tempo::if_shouldjump()
 {
 	for (int i = 0; i < beats_num; i++) {
-		if (beats_left[i].GetLeft() > _interval_left || beats_left[i].GetLeft() < _interval_right) {
+		if (beats_left[i].GetLeft() > interval_left || beats_left[i].GetLeft() < interval_right) {
 			if (_has_moved) {
 				return false;
 			}
@@ -64,7 +64,7 @@ void tempo::show()
 		if (beats_left[i].GetLeft() > left_beat_end_pos) {
 			beats_left[i].SetTopLeft(left_beat_start_pos, beat_y);
 		}
-		if (beats_left[i].GetLeft() > _interval_right && beats_left[i].GetLeft() < _interval_right+10) {
+		if (beats_left[i].GetLeft() > interval_right && beats_left[i].GetLeft() < interval_right+10) {
 			_has_moved = false;
 		}
 	}
