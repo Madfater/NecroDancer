@@ -2,6 +2,8 @@
 
 #include "stdafx.h"
 #include "../Library/gameutil.h"
+#include "../Library/audio.h"
+//#include "../Library/gamecore.h"
 #include "img_path.h"
 #include <string>
 #include <vector>

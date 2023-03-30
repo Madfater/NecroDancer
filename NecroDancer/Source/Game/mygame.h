@@ -40,6 +40,7 @@
 
 
 #include "game_map.h"
+#include "tempo.h"
 #include "camera.h"
 
 namespace game_framework {
@@ -93,6 +94,7 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
+		tempo tempo;
 		game_map m ;
 		camera c ;
 	};

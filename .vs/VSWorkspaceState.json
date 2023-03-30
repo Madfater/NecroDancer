@@ -3,9 +3,8 @@
     "",
     "\\NecroDancer",
     "\\NecroDancer\\Source",
-    "\\NecroDancer\\Source\\Game",
-    "\\NecroDancer\\Source\\Library"
+    "\\NecroDancer\\Source\\Game"
   ],
-  "SelectedNode": "\\NecroDancer\\Source\\Game\\camera.cpp",
+  "SelectedNode": "\\NecroDancer\\game.sln",
   "PreviewInSolutionExplorer": false
 }

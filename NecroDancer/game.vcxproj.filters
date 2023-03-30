@@ -60,7 +60,7 @@
     <ClCompile Include="Source\Game\charater.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Game\camera.cpp">
+    <ClCompile Include="Source\Game\tempo.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,13 +107,13 @@
     <ClInclude Include="Source\Game\character.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Game\camera.h">
+    <ClInclude Include="Source\Game\tempo.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\Core\game.rc">
-      <Filter>MFC</Filter>
+      <Filter>GameLibrary</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

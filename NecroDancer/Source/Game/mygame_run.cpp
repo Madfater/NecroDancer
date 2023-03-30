@@ -36,6 +36,9 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
+	tempo.init();
+	//CAudio music1();
+	//music1.load(0, "D:\OOP\2023s\teamproject\NecroDancer\NecroDancer\Resources\audio\zone1_1.wav");
 	m.init();
 	c.init(&m);
 }
@@ -49,25 +52,28 @@ bool is_collide(character* chr,vector<character*> chrs,int d)
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	int direction = nChar - 37;
-	if(direction>=0 && direction<=3)
+	if (tempo.if_shouldjump())
 	{
-		character* player = m.characters[0];
-
-		if (direction == 0)
-			player->set_faceright(false);
-		else if (direction == 2)
-			player->set_faceright(true);
-
-		for (auto &i : m.characters)
+		int direction = nChar - 37;
+		if(direction>=0 && direction<=3)
 		{
-			if (m.get_block_info(i->get_x() + direction_x[direction], i->get_y() + direction_y[direction])->type == 0 && is_collide(i, m.characters, direction))
+			character* player = m.characters[0];
+
+			if (direction == 0)
+				player->set_faceright(false);
+			else if (direction == 2)
+				player->set_faceright(true);
+
+			for (auto &i : m.characters)
 			{
-				i->set_position_map(i->get_x() + direction_x[direction], i->get_y() + direction_y[direction]);
-				i->set_move_position(4 - (player->get_y() - i->get_y()));
-				i->moving();
-				for (auto &j : m.characters)
-					j->set_position_camera(7 - (player->get_x() - j->get_x()), 4 - (player->get_y() - j->get_y()));
+				if (m.get_block_info(i->get_x() + direction_x[direction], i->get_y() + direction_y[direction])->type == 0 && is_collide(i, m.characters, direction))
+				{
+					i->set_position_map(i->get_x() + direction_x[direction], i->get_y() + direction_y[direction]);
+					i->set_move_position(4 - (player->get_y() - i->get_y()));
+					i->moving();
+					for (auto &j : m.characters)
+						j->set_position_camera(7 - (player->get_x() - j->get_x()), 4 - (player->get_y() - j->get_y()));
+				}
 			}
 		}
 	}
@@ -100,5 +106,6 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動
 
 void CGameStateRun::OnShow()
 {
+	tempo.show();
 	c.show();
 }

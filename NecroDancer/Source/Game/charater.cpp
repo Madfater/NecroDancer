@@ -3,6 +3,7 @@
 #include "character.h"
 #include "img_path.h"
 
+character::character(int _HP, int _x, int _y,vector<vector<string>> files, COLORREF color)
 character::character(int _HP, vector<vector<string>> files, COLORREF color)
 {
 	HP = _HP;
@@ -12,6 +13,8 @@ character::character(int _HP, vector<vector<string>> files, COLORREF color)
 		img[i].SetAnimation(120, false);
 	}
 	is_faceright = true;
+	x = _x;
+	y = _y;
 }
 
 void character::set_position_camera(int camera_x, int camera_y)
