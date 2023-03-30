@@ -2,33 +2,47 @@
 
 #include "../Library/gameutil.h"
 
+
 class character
 {
-	public:
-		character::character(int, int, int,vector<vector<string>>, COLORREF);
-		int get_x();
-		int get_y();
-		bool get_faceright();
-		void show();
-		void set_faceright(bool _is_faceright);
-		virtual bool move() = 0;
-		virtual ~character() = default;
 	protected:
 		int HP;
-		int x;
-		int y;
+		int map_x;
+		int map_y;
+		int move_position = -1;
 		bool is_faceright;
+		bool is_falling = false;
+		bool is_moving = false;
 		game_framework::CMovingBitmap img_left;
 		game_framework::CMovingBitmap img_right;
 		vector<game_framework::CMovingBitmap> img = { img_left ,img_right };
+	public:
+		character::character(int, vector<vector<string>>, COLORREF);
+		virtual ~character() = default;
+		virtual void move() = 0;
+		int get_x();
+		int get_y();
+		bool get_is_moving();
+		bool get_faceright();
+		void set_move_position(int);
+		void set_position_camera(int, int);
+		void set_position_map(int, int);
+		void set_faceright(bool);
+		void moving();
+		void show();
 
 };
 
 class main_character : public character
 {
 	public:
-		main_character(int HP, int x, int y, vector<vector<string>> files,  COLORREF color) : character(HP, x, y, files,color) {};
-		bool move();
-	private:
-		bool is_falling = false;
+		main_character(int HP, vector<vector<string>> files,  COLORREF color) : character(HP, files,color) {};
+		void move();
+};
+
+class monster :public character
+{
+	public:
+		monster(int HP, vector<vector<string>> files, COLORREF color) : character(HP, files, color) {};
+		void move();
 };

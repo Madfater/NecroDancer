@@ -6,133 +6,60 @@
 //#include "../Library/gamecore.h"
 #include "img_path.h"
 #include <string>
-
+#include <vector>
 #include "game_map.h"
 
 #define _wall 1
 #define _floor 0
 
-using namespace game_framework;
-
-void camera::init()
+void game_map::init()
 {
-	//CSpecialEffect time;
-	player = new main_character(3, 7, 4, img_player, RGB(0, 0, 0));
-	position_x = g.get_start_position()[0];
-	position_y = g.get_start_position()[1];
+	start_x = 2;
+	start_y = 2;
+	map_height = 10;
+	map_width = 10;
 
-	for (int y = 0; y < 9; y++)
-		for (int x = 0; x < 15; x++)
-			camera[y][x].LoadBitmapByString({ img_floor,img_wall,img_wall_half });
-}
+	characters.push_back(new main_character{ 3,img_player,RGB(0,0,0) });//player
+	characters[0]->set_position_map(start_x, start_y);
+	
+	characters.push_back(new monster{ 3,img_monsters[0],RGB(0,0,0) });
+	characters[1]->set_position_map(1, 1);
 
-void camera::show()
-{
+	characters.push_back(new monster{ 3,img_monsters[1],RGB(0,0,0) });
+	characters[2]->set_position_map(3, 1);
 
-	for (int y = 0; y < 9; y++)
+	for (int y = 0; y < 10; y++)
 	{
-		for (int x = 0; x < 15; x++)
+		blocks.push_back(vector<block>());
+		for (int x = 0; x < 10; x++)
 		{
-			if (position_x - 7 + x < 0 || position_y - 4 + y < 0 || position_x - 7 + x >=20 || position_y - 4 + y >=10 )
-			{
-				continue;
-			}
-			switch (g.get_block_info(position_x - 7 + x, position_y - 4 + y))
-			{
-				case _wall:
-					if (y == 0)
-					{
-						camera[y][x].SetFrameIndexOfBitmap(2);
-						camera[y][x].SetTopLeft(x * 60, y * 60);
-					}
-					else
-					{
-						camera[y][x].SetFrameIndexOfBitmap(1);
-						camera[y][x].SetTopLeft(x * 60, (y * 60) - 38);
-					}
-					break;
-				case _floor:
-					camera[y][x].SetFrameIndexOfBitmap(0);
-					camera[y][x].SetTopLeft(x * 60, y * 60);
-					break;
-				default:
-					break;
-			}
-			camera[y][x].ShowBitmap();
-
-			if(x==player->get_x() && y==player->get_y())
-				player->show();
+			if(y==0 || x==0 || y==9 || x==9)
+				blocks[y].push_back({ _wall });
+			else
+				blocks[y].push_back({ _floor });
 		}
 	}
-
-	if (is_moving)
-		is_moving = player->move();
 }
 
-void camera::keydown(UINT nChar)
+int game_map::get_start_x()
 {
-	
-	switch (nChar)
-	{
-		case 37:
-			//left
-			is_moving = true;
-			player->set_faceright(false);
-			if (g.get_block_info(position_x - 1, position_y) == _wall)
-				is_moving = false;
-			else
-			{
-				player->move();
-				position_x--;
-			}
-			break;
-		case 38:
-			//up
-			is_moving = true;
-			if (g.get_block_info(position_x, position_y - 1) == _wall)
-				is_moving = false;
-			else
-			{
-				player->move();
-				position_y--;
-			}
-			break;
-		case 39:
-			//right
-			is_moving = true;
-			player->set_faceright(true);
-			if (g.get_block_info(position_x + 1, position_y) == _wall)
-				is_moving = false;
-			else
-			{
-				player->move();
-				position_x++;
-			}
-			break;
-		case 40:
-			//down
-			is_moving = true;
-			if (g.get_block_info(position_x, position_y + 1) == _wall)
-				is_moving = false;
-			else
-			{
-				player->move();
-				position_y++;
-			}
-			break;
-		default:
-			break;
-	}
-
+	return start_x;
 }
 
-int* game_map::get_start_position()
+int game_map::get_start_y()
 {
-	int *rst = start;
-	return rst;
+	return start_y;
 }
 
-int game_map::get_block_info(int x,int y)
+bool game_map::is_out_of_range(int x, int y)
 {
-	return _map[y][x];
+	if (y >= map_height || y < 0 || x >= map_width || x < 0)
+		return true;
+
+	return false;
+}
+
+block* game_map::get_block_info(int x,int y)
+{
+	return &blocks[y][x];
 }
