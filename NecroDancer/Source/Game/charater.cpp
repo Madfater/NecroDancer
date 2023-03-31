@@ -4,7 +4,6 @@
 #include "img_path.h"
 
 character::character(int _HP, int _x, int _y,vector<vector<string>> files, COLORREF color)
-character::character(int _HP, vector<vector<string>> files, COLORREF color)
 {
 	HP = _HP;
 	for (int i = 0; i < 2; i++)
@@ -15,6 +14,16 @@ character::character(int _HP, vector<vector<string>> files, COLORREF color)
 	is_faceright = true;
 	x = _x;
 	y = _y;
+}
+character::character(int _HP, vector<vector<string>> files, COLORREF color)
+{
+	HP = _HP;
+	for (int i = 0; i < 2; i++)
+	{
+		img[i].LoadBitmapByString(files[i], color);
+		img[i].SetAnimation(120, false);
+	}
+	is_faceright = true;
 }
 
 void character::set_position_camera(int camera_x, int camera_y)

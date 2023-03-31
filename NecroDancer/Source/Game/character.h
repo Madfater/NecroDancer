@@ -9,6 +9,7 @@ class character
 		int HP;
 		int map_x;
 		int map_y;
+		int x, y;
 		int move_position = -1;
 		bool is_faceright;
 		bool is_falling = false;
@@ -17,7 +18,8 @@ class character
 		game_framework::CMovingBitmap img_right;
 		vector<game_framework::CMovingBitmap> img = { img_left ,img_right };
 	public:
-		character::character(int, vector<vector<string>>, COLORREF);
+		character(int _HP, int _x, int _y, vector<vector<string>> files, COLORREF color);
+		character(int, vector<vector<string>>, COLORREF);
 		virtual ~character() = default;
 		virtual void move() = 0;
 		int get_x();

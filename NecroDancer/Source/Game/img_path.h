@@ -15,7 +15,7 @@ const int direction_x[4] = { -1,0,1,0 };//left->up->right->down
 const int direction_y[4] = { 0,-1,0,1 };
 
 const vector<string> img_background = { "resources/picture/floor.bmp","resources/picture/wall.bmp"};
-const string img_menu = "resources/picture/mainmenu.bmp";
+//const string img_menu = "resources/picture/mainmenu.bmp";
 const vector<vector<string>> img_player={ 
 											{	
 												"resources/picture/player_left1.bmp",
