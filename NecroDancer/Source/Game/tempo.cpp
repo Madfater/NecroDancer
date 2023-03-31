@@ -12,7 +12,7 @@
 #define beat_y 400
 #define beats_space 100
 #define beats_num 4
-#define beat_speed 2
+#define beat_speed 5
 
 using namespace game_framework;
 
@@ -64,7 +64,7 @@ void tempo::show()
 		if (beats_left[i].GetLeft() > left_beat_end_pos) {
 			beats_left[i].SetTopLeft(left_beat_start_pos, beat_y);
 		}
-		if (beats_left[i].GetLeft() > interval_right && beats_left[i].GetLeft() < interval_right+10) {
+		if (beats_left[i].GetLeft() > interval_right && beats_left[i].GetLeft() < interval_right+beats_space) {
 			_has_moved = false;
 		}
 	}
