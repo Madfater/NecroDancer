@@ -19,14 +19,16 @@ void game_map::init()
 	map_height = 10;
 	map_width = 10;
 
-	characters.push_back(new main_character{ 3,img_player,RGB(0,0,0) });//player
-	characters[0]->set_position_map(start_x, start_y);
-	
-	characters.push_back(new monster{ 3,img_monsters[0],RGB(0,0,0) });
-	characters[1]->set_position_map(1, 1);
+	player = new main_character(3,1);
+	player->set_map_position(start_x, start_y);
+	player->set_camera_position(7, 4);
 
-	characters.push_back(new monster{ 3,img_monsters[1],RGB(0,0,0) });
-	characters[2]->set_position_map(3, 1);
+	characters.push_back(new bat);
+	characters[0]->set_map_position(1, 1);
+
+	characters.push_back(new slime);
+	characters[1]->set_map_position(3, 1);
+
 
 	for (int y = 0; y < 10; y++)
 	{
@@ -61,5 +63,12 @@ bool game_map::is_out_of_range(int x, int y)
 
 block* game_map::get_block_info(int x,int y)
 {
-	return &blocks[y][x];
+	try
+	{
+		return &blocks[y][x];
+	}
+	catch (const std::exception&)
+	{
+		return nullptr;
+	}
 }

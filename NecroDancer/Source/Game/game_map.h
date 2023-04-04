@@ -20,6 +20,7 @@ class game_map
 		int map_width;
 		int map_height;
 	public:
+		character* player;
 		vector<character *> characters;
 		void init();
 		int get_start_x();
