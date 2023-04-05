@@ -38,6 +38,7 @@ class character
 
 		virtual void attack(character*) ;
 		virtual void move_animation();
+		void move_step_increase();
 		void lose_HP(int);
 		void show();
 };

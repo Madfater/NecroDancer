@@ -8,8 +8,6 @@
 #include "../Library/gamecore.h"
 #include "mygame.h"
 #include "img_path.h"
-#include <iostream>
-
 using namespace game_framework;
 
 /////////////////////////////////////////////////////////////////////////////
@@ -65,12 +63,15 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 				m.player->set_moving();
 				for (auto &i : m.characters)
 				{
-					
-					if (1)
+					int x = i->get_map_x() + direction_x[i->get_move_direction()];
+					int y = i->get_map_y() + direction_y[i->get_move_direction()];
+					int is_wall = m.get_block_info(x, y)->type;
+					if (is_wall == 0)
 					{
 						i->set_map_position(i->get_map_x() + direction_x[i->get_move_direction()], i->get_map_y() + direction_y[i->get_move_direction()]);
 						i->set_moving();
 					}
+					i->move_step_increase();
 				}
 			}
 			for (auto &j : m.characters)

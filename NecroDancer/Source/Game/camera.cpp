@@ -50,6 +50,9 @@ void camera::show()
 					i->show();
 		}
 	}
+	if (_map->player->get_is_moving())
+		_map->player->move_animation();
+
 	for (auto &i : _map->characters)
 		if (i->get_is_moving())
 			i->move_animation();

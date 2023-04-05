@@ -62,7 +62,6 @@ void character::set_map_position(int x, int y)
 void character::set_moving()
 {
 	is_moving = true;
-	move_step++;
 }
 
 void character::set_camera_position(int x, int y)
@@ -111,6 +110,10 @@ void character::move_animation()
 			is_moving = false;
 		}
 	}
+}
+void character::move_step_increase()
+{
+	move_step++;
 }
 //---------------------------------------------------------
 //bat override
