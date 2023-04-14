@@ -52,13 +52,13 @@ class main_character : public character
 class bat :public character
 {
 	public:
-		bat() : character(1, 1, img_monsters[0], RGB(0, 0, 0)) { move_direction = { 0,2,2,0 }; };
+		bat() : character(1, 1, img_monsters[0], RGB(0, 0, 0)) { move_direction = { 4,4,0,4,4,2 }; };
 };
 
 class slime :public character
 {
 	public:
-		slime() : character(1, 1, img_monsters[1], RGB(0, 0, 0)) { move_direction = { 1,3,3,1 }; };
+		slime() : character(1, 1, img_monsters[1], RGB(0, 0, 0)) { move_direction = { 4,4, 1,4,4,3}; };
 };
 
 class dragon :public character

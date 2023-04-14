@@ -57,6 +57,21 @@ bool tempo::if_shouldjump()
 	return false;
 }
 
+bool tempo::if_afterjump()
+{
+	bool jump = false;
+	for (int i = 0; i < beats_num; i++) {
+		if (beats_left[i].GetLeft() > interval_left || beats_left[i].GetLeft() < interval_right) 
+		{
+			jump = true;
+		}
+	}
+	if (jump == true && _has_moved == false)
+		return true;
+	else
+		return false;
+}
+
 void tempo::show() 
 {	
 	for (int i = 0; i < beats_num; i++) {

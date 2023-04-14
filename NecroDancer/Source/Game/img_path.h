@@ -6,8 +6,8 @@
 #include <vector>
 
 
-const int direction_x[4] = { -1,0,1,0 };//left->up->right->down
-const int direction_y[4] = { 0,-1,0,1 };
+const int direction_x[5] = { -1,0,1,0,0 };//left->up->right->down->stop
+const int direction_y[5] = { 0,-1,0,1,0 };
 
 const string img_menu = "resources/picture/mainmenu.bmp";
 const string img_beat = "resources/picture/beat.bmp";
