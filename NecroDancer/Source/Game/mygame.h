@@ -42,6 +42,7 @@
 #include "game_map.h"
 #include "tempo.h"
 #include "camera.h"
+#include "interface.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -97,6 +98,8 @@ namespace game_framework {
 		tempo tempo;
 		game_map m ;
 		camera c ;
+		_interface i;
+
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

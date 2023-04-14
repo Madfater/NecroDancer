@@ -24,6 +24,7 @@ class character
 		virtual void move() = 0;
 		int get_x();
 		int get_y();
+		int get_hp();
 		bool get_is_moving();
 		bool get_faceright();
 		void set_move_position(int);
