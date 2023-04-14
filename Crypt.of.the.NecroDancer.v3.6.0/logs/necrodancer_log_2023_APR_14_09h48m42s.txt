@@ -1,0 +1,26 @@
+DirectX: Creating window, w=976, h=579
+DirectX: Initializing
+DirectX: Initialized
+DirectX: Creating device
+DirectX: Created device
+DirectX: Setting viewport
+WINDOW SUCCESSFULLY INITIALIZED
+DirectX: Initializing pipeline
+DirectX: Done initializing pipeline
+NecroDancer version v2.59 loading...
+OnCreate: Initializing Steam
+GoG: Initializing galaxy API1
+GoG: Initializing galaxy API2
+GoG: Initializing galaxy API3
+OnCreate: Updating screen size
+Updating screen size: 960x540
+OnCreate: Starting FMOD
+Initializing FMOD values
+1024
+2
+0
+0
+OnCreate: Setting update rate
+GLOBAL_SCALE_FACTOR: 2.0
+Loading ControllerMainMenu...
+LoadPlayerDataXML(), cloudTimestamp=0

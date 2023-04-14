@@ -244,7 +244,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Source\Game\camera.cpp" />
-    <ClCompile Include="Source\Game\charater.cpp" />
+    <ClCompile Include="Source\Game\character.cpp" />
     <ClCompile Include="Source\Game\game_map.cpp" />
     <ClCompile Include="Source\Game\interface.cpp" />
     <ClCompile Include="Source\Game\mygame_initialize.cpp" />

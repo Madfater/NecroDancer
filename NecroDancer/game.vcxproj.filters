@@ -57,14 +57,13 @@
     <ClCompile Include="Source\Game\game_map.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Game\charater.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Game\tempo.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Game\camera.cpp" />
-    <ClCompile Include="Source\Game\interface.cpp">
+    <ClCompile Include="Source\Game\camera.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\character.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -93,6 +92,9 @@
     <ClInclude Include="Source\Core\Resource.h">
       <Filter>MFC</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Core\StdAfx.h">
+      <Filter>MFC</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Game\config.h">
       <Filter>MyGame</Filter>
     </ClInclude>
@@ -112,12 +114,6 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game\camera.h" />
-    <ClInclude Include="Source\Core\StdAfx.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\interface.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\Core\game.rc">

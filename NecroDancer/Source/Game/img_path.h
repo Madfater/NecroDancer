@@ -5,15 +5,13 @@
 #include <string>
 #include <vector>
 
-const string img_wall ="resources/picture/wall.bmp";
-const string img_wall_half = "resources/picture/wall_cut.bmp";
-const string img_floor = "resources/picture/floor.bmp";
+
+const int direction_x[5] = { -1,0,1,0,0 };//left->up->right->down->stop
+const int direction_y[5] = { 0,-1,0,1,0 };
+
 const string img_menu = "resources/picture/mainmenu.bmp";
 const string img_beat = "resources/picture/beat.bmp";
 const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/picture/heart2.bmp"	 };
-const int direction_x[4] = { -1,0,1,0 };//left->up->right->down
-const int direction_y[4] = { 0,-1,0,1 };
-
 const vector<string> img_background = { "resources/picture/floor.bmp","resources/picture/wall.bmp"};
 //const string img_menu = "resources/picture/mainmenu.bmp";
 
