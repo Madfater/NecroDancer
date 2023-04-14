@@ -22,11 +22,11 @@ class character
 	public:
 		character::character(int,int, vector<vector<string>>, COLORREF);
 		virtual ~character() = default;
-
 		int get_map_x();
 		int get_map_y();
 		int get_camera_x();
 		int get_camera_y();
+		int get_hp();
 		bool get_is_moving();
 		bool get_faceright();
 		virtual int get_move_direction();

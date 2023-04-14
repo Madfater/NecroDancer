@@ -13,6 +13,12 @@ const string img_menu = "resources/picture/mainmenu.bmp";
 const string img_beat = "resources/picture/beat.bmp";
 const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/picture/heart2.bmp"	 };
 const vector<string> img_background = { "resources/picture/floor.bmp","resources/picture/wall.bmp"};
+//const string img_menu = "resources/picture/mainmenu.bmp";
+
+const string img_health_full = "resources/picture/heart.bmp";
+const string img_health_half = "resources/picture/heart_half.bmp";
+const string img_health_empty = "resources/picture/heart_empty.bmp";
+const string money = "resources/picture/heart_half.bmp";
 const vector<vector<string>> img_player={ 
 											{	
 												"resources/picture/player_left1.bmp",
