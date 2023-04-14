@@ -114,5 +114,9 @@ void monster::move()
 		}
 	}
 }
+int character::get_hp() {
+	return HP;
+}
+
 
 

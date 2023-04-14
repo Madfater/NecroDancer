@@ -37,6 +37,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
 	tempo.init();
+	i.init();
 	//CAudio music1();
 	//music1.load(0, "D:\OOP\2023s\teamproject\NecroDancer\NecroDancer\Resources\audio\zone1_1.wav");
 	m.init();
@@ -109,4 +110,5 @@ void CGameStateRun::OnShow()
 	
 	c.show();
 	tempo.show();
+	i.show();
 }
