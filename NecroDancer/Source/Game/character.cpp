@@ -37,6 +37,11 @@ int character::get_camera_y()
 	return camera_y;
 }
 
+int character::get_hp()
+{
+	return HP;
+}
+
 bool character::get_is_moving()
 {
 	return is_moving;
@@ -58,6 +63,7 @@ void character::set_map_position(int x, int y)
 	map_x = x;
 	map_y = y;
 }
+
 
 void character::set_moving()
 {

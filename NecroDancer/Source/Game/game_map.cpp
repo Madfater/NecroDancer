@@ -53,6 +53,16 @@ int game_map::get_start_y()
 	return start_y;
 }
 
+vector<character*> game_map::get_chr()
+{
+	return characters;
+}
+
+void game_map::pop_monster(int n)
+{
+	characters.erase(characters.begin() + n);
+}
+
 bool game_map::is_out_of_range(int x, int y)
 {
 	if (y >= map_height || y < 0 || x >= map_width || x < 0)

@@ -10,7 +10,7 @@ void camera::init(game_map* m)
 {
 	_map = m;
 
-	for (auto &i : _map->characters)
+	for (auto &i : _map->get_chr())
 		i->set_camera_position(7 - (_map->player->get_map_x() - i->get_map_x()), 4 - (_map->player->get_map_y() - i->get_map_y()));
 
 	for (int y = 0; y < 9; y++)
@@ -45,7 +45,7 @@ void camera::show()
 			if (x == 7 && y == 4)
 				_map->player->show();
 
-			for (auto &i : _map->characters)
+			for (auto &i : _map->get_chr())
 				if (i->get_camera_x() == x && i->get_camera_y()==y)
 					i->show();
 		}
@@ -53,7 +53,7 @@ void camera::show()
 	if (_map->player->get_is_moving())
 		_map->player->move_animation();
 
-	for (auto &i : _map->characters)
+	for (auto &i : _map->get_chr())
 		if (i->get_is_moving())
 			i->move_animation();
 }
