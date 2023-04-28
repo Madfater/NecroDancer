@@ -3,8 +3,8 @@
 #include "../Library/gameutil.h"
 #include "game_map.h"
 
-#define _wall 1
-#define _floor 0
+#define _wall 0
+#define _floor 1
 
 void camera::init(game_map* m)
 {
@@ -20,6 +20,13 @@ void camera::init(game_map* m)
 
 void camera::show()
 {
+	if (_map->player->get_is_moving())
+		_map->player->move_animation();
+
+	for (auto &i : _map->get_chr())
+		if (i->get_is_moving())
+			i->move_animation();
+
 	for (int y = 0; y < 9; y++)
 	{
 		for (int x = 0; x < 15; x++)
@@ -34,7 +41,7 @@ void camera::show()
 					camera_blocks[y][x].SetTopLeft(x * 60, (y * 60) - 38);
 					break;
 				case _floor:
-					camera_blocks[y][x].SetFrameIndexOfBitmap(_floor);
+					camera_blocks[y][x].SetFrameIndexOfBitmap(_floor+(x%2)+(y%2));
 					camera_blocks[y][x].SetTopLeft(x * 60, y * 60);
 					break;
 				default:
@@ -50,10 +57,5 @@ void camera::show()
 					i->show();
 		}
 	}
-	if (_map->player->get_is_moving())
-		_map->player->move_animation();
-
-	for (auto &i : _map->get_chr())
-		if (i->get_is_moving())
-			i->move_animation();
+	
 }

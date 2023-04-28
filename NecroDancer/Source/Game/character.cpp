@@ -103,13 +103,13 @@ void character::move_animation()
 {
 	if (is_falling == false) 
 	{
-		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 8); 
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 5); 
 		if (img[is_faceright].GetTop() <= camera_y * 60 - 40)
 			is_falling = true;
 	}
 	else 
 	{
-		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 8); 
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 5); 
 		if (img[is_faceright].GetTop() >= camera_y * 60-10)
 		{
 			is_falling = false;

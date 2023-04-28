@@ -9,8 +9,8 @@
 #include <vector>
 #include "game_map.h"
 
-#define _wall 1
-#define _floor 0
+#define _wall 0
+#define _floor 1
 
 void game_map::init()
 {

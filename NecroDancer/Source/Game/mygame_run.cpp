@@ -55,7 +55,7 @@ void move(int direction,game_map* m)
 {
 	if (direction >= 0 && direction <= 4)
 	{
-		if (m->get_block_info(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction])->type == 0 && is_collide(m->player, m->get_chr(), direction)==nullptr)
+		if (m->get_block_info(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction])->type == 1 && is_collide(m->player, m->get_chr(), direction)==nullptr)
 		{
 			m->player->set_map_position(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction]);
 			m->player->set_moving();
@@ -64,7 +64,7 @@ void move(int direction,game_map* m)
 				int x = i->get_map_x() + direction_x[i->get_move_direction()];
 				int y = i->get_map_y() + direction_y[i->get_move_direction()];
 				int is_wall = m->get_block_info(x, y)->type;
-				if (is_wall == 0 && is_collide(i, m->get_chr(), i->get_move_direction())==nullptr)
+				if (is_wall == 1 && is_collide(i, m->get_chr(), i->get_move_direction())==nullptr)
 				{
 					i->set_map_position(i->get_map_x() + direction_x[i->get_move_direction()], i->get_map_y() + direction_y[i->get_move_direction()]);
 					i->set_moving();
@@ -88,15 +88,7 @@ void move(int direction,game_map* m)
 				for (i = 0; i < m->get_chr().size(); i++)
 					if (m->get_chr()[i] == monster)
 						break;
-
 				m->pop_monster(i);
-				std::ofstream outfile("example.txt"); // 創建一個輸出文件流並打開文件
-				if (outfile.is_open()) { // 確認文件是否成功打開
-					outfile << i << std::endl;
-					outfile << monster->get_hp() << std::endl; // 寫入文本到文件
-					outfile << m->get_chr().size() << std::endl;
-					outfile.close(); // 關閉文件流
-				}
 			}
 		}
 		for (auto &j : m->get_chr())

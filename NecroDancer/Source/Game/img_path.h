@@ -12,7 +12,7 @@ const int direction_y[5] = { 0,-1,0,1,0 };
 const string img_menu = "resources/picture/mainmenu.bmp";
 const string img_beat = "resources/picture/beat.bmp";
 const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/picture/heart2.bmp"	 };
-const vector<string> img_background = { "resources/picture/floor.bmp","resources/picture/wall.bmp"};
+const vector<string> img_background = { "resources/picture/wall.bmp","resources/picture/floor_even.bmp","resources/picture/floor_odd.bmp" ,"resources/picture/floor_even.bmp" };
 //const string img_menu = "resources/picture/mainmenu.bmp";
 
 const string img_health_full = "resources/picture/heart.bmp";
