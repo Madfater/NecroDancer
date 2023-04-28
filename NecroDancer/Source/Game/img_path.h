@@ -37,10 +37,10 @@ const vector<vector<string>> img_player={
 const vector<vector<vector<string>>> img_monsters={
 													{
 														{
-															"resources/picture/bat1.bmp",
-															"resources/picture/bat2.bmp",
-															"resources/picture/bat3.bmp",
-															"resources/picture/bat4.bmp"
+															"resources/picture/bat_left1.bmp",
+															"resources/picture/bat_left2.bmp",
+															"resources/picture/bat_left3.bmp",
+															"resources/picture/bat_left4.bmp"
 														},
 														{
 															"resources/picture/bat1.bmp",
@@ -57,10 +57,10 @@ const vector<vector<vector<string>>> img_monsters={
 															"resources/picture/slime_fire4.bmp"
 														},
 														{
-															"resources/picture/slime_fire1.bmp",
-															"resources/picture/slime_fire2.bmp",
-															"resources/picture/slime_fire3.bmp",
-															"resources/picture/slime_fire4.bmp"
+															"resources/picture/slime_fire_right1.bmp",
+															"resources/picture/slime_fire_right2.bmp",
+															"resources/picture/slime_fire_right3.bmp",
+															"resources/picture/slime_fire_right4.bmp"
 														}
 													},
 													{
