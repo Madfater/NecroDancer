@@ -1,8 +1,8 @@
 #pragma once
-
 #include "../Library/gameutil.h"
-#include "character.h"
 #include "img_path.h"
+#include "character.h"
+#include "player.h"
 #include <string>
 #include <vector>
 
@@ -21,12 +21,13 @@ class game_map
 		int map_height;
 		vector<character *> characters;
 	public:
-		character* player;
+		Player* player;
 		void init();
 		int get_start_x();
 		int get_start_y();
+		
 		vector<character *> get_chr();
 		void pop_monster(int);
 		bool is_out_of_range(int x, int y);
-		block* get_block_info(int x, int y);
+		int get_block_info(int x, int y);
 };

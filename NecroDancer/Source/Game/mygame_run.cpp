@@ -43,59 +43,56 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	m.init();
 	c.init(&m);
 }
-character* is_collide(character* chr,vector<character*> chrs,int d)
-{
-	for (character* &i : chrs)
-		if (i->get_map_x() == chr->get_map_x() + direction_x[d] && i->get_map_y() == chr->get_map_y() + direction_y[d])
-			return i;
-	return nullptr;
-}
 
 void move(int direction,game_map* m)
 {
-	if (direction >= 0 && direction <= 4)
+	if (direction >= 0 && direction <= 3)
 	{
-		if (m->get_block_info(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction])->type == 1 && is_collide(m->player, m->get_chr(), direction)==nullptr)
+		switch (direction)
 		{
-			m->player->set_map_position(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction]);
-			m->player->set_moving();
-			for (auto &i : m->get_chr())
-			{
-				int x = i->get_map_x() + direction_x[i->get_move_direction()];
-				int y = i->get_map_y() + direction_y[i->get_move_direction()];
-				int is_wall = m->get_block_info(x, y)->type;
-				if (is_wall == 1 && is_collide(i, m->get_chr(), i->get_move_direction())==nullptr)
-				{
-					i->set_map_position(i->get_map_x() + direction_x[i->get_move_direction()], i->get_map_y() + direction_y[i->get_move_direction()]);
-					i->set_moving();
-				}
-				else if (is_collide(i, { m->player }, i->get_move_direction()))
-				{
-					i->attack(m->player);
-				}
-				i->move_step_increase();
-			}
+			case 0:
+				m->player->set_faceright(false);
+				break;
+			case 2:
+				m->player->set_faceright(true);
+				break;
+			default:
+				break;
 		}
-		else if (is_collide(m->player, m->get_chr(), direction))
-		{
-			character* monster = is_collide(m->player, m->get_chr(), direction);
 
-			m->player->attack(monster);
-
-			if (monster->get_hp() <= 0)
-			{
-				int i;
-				for (i = 0; i < m->get_chr().size(); i++)
-					if (m->get_chr()[i] == monster)
-						break;
-				m->pop_monster(i);
-			}
-		}
-		for (auto &j : m->get_chr())
+		int info = m->get_block_info(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction]);
+		switch (info)
 		{
-			int camera_x = 7 - (m->player->get_map_x() - j->get_map_x());
-			int camera_y = 4 - (m->player->get_map_y() - j->get_map_y());
-			j->set_camera_position(camera_x, camera_y);
+			case _wall:
+				break;
+			case _floor:
+				m->player->set_map_position(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction]);
+				m->player->set_moving();
+				for (auto &i : m->get_chr())
+				{
+					int x = i->get_map_x() + direction_x[i->get_move_direction()];
+					int y = i->get_map_y() + direction_y[i->get_move_direction()];
+	
+					switch (m->get_block_info(x, y))
+					{
+						case _wall:
+							break;
+						case _player:
+							m->player->lose_HP(i->get_damage());
+							break;
+						case _floor:
+							i->set_map_position(i->get_map_x() + direction_x[i->get_move_direction()], i->get_map_y() + direction_y[i->get_move_direction()]);
+							break;
+					} 
+					i->move_step_increase();
+				}
+				break;
+			default:
+				character* monster = m->get_chr()[info*-1-1];
+				m->player->attack(monster);
+				if (monster->get_hp() <= 0)
+					m->pop_monster(info*-1-1);
+				break;
 		}
 	}
 }

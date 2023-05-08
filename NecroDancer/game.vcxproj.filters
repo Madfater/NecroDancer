@@ -66,6 +66,10 @@
     <ClCompile Include="Source\Game\character.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Game\interface.cpp" />
+    <ClCompile Include="Source\Game\player.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Library\audio.h">
@@ -114,6 +118,10 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game\camera.h" />
+    <ClInclude Include="Source\Game\interface.h" />
+    <ClInclude Include="Source\Game\player.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\Core\game.rc">

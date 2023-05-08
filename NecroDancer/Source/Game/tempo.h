@@ -1,7 +1,6 @@
 #pragma once
-
-
 #include "../Library/gameutil.h"
+#include "img_path.h"
 
 class tempo
 {
