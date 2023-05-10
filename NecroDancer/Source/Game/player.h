@@ -14,6 +14,7 @@ class Player
 		bool is_falling = false;
 		bool is_moving = false;
 		vector<game_framework::CMovingBitmap> img;
+		game_framework::CMovingBitmap atk_img;
 
 	public:
 		Player::Player(int,int);
