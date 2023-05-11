@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\NecroDancer",
+    "\\NecroDancer\\Source",
+    "\\NecroDancer\\Source\\Library"
   ],
+  "SelectedNode": "\\NecroDancer\\Source\\Game",
   "PreviewInSolutionExplorer": false
 }

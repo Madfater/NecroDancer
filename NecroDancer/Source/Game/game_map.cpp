@@ -1,16 +1,5 @@
-#pragma once
-
 #include "stdafx.h"
-#include "../Library/gameutil.h"
-#include "../Library/audio.h"
-//#include "../Library/gamecore.h"
-#include "img_path.h"
-#include <string>
-#include <vector>
 #include "game_map.h"
-
-#define _wall 0
-#define _floor 1
 
 void game_map::init()
 {
@@ -19,9 +8,7 @@ void game_map::init()
 	map_height = 10;
 	map_width = 10;
 
-	player = new main_character(3,1);
-	player->set_map_position(start_x, start_y);
-	player->set_camera_position(7, 4);
+	player = new Player(start_x,start_y);
 
 	characters.push_back(new bat);
 	characters[0]->set_map_position(1, 1);
@@ -43,16 +30,6 @@ void game_map::init()
 	}
 }
 
-int game_map::get_start_x()
-{
-	return start_x;
-}
-
-int game_map::get_start_y()
-{
-	return start_y;
-}
-
 vector<character*> game_map::get_chr()
 {
 	return characters;
@@ -71,14 +48,14 @@ bool game_map::is_out_of_range(int x, int y)
 	return false;
 }
 
-block* game_map::get_block_info(int x,int y)
+int game_map::get_block_info(int x,int y)
 {
-	try
-	{
-		return &blocks[y][x];
-	}
-	catch (const std::exception&)
-	{
-		return nullptr;
-	}
+	if (player->get_map_x() == x && player->get_map_y() == y)
+		return _player;
+
+	for (int i = 0; i < characters.size(); i++)
+		if (characters[i]->get_map_x() == x && characters[i]->get_map_y() == y)
+			return -1*(i+1);
+
+	return blocks[x][y].type;
 }

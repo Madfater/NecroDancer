@@ -1,7 +1,5 @@
 #include "stdafx.h"
-#include "../Library/gameutil.h"
 #include "tempo.h"
-#include "img_path.h"
 
 #define interval_right 20
 #define interval_left 380

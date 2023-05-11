@@ -5,6 +5,11 @@
 #include <string>
 #include <vector>
 
+#define _wall 0
+#define _floor 1
+#define _player 2
+
+const int weapon_damage[1] = { 1 };
 
 const int direction_x[5] = { -1,0,1,0,0 };//left->up->right->down->stop
 const int direction_y[5] = { 0,-1,0,1,0 };
@@ -12,13 +17,35 @@ const int direction_y[5] = { 0,-1,0,1,0 };
 const string img_menu = "resources/picture/mainmenu.bmp";
 const string img_beat = "resources/picture/beat.bmp";
 const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/picture/heart2.bmp"	 };
-const vector<string> img_background = { "resources/picture/wall.bmp","resources/picture/floor_even.bmp","resources/picture/floor_odd.bmp" ,"resources/picture/floor_even.bmp" };
+const vector<string> img_background = { "resources/picture/wall.bmp","resources/picture/floor_even.bmp","resources/picture/floor_odd.bmp" };
 //const string img_menu = "resources/picture/mainmenu.bmp";
 
 const string img_health_full = "resources/picture/heart.bmp";
 const string img_health_half = "resources/picture/heart_half.bmp";
 const string img_health_empty = "resources/picture/heart_empty.bmp";
 const string money = "resources/picture/heart_half.bmp";
+const vector<vector<string>> img_attack_dagger = {//left up right down
+												{
+													"resources/picture/attack_dagger_left1.bmp",
+													"resources/picture/attack_dagger_left2.bmp",
+													"resources/picture/attack_dagger_left3.bmp"
+												},
+												{
+													"resources/picture/attack_dagger_up1.bmp",
+													"resources/picture/attack_dagger_up2.bmp",
+													"resources/picture/attack_dagger_up3.bmp"
+												},
+												{
+													"resources/picture/attack_dagger_right1.bmp",
+													"resources/picture/attack_dagger_right2.bmp",
+													"resources/picture/attack_dagger_right3.bmp"
+												},
+												{
+													"resources/picture/attack_dagger_down1.bmp",
+													"resources/picture/attack_dagger_down2.bmp",
+													"resources/picture/attack_dagger_down3.bmp"
+												},
+										};
 const vector<vector<string>> img_player={ 
 											{	
 												"resources/picture/player_left1.bmp",
