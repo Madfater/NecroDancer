@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "player.h"
 
-Player::Player(int x, int y)
+Player::Player(int _x, int _y)
 {
 	HP = 3;
 	weapon_id = 0;
@@ -12,8 +12,8 @@ Player::Player(int x, int y)
 		img[i].SetTopLeft(7 * 60, 4 * 60 - 10);
 		img[i].SetAnimation(100, false);
 	}
-	map_x = x;
-	map_y = y;
+	x = _x;
+	y = _y;
 }
 
 int Player::get_is_moving()
@@ -21,19 +21,24 @@ int Player::get_is_moving()
 	return is_moving;
 }
 
-int Player::get_map_x()
-{
-	return map_x;
-}
-
-int Player::get_map_y()
-{
-	return map_y;
-}
-
 int Player::get_hp()
 {
 	return HP;
+}
+
+int Player::get_weapon_id()
+{
+	return weapon_id;
+}
+
+int Player::get_x()
+{
+	return x;
+}
+
+int Player::get_y()
+{
+	return y;
 }
 
 void Player::set_moving()
@@ -41,10 +46,10 @@ void Player::set_moving()
 	is_moving = true;
 }
 
-void Player::set_map_position(int x, int y)
+void Player::set_position(int _x, int _y)
 {
-	map_x = x;
-	map_y = y;
+	x = _x;
+	y = _y;
 }
 
 void Player::set_faceright(bool is)
@@ -52,7 +57,7 @@ void Player::set_faceright(bool is)
 	is_faceright = is;
 }
 
-void Player::attack(character * chr)
+void Player::attack(Monster * chr)
 {
 	chr->lose_HP(weapon_damage[weapon_id]);
 }
