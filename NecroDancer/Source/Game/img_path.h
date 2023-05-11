@@ -27,6 +27,7 @@ const string img_health_full = "resources/picture/heart.bmp";
 const string img_health_half = "resources/picture/heart_half.bmp";
 const string img_health_empty = "resources/picture/heart_empty.bmp";
 const string money = "resources/picture/heart_half.bmp";
+const vector<string> img_background = {"resources/picture/swipe_dagger1.bmp","resources/picture/swipe_dagger2.bmp","resources/picture/swipe_dagger3.bmp"}
 const vector<vector<string>> img_player={ 
 											{	
 												"resources/picture/player_left1.bmp",

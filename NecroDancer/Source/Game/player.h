@@ -16,6 +16,7 @@ class Player
 		int weapon_id;
 		int x;
 		int y;
+		game_framework::CMovingBitmap atk_img;
 
 	public:
 
