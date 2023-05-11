@@ -15,6 +15,7 @@ void camera::show()
 	if (_map->player->get_is_moving())
 		_map->player->move_animation();
 
+
 	for (int y = 0; y < 9; y++)
 	{
 		for (int x = 0; x < 15; x++)
@@ -50,5 +51,7 @@ void camera::show()
 			}
 		}
 	}
+	if (_map->player->get_is_attacking())
+		_map->player->attack_animation();
 	
 }

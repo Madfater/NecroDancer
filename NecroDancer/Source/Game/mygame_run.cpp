@@ -46,7 +46,7 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void move(int direction,game_map* m)
 {
-	if (direction >= 0 && direction <= 3)
+	if (direction >= 0 && direction <= 3)//left up right down
 	{
 		switch (direction)
 		{
@@ -89,7 +89,7 @@ void move(int direction,game_map* m)
 				break;
 			default:
 				character* monster = m->get_chr()[info*-1-1];
-				m->player->attack(monster);
+				m->player->attack(monster, direction);
 				if (monster->get_hp() <= 0)
 					m->pop_monster(info*-1-1);
 				break;
