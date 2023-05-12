@@ -114,8 +114,6 @@
     <ClInclude Include="Source\Game\tempo.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Game\camera.h" />
-    <ClInclude Include="Source\Game\interface.h" />
     <ClInclude Include="Source\Game\player.h">
       <Filter>MyGame</Filter>
     </ClInclude>

@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "tempo.h"
 
-#define interval_right 20
-#define interval_left 380
+#define interval_right 30
+#define interval_left 370
 #define left_beat_start_pos 0
 #define left_beat_end_pos 400
 #define right_beat_start_pos 900
@@ -10,7 +10,7 @@
 #define beat_y 400
 #define beats_space 100
 #define beats_num 4
-#define beat_speed 5
+#define beat_speed 3
 
 using namespace game_framework;
 
