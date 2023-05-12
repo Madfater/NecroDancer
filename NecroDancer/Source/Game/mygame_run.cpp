@@ -94,7 +94,7 @@ void move(int direction,game_map* m,_interface* inter)
 				break;
 			default:
 				Monster* monster = m->get_chr()[info*-1-1];
-				m->player->attack(monster);
+				m->player->attack(monster,direction);
 				if (monster->get_hp() <= 0)
 					m->pop_monster(info*-1-1);
 				break;

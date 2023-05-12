@@ -33,6 +33,11 @@ int Player::get_is_moving()
 	return is_moving;
 }
 
+int Player::get_is_attacking()
+{
+	return is_attacking;
+}
+
 int Player::get_hp()
 {
 	return HP;

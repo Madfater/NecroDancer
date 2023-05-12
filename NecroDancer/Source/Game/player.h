@@ -7,7 +7,7 @@ class Player
 {
 	private:
 		vector<game_framework::CMovingBitmap> img;
-		game_framework::CMovingBitmap atk_img;
+		vector<game_framework::CMovingBitmap> atk_img;
 
 		bool is_faceright = false;
 		bool is_falling = false;
@@ -20,9 +20,6 @@ class Player
 		int weapon_id;
 		int x;
 		int y;
-		
-		vector<game_framework::CMovingBitmap> img;
-		vector<game_framework::CMovingBitmap> atk_img; 
 
 	public:
 
@@ -31,8 +28,6 @@ class Player
 
 		int get_is_moving();
 		int get_is_attacking();
-		int get_map_x();
-		int get_map_y();
 		int get_hp();
 		int get_weapon_id();
 		int get_x();
