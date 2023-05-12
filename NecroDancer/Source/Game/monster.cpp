@@ -5,13 +5,14 @@ Monster::Monster(int _HP,int _damage, vector<vector<string>> files, COLORREF col
 {
 	HP = _HP;
 	damage = _damage;
+	is_faceright = true;
+
 	for (int i = 0; i < 2; i++)
 	{
 		img.push_back(game_framework::CMovingBitmap{});
 		img[i].LoadBitmapByString(files[i],RGB(0,0,0));
 		img[i].SetAnimation(100, false);
 	}
-	is_faceright = true;
 }
 
 bool Monster::get_faceright() 
@@ -60,7 +61,6 @@ void Monster::set_position(int _x, int _y,int player_x, int player_y)
 	camera_y = _y - player_y + 4;
 	x = _x;
 	y = _y;
-
 
 	for (int i = 0; i < 2; i++)
 		img[i].SetTopLeft(camera_x * 60, camera_y * 60 - 10);

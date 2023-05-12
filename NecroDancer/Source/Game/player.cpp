@@ -5,8 +5,8 @@ Player::Player(int _x, int _y)
 {
 	HP = 3;
 	weapon_id = 0;
-	
-	
+	x = _x;
+	y = _y;
 	
 	for (int i = 0; i < 2; i++)
 	{
@@ -15,8 +15,7 @@ Player::Player(int _x, int _y)
 		img[i].SetTopLeft(7 * 60, 4 * 60 - 10);
 		img[i].SetAnimation(100, false);
 	}
-	x = _x;
-	y = _y;
+
 	for (int i = 0; i < 4; i++) {
 		atk_img.push_back(game_framework::CMovingBitmap{});
 		atk_img[i].LoadBitmapByString(img_attack_dagger[i], RGB(0, 0, 0));
