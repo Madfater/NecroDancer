@@ -77,6 +77,7 @@ void move(int direction,game_map* m)
 					switch (m->get_block_info(x, y))
 					{
 						case _player:
+							i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
 							m->player->lose_HP(i->get_damage());
 							break;
 						case _floor:

@@ -61,6 +61,7 @@ void Monster::set_position(int _x, int _y,int player_x, int player_y)
 	x = _x;
 	y = _y;
 
+
 	for (int i = 0; i < 2; i++)
 		img[i].SetTopLeft(camera_x * 60, camera_y * 60 - 10);
 }
