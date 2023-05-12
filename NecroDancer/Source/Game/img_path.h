@@ -27,7 +27,28 @@ const string img_health_full = "resources/picture/heart.bmp";
 const string img_health_half = "resources/picture/heart_half.bmp";
 const string img_health_empty = "resources/picture/heart_empty.bmp";
 const string money = "resources/picture/heart_half.bmp";
-//const vector<string> img_background = { "resources/picture/swipe_dagger1.bmp","resources/picture/swipe_dagger2.bmp","resources/picture/swipe_dagger3.bmp" };
+const vector<vector<string>> img_attack_dagger = {//left up right down
+												{
+													"resources/picture/attack_dagger_left1.bmp",
+													"resources/picture/attack_dagger_left2.bmp",
+													"resources/picture/attack_dagger_left3.bmp"
+												},
+												{
+													"resources/picture/attack_dagger_up1.bmp",
+													"resources/picture/attack_dagger_up2.bmp",
+													"resources/picture/attack_dagger_up3.bmp"
+												},
+												{
+													"resources/picture/attack_dagger_right1.bmp",
+													"resources/picture/attack_dagger_right2.bmp",
+													"resources/picture/attack_dagger_right3.bmp"
+												},
+												{
+													"resources/picture/attack_dagger_down1.bmp",
+													"resources/picture/attack_dagger_down2.bmp",
+													"resources/picture/attack_dagger_down3.bmp"
+												},
+										};
 const vector<vector<string>> img_player={ 
 											{	
 												"resources/picture/player_left1.bmp",
