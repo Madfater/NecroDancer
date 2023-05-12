@@ -42,7 +42,7 @@ bool character::get_faceright()
 
 int character::get_move_direction()
 {
-	return move_direction[move_step % 6];
+	return move_direction[move_step % 8];
 }
 //---------------------------------------------------------
 //setter

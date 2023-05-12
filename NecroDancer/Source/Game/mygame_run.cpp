@@ -40,13 +40,13 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	audio->Load(0, "resources/audio/zone1_1.wav");
 	audio->Play(0);
 	tempo.init();
-	i.init();
+	inter.init();
 	//music1.load(0, "D:\OOP\2023s\teamproject\NecroDancer\NecroDancer\Resources\audio\zone1_1.wav");
 	m.init();
 	c.init(&m);
 }
 
-void move(int direction,game_map* m)
+void move(int direction,game_map* m,_interface* inter)
 {
 	if (direction >= 0 && direction <= 3)//left up right down
 	{
@@ -81,6 +81,7 @@ void move(int direction,game_map* m)
 							break;
 						case _player:
 							m->player->lose_HP(i->get_damage());
+							inter->lose_hp();
 							break;
 						case _floor:
 							i->set_map_position(i->get_map_x() + direction_x[i->get_move_direction()], i->get_map_y() + direction_y[i->get_move_direction()]);
@@ -101,11 +102,11 @@ void move(int direction,game_map* m)
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	//if (tempo.if_shouldjump())
-	if(1)
+	if (tempo.if_shouldjump())
+	//if(1)
 	{
 		int direction = nChar - 37;
-		move(direction, &m);
+		move(direction, &m,&inter);
 	}
 }
 
@@ -138,5 +139,5 @@ void CGameStateRun::OnShow()
 {
 	c.show();
 	tempo.show();
-	i.show();
+	inter.show();
 }

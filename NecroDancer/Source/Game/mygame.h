@@ -98,7 +98,7 @@ namespace game_framework {
 		tempo tempo;
 		game_map m ;
 		camera c ;
-		_interface i;
+		_interface inter;
 
 	};
 

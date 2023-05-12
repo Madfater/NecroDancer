@@ -35,11 +35,11 @@ class character
 class bat :public character
 {
 	public:
-		bat() : character(1, 1, img_monsters[0], RGB(0, 0, 0)) { move_direction = { 4,4,0,4,4,2 }; };
+		bat() : character(5, 1, img_monsters[0], RGB(0, 0, 0)) { move_direction = { 0,0,1,1,2,2,3,3 }; };
 };
 
 class slime :public character
 {
 	public:
-		slime() : character(1, 1, img_monsters[1], RGB(0, 0, 0)) { move_direction = { 4,4, 1,4,4,3}; };
+		slime() : character(5, 1, img_monsters[1], RGB(0, 0, 0)) { move_direction = { 0,0,1,1,2,2,3,3}; };
 };
