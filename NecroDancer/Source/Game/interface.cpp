@@ -48,7 +48,37 @@ void _interface::init()
 
 
 }
+void _interface::lose_hp() {
+	lifepoint = lifepoint - 1;
+	hearts.clear();
 
+	full = lifepoint / 2;
+	empty = (10 - lifepoint) / 2;
+	int num = 0;
+	for (int i = 0; i < full; i++)
+	{
+		CMovingBitmap heart;
+		heart.LoadBitmapByString({ img_health_full }, RGB(0, 0, 0));
+		heart.SetTopLeft(heart_pos + heart_space * num, heart_height);
+		hearts.push_back(heart);
+		num++;
+	}
+	if (lifepoint % 2 == 1) {
+		CMovingBitmap heart;
+		heart.LoadBitmapByString({ img_health_half }, RGB(0, 0, 0));
+		heart.SetTopLeft(heart_pos + heart_space * num, heart_height);
+		hearts.push_back(heart);
+		num++;
+	}
+	for (int i = 0; i < empty; i++)
+	{
+		CMovingBitmap heart;
+		heart.LoadBitmapByString({ img_health_empty }, RGB(0, 0, 0));
+		heart.SetTopLeft(heart_pos + heart_space * num, heart_height);
+		hearts.push_back(heart);
+		num++;
+	}
+}
 void _interface::show()
 {
 
