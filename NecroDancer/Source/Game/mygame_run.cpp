@@ -62,37 +62,39 @@ void move(int direction,game_map* m,_interface* inter)
 				break;
 		}
 
-		int info = m->get_block_info(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction]);
+		int info = m->get_block_info(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction]);
 		switch (info)
 		{
 			case _wall:
 				break;
 			case _floor:
-				m->player->set_map_position(m->player->get_map_x() + direction_x[direction], m->player->get_map_y() + direction_y[direction]);
+				m->player->set_position(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction]);
 				m->player->set_moving();
 				for (auto &i : m->get_chr())
 				{
-					int x = i->get_map_x() + direction_x[i->get_move_direction()];
-					int y = i->get_map_y() + direction_y[i->get_move_direction()];
+					int d = i->move(m->player->get_x(), m->player->get_y());
+					int x = i->get_x() + direction_x[d];
+					int y = i->get_y() + direction_y[d];
 	
 					switch (m->get_block_info(x, y))
 					{
-						case _wall:
-							break;
 						case _player:
 							m->player->lose_HP(i->get_damage());
 							inter->lose_hp();
 							break;
 						case _floor:
-							i->set_map_position(i->get_map_x() + direction_x[i->get_move_direction()], i->get_map_y() + direction_y[i->get_move_direction()]);
+							i->set_is_moving();
+							i->set_position(x, y, m->player->get_x(), m->player->get_y());
+							break;
+						default:
+							i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
 							break;
 					} 
-					i->move_step_increase();
 				}
 				break;
 			default:
-				character* monster = m->get_chr()[info*-1-1];
-				m->player->attack(monster, direction);
+				Monster* monster = m->get_chr()[info*-1-1];
+				m->player->attack(monster,direction);
 				if (monster->get_hp() <= 0)
 					m->pop_monster(info*-1-1);
 				break;
