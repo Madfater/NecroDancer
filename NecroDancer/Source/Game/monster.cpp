@@ -24,6 +24,10 @@ bool Monster::get_is_moving()
 {
 	return is_moving;
 }
+bool Monster::get_is_damaged()
+{
+	return is_damaged;
+}
 
 int Monster::get_hp()
 {
@@ -103,6 +107,11 @@ void Monster::move_animation()
 void Monster::show()
 {	
 	img[is_faceright].ShowBitmap();
+}
+
+void Monster::show()
+{
+
 }
 
 int bat::move(int _x, int _y)

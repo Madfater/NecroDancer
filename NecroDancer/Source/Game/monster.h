@@ -11,6 +11,7 @@ class Monster
 		bool is_faceright;
 		bool is_falling;
 		bool is_moving;
+		bool is_damaged = false;
 
 		int HP;
 		int damage;
@@ -28,6 +29,8 @@ class Monster
 
 		bool get_faceright();
 		bool get_is_moving();
+		bool get_is_damaged();
+
 		int get_hp();
 		int get_damage();
 		int get_x();
@@ -35,6 +38,7 @@ class Monster
 		int get_camera_x();
 		int get_camera_y();
 
+		
 		void set_position(int, int, int, int);
 		void set_faceright(bool);
 		void set_is_moving();
@@ -43,6 +47,7 @@ class Monster
 		void move_animation();
 		void lose_HP(int);
 		void show();
+		void show_hp();
 };
 
 class bat :public Monster
