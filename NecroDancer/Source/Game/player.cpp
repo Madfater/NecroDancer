@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "player.h"
 
-Player::Player(int _x, int _y)
+Player::Player(int x, int y)
 {
 	HP = 3;
 	weapon_id = 0;
@@ -15,8 +15,6 @@ Player::Player(int _x, int _y)
 		img[i].SetTopLeft(7 * 60, 4 * 60 - 10);
 		img[i].SetAnimation(100, false);
 	}
-	x = _x;
-	y = _y;
 	for (int i = 0; i < 4; i++) {
 		atk_img.push_back(game_framework::CMovingBitmap{});
 		atk_img[i].LoadBitmapByString(img_attack_dagger[i], RGB(0, 0, 0));
@@ -26,6 +24,8 @@ Player::Player(int _x, int _y)
 	atk_img[1].SetTopLeft(7 * 60, 3 * 60 - 10); //up
 	atk_img[2].SetTopLeft(8 * 60, 4 * 60 - 10); //right
 	atk_img[3].SetTopLeft(7 * 60, 5 * 60 - 10); //down	
+	map_x = x;
+	map_y = y;
 }
 
 int Player::get_is_moving()
@@ -38,24 +38,19 @@ int Player::get_is_attacking()
 	return is_attacking;
 }
 
+int Player::get_map_x()
+{
+	return map_x;
+}
+
+int Player::get_map_y()
+{
+	return map_y;
+}
+
 int Player::get_hp()
 {
 	return HP;
-}
-
-int Player::get_weapon_id()
-{
-	return weapon_id;
-}
-
-int Player::get_x()
-{
-	return x;
-}
-
-int Player::get_y()
-{
-	return y;
 }
 
 void Player::set_moving()
@@ -63,10 +58,10 @@ void Player::set_moving()
 	is_moving = true;
 }
 
-void Player::set_position(int _x, int _y)
+void Player::set_map_position(int x, int y)
 {
-	x = _x;
-	y = _y;
+	map_x = x;
+	map_y = y;
 }
 
 void Player::set_faceright(bool is)
@@ -74,7 +69,7 @@ void Player::set_faceright(bool is)
 	is_faceright = is;
 }
 
-void Player::attack(Monster* chr,int direaction)
+void Player::attack(character * chr,int direaction)
 {
 	attack_direction = direaction;
 	chr->lose_HP(weapon_damage[weapon_id]);

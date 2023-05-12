@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Library/gameutil.h"
-#include "monster.h"
+#include "character.h"
 #include "game_map.h"
 #include "img_path.h"
 #include <string>

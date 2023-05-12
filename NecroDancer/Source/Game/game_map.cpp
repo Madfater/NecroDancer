@@ -10,11 +10,11 @@ void game_map::init()
 
 	player = new Player(start_x,start_y);
 
-	monsters.push_back(new bat);
-	monsters[0]->set_position(1, 1, player->get_x(), player->get_y());
+	characters.push_back(new bat);
+	characters[0]->set_map_position(1, 1);
 
-	monsters.push_back(new slime);
-	monsters[1]->set_position(3, 1, player->get_x(), player->get_y());
+	characters.push_back(new slime);
+	characters[1]->set_map_position(3, 1);
 
 
 	for (int y = 0; y < 10; y++)
@@ -30,14 +30,14 @@ void game_map::init()
 	}
 }
 
-vector<Monster*> game_map::get_chr()
+vector<character*> game_map::get_chr()
 {
-	return monsters;
+	return characters;
 }
 
 void game_map::pop_monster(int n)
 {
-	monsters.erase(monsters.begin() + n);
+	characters.erase(characters.begin() + n);
 }
 
 bool game_map::is_out_of_range(int x, int y)
@@ -50,11 +50,11 @@ bool game_map::is_out_of_range(int x, int y)
 
 int game_map::get_block_info(int x,int y)
 {
-	if (player->get_x() == x && player->get_y() == y)
+	if (player->get_map_x() == x && player->get_map_y() == y)
 		return _player;
 
-	for (int i = 0; i < monsters.size(); i++)
-		if (monsters[i]->get_x() == x && monsters[i]->get_y() == y)
+	for (int i = 0; i < characters.size(); i++)
+		if (characters[i]->get_map_x() == x && characters[i]->get_map_y() == y)
 			return -1*(i+1);
 
 	return blocks[x][y].type;
