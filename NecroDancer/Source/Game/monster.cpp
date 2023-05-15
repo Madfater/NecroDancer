@@ -109,9 +109,9 @@ void Monster::show()
 	img[is_faceright].ShowBitmap();
 }
 
-void Monster::show()
+void Monster::show_hp()
 {
-
+	
 }
 
 int bat::move(int _x, int _y)

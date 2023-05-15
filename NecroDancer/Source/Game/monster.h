@@ -7,6 +7,7 @@ class Monster
 {
 	protected:
 		vector<game_framework::CMovingBitmap> img;
+		vector<game_framework::CMovingBitmap> hearts;
 
 		bool is_faceright;
 		bool is_falling;
