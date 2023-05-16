@@ -46,7 +46,7 @@ void camera::show()
 			for (auto &i : _map->get_chr())
 				if (i->get_camera_x() == x && i->get_camera_y() == y) {
 					i->show();
-					if (i->get_damage())
+					if (i->get_is_damaged())
 						i->show_hp();
 				}
 					
@@ -54,5 +54,10 @@ void camera::show()
 	}
 	if (_map->player->get_is_attacking())
 		_map->player->attack_animation();
+	for (auto &i : _map->get_chr())
+	{
+		if (i->get_is_damaged())
+			i->show_hp();
+	}
 	
 }

@@ -15,6 +15,7 @@ class Monster
 		bool is_damaged = false;
 
 		int HP;
+		int full_HP;
 		int damage;
 		int x;
 		int y;
@@ -54,13 +55,13 @@ class Monster
 class bat :public Monster
 {
 	public:
-		bat() : Monster(1, 1, img_monsters[0], RGB(0, 0, 0)) { };
+		bat() : Monster(10, 1, img_monsters[0], RGB(0, 0, 0)) { };
 		virtual int move(int, int);
 };
 
 class slime :public Monster
 {
 	public:
-		slime() : Monster(1, 1, img_monsters[1], RGB(0, 0, 0)) { };
+		slime() : Monster(5, 1, img_monsters[1], RGB(0, 0, 0)) { };
 		virtual int move(int, int);
 };

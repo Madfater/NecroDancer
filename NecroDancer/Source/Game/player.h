@@ -8,6 +8,7 @@ class Player
 	private:
 		vector<game_framework::CMovingBitmap> img;
 		vector<game_framework::CMovingBitmap> atk_img;
+		vector<game_framework::CMovingBitmap> being_atk_img;
 
 		bool is_faceright = false;
 		bool is_falling = false;

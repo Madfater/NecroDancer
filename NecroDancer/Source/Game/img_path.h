@@ -23,6 +23,9 @@ const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/pict
 const vector<string> img_background = { "resources/picture/wall.bmp","resources/picture/floor_even.bmp","resources/picture/floor_odd.bmp" };
 //const string img_menu = "resources/picture/mainmenu.bmp";
 
+const string img_health_temp_full = "resources/picture/heart_temp_full.bmp";
+const string img_health_temp_empty = "resources/picture/heart_temp_empty.bmp";
+
 const string img_health_full = "resources/picture/heart.bmp";
 const string img_health_half = "resources/picture/heart_half.bmp";
 const string img_health_empty = "resources/picture/heart_empty.bmp";
