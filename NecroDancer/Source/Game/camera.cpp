@@ -20,6 +20,7 @@ void camera::show()
 			i->move_animation();
 
 
+
 	for (int y = 0; y < 9; y++)
 	{
 		for (int x = 0; x < 15; x++)
@@ -59,5 +60,7 @@ void camera::show()
 		if (i->get_is_damaged())
 			i->show_hp();
 	}
+	if (_map->player->get_be_attacking())
+		_map->player->be_attack_animation();
 	
 }

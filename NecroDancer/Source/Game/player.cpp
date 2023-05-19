@@ -25,11 +25,19 @@ Player::Player(int _x, int _y)
 	atk_img[1].SetTopLeft(7 * 60, 3 * 60 - 10); //up
 	atk_img[2].SetTopLeft(8 * 60, 4 * 60 - 10); //right
 	atk_img[3].SetTopLeft(7 * 60, 5 * 60 - 10); //down	
+
+	being_atk_img.LoadBitmapByString(img_monster_attack, RGB(0, 0, 0));
+	being_atk_img.SetAnimation(100, false);
+	being_atk_img.SetTopLeft(7 * 60 - 4, 4 * 60 - 10);
 }
 
 int Player::get_is_moving()
 {
 	return is_moving;
+}
+
+int Player::get_be_attacking() {
+	return be_attacking;
 }
 
 int Player::get_is_attacking()
@@ -110,9 +118,21 @@ void Player::attack_animation() {
 	}
 }
 
+void Player::be_attack_animation() {
+	if (be_attack_counter < 20) {
+		being_atk_img.ShowBitmap();
+		be_attack_counter++;
+	}
+	else {
+		be_attacking = false;
+		be_attack_counter = 0;
+	}
+	
+}
 void Player::lose_HP(int hp)
 {
 	HP -= hp;
+	be_attacking = true;
 }
 
 void Player::show()
