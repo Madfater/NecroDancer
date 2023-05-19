@@ -60,15 +60,12 @@ int Monster::get_camera_y()
 	return camera_y;
 }
 
-void Monster::set_position(int _x, int _y,int player_x, int player_y)
+void Monster::set_position(int _x, int _y, int player_x, int player_y)
 {
 	camera_x = _x - player_x + 7;
 	camera_y = _y - player_y + 4;
 	x = _x;
 	y = _y;
-
-	for (int i = 0; i < 2; i++)
-		img[i].SetTopLeft(camera_x * 60, camera_y * 60 - 10);
 }
 
 void Monster::set_faceright(bool _is_faceright)
@@ -120,8 +117,11 @@ void Monster::move_animation()
 	}
 }
 
-void Monster::show()
+void Monster::show(bool is_changing)
 {	
+	if(is_changing)
+		for (int i = 0; i < 2; i++)
+			img[i].SetTopLeft(camera_x * 60, camera_y * 60 - 10);
 	img[is_faceright].ShowBitmap();
 }
 
