@@ -15,14 +15,15 @@ class game_map
 {
 	private:
 		vector<vector<block>> blocks;
+		vector<Monster *> monsters;
+
 		int start_x;
 		int start_y;
 		int map_width;
 		int map_height;
-		vector<Monster *> monsters;
 	public:
-		Player* player;
 		void init();
+		Player* player;
 		vector<Monster *> get_chr();
 		void pop_monster(int);
 		bool is_out_of_range(int x, int y);

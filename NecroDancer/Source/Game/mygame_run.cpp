@@ -25,30 +25,35 @@ CGameStateRun::~CGameStateRun()
 }
 
 
-void CGameStateRun::OnBeginState()
+void monster_moving(game_map* m,_interface* inter)
 {
+	for (auto &i : m->get_chr())
+	{
+		int d = i->move(m->player->get_x(), m->player->get_y());
+		int x = i->get_x() + direction_x[d];
+		int y = i->get_y() + direction_y[d];
+
+		switch (m->get_block_info(x, y))
+		{
+			case _player:
+				i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
+				m->player->lose_HP(i->get_damage());
+				inter->lose_hp();
+				break;
+			case _floor:
+				i->set_is_moving();
+				i->set_position(x, y, m->player->get_x(), m->player->get_y());
+				break;
+			default:
+				i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
+				break;
+		}
+	}
 }
 
-void CGameStateRun::OnMove()							// 移動遊戲元素
+void moving(int direction, game_map* m, _interface* inter)
 {
-	
-}
-
-void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
-{
-	CAudio* audio = CAudio::Instance();
-	audio->Load(0, "resources/audio/zone1_1.wav");
-	audio->Play(0);
-	tempo.init();
-	inter.init();
-	//music1.load(0, "D:\OOP\2023s\teamproject\NecroDancer\NecroDancer\Resources\audio\zone1_1.wav");
-	m.init();
-	c.init(&m);
-}
-
-void move(int direction,game_map* m,_interface* inter)
-{
-	if (direction >= 0 && direction <= 3)//left up right down
+	if (direction >= 0 && direction <= 4)//left up right down
 	{
 		switch (direction)
 		{
@@ -70,47 +75,61 @@ void move(int direction,game_map* m,_interface* inter)
 			case _floor:
 				m->player->set_position(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction]);
 				m->player->set_moving();
-				for (auto &i : m->get_chr())
-				{
-					int d = i->move(m->player->get_x(), m->player->get_y());
-					int x = i->get_x() + direction_x[d];
-					int y = i->get_y() + direction_y[d];
-	
-					switch (m->get_block_info(x, y))
-					{
-						case _player:
-							i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
-							m->player->lose_HP(i->get_damage());
-							inter->lose_hp();
-							break;
-						case _floor:
-							i->set_is_moving();
-							i->set_position(x, y, m->player->get_x(), m->player->get_y());
-							break;
-						default:
-							i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
-							break;
-					} 
-				}
+				break;
+			case _player:
 				break;
 			default:
 				int index = info * -1 - 1;
 				Monster* monster = m->get_chr()[index];
-				m->player->attack(monster,direction);
+				m->player->attack(monster, direction);
 				if (monster->get_hp() <= 0)
 					m->pop_monster(index);
 				break;
 		}
+		monster_moving(m, inter);
 	}
 }
 
+CGameStateRun::CGameStateRun(CGame *g) : CGameState(g)
+{
+
+}
+
+CGameStateRun::~CGameStateRun()
+{
+}
+
+
+void CGameStateRun::OnBeginState()
+{
+}
+
+void CGameStateRun::OnMove()							// 移動遊戲元素
+{
+	
+}
+
+void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
+{
+	CAudio* audio = CAudio::Instance();
+	audio->Load(0, "resources/audio/zone1_1.wav");
+	audio->Play(0);
+	tempo.init();
+	inter.init();
+	//music1.load(0, "D:\OOP\2023s\teamproject\NecroDancer\NecroDancer\Resources\audio\zone1_1.wav");
+	m.init();
+	c.init(&m);
+}
+
+
+
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	if (tempo.if_shouldjump())
-	//if(1)
+	//if (tempo.if_shouldjump())
+	if(1)
 	{
 		int direction = nChar - 37;
-		move(direction, &m,&inter);
+		moving(direction, &m, &inter);
 	}
 }
 
