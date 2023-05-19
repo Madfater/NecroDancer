@@ -56,12 +56,22 @@ class bat :public Monster
 {
 	public:
 		bat() : Monster(10, 1, img_monsters[0], RGB(0, 0, 0)) { };
-		virtual int move(int, int);
+		int move(int, int) override;
 };
 
 class slime :public Monster
 {
 	public:
 		slime() : Monster(5, 1, img_monsters[1], RGB(0, 0, 0)) { };
-		virtual int move(int, int);
+		int move(int, int) override;
+};
+
+class minotaur :public Monster
+{
+	private:
+		int is_stunned;
+		bool is_rushing;
+	public:
+		minotaur() :Monster(5, 1, img_monsters[2], RGB(0, 0, 0)) {};
+		int move(int, int) override;
 };

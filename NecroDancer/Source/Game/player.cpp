@@ -107,12 +107,15 @@ void Player::move_animation()
 	}
 }
 
-void Player::attack_animation() {
-	if (attack_counter < 10) {
+void Player::attack_animation()
+{
+	if (attack_counter < 10) 
+	{
 		atk_img[attack_direction].ShowBitmap();
-		attack_counter = attack_counter + 1;
+		attack_counter++;
 	}
-	else {
+	else
+	{
 		is_attacking = false;
 		attack_counter = 0;
 	}
