@@ -74,7 +74,7 @@ const vector<vector<string>> img_player={
 											}
 										};
 
-const vector<vector<vector<string>>> img_monsters={
+const vector<vector<vector<string>>> img_monsters = {
 													{
 														{
 															"resources/picture/bat_left1.bmp",
@@ -102,19 +102,45 @@ const vector<vector<vector<string>>> img_monsters={
 															"resources/picture/slime_fire_right3.bmp",
 															"resources/picture/slime_fire_right4.bmp"
 														}
-													},
-													{
-														{
-															"resources/picture/dragon_red1.bmp",
-															"resources/picture/dragon_red2.bmp",
-															"resources/picture/dragon_red3.bmp",
-															"resources/picture/dragon_red4.bmp"
-														},
-														{
-															"resources/picture/dragon_red1.bmp",
-															"resources/picture/dragon_red2.bmp",
-															"resources/picture/dragon_red3.bmp",
-															"resources/picture/dragon_red4.bmp"
-														}
 													}
-												};
+};
+
+const vector<vector<vector<string>>> minotaur = {
+	{
+		{
+			"resources/picture/cow_left1.bmp",
+			"resources/picture/cow_left2.bmp",
+			"resources/picture/cow_left3.bmp",
+			"resources/picture/cow_left4.bmp"
+		},
+		{
+			"resources/picture/cow_right1.bmp",
+			"resources/picture/cow_right2.bmp",
+			"resources/picture/cow_right3.bmp",
+			"resources/picture/cow_right4.bmp"
+		}
+	},
+	{
+		{
+			"cow_attack_left.bmp"
+		},
+		{
+			"cow_attack_right.bmp"
+		}
+	},
+	{
+		{
+			"cow_stunned_left1.bmp",
+			"cow_stunned_left2.bmp",
+			"cow_stunned_left3.bmp",
+			"cow_stunned_left4.bmp"
+		},
+		{
+			"cow_stunned_right1.bmp",
+			"cow_stunned_right2.bmp",
+			"cow_stunned_right3.bmp",
+			"cow_stunned_right4.bmp"
+		}
+	}
+
+	};
