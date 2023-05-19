@@ -30,6 +30,13 @@ const string img_health_full = "resources/picture/heart.bmp";
 const string img_health_half = "resources/picture/heart_half.bmp";
 const string img_health_empty = "resources/picture/heart_empty.bmp";
 const string money = "resources/picture/heart_half.bmp";
+const vector<string> img_monster_attack = {
+	"resources/picture/monster_attack1.bmp",
+	"resources/picture/monster_attack2.bmp",
+	"resources/picture/monster_attack3.bmp",
+	"resources/picture/monster_attack4.bmp",
+	"resources/picture/monster_attack5.bmp"
+};
 const vector<vector<string>> img_attack_dagger = {//left up right down
 												{
 													"resources/picture/attack_dagger_left1.bmp",

@@ -58,5 +58,10 @@ void camera::show()
 
 	for (auto &i : _map->get_chr())
 		if (i->get_is_damaged())
+			i->show_hp();
+	}
+	if (_map->player->get_be_attacking())
+		_map->player->be_attack_animation();
+	
 			i->show_hp();	
 }
