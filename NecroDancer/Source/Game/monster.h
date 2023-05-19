@@ -7,12 +7,15 @@ class Monster
 {
 	protected:
 		vector<game_framework::CMovingBitmap> img;
+		vector<game_framework::CMovingBitmap> hearts;
 
 		bool is_faceright;
 		bool is_falling;
 		bool is_moving;
+		bool is_damaged = false;
 
 		int HP;
+		int full_HP;
 		int damage;
 		int x;
 		int y;
@@ -28,6 +31,8 @@ class Monster
 
 		bool get_faceright();
 		bool get_is_moving();
+		bool get_is_damaged();
+
 		int get_hp();
 		int get_damage();
 		int get_x();
@@ -35,6 +40,7 @@ class Monster
 		int get_camera_x();
 		int get_camera_y();
 
+		
 		void set_position(int, int, int, int);
 		void set_faceright(bool);
 		void set_is_moving();
@@ -43,18 +49,19 @@ class Monster
 		void move_animation();
 		void lose_HP(int);
 		void show();
+		void show_hp();
 };
 
 class bat :public Monster
 {
 	public:
-		bat() : Monster(1, 1, img_monsters[0], RGB(0, 0, 0)) { };
+		bat() : Monster(10, 1, img_monsters[0], RGB(0, 0, 0)) { };
 		virtual int move(int, int);
 };
 
 class slime :public Monster
 {
 	public:
-		slime() : Monster(1, 1, img_monsters[1], RGB(0, 0, 0)) { };
+		slime() : Monster(5, 1, img_monsters[1], RGB(0, 0, 0)) { };
 		virtual int move(int, int);
 };

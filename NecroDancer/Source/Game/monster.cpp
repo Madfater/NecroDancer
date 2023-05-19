@@ -3,6 +3,7 @@
 
 Monster::Monster(int _HP,int _damage, vector<vector<string>> files, COLORREF color)
 {
+	full_HP = _HP;
 	HP = _HP;
 	damage = _damage;
 	is_faceright = true;
@@ -23,6 +24,10 @@ bool Monster::get_faceright()
 bool Monster::get_is_moving()
 {
 	return is_moving;
+}
+bool Monster::get_is_damaged()
+{
+	return is_damaged;
 }
 
 int Monster::get_hp()
@@ -79,6 +84,21 @@ void Monster::set_is_moving()
 void Monster::lose_HP(int damage)
 {
 	HP -= damage;
+	is_damaged = true;
+	hearts.clear();
+	for (int i = 0; i < HP; i++)
+	{
+		hearts.push_back(game_framework::CMovingBitmap{});
+		hearts[i].LoadBitmapByString({ img_health_temp_full }, RGB(0, 0, 0));
+	}
+	for (int i = HP; i < full_HP; i++)
+	{
+		hearts.push_back(game_framework::CMovingBitmap{});
+		hearts[i].LoadBitmapByString({ img_health_temp_empty }, RGB(0, 0, 0));
+	}
+	for (int i = 0; i < full_HP; i++) {
+		hearts[i].SetTopLeft(camera_x * 60 + 30 * i - full_HP/2*30 +15, camera_y * 60 - 30);
+	}
 }
 
 void Monster::move_animation()
@@ -103,6 +123,15 @@ void Monster::move_animation()
 void Monster::show()
 {	
 	img[is_faceright].ShowBitmap();
+}
+
+void Monster::show_hp()
+{
+	for (int i = 0; i < full_HP; i++)
+	{
+		hearts[i].SetTopLeft(camera_x * 60 + 30 * i - full_HP / 2 * 30 + 15, camera_y * 60 - 30);
+		hearts[i].ShowBitmap();
+	}
 }
 
 int bat::move(int _x, int _y)
