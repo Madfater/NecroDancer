@@ -11,8 +11,8 @@
 
 const int weapon_damage[1] = { 1 };
 
-const int bat_step[8] = { 1, 4, 3, 4, 3, 4, 1, 4 };
-const int slime_step[8] = { 0, 4, 2, 4, 2, 4, 0, 4 };
+const vector<int> bat_step = { 1, 4, 3, 4 };
+const vector<int> slime_step = { 0, 4, 2, 4 };
 
 const int direction_x[5] = { -1,0,1,0,0 };//left->up->right->down->stop
 const int direction_y[5] = { 0,-1,0,1,0 };

@@ -136,10 +136,10 @@ void Monster::show_hp()
 
 int bat::move(int _x, int _y)
 {
-	return bat_step[(step_cnt++) % 8];
+	return bat_step[(step_cnt++) % bat_step.size()] ;
 }
 
 int slime::move(int _x, int _y)
 {
-	return slime_step[(step_cnt++) % 8];
+	return slime_step[(step_cnt++) % slime_step.size()] ;
 }

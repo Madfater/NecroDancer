@@ -23,8 +23,6 @@ class Monster
 		int camera_x;
 		int camera_y;
 
-		int step_cnt = 0;
-
 	public:
 		Monster::Monster(int,int, vector<vector<string>>, COLORREF);
 		virtual ~Monster() = default;
@@ -54,6 +52,8 @@ class Monster
 
 class bat :public Monster
 {
+	private:
+		int step_cnt = 0;
 	public:
 		bat() : Monster(10, 1, img_monsters[0], RGB(0, 0, 0)) { };
 		int move(int, int) override;
@@ -61,6 +61,8 @@ class bat :public Monster
 
 class slime :public Monster
 {
+	private:
+		int step_cnt = 0;
 	public:
 		slime() : Monster(5, 1, img_monsters[1], RGB(0, 0, 0)) { };
 		int move(int, int) override;
