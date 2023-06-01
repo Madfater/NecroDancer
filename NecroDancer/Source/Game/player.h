@@ -1,7 +1,11 @@
 #pragma once
+#ifndef CLASSplayer_H
+#define CLASSplayer_H
 #include "../Library/gameutil.h"
 #include "img_path.h"
 #include "monster.h"
+
+class Monster;
 
 class Player
 {
@@ -56,3 +60,4 @@ class Player
 		void lose_HP(int);
 		void show();
 };
+#endif

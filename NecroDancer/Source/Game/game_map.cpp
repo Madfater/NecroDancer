@@ -1,31 +1,55 @@
 #include "stdafx.h"
 #include "game_map.h"
 
+
 void game_map::init()
 {
-	start_x = 2;
-	start_y = 2;
-	map_height = 10;
-	map_width = 10;
+	start_x = 3;
+	start_y = 3;
+	map_height = 17;
+	map_width = 24;
 
 	player = new Player(start_x,start_y);
 
-	monsters.push_back(new bat);
-	monsters[0]->set_position(1, 1, player->get_x(), player->get_y());
+	std::ifstream inputFile("resources/map/map.bin", std::ios::binary);
 
-	monsters.push_back(new slime);
-	monsters[1]->set_position(3, 1, player->get_x(), player->get_y());
+	// 讀取數據
+	std::vector<std::vector<int>> matrix(17, std::vector<int>(24));
 
-
-	for (int y = 0; y < 10; y++)
+	for (int i = 0; i < 17; i++)
+	{
+		for (int j = 0; j < 24; j++)
+		{
+			inputFile.read(reinterpret_cast<char*>(&matrix[i][j]), 1);
+		}
+	}
+	inputFile.close();
+	// 關閉檔案
+	for (int i = 0; i < 17; i++)
 	{
 		blocks.push_back(vector<block>());
-		for (int x = 0; x < 10; x++)
+		for (int j = 0; j < 24; j++)
 		{
-			if(y==0 || x==0 || y==9 || x==9)
-				blocks[y].push_back({ _wall });
-			else
-				blocks[y].push_back({ _floor });
+			int block = 1;
+			switch (matrix[i][j])
+			{
+				case _slime:
+					monsters.push_back(new slime());
+					monsters[monsters.size()-1]->set_position(j, i, player->get_x(), player->get_y());
+					break;
+				case _bat:
+					monsters.push_back(new bat());
+					monsters[monsters.size() - 1]->set_position(j, i, player->get_x(), player->get_y());
+					break;
+				case _minotaur:
+					monsters.push_back(new minotaur());
+					monsters[monsters.size() - 1]->set_position(j, i, player->get_x(), player->get_y());
+					break;
+				default:
+					block = matrix[i][j];
+					break;
+			}
+			blocks[i].push_back({ block });
 		}
 	}
 }
@@ -50,6 +74,7 @@ bool game_map::is_out_of_range(int x, int y)
 
 int game_map::get_block_info(int x,int y)
 {
+
 	if (player->get_x() == x && player->get_y() == y)
 		return _player;
 
@@ -57,5 +82,5 @@ int game_map::get_block_info(int x,int y)
 		if (monsters[i]->get_x() == x && monsters[i]->get_y() == y)
 			return -1*(i+1);
 
-	return blocks[x][y].type;
+	return blocks[y][x].type;
 }

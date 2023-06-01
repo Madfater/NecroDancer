@@ -20,7 +20,7 @@ void monster_moving(game_map* m,_interface* inter)
 {
 	for (auto &i : m->get_chr())
 	{
-		int d = i->move(m->player->get_x(), m->player->get_y());
+		int d = i->move(m);
 		int x = i->get_x() + direction_x[d];
 		int y = i->get_y() + direction_y[d];
 
@@ -57,10 +57,14 @@ void moving(int direction, game_map* m, _interface* inter)
 			default:
 				break;
 		}
-
+		
 		int info = m->get_block_info(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction]);
 		switch (info)
 		{
+			case _border:
+				break;
+			case _empty:
+				break;
 			case _wall:
 				switch (m->player->get_shovel_id())
 				{

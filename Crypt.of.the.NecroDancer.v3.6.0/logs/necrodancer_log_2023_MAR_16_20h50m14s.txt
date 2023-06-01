@@ -1,4 +1,0 @@
-GoG: Initializing galaxy API1
-GoG: Initializing galaxy API2
-GoG: Initializing galaxy API3
-NECRODANCER INITIALIZING IN WINDOWED MODE AT RESOLUTION 960 x 540
