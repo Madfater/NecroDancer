@@ -66,15 +66,6 @@ void moving(int direction, game_map* m, _interface* inter)
 			case _empty:
 				break;
 			case _wall:
-				switch (m->player->get_shovel_id())
-				{
-				case 0:
-					//change wall to floor
-					m->player->dig(direction);
-					break;
-				default:
-					break;
-				}
 				break;
 			case _floor:
 				m->player->set_position(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction]);

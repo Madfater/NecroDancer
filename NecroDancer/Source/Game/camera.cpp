@@ -61,8 +61,6 @@ void camera::show()
 
 	if (_map->player->get_is_attacking())
 		_map->player->attack_animation();
-	if (_map->player->get_is_digging())
-		_map->player->dig_animation();
 
 	for (auto &i : _map->get_chr())
 		if (i->get_is_damaged())
