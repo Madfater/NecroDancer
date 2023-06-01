@@ -5,17 +5,17 @@
 #include <string>
 #include <vector>
 
-#define _wall 0
-#define _floor 1
-#define _player 2
+enum map_obj {_wall,_floor,_player, _empty, _border, _store, _slime, _bat, _minotaur};
+enum status { normal, stunned, rush, _attack };
+enum directions { _left, _up, _right, _down, _stop };
 
 const int weapon_damage[1] = { 1 };
 
-const vector<int> bat_step = { 1, 4, 3, 4 };
-const vector<int> slime_step = { 0, 4, 2, 4 };
+const vector<short> bat_step = { 4, 1, 4, 3 };
+const vector<short> slime_step = { 4, 0, 4, 2 };
 
-const int direction_x[5] = { -1,0,1,0,0 };//left->up->right->down->stop
-const int direction_y[5] = { 0,-1,0,1,0 };
+const short direction_x[5] = { -1,0,1,0,0 };
+const short direction_y[5] = { 0,-1,0,1,0 };
 
 const string img_menu = "resources/picture/mainmenu.bmp";
 const string img_beat = "resources/picture/beat.bmp";
@@ -37,7 +37,7 @@ const vector<string> img_monster_attack = {
 	"resources/picture/monster_attack4.bmp",
 	"resources/picture/monster_attack5.bmp"
 };
-const vector<vector<string>> img_attack_dagger = {//left up right down
+const vector<vector<string>> img_attack_dagger = {
 												{
 													"resources/picture/attack_dagger_left1.bmp",
 													"resources/picture/attack_dagger_left2.bmp",
@@ -105,7 +105,7 @@ const vector<vector<vector<string>>> img_monsters = {
 													}
 };
 
-const vector<vector<vector<string>>> minotaur = {
+const vector<vector<vector<string>>> img_minotaur = {
 	{
 		{
 			"resources/picture/cow_left1.bmp",
@@ -122,24 +122,24 @@ const vector<vector<vector<string>>> minotaur = {
 	},
 	{
 		{
-			"cow_attack_left.bmp"
+			"resources/picture/cow_attack_left.bmp"
 		},
 		{
-			"cow_attack_right.bmp"
+			"resources/picture/cow_attack_right.bmp"
 		}
 	},
 	{
 		{
-			"cow_stunned_left1.bmp",
-			"cow_stunned_left2.bmp",
-			"cow_stunned_left3.bmp",
-			"cow_stunned_left4.bmp"
+			"resources/picture/cow_stunned_left1.bmp",
+			"resources/picture/cow_stunned_left2.bmp",
+			"resources/picture/cow_stunned_left3.bmp",
+			"resources/picture/cow_stunned_left4.bmp"
 		},
 		{
-			"cow_stunned_right1.bmp",
-			"cow_stunned_right2.bmp",
-			"cow_stunned_right3.bmp",
-			"cow_stunned_right4.bmp"
+			"resources/picture/cow_stunned_right1.bmp",
+			"resources/picture/cow_stunned_right2.bmp",
+			"resources/picture/cow_stunned_right3.bmp",
+			"resources/picture/cow_stunned_right4.bmp"
 		}
 	}
 

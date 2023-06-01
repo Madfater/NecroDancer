@@ -134,12 +134,150 @@ void Monster::show_hp()
 	}
 }
 
-int bat::move(int _x, int _y)
+int bat::move(game_map* map)
 {
 	return bat_step[(step_cnt++) % bat_step.size()] ;
 }
 
-int slime::move(int _x, int _y)
+int slime::move(game_map* map)
 {
 	return slime_step[(step_cnt++) % slime_step.size()] ;
+}
+
+void minotaur::set_position(int _x, int _y, int player_x, int player_y)
+{
+	camera_x = _x - player_x + 7;
+	camera_y = _y - player_y + 4;
+	x = _x;
+	y = _y;
+
+	for (int i = 0; i < 2; i++)
+	{
+		img[i].SetTopLeft(camera_x * 60-35, camera_y * 60 - 73);
+		img_stunned[i].SetTopLeft(camera_x * 60 - 35, camera_y * 60 - 73);
+		img_attacking[i].SetTopLeft(camera_x * 60 - 35, camera_y * 60 - 73);
+	}
+}
+
+void minotaur::show()
+{
+	switch (Status)
+	{
+		case normal:
+			img[is_faceright].ShowBitmap();
+			break;
+		case stunned:
+			img_stunned[is_faceright].ShowBitmap();
+			break;
+		case rush:
+			img[is_faceright].ShowBitmap();
+			break;
+		case _attack:
+			img_attacking[is_faceright].ShowBitmap();
+			break;
+	}
+}
+
+int minotaur::move(game_map* map)
+{
+	int player_x = map->player->get_x();
+	int player_y = map->player->get_y();
+
+	if (Status == stunned)
+	{
+		cnt_stun++;
+		if (cnt_stun == 3)
+		{
+			cnt_stun = 0;
+			Status = normal;
+		}
+	}
+
+	if (Status == _attack)
+	{
+		if (cnt_attack == 1)
+		{
+			cnt_attack = 0;
+			Status = rush;
+		}
+		cnt_attack++;
+	}
+
+	if ((x == player_x|| y==player_y) && Status == normal)
+	{
+		Status = rush;
+		if (abs(x - player_x) == 1 || abs(y - player_y) == 1)
+			Status = _attack;
+
+		if (player_y > y)
+			direction = _down;
+		else if (player_y < y)
+			direction = _up;
+		else if (player_x > x)
+			direction = _right;
+		else if (player_x < x)
+			direction = _left;
+	}
+
+	
+
+	int rush_info = map->get_block_info(x + direction_x[direction], y + direction_y[direction]);
+
+	if(rush_info == _wall && Status == rush)
+	{
+		Status = stunned;
+		return _stop;
+	}
+	else if (rush_info == _player && Status == rush)
+	{
+		Status = normal;
+		return direction;
+	}
+		
+	int res = 4;
+	int max = INT_MAX;
+	switch (Status)
+	{
+		case normal:
+			for (int i = 0; i < 4; i++)
+			{
+				int dis_x = player_x - (x + direction_x[i]);
+				int dis_y = player_y - (y + direction_y[i]);
+				if (dis_x * dis_x + dis_y * dis_y < max)
+				{
+					max = dis_x * dis_x + dis_y * dis_y;
+					res = i;
+				}
+			}
+			return res;
+			break;
+		case rush:
+			return direction;
+			break;
+		case stunned:
+			return _stop;
+			break;
+		case _attack:
+			return _stop;
+			break;
+	}
+}
+
+void minotaur::move_animation()
+{
+	if (is_falling == false)
+	{
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 5);
+		if (img[is_faceright].GetTop() <= camera_y * 60 - 103)
+			is_falling = true;
+	}
+	else
+	{
+		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 5);
+		if (img[is_faceright].GetTop() >= camera_y * 60 - 73)
+		{
+			is_falling = false;
+			is_moving = false;
+		}
+	}
 }

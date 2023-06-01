@@ -120,6 +120,8 @@
     <ClInclude Include="Source\Game\monster.h">
       <Filter>MyGame</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Game\camera.h" />
+    <ClInclude Include="Source\Game\interface.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\Core\game.rc">

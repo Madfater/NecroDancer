@@ -1,10 +1,16 @@
 #pragma once
+#ifndef CLASSmap_H
+#define CLASSmap_H
 #include "../Library/gameutil.h"
 #include "img_path.h"
 #include "monster.h"
 #include "player.h"
 #include <string>
 #include <vector>
+#include <fstream>
+
+class Monster;
+class Player;
 
 typedef struct 
 {
@@ -21,6 +27,7 @@ class game_map
 		int start_y;
 		int map_width;
 		int map_height;
+
 	public:
 		void init();
 		Player* player;
@@ -29,3 +36,4 @@ class game_map
 		bool is_out_of_range(int x, int y);
 		int get_block_info(int x, int y);
 };
+#endif
