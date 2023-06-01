@@ -226,6 +226,12 @@ int minotaur::move(game_map* map)
 	if(rush_info == _wall && Status == rush)
 	{
 		Status = stunned;
+		map->block_change(x + direction_x[direction], y + direction_y[direction], _floor);
+		return _stop;
+	}
+	else if (rush_info == _wall && Status == rush)
+	{
+		Status = stunned;
 		return _stop;
 	}
 	else if (rush_info == _player && Status == rush)

@@ -84,3 +84,8 @@ int game_map::get_block_info(int x,int y)
 
 	return blocks[y][x].type;
 }
+
+void game_map::block_change(int x, int y, int type)
+{
+	blocks[y][x].type = type;
+}

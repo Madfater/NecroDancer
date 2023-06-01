@@ -35,5 +35,6 @@ class game_map
 		void pop_monster(int);
 		bool is_out_of_range(int x, int y);
 		int get_block_info(int x, int y);
+		void block_change(int x, int y, int type);
 };
 #endif
