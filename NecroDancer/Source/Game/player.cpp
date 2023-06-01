@@ -16,7 +16,8 @@ Player::Player(int _x, int _y)
 		img[i].SetAnimation(100, false);
 	}
 
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 4; i++) 
+	{
 		atk_img.push_back(game_framework::CMovingBitmap{});
 		atk_img[i].LoadBitmapByString(img_attack_dagger[i], RGB(0, 0, 0));
 		atk_img[i].SetAnimation(100, false);
@@ -25,6 +26,24 @@ Player::Player(int _x, int _y)
 	atk_img[1].SetTopLeft(7 * 60, 3 * 60 - 10); //up
 	atk_img[2].SetTopLeft(8 * 60, 4 * 60 - 10); //right
 	atk_img[3].SetTopLeft(7 * 60, 5 * 60 - 10); //down	
+
+	for (int i = 0; i < 4; i++) 
+	{
+		vector<game_framework::CMovingBitmap> temp;
+		shovel_img.push_back(temp);
+		for (int j = 0; j < 2; j++) 
+		{
+			shovel_img[i].push_back(game_framework::CMovingBitmap{});
+			shovel_img[i][j].LoadBitmapByString({ img_shovel[j] }, RGB(0, 0, 0));
+		}
+		
+	}
+	for (int i = 0; i < 2; i++) {
+		shovel_img[0][i].SetTopLeft(6 * 60, 4 * 60 - 30); //left
+		shovel_img[1][i].SetTopLeft(7 * 60, 3 * 60 - 30); //up
+		shovel_img[2][i].SetTopLeft(8 * 60, 4 * 60 - 30); //right
+		shovel_img[3][i].SetTopLeft(7 * 60, 5 * 60 - 30); //down
+	}
 
 	being_atk_img.LoadBitmapByString(img_monster_attack, RGB(0, 0, 0));
 	being_atk_img.SetAnimation(100, false);
@@ -45,6 +64,11 @@ int Player::get_is_attacking()
 	return is_attacking;
 }
 
+int Player::get_is_digging()
+{
+	return is_digging;
+}
+
 int Player::get_hp()
 {
 	return HP;
@@ -55,6 +79,10 @@ int Player::get_weapon_id()
 	return weapon_id;
 }
 
+int Player::get_shovel_id()
+{
+	return shovel_id;
+}
 int Player::get_x()
 {
 	return x;
@@ -81,9 +109,15 @@ void Player::set_faceright(bool is)
 	is_faceright = is;
 }
 
+void Player::dig(int direaction)
+{
+	_direction = direaction;
+	is_digging = true;
+}
+
 void Player::attack(Monster* chr,int direaction)
 {
-	attack_direction = direaction;
+	_direction = direaction;
 	chr->lose_HP(weapon_damage[weapon_id]);
 	is_attacking = true;
 }
@@ -111,7 +145,7 @@ void Player::attack_animation()
 {
 	if (attack_counter < 10) 
 	{
-		atk_img[attack_direction].ShowBitmap();
+		atk_img[_direction].ShowBitmap();
 		attack_counter++;
 	}
 	else
@@ -132,6 +166,18 @@ void Player::be_attack_animation() {
 	}
 	
 }
+
+void Player::dig_animation()
+{
+	if (dig_counter < 10) {
+		shovel_img[_direction][is_faceright].ShowBitmap();
+		dig_counter++;
+	}
+	else {
+		is_digging = false;
+		dig_counter = 0;
+	}
+}
 void Player::lose_HP(int hp)
 {
 	HP -= hp;
@@ -142,3 +188,4 @@ void Player::show()
 {
 	img[is_faceright].ShowBitmap();
 }
+

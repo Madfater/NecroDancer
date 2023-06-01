@@ -11,6 +11,7 @@ class Player
 {
 	private:
 		vector<game_framework::CMovingBitmap> img;
+		vector<vector<game_framework::CMovingBitmap>> shovel_img;
 		vector<game_framework::CMovingBitmap> atk_img;
 		game_framework::CMovingBitmap being_atk_img;
 
@@ -19,12 +20,15 @@ class Player
 		bool is_moving = false;
 		bool is_attacking = false;
 		bool be_attacking = false;
-		int attack_direction = 0;
+		bool is_digging = false;
+		int _direction = 0;
 		int attack_counter = 0;
 		int be_attack_counter = 0;
+		int dig_counter = 0;
 
 		int HP;
 		int weapon_id;
+		int shovel_id = 0;
 		int x;
 		int y;
 
@@ -36,17 +40,21 @@ class Player
 		int get_is_moving();
 		int get_is_attacking();
 		int get_be_attacking();
+		int get_is_digging();
 		int get_hp();
 		int get_weapon_id();
+		int get_shovel_id();
 		int get_x();
 		int get_y();
 
 		void set_moving();
 		void set_position(int, int);
 		void set_faceright(bool);
+		void dig(int);
 
 		void attack(Monster*,int);
 		void move_animation();
+		void dig_animation();
 		void attack_animation();
 		void be_attack_animation();
 		void lose_HP(int);
