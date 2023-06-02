@@ -170,7 +170,7 @@ void minotaur::show()
 			img_stunned[is_faceright].ShowBitmap();
 			break;
 		case rush:
-			img[is_faceright].ShowBitmap();
+			img_attacking[is_faceright].ShowBitmap();
 			break;
 		case _attack:
 			img_attacking[is_faceright].ShowBitmap();
