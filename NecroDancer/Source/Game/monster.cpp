@@ -136,7 +136,25 @@ void Monster::show_hp()
 
 int bat::move(game_map* map)
 {
-	return bat_step[(step_cnt++) % bat_step.size()] ;
+	int player_x = map->player->get_x();
+	int player_y = map->player->get_y();
+	int res = 4;
+	int max = INT_MAX;
+
+	for (int i = 0; i < 4; i++)
+	{
+		int dis_x = player_x - (x + direction_x[i]);
+		int dis_y = player_y - (y + direction_y[i]);
+		if (dis_x * dis_x + dis_y * dis_y < max)
+		{
+			max = dis_x * dis_x + dis_y * dis_y;
+			res = i;
+		}
+	}
+	if(step_cnt++%2)
+		return res;
+	else
+		return _stop;
 }
 
 int slime::move(game_map* map)
@@ -194,14 +212,7 @@ int minotaur::move(game_map* map)
 	}
 
 	if (Status == _attack)
-	{
-		if (cnt_attack == 1)
-		{
-			cnt_attack = 0;
-			Status = rush;
-		}
-		cnt_attack++;
-	}
+		Status = rush;
 
 	if ((x == player_x|| y==player_y) && Status == normal)
 	{
@@ -219,8 +230,6 @@ int minotaur::move(game_map* map)
 			direction = _left;
 	}
 
-	
-
 	int rush_info = map->get_block_info(x + direction_x[direction], y + direction_y[direction]);
 
 	if(rush_info == _wall && Status == rush)
@@ -229,7 +238,7 @@ int minotaur::move(game_map* map)
 		map->block_change(x + direction_x[direction], y + direction_y[direction], _floor);
 		return _stop;
 	}
-	else if (rush_info == _wall && Status == rush)
+	else if (rush_info == _border && Status == rush)
 	{
 		Status = stunned;
 		return _stop;
@@ -274,13 +283,17 @@ void minotaur::move_animation()
 	if (is_falling == false)
 	{
 		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() - 5);
-		if (img[is_faceright].GetTop() <= camera_y * 60 - 103)
+		img_attacking[is_faceright].SetTopLeft(img_attacking[is_faceright].GetLeft(), img_attacking[is_faceright].GetTop() - 5);
+		if (img_attacking[is_faceright].GetTop() <= camera_y * 60 - 103 &&
+			img[is_faceright].GetTop() <= camera_y * 60 - 103)
 			is_falling = true;
 	}
 	else
 	{
 		img[is_faceright].SetTopLeft(img[is_faceright].GetLeft(), img[is_faceright].GetTop() + 5);
-		if (img[is_faceright].GetTop() >= camera_y * 60 - 73)
+		img_attacking[is_faceright].SetTopLeft(img_attacking[is_faceright].GetLeft(), img_attacking[is_faceright].GetTop() + 5);
+		if (img_attacking[is_faceright].GetTop() >= camera_y * 60 - 73 &&
+			img[is_faceright].GetTop() >= camera_y * 60 - 73)
 		{
 			is_falling = false;
 			is_moving = false;

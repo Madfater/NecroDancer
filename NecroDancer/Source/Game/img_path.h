@@ -11,7 +11,6 @@ enum directions { _left, _up, _right, _down, _stop };
 
 const int weapon_damage[1] = { 1 };
 
-const vector<short> bat_step = { 4, 1, 4, 3 };
 const vector<short> slime_step = { 4, 0, 4, 2 };
 
 const short direction_x[5] = { -1,0,1,0,0 };

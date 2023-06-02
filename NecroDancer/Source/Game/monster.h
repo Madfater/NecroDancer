@@ -62,7 +62,7 @@ class bat :public Monster
 	private:
 		int step_cnt = 0;
 	public:
-		bat() : Monster(10, 1, img_monsters[0], RGB(0, 0, 0)) { };
+		bat() : Monster(2, 1, img_monsters[0], RGB(0, 0, 0)) { };
 		int move(game_map*) override;
 };
 
@@ -71,7 +71,7 @@ class slime :public Monster
 	private:
 		int step_cnt = 0;
 	public:
-		slime() : Monster(5, 1, img_monsters[1], RGB(0, 0, 0)) { };
+		slime() : Monster(1, 1, img_monsters[1], RGB(0, 0, 0)) { };
 		int move(game_map*) override;
 };
 
@@ -80,7 +80,6 @@ class minotaur :public Monster
 	private:
 		int Status = normal;
 		int cnt_stun = 0;
-		int cnt_attack = 0;
 		int direction = 0;
 		vector<game_framework::CMovingBitmap> img_stunned;
 		vector<game_framework::CMovingBitmap> img_attacking;
