@@ -15,7 +15,7 @@ public:
 	//game_framework::CMovingBitmap heart_half;
 	game_framework::CMovingBitmap money;
 	void init();
-	void lose_hp();
+	void load_hp(int);
 	void show();
 
 };

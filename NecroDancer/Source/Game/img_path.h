@@ -7,14 +7,14 @@
 
 enum map_obj {_wall,_floor,_player, _empty, _border, _store, _slime, _bat, _minotaur};
 enum status { normal, stunned, rush, _attack };
-enum directions { _left, _up, _right, _down, _stop };
+enum directions { _left, _up, _right, _down, _upr, _downr, _downl, _upl, _stop};
 
 const int weapon_damage[1] = { 1 };
 
 const vector<short> slime_step = { 4, 0, 4, 2 };
 
-const short direction_x[5] = { -1,0,1,0,0 };
-const short direction_y[5] = { 0,-1,0,1,0 };
+const short direction_x[17] = { -1,0,1,0,1,1,-1,-1,0,2,2,-2,-2,1,1,-1,-1 };
+const short direction_y[17] = { 0,-1,0,1,-1,1,1,-1,0,1,-1,1,-1,2,-2,2,-2 };
 
 const string img_menu = "resources/picture/mainmenu.bmp";
 const string img_beat = "resources/picture/beat.bmp";
@@ -75,72 +75,163 @@ const vector<vector<string>> img_player={
 										};
 
 const vector<vector<vector<string>>> img_monsters = {
-													{
 														{
-															"resources/picture/bat_left1.bmp",
-															"resources/picture/bat_left2.bmp",
-															"resources/picture/bat_left3.bmp",
-															"resources/picture/bat_left4.bmp"
+															{
+																"resources/picture/bat_left1.bmp",
+																"resources/picture/bat_left2.bmp",
+																"resources/picture/bat_left3.bmp",
+																"resources/picture/bat_left4.bmp"
+															},
+															{
+																"resources/picture/bat1.bmp",
+																"resources/picture/bat2.bmp",
+																"resources/picture/bat3.bmp",
+																"resources/picture/bat4.bmp"
+															}
 														},
 														{
-															"resources/picture/bat1.bmp",
-															"resources/picture/bat2.bmp",
-															"resources/picture/bat3.bmp",
-															"resources/picture/bat4.bmp"
+															{
+																"resources/picture/slime_fire1.bmp",
+																"resources/picture/slime_fire2.bmp",
+																"resources/picture/slime_fire3.bmp",
+																"resources/picture/slime_fire4.bmp"
+															},
+															{
+																"resources/picture/slime_fire_right1.bmp",
+																"resources/picture/slime_fire_right2.bmp",
+																"resources/picture/slime_fire_right3.bmp",
+																"resources/picture/slime_fire_right4.bmp"
+															}
 														}
+													};
+
+const vector<vector<string>> img_minotaur = {
+												{
+													{
+														"resources/picture/cow_left1.bmp",
+														"resources/picture/cow_left2.bmp",
+														"resources/picture/cow_left3.bmp",
+														"resources/picture/cow_left4.bmp"
 													},
 													{
+														"resources/picture/cow_right1.bmp",
+														"resources/picture/cow_right2.bmp",
+														"resources/picture/cow_right3.bmp",
+														"resources/picture/cow_right4.bmp"
+													}
+												}
+										  };
+
+const vector<vector<string>> img_minotaur_attack = {
 														{
-															"resources/picture/slime_fire1.bmp",
-															"resources/picture/slime_fire2.bmp",
-															"resources/picture/slime_fire3.bmp",
-															"resources/picture/slime_fire4.bmp"
+															"resources/picture/cow_attack_left.bmp"
 														},
 														{
-															"resources/picture/slime_fire_right1.bmp",
-															"resources/picture/slime_fire_right2.bmp",
-															"resources/picture/slime_fire_right3.bmp",
-															"resources/picture/slime_fire_right4.bmp"
+															"resources/picture/cow_attack_right.bmp"
 														}
-													}
-};
+												   };
 
-const vector<vector<vector<string>>> img_minotaur = {
-	{
-		{
-			"resources/picture/cow_left1.bmp",
-			"resources/picture/cow_left2.bmp",
-			"resources/picture/cow_left3.bmp",
-			"resources/picture/cow_left4.bmp"
-		},
-		{
-			"resources/picture/cow_right1.bmp",
-			"resources/picture/cow_right2.bmp",
-			"resources/picture/cow_right3.bmp",
-			"resources/picture/cow_right4.bmp"
-		}
-	},
-	{
-		{
-			"resources/picture/cow_attack_left.bmp"
-		},
-		{
-			"resources/picture/cow_attack_right.bmp"
-		}
-	},
-	{
-		{
-			"resources/picture/cow_stunned_left1.bmp",
-			"resources/picture/cow_stunned_left2.bmp",
-			"resources/picture/cow_stunned_left3.bmp",
-			"resources/picture/cow_stunned_left4.bmp"
-		},
-		{
-			"resources/picture/cow_stunned_right1.bmp",
-			"resources/picture/cow_stunned_right2.bmp",
-			"resources/picture/cow_stunned_right3.bmp",
-			"resources/picture/cow_stunned_right4.bmp"
-		}
-	}
+const vector<vector<string>> img_minotaur_stunned = {
+														{
+															"resources/picture/cow_stunned_left1.bmp",
+															"resources/picture/cow_stunned_left2.bmp",
+															"resources/picture/cow_stunned_left3.bmp",
+															"resources/picture/cow_stunned_left4.bmp"
+														},
+														{
+															"resources/picture/cow_stunned_right1.bmp",
+															"resources/picture/cow_stunned_right2.bmp",
+															"resources/picture/cow_stunned_right3.bmp",
+															"resources/picture/cow_stunned_right4.bmp"
+														}
+													};
 
-	};
+
+const vector<vector<string>> img_pawn = {
+											{
+												"resources/picture/pawn1.bmp",
+												"resources/picture/pawn2.bmp",
+												"resources/picture/pawn3.bmp",
+												"resources/picture/pawn4.bmp"
+											},
+											{
+												"resources/picture/pawn1.bmp",
+												"resources/picture/pawn2.bmp",
+												"resources/picture/pawn3.bmp",
+												"resources/picture/pawn4.bmp"
+											}
+										};
+
+const vector<string> img_pawn_attack = { "resources/picture/pawn_attack.bmp" };
+
+
+const vector<vector<string>> img_knight = {
+											{
+												"resources/picture/knight1.bmp",
+												"resources/picture/knight2.bmp",
+												"resources/picture/knight3.bmp",
+												"resources/picture/knight4.bmp"
+											},
+											{
+												"resources/picture/knight1.bmp",
+												"resources/picture/knight2.bmp",
+												"resources/picture/knight3.bmp",
+												"resources/picture/knight4.bmp"
+											}
+									   };
+
+const vector<string> img_knight_attack = { "resources/picture/knight_attack.bmp" };
+
+const vector<vector<string>> img_rook = {
+											{
+												"resources/picture/rook1.bmp",
+												"resources/picture/rook2.bmp"
+											},
+											{
+												"resources/picture/rook1.bmp",
+												"resources/picture/rook2.bmp"
+											}
+										};
+
+const vector<string> img_rook_attack = { "resources/picture/rook_attack.bmp" };
+
+const vector<vector<string>> img_bishop = {
+											{
+												"resources/picture/bishop1.bmp",
+												"resources/picture/bishop2.bmp",
+												"resources/picture/bishop3.bmp",
+												"resources/picture/bishop4.bmp"
+											},
+											{
+												"resources/picture/bishop1.bmp",
+												"resources/picture/bishop2.bmp",
+												"resources/picture/bishop3.bmp",
+												"resources/picture/bishop4.bmp"
+											}
+										};
+
+const vector<string> img_bishop_attack = { "resources/picture/bishop_attack.bmp" };
+
+const vector<vector<string>> img_queen = {
+											{
+												"resources/picture/queen.bmp"
+											},
+											{
+												"resources/picture/queen.bmp"
+											}
+										};
+
+const vector<vector<string>> img_king = {
+											{
+												"resources/picture/king1.bmp",
+												"resources/picture/king2.bmp",
+												"resources/picture/king3.bmp",
+												"resources/picture/king4.bmp"
+											},
+											{
+												"resources/picture/king1.bmp",
+												"resources/picture/king2.bmp",
+												"resources/picture/king3.bmp",
+												"resources/picture/king4.bmp"
+											}
+										};

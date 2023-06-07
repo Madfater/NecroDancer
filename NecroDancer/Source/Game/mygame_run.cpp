@@ -29,7 +29,6 @@ void monster_moving(game_map* m,_interface* inter)
 			case _player:
 				i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
 				m->player->lose_HP(i->get_damage());
-				inter->lose_hp();
 				break;
 			case _floor:
 				i->set_is_moving();
@@ -39,6 +38,7 @@ void monster_moving(game_map* m,_interface* inter)
 				i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
 				break;
 		}
+		inter->load_hp(m->player->get_hp());
 	}
 }
 

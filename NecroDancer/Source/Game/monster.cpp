@@ -138,7 +138,7 @@ int bat::move(game_map* map)
 {
 	int player_x = map->player->get_x();
 	int player_y = map->player->get_y();
-	int res = 4;
+	int res = 0;
 	int max = INT_MAX;
 
 	for (int i = 0; i < 4; i++)
@@ -151,7 +151,7 @@ int bat::move(game_map* map)
 			res = i;
 		}
 	}
-	if(step_cnt++%2)
+	if(step_cnt++%3==0)
 		return res;
 	else
 		return _stop;
@@ -299,4 +299,352 @@ void minotaur::move_animation()
 			is_moving = false;
 		}
 	}
+}
+
+int pawn::move(game_map * m)
+{
+	int move_info = m->get_block_info(x + direction_x[_down], y + direction_y[_down]);
+	int l_bot_diag_info = m->get_block_info(x + 1, y + 1);
+	int r_bot_diag_info = m->get_block_info(x - 1, y + 1);
+
+	if (is_queen)
+	{
+		int player_x = m->player->get_x();
+		int player_y = m->player->get_y();
+		int max = INT_MAX;
+		int res = 0;
+		int dis_x = 0, dis_y = 0;
+		for (int i = 0; i < 8; i++)
+		{
+			if (m->get_block_info(x + direction_x[i], y + direction_y[i]) == _player && i > 3)
+				continue;
+
+			dis_x = (x + direction_x[i]) - player_x;
+			dis_y = (y + direction_y[i]) - player_y;
+			if (dis_x*dis_x + dis_y * dis_y < max)
+			{
+				res = i;
+				max = dis_x * dis_x + dis_y * dis_y;
+			}
+		}
+
+		return res;
+	}
+	else
+	{
+		switch (++step_cnt%8)
+		{
+			case 7:
+				is_attacking = true;
+				break;
+			case 0:
+				is_attacking = false;
+				if (r_bot_diag_info == _player || l_bot_diag_info == _player)
+				{
+					m->player->lose_HP(damage);
+					return _stop;
+				}
+				if (move_info == _wall && is_queen == false)
+				{
+					for (int i = 0; i < 2; i++)
+						img.pop_back();
+					for (int i = 0; i < 2; i++)
+					{
+						img.push_back(game_framework::CMovingBitmap{});
+						img[i].LoadBitmapByString(img_queen[i], RGB(0, 0, 0));
+						img[i].SetAnimation(100, false);
+					}
+					is_queen = true;
+					return _stop;
+				}
+				return _down;
+				break;
+		}
+	}
+
+	return _stop;
+}
+
+void pawn::show()
+{
+	if (is_attacking && is_queen==false)
+	{
+		img_attacking.ShowBitmap();
+	}
+	else
+	{
+		img[is_faceright].ShowBitmap();
+	}
+}
+
+void pawn::set_position(int _x, int _y, int player_x, int player_y)
+{
+	camera_x = _x - player_x + 7;
+	camera_y = _y - player_y + 4;
+	x = _x;
+	y = _y;
+
+	if (!is_queen)
+	{
+		for (int i = 0; i < 2; i++)
+			img[i].SetTopLeft(camera_x * 60 + 18, camera_y * 60 - 10);
+	}
+	else
+	{
+		for (int i = 0; i < 2; i++)
+			img[i].SetTopLeft(camera_x * 60 - 23, camera_y * 60 - 48);
+	}
+
+	img_attacking.SetTopLeft(camera_x * 60 + 13, camera_y * 60 - 10);
+}
+
+int knight :: move(game_map * m)
+{
+	switch (++step_cnt % 5)
+	{
+		case 4:
+			is_attacking = true;
+			break;
+		case 0:
+			is_attacking = false;
+			int player_x = m->player->get_x();
+			int player_y = m->player->get_y();
+			int res = 9;
+			int max = INT_MAX;
+
+			for (int i = 9; i < 17; i++)
+			{
+				int dis_x = player_x - (x + direction_x[i]);
+				int dis_y = player_y - (y + direction_y[i]);
+				if (dis_x * dis_x + dis_y * dis_y < max)
+				{
+					max = dis_x * dis_x + dis_y * dis_y;
+					res = i;
+				}
+			}
+			return res;
+	}
+	return _stop;
+}
+
+void knight::show()
+{
+	if (is_attacking)
+	{
+		img_attacking.ShowBitmap();
+	}
+	else
+	{
+		img[is_faceright].ShowBitmap();
+	}
+}
+
+void knight::set_position(int _x, int _y, int player_x, int player_y)
+{
+	camera_x = _x - player_x + 7;
+	camera_y = _y - player_y + 4;
+	x = _x;
+	y = _y;
+
+	for (int i = 0; i < 2; i++)
+		img[i].SetTopLeft(camera_x * 60 + 14, camera_y * 60 - 15);
+
+	img_attacking.SetTopLeft(camera_x * 60 + 8, camera_y * 60 - 15);
+}
+
+int rook::move(game_map * m)
+{	
+	switch (++step_cnt %3)
+	{
+		case 2:
+			is_attacking = true;
+			break;
+		case 0:
+			is_attacking = false;
+			int player_x = m->player->get_x();
+			int player_y = m->player->get_y();
+			int res = 0;
+			int max = INT_MAX;
+
+			for (int i = 0; i < 4; i++)
+			{
+				int dis_x = player_x - (x + direction_x[i]);
+				int dis_y = player_y - (y + direction_y[i]);
+				if (dis_x * dis_x + dis_y * dis_y < max)
+				{
+					max = dis_x * dis_x + dis_y * dis_y;
+					res = i;
+				}
+			}
+			return res;
+	}
+	return _stop;
+}
+
+void rook::show()
+{
+	if (is_attacking)
+	{
+		img_attacking.ShowBitmap();
+	}
+	else
+	{
+		img[is_faceright].ShowBitmap();
+	}
+}
+
+void rook::set_position(int _x, int _y, int player_x, int player_y)
+{
+	camera_x = _x - player_x + 7;
+	camera_y = _y - player_y + 4;
+	x = _x;
+	y = _y;
+
+	for (int i = 0; i < 2; i++)
+		img[i].SetTopLeft(camera_x * 60 + 2, camera_y * 60 - 22);
+
+	img_attacking.SetTopLeft(camera_x * 60 + 4, camera_y * 60 - 22);
+}
+
+int bishop::move(game_map * m)
+{
+	switch (++step_cnt % 5)
+	{
+		case 4:
+			is_attacking = true;
+			break;
+		case 0:
+			is_attacking = false;
+			int player_x = m->player->get_x();
+			int player_y = m->player->get_y();
+			int res = 4;
+			int max = INT_MAX;
+
+			for (int i = 4; i < 8; i++)
+			{
+				int dis_x = player_x - (x + direction_x[i]);
+				int dis_y = player_y - (y + direction_y[i]);
+				if (dis_x * dis_x + dis_y * dis_y < max)
+				{
+					max = dis_x * dis_x + dis_y * dis_y;
+					res = i;
+				}
+			}
+			return res;
+	}
+	return _stop;
+}
+
+void bishop::show()
+{
+	if (is_attacking)
+	{
+		img_attacking.ShowBitmap();
+	}
+	else
+	{
+		img[is_faceright].ShowBitmap();
+	}
+}
+
+void bishop::set_position(int _x, int _y, int player_x, int player_y)
+{
+	camera_x = _x - player_x + 7;
+	camera_y = _y - player_y + 4;
+	x = _x;
+	y = _y;
+
+	for (int i = 0; i < 2; i++)
+		img[i].SetTopLeft(camera_x * 60 + 15, camera_y * 60 - 30);
+
+	img_attacking.SetTopLeft(camera_x * 60 + 9, camera_y * 60 - 30);
+}
+int queen::move(game_map * m)
+{
+	int player_x = m->player->get_x();
+	int player_y = m->player->get_y();
+	int max = INT_MAX;
+	int res = 0;
+	int dis_x = 0, dis_y = 0;
+	for (int i = 0; i < 8; i++)
+	{
+		if (m->get_block_info(x + direction_x[i], y + direction_y[i]) == _player && i > 3)
+			continue;
+
+		dis_x = (x + direction_x[i]) - player_x;
+		dis_y = (y + direction_y[i]) - player_y;
+		if (dis_x*dis_x + dis_y * dis_y < max)
+		{
+			res = i;
+			max = dis_x * dis_x + dis_y * dis_y;
+		}
+	}
+
+	return res;
+}
+
+void queen::set_position(int _x, int _y, int player_x, int player_y)
+{
+	camera_x = _x - player_x + 7;
+	camera_y = _y - player_y + 4;
+	x = _x;
+	y = _y;
+
+	for (int i = 0; i < 2; i++)
+		img[i].SetTopLeft(camera_x * 60 - 23, camera_y * 60 - 48);
+}
+
+int king::move(game_map * m)
+{
+	int player_x = m->player->get_x();
+	int player_y = m->player->get_y();
+	int max = INT_MAX;
+	int min = INT_MIN;
+	int res = 0;
+	int dis_x = 0, dis_y = 0;
+
+	if (m->get_chr().size() == 1)
+	{
+		for (int i = 0; i < 8; i++)
+		{
+			if (m->get_block_info(x + direction_x[i], y + direction_y[i]) == _player && i > 3)
+				continue;
+
+			dis_x = (x + direction_x[i]) - player_x;
+			dis_y = (y + direction_y[i]) - player_y;
+			if (dis_x*dis_x + dis_y * dis_y < max)
+			{
+				res = i;
+				max = dis_x * dis_x + dis_y * dis_y;
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i < 8; i++)
+		{
+			if (m->get_block_info(x + direction_x[i], y + direction_y[i]) == _player && i > 3)
+				continue;
+
+			dis_x = (x + direction_x[i]) - player_x;
+			dis_y = (y + direction_y[i]) - player_y;
+			if (dis_x*dis_x + dis_y * dis_y > min)
+			{
+				res = i;
+				min = dis_x * dis_x + dis_y * dis_y;
+			}
+		}
+	}
+	return res;
+}
+
+void king::set_position(int _x, int _y, int player_x, int player_y)
+{
+	camera_x = _x - player_x + 7;
+	camera_y = _y - player_y + 4;
+	x = _x;
+	y = _y;
+
+	for (int i = 0; i < 2; i++)
+		img[i].SetTopLeft(camera_x * 60 - 0.5, camera_y * 60 - 63);
 }

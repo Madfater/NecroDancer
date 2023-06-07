@@ -12,8 +12,6 @@ void game_map::init()
 	player = new Player(start_x,start_y);
 
 	std::ifstream inputFile("resources/map/map.bin", std::ios::binary);
-
-	// 讀取數據
 	std::vector<std::vector<int>> matrix(17, std::vector<int>(24));
 
 	for (int i = 0; i < 17; i++)
@@ -24,7 +22,11 @@ void game_map::init()
 		}
 	}
 	inputFile.close();
-	// 關閉檔案
+
+	//test area 
+	monsters.push_back(new bishop());
+	monsters[0]->set_position(4, 4, player->get_x(), player->get_y());
+	//
 	for (int i = 0; i < 17; i++)
 	{
 		blocks.push_back(vector<block>());

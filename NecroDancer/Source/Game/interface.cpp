@@ -39,22 +39,16 @@ void _interface::init()
 		hearts.push_back(heart);
 		num++;
 	}
-
-
-	
-	
-	
-
-
-
 }
-void _interface::lose_hp() {
-	lifepoint = lifepoint - 1;
-	hearts.clear();
 
+void _interface::load_hp(int hp) {
+
+	lifepoint = hp;
+	hearts.clear();
 	full = lifepoint / 2;
 	empty = (10 - lifepoint) / 2;
 	int num = 0;
+
 	for (int i = 0; i < full; i++)
 	{
 		CMovingBitmap heart;
@@ -81,10 +75,8 @@ void _interface::lose_hp() {
 }
 void _interface::show()
 {
-
-	for (int i = 0; i < heart_num; i++) {
+	for (int i = 0; i < heart_num; i++) 
+	{
 		hearts[i].ShowBitmap();
 	}
-
-
 }

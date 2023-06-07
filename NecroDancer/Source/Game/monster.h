@@ -1,12 +1,11 @@
 #pragma once
 #ifndef CLASS_monster_H
 #define CLASS_monster_H
-
 #include "../Library/gameutil.h"
-#include <cmath>
 #include "img_path.h"
 #include "game_map.h"
-
+#include <random>
+#include <cmath>
 
 class game_map;
 
@@ -84,14 +83,14 @@ class minotaur :public Monster
 		vector<game_framework::CMovingBitmap> img_stunned;
 		vector<game_framework::CMovingBitmap> img_attacking;
 	public:
-		minotaur() :Monster(5, 1, img_minotaur[0], RGB(0, 0, 0)) {
-			
+		minotaur() :Monster(5, 1, img_minotaur, RGB(0, 0, 0)) 
+		{
 			for (int i = 0; i < 2; i++)
 			{
 				img_stunned.push_back(game_framework::CMovingBitmap{});
 				img_attacking.push_back(game_framework::CMovingBitmap{});
-				img_stunned[i].LoadBitmapByString(img_minotaur[2][i], RGB(0, 0, 0));
-				img_attacking[i].LoadBitmapByString(img_minotaur[1][i], RGB(0, 0, 0));
+				img_stunned[i].LoadBitmapByString(img_minotaur_stunned[i], RGB(0, 0, 0));
+				img_attacking[i].LoadBitmapByString(img_minotaur_attack[i], RGB(0, 0, 0));
 				img_stunned[i].SetAnimation(100, false);
 			}
 		};
@@ -99,5 +98,95 @@ class minotaur :public Monster
 		void show() override;
 		int move(game_map*) override;
 		void move_animation() override;
+};
+
+class pawn :public Monster
+{
+	private:
+		int step_cnt = 0;
+		bool is_queen = false;
+		bool is_attacking = false;
+		game_framework::CMovingBitmap img_attacking;
+	public:
+		pawn() : Monster(1, 1, img_pawn, RGB(0, 0, 0)) 
+		{
+			std::random_device rd;
+			std::mt19937 rng(rd());
+			std::uniform_int_distribution<int> distInt(0, 6);
+			step_cnt = distInt(rng);
+
+			img_attacking.LoadBitmapByString(img_pawn_attack, RGB(0, 0, 0));
+		};
+		int move(game_map*) override;
+		void show() override;
+		void set_position(int, int, int, int) override;
+};
+
+class knight :public Monster
+{
+	private:
+		int step_cnt = 0;
+		bool is_attacking = false;
+		game_framework::CMovingBitmap img_attacking;
+	public:
+		knight() : Monster(1, 1, img_knight, RGB(0, 0, 0)) 
+		{
+			img_attacking.LoadBitmapByString(img_knight_attack, RGB(0, 0, 0));
+		};
+		int move(game_map*) override;
+		void show() override;
+		void set_position(int, int, int, int) override;
+};
+
+class rook :public Monster
+{
+	private:
+		int step_cnt = 0;
+		bool is_attacking = false;
+		game_framework::CMovingBitmap img_attacking;
+	public:
+		rook() : Monster(1, 1, img_rook, RGB(0, 0, 0)) 
+		{
+			img_attacking.LoadBitmapByString(img_rook_attack, RGB(0, 0, 0));
+		};
+		int move(game_map*) override;
+		void show() override;
+		void set_position(int, int, int, int) override;
+};
+
+class bishop :public Monster
+{
+	private:
+		int step_cnt = 0;
+		bool is_attacking = false;
+		game_framework::CMovingBitmap img_attacking;
+	public:
+		bishop() : Monster(1, 1, img_bishop, RGB(0, 0, 0)) 
+		{
+			img_attacking.LoadBitmapByString(img_bishop_attack, RGB(0, 0, 0));
+		};
+		int move(game_map*) override;
+		void show() override;
+		void set_position(int, int, int, int) override;
+};
+
+class queen :public Monster
+{
+	private:
+		int step_cnt = 0;
+	public:
+		queen() : Monster(1, 1, img_queen, RGB(0, 0, 0)) { };
+		int move(game_map*) override;
+		void set_position(int, int, int, int) override;
+};
+
+class king :public Monster
+{
+	private:
+		int step_cnt = 0;
+	public:
+		king() : Monster(3, 2, img_king, RGB(0, 0, 0)) { };
+		int move(game_map*) override;
+		void set_position(int, int, int, int) override;
 };
 #endif
