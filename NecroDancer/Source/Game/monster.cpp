@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "monster.h"
 
-Monster::Monster(int _HP,int _damage, vector<vector<string>> files, COLORREF color)
+Monster::Monster(int _HP,int _damage, vector<vector<string>> files)
 {
 	full_HP = _HP;
 	HP = _HP;
@@ -60,10 +60,10 @@ int Monster::get_camera_y()
 	return camera_y;
 }
 
-void Monster::set_position(int _x, int _y, int player_x, int player_y)
+void Monster::set_position(int _x, int _y, game_map* m)
 {
-	camera_x = _x - player_x + 7;
-	camera_y = _y - player_y + 4;
+	camera_x = _x - m->player->get_x() + 7;
+	camera_y = _y - m->player->get_y() + 4;
 	x = _x;
 	y = _y;
 
@@ -162,10 +162,10 @@ int slime::move(game_map* map)
 	return slime_step[(step_cnt++) % slime_step.size()] ;
 }
 
-void minotaur::set_position(int _x, int _y, int player_x, int player_y)
+void minotaur::set_position(int _x, int _y, game_map* m)
 {
-	camera_x = _x - player_x + 7;
-	camera_y = _y - player_y + 4;
+	camera_x = _x - m->player->get_x() + 7;
+	camera_y = _y - m->player->get_y() + 4;
 	x = _x;
 	y = _y;
 
@@ -377,10 +377,10 @@ void pawn::show()
 	}
 }
 
-void pawn::set_position(int _x, int _y, int player_x, int player_y)
+void pawn::set_position(int _x, int _y, game_map* m)
 {
-	camera_x = _x - player_x + 7;
-	camera_y = _y - player_y + 4;
+	camera_x = _x - m->player->get_x() + 7;
+	camera_y = _y - m->player->get_y() + 4;
 	x = _x;
 	y = _y;
 
@@ -439,10 +439,10 @@ void knight::show()
 	}
 }
 
-void knight::set_position(int _x, int _y, int player_x, int player_y)
+void knight::set_position(int _x, int _y, game_map* m)
 {
-	camera_x = _x - player_x + 7;
-	camera_y = _y - player_y + 4;
+	camera_x = _x - m->player->get_x() + 7;
+	camera_y = _y - m->player->get_y() + 4;
 	x = _x;
 	y = _y;
 
@@ -493,10 +493,10 @@ void rook::show()
 	}
 }
 
-void rook::set_position(int _x, int _y, int player_x, int player_y)
+void rook::set_position(int _x, int _y, game_map* m)
 {
-	camera_x = _x - player_x + 7;
-	camera_y = _y - player_y + 4;
+	camera_x = _x - m->player->get_x() + 7;
+	camera_y = _y - m->player->get_y() + 4;
 	x = _x;
 	y = _y;
 
@@ -547,10 +547,10 @@ void bishop::show()
 	}
 }
 
-void bishop::set_position(int _x, int _y, int player_x, int player_y)
+void bishop::set_position(int _x, int _y, game_map* m)
 {
-	camera_x = _x - player_x + 7;
-	camera_y = _y - player_y + 4;
+	camera_x = _x - m->player->get_x() + 7;
+	camera_y = _y - m->player->get_y() + 4;
 	x = _x;
 	y = _y;
 
@@ -583,10 +583,10 @@ int queen::move(game_map * m)
 	return res;
 }
 
-void queen::set_position(int _x, int _y, int player_x, int player_y)
+void queen::set_position(int _x, int _y, game_map* m)
 {
-	camera_x = _x - player_x + 7;
-	camera_y = _y - player_y + 4;
+	camera_x = _x - m->player->get_x() + 7;
+	camera_y = _y - m->player->get_y() + 4;
 	x = _x;
 	y = _y;
 
@@ -638,10 +638,10 @@ int king::move(game_map * m)
 	return res;
 }
 
-void king::set_position(int _x, int _y, int player_x, int player_y)
+void king::set_position(int _x, int _y, game_map* m)
 {
-	camera_x = _x - player_x + 7;
-	camera_y = _y - player_y + 4;
+	camera_x = _x - m->player->get_x() + 7;
+	camera_y = _y - m->player->get_y() + 4;
 	x = _x;
 	y = _y;
 

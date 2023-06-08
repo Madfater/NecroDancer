@@ -5,12 +5,14 @@
 #include "img_path.h"
 #include "monster.h"
 #include "player.h"
+#include "item.h"
 #include <string>
 #include <vector>
 #include <fstream>
 
 class Monster;
 class Player;
+class Item;
 
 typedef struct 
 {
@@ -21,7 +23,8 @@ class game_map
 {
 	private:
 		vector<vector<block>> blocks;
-		vector<Monster *> monsters;
+		vector<Monster*> monsters;
+		vector<Item*> Items;
 
 		int start_x;
 		int start_y;

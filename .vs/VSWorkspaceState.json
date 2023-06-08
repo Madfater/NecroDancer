@@ -3,8 +3,9 @@
     "",
     "\\NecroDancer",
     "\\NecroDancer\\Source",
+    "\\NecroDancer\\Source\\Core",
+    "\\NecroDancer\\Source\\Game",
     "\\NecroDancer\\Source\\Library"
   ],
-  "SelectedNode": "\\NecroDancer\\Source\\Game",
   "PreviewInSolutionExplorer": false
 }

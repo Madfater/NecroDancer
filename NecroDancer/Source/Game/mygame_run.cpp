@@ -27,15 +27,15 @@ void monster_moving(game_map* m,_interface* inter)
 		switch (m->get_block_info(x, y))
 		{
 			case _player:
-				i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
+				i->set_position(i->get_x(), i->get_y(), m);
 				m->player->lose_HP(i->get_damage());
 				break;
 			case _floor:
 				i->set_is_moving();
-				i->set_position(x, y, m->player->get_x(), m->player->get_y());
+				i->set_position(x, y,m);
 				break;
 			default:
-				i->set_position(i->get_x(), i->get_y(), m->player->get_x(), m->player->get_y());
+				i->set_position(i->get_x(), i->get_y(),m);
 				break;
 		}
 		inter->load_hp(m->player->get_hp());
@@ -130,10 +130,8 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	//if (tempo.if_shouldjump())
 	if(1)
-	{
-		int direction = nChar - 37;
-		moving(direction, &m, &inter);
-	}
+		moving(nChar - 37, &m, &inter);
+
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)

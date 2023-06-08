@@ -23,10 +23,6 @@ void game_map::init()
 	}
 	inputFile.close();
 
-	//test area 
-	monsters.push_back(new bishop());
-	monsters[0]->set_position(4, 4, player->get_x(), player->get_y());
-	//
 	for (int i = 0; i < 17; i++)
 	{
 		blocks.push_back(vector<block>());
@@ -37,15 +33,15 @@ void game_map::init()
 			{
 				case _slime:
 					monsters.push_back(new slime());
-					monsters[monsters.size()-1]->set_position(j, i, player->get_x(), player->get_y());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
 					break;
 				case _bat:
 					monsters.push_back(new bat());
-					monsters[monsters.size() - 1]->set_position(j, i, player->get_x(), player->get_y());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
 					break;
 				case _minotaur:
 					monsters.push_back(new minotaur());
-					monsters[monsters.size() - 1]->set_position(j, i, player->get_x(), player->get_y());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
 					break;
 				default:
 					block = matrix[i][j];

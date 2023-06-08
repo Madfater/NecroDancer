@@ -31,6 +31,9 @@ void camera::show()
 				case _empty:
 					break;
 				case _border:
+					camera_blocks[y][x].SetFrameIndexOfBitmap(_border);
+					camera_blocks[y][x].SetTopLeft(x * 60, (y * 60) - 38);
+					camera_blocks[y][x].ShowBitmap();
 					break;
 				case _wall:
 					camera_blocks[y][x].SetFrameIndexOfBitmap(_wall);

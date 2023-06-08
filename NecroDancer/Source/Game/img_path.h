@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-enum map_obj {_wall,_floor,_player, _empty, _border, _store, _slime, _bat, _minotaur};
+enum map_obj { _wall, _floor, _player, _empty, _border, _store, _slime, _bat, _minotaur, _door, _stair };
 enum status { normal, stunned, rush, _attack };
 enum directions { _left, _up, _right, _down, _upr, _downr, _downl, _upl, _stop};
 
@@ -17,9 +17,18 @@ const short direction_x[17] = { -1,0,1,0,1,1,-1,-1,0,2,2,-2,-2,1,1,-1,-1 };
 const short direction_y[17] = { 0,-1,0,1,-1,1,1,-1,0,1,-1,1,-1,2,-2,2,-2 };
 
 const string img_menu = "resources/picture/mainmenu.bmp";
+
 const string img_beat = "resources/picture/beat.bmp";
+
 const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/picture/heart2.bmp"	 };
-const vector<string> img_background = { "resources/picture/wall.bmp","resources/picture/floor_even.bmp","resources/picture/floor_odd.bmp" };
+
+const vector<string> img_background = { "resources/picture/wall.bmp",
+										"resources/picture/floor_even.bmp",
+										"resources/picture/floor_odd.bmp",
+										"resources/picture/floor_even.bmp" , 
+										"resources/picture/unbreakable.bmp" 
+									  };
+
 //const string img_menu = "resources/picture/mainmenu.bmp";
 
 const string img_health_temp_full = "resources/picture/heart_temp_full.bmp";
@@ -28,37 +37,44 @@ const string img_health_temp_empty = "resources/picture/heart_temp_empty.bmp";
 const string img_health_full = "resources/picture/heart.bmp";
 const string img_health_half = "resources/picture/heart_half.bmp";
 const string img_health_empty = "resources/picture/heart_empty.bmp";
+
+const vector<string> img_bomb = { "resources/picture/bomb1.bmp" ,"resources/picture/bomb2.bmp" };
+const vector<string> img_chest = { "resources/picture/chest.bmp" };
+const vector<string> img_stair = { "resources/picture/stair.bmp" };
+
 const string money = "resources/picture/heart_half.bmp";
+
 const vector<string> img_shovel = { "resources/picture/shovel_left.bmp","resources/picture/shovel_right.bmp" };
+
 const vector<string> img_monster_attack = {
-	"resources/picture/monster_attack1.bmp",
-	"resources/picture/monster_attack2.bmp",
-	"resources/picture/monster_attack3.bmp",
-	"resources/picture/monster_attack4.bmp",
-	"resources/picture/monster_attack5.bmp"
-};
+											"resources/picture/monster_attack1.bmp",
+											"resources/picture/monster_attack2.bmp",
+											"resources/picture/monster_attack3.bmp",
+											"resources/picture/monster_attack4.bmp",
+											"resources/picture/monster_attack5.bmp"
+										  };
 const vector<vector<string>> img_attack_dagger = {
-												{
-													"resources/picture/attack_dagger_left1.bmp",
-													"resources/picture/attack_dagger_left2.bmp",
-													"resources/picture/attack_dagger_left3.bmp"
-												},
-												{
-													"resources/picture/attack_dagger_up1.bmp",
-													"resources/picture/attack_dagger_up2.bmp",
-													"resources/picture/attack_dagger_up3.bmp"
-												},
-												{
-													"resources/picture/attack_dagger_right1.bmp",
-													"resources/picture/attack_dagger_right2.bmp",
-													"resources/picture/attack_dagger_right3.bmp"
-												},
-												{
-													"resources/picture/attack_dagger_down1.bmp",
-													"resources/picture/attack_dagger_down2.bmp",
-													"resources/picture/attack_dagger_down3.bmp"
-												},
-										};
+													{
+														"resources/picture/attack_dagger_left1.bmp",
+														"resources/picture/attack_dagger_left2.bmp",
+														"resources/picture/attack_dagger_left3.bmp"
+													},
+													{
+														"resources/picture/attack_dagger_up1.bmp",
+														"resources/picture/attack_dagger_up2.bmp",
+														"resources/picture/attack_dagger_up3.bmp"
+													},
+													{
+														"resources/picture/attack_dagger_right1.bmp",
+														"resources/picture/attack_dagger_right2.bmp",
+														"resources/picture/attack_dagger_right3.bmp"
+													},
+													{
+														"resources/picture/attack_dagger_down1.bmp",
+														"resources/picture/attack_dagger_down2.bmp",
+														"resources/picture/attack_dagger_down3.bmp"
+													},
+												};
 const vector<vector<string>> img_player={ 
 											{	
 												"resources/picture/player_left1.bmp",

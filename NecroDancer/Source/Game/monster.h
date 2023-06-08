@@ -30,7 +30,7 @@ class Monster
 		int camera_y;
 
 	public:
-		Monster::Monster(int,int, vector<vector<string>>, COLORREF);
+		Monster::Monster(int,int, vector<vector<string>>);
 		virtual ~Monster() = default;
 
 		bool get_faceright();
@@ -45,7 +45,7 @@ class Monster
 		int get_camera_y();
 
 		
-		virtual void set_position(int, int, int, int);
+		virtual void set_position(int, int, game_map*);
 		void set_faceright(bool);
 		void set_is_moving();
 
@@ -61,7 +61,7 @@ class bat :public Monster
 	private:
 		int step_cnt = 0;
 	public:
-		bat() : Monster(2, 1, img_monsters[0], RGB(0, 0, 0)) { };
+		bat() : Monster(2, 1, img_monsters[0]) { };
 		int move(game_map*) override;
 };
 
@@ -70,7 +70,7 @@ class slime :public Monster
 	private:
 		int step_cnt = 0;
 	public:
-		slime() : Monster(1, 1, img_monsters[1], RGB(0, 0, 0)) { };
+		slime() : Monster(1, 1, img_monsters[1]) { };
 		int move(game_map*) override;
 };
 
@@ -83,7 +83,7 @@ class minotaur :public Monster
 		vector<game_framework::CMovingBitmap> img_stunned;
 		vector<game_framework::CMovingBitmap> img_attacking;
 	public:
-		minotaur() :Monster(5, 1, img_minotaur, RGB(0, 0, 0)) 
+		minotaur() :Monster(5, 1, img_minotaur) 
 		{
 			for (int i = 0; i < 2; i++)
 			{
@@ -94,7 +94,7 @@ class minotaur :public Monster
 				img_stunned[i].SetAnimation(100, false);
 			}
 		};
-		void set_position(int, int, int, int) override;
+		void set_position(int, int, game_map*) override;
 		void show() override;
 		int move(game_map*) override;
 		void move_animation() override;
@@ -108,7 +108,7 @@ class pawn :public Monster
 		bool is_attacking = false;
 		game_framework::CMovingBitmap img_attacking;
 	public:
-		pawn() : Monster(1, 1, img_pawn, RGB(0, 0, 0)) 
+		pawn() : Monster(1, 1, img_pawn) 
 		{
 			std::random_device rd;
 			std::mt19937 rng(rd());
@@ -119,7 +119,7 @@ class pawn :public Monster
 		};
 		int move(game_map*) override;
 		void show() override;
-		void set_position(int, int, int, int) override;
+		void set_position(int, int, game_map*) override;
 };
 
 class knight :public Monster
@@ -129,13 +129,13 @@ class knight :public Monster
 		bool is_attacking = false;
 		game_framework::CMovingBitmap img_attacking;
 	public:
-		knight() : Monster(1, 1, img_knight, RGB(0, 0, 0)) 
+		knight() : Monster(1, 1, img_knight) 
 		{
 			img_attacking.LoadBitmapByString(img_knight_attack, RGB(0, 0, 0));
 		};
 		int move(game_map*) override;
 		void show() override;
-		void set_position(int, int, int, int) override;
+		void set_position(int, int, game_map*) override;
 };
 
 class rook :public Monster
@@ -145,13 +145,13 @@ class rook :public Monster
 		bool is_attacking = false;
 		game_framework::CMovingBitmap img_attacking;
 	public:
-		rook() : Monster(1, 1, img_rook, RGB(0, 0, 0)) 
+		rook() : Monster(1, 1, img_rook) 
 		{
 			img_attacking.LoadBitmapByString(img_rook_attack, RGB(0, 0, 0));
 		};
 		int move(game_map*) override;
 		void show() override;
-		void set_position(int, int, int, int) override;
+		void set_position(int, int, game_map*) override;
 };
 
 class bishop :public Monster
@@ -161,13 +161,13 @@ class bishop :public Monster
 		bool is_attacking = false;
 		game_framework::CMovingBitmap img_attacking;
 	public:
-		bishop() : Monster(1, 1, img_bishop, RGB(0, 0, 0)) 
+		bishop() : Monster(1, 1, img_bishop) 
 		{
 			img_attacking.LoadBitmapByString(img_bishop_attack, RGB(0, 0, 0));
 		};
 		int move(game_map*) override;
 		void show() override;
-		void set_position(int, int, int, int) override;
+		void set_position(int, int, game_map*) override;
 };
 
 class queen :public Monster
@@ -175,9 +175,9 @@ class queen :public Monster
 	private:
 		int step_cnt = 0;
 	public:
-		queen() : Monster(1, 1, img_queen, RGB(0, 0, 0)) { };
+		queen() : Monster(1, 1, img_queen) { };
 		int move(game_map*) override;
-		void set_position(int, int, int, int) override;
+		void set_position(int, int, game_map*) override;
 };
 
 class king :public Monster
@@ -185,8 +185,8 @@ class king :public Monster
 	private:
 		int step_cnt = 0;
 	public:
-		king() : Monster(3, 2, img_king, RGB(0, 0, 0)) { };
+		king() : Monster(3, 2, img_king) { };
 		int move(game_map*) override;
-		void set_position(int, int, int, int) override;
+		void set_position(int, int, game_map*) override;
 };
 #endif

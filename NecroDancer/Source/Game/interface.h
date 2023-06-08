@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "../Library/gameutil.h"
 
 class _interface
