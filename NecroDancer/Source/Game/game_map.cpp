@@ -43,6 +43,14 @@ void game_map::init()
 					monsters.push_back(new minotaur());
 					monsters[monsters.size() - 1]->set_position(j, i, this);
 					break;
+				case _stair:
+					Items.push_back(new Stair());
+					Items[Items.size() - 1]->set_position(j, i, this);
+					break;
+				case _chest:
+					Items.push_back(new Chest());
+					Items[Items.size() - 1]->set_position(j, i, this);
+					break;
 				default:
 					block = matrix[i][j];
 					break;
@@ -76,9 +84,14 @@ int game_map::get_block_info(int x,int y)
 	if (player->get_x() == x && player->get_y() == y)
 		return _player;
 
-	for (int i = 0; i < monsters.size(); i++)
-		if (monsters[i]->get_x() == x && monsters[i]->get_y() == y)
-			return -1*(i+1);
+	for (const auto& monster : monsters) {
+		if (dynamic_cast<bat*>(monster) != nullptr)
+			return _bat;
+		else if (dynamic_cast<slime*>(monster) != nullptr)
+			return _slime;
+		else if (dynamic_cast<minotaur*>(monster) != nullptr)
+			return _minotaur;
+	}
 
 	return blocks[y][x].type;
 }
