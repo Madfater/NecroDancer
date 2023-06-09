@@ -25,8 +25,11 @@ const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/pict
 const vector<string> img_background = { "resources/picture/wall.bmp",
 										"resources/picture/floor_even.bmp",
 										"resources/picture/floor_odd.bmp",
-										"resources/picture/floor_even.bmp" , 
-										"resources/picture/unbreakable.bmp" 
+										"resources/picture/floor_even.bmp", 
+										"resources/picture/unbreakable.bmp",
+										"resources/picture/stair.bmp",
+										"resources/picture/door.bmp",
+										"resources/picture/door_side.bmp",
 									  };
 
 //const string img_menu = "resources/picture/mainmenu.bmp";
