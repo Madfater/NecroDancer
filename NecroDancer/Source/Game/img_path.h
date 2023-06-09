@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-enum map_obj { _wall, _floor, _player, _empty, _border, _store, _slime, _bat, _minotaur, _door, _stair };
+enum map_obj { _wall, _floor, _player, _empty, _border, _store, _slime, _bat, _minotaur, _door, _stair , _chest};
 enum status { normal, stunned, rush, _attack };
 enum directions { _left, _up, _right, _down, _upr, _downr, _downl, _upl, _stop};
 

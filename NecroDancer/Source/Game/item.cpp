@@ -36,10 +36,12 @@ void Item::set_position(int _x, int _y, game_map* m)
 	img.SetTopLeft(camera_x * 60 , camera_y * 60 - 10);
 }
 
-void Bomb::show()
-{
-}
-
 void Chest::show()
 {
+	img.ShowBitmap();
+}
+
+void Stair::show()
+{
+	img.ShowBitmap();
 }

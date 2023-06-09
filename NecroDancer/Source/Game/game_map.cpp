@@ -84,14 +84,18 @@ int game_map::get_block_info(int x,int y)
 	if (player->get_x() == x && player->get_y() == y)
 		return _player;
 
-	for (const auto& monster : monsters) {
-		if (dynamic_cast<bat*>(monster) != nullptr)
-			return _bat;
-		else if (dynamic_cast<slime*>(monster) != nullptr)
-			return _slime;
-		else if (dynamic_cast<minotaur*>(monster) != nullptr)
-			return _minotaur;
-	}
+	for (int i = 0; i < monsters.size(); i++)
+		if (monsters[i]->get_x() == x && monsters[i]->get_y() == y)
+			return -1*(i+1);
+
+	for (auto &item : Items)
+		if (item->get_x() == x && item->get_y() == y)
+		{
+			if (dynamic_cast<Stair*>(item) != nullptr)
+				return _stair;
+			else if (dynamic_cast<Chest*>(item) != nullptr)
+				return _chest;
+		}
 
 	return blocks[y][x].type;
 }
