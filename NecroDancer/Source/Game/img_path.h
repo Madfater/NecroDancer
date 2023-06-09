@@ -8,6 +8,7 @@
 enum map_obj { _wall, _floor, _player, _empty, _border, _store, _slime, _bat, _minotaur, _door, _stair , _chest};
 enum status { normal, stunned, rush, _attack };
 enum directions { _left, _up, _right, _down, _upr, _downr, _downl, _upl, _stop};
+//enum weapon { dagger, dagger, _right, _down, _upr, _downr, _downl, _upl, _stop };
 
 const int weapon_damage[1] = { 1 };
 
