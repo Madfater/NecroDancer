@@ -5,13 +5,13 @@
 #include <string>
 #include <vector>
 
-enum map_obj { _wall, _floor, _player, _empty, _border, _store, _slime, _bat, _minotaur, _door, _stair , _chest};
+enum map_obj { _wall, _floor, _player, _empty, _border, _store, _slime, _bat, _minotaur, _door_hor, _door_ver, _stair , _chest};
 enum status { normal, stunned, rush, _attack };
 enum directions { _left, _up, _right, _down, _upr, _downr, _downl, _upl, _stop};
 
 const int weapon_damage[1] = { 1 };
 
-const vector<short> slime_step = { 4, 0, 4, 2 };
+const vector<short> slime_step = { _stop, _left, _stop, _right };
 
 const short direction_x[17] = { -1,0,1,0,1,1,-1,-1,0,2,2,-2,-2,1,1,-1,-1 };
 const short direction_y[17] = { 0,-1,0,1,-1,1,1,-1,0,1,-1,1,-1,2,-2,2,-2 };
@@ -25,11 +25,10 @@ const vector<string> img_heart = {"resources/picture/heart1.bmp","resources/pict
 const vector<string> img_background = { "resources/picture/wall.bmp",
 										"resources/picture/floor_even.bmp",
 										"resources/picture/floor_odd.bmp",
-										"resources/picture/floor_even.bmp", 
 										"resources/picture/unbreakable.bmp",
 										"resources/picture/stair.bmp",
-										"resources/picture/door.bmp",
-										"resources/picture/door_side.bmp",
+										"resources/picture/door_hor.bmp",
+										"resources/picture/door_ver.bmp",
 									  };
 
 //const string img_menu = "resources/picture/mainmenu.bmp";

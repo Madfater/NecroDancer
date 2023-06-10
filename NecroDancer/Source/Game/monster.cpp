@@ -251,6 +251,10 @@ int minotaur::move(game_map* map)
 		
 	int res = 4;
 	int max = INT_MAX;
+
+	if ((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y) > 25)
+		return _stop;
+
 	switch (Status)
 	{
 		case normal:
