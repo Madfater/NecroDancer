@@ -72,9 +72,6 @@
     <ClCompile Include="Source\Game\interface.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Game\item.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Library\audio.h">
@@ -129,9 +126,6 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game\camera.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Game\item.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

@@ -201,6 +201,9 @@ int minotaur::move(game_map* map)
 	int player_x = map->player->get_x();
 	int player_y = map->player->get_y();
 
+	if (sqrt((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y)) > 5)
+		return _stop;
+
 	if (Status == stunned)
 	{
 		cnt_stun++;
@@ -251,9 +254,6 @@ int minotaur::move(game_map* map)
 		
 	int res = 4;
 	int max = INT_MAX;
-
-	if ((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y) > 25)
-		return _stop;
 
 	switch (Status)
 	{
@@ -310,11 +310,14 @@ int pawn::move(game_map * m)
 	int move_info = m->get_block_info(x + direction_x[_down], y + direction_y[_down]);
 	int l_bot_diag_info = m->get_block_info(x + 1, y + 1);
 	int r_bot_diag_info = m->get_block_info(x - 1, y + 1);
+	int player_x = m->player->get_x();
+	int player_y = m->player->get_y();
+
+	if (sqrt((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y)) > 5)
+		return _stop;
 
 	if (is_queen)
 	{
-		int player_x = m->player->get_x();
-		int player_y = m->player->get_y();
 		int max = INT_MAX;
 		int res = 0;
 		int dis_x = 0, dis_y = 0;
@@ -404,6 +407,11 @@ void pawn::set_position(int _x, int _y, game_map* m)
 
 int knight :: move(game_map * m)
 {
+	int player_x = m->player->get_x();
+	int player_y = m->player->get_y();
+	if (sqrt((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y)) > 5)
+		return _stop;
+
 	switch (++step_cnt % 5)
 	{
 		case 4:
@@ -411,8 +419,6 @@ int knight :: move(game_map * m)
 			break;
 		case 0:
 			is_attacking = false;
-			int player_x = m->player->get_x();
-			int player_y = m->player->get_y();
 			int res = 9;
 			int max = INT_MAX;
 
@@ -458,6 +464,11 @@ void knight::set_position(int _x, int _y, game_map* m)
 
 int rook::move(game_map * m)
 {	
+	int player_x = m->player->get_x();
+	int player_y = m->player->get_y();
+	if (sqrt((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y)) > 5)
+		return _stop;
+
 	switch (++step_cnt %3)
 	{
 		case 2:
@@ -465,8 +476,6 @@ int rook::move(game_map * m)
 			break;
 		case 0:
 			is_attacking = false;
-			int player_x = m->player->get_x();
-			int player_y = m->player->get_y();
 			int res = 0;
 			int max = INT_MAX;
 
@@ -512,6 +521,11 @@ void rook::set_position(int _x, int _y, game_map* m)
 
 int bishop::move(game_map * m)
 {
+	int player_x = m->player->get_x();
+	int player_y = m->player->get_y();
+	if (sqrt((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y)) > 5)
+		return _stop;
+
 	switch (++step_cnt % 5)
 	{
 		case 4:
@@ -519,8 +533,6 @@ int bishop::move(game_map * m)
 			break;
 		case 0:
 			is_attacking = false;
-			int player_x = m->player->get_x();
-			int player_y = m->player->get_y();
 			int res = 4;
 			int max = INT_MAX;
 
@@ -567,6 +579,10 @@ int queen::move(game_map * m)
 {
 	int player_x = m->player->get_x();
 	int player_y = m->player->get_y();
+
+	if (sqrt((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y)) > 5)
+		return _stop;
+
 	int max = INT_MAX;
 	int res = 0;
 	int dis_x = 0, dis_y = 0;
@@ -602,6 +618,10 @@ int king::move(game_map * m)
 {
 	int player_x = m->player->get_x();
 	int player_y = m->player->get_y();
+
+	if (sqrt((player_x - x)*(player_x - x) + (player_y - y)*(player_y - y)) > 5)
+		return _stop;
+
 	int max = INT_MAX;
 	int min = INT_MIN;
 	int res = 0;

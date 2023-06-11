@@ -24,6 +24,18 @@ void monster_moving(game_map* m,_interface* inter)
 		int x = i->get_x() + direction_x[d];
 		int y = i->get_y() + direction_y[d];
 
+		switch (d)
+		{
+			case 0:
+				i->set_faceright(false);
+				break;
+			case 2:
+				i->set_faceright(true);
+				break;
+			default:
+				break;
+		}
+
 		switch (m->get_block_info(x, y))
 		{
 			case _player:
@@ -42,23 +54,24 @@ void monster_moving(game_map* m,_interface* inter)
 	}
 }
 
-void moving(int direction, game_map* m, _interface* inter)
+void CGameStateRun::moving(int direction)
 {
 	if (direction >= 0 && direction <= 4)//left up right down
 	{
 		switch (direction)
 		{
 			case 0:
-				m->player->set_faceright(false);
+				m.player->set_faceright(false);
 				break;
 			case 2:
-				m->player->set_faceright(true);
+				m.player->set_faceright(true);
 				break;
 			default:
 				break;
 		}
-		
-		int info = m->get_block_info(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction]);
+		int player_x = m.player->get_x();
+		int player_y = m.player->get_y();
+		int info = m.get_block_info(player_x + direction_x[direction], player_y + direction_y[direction]);
 		switch (info)
 		{
 			case _border:
@@ -66,43 +79,57 @@ void moving(int direction, game_map* m, _interface* inter)
 			case _empty:
 				break;
 			case _door_hor:
-				m->block_change(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction], _floor);
+				m.block_change(player_x + direction_x[direction], player_y + direction_y[direction], _floor);
 				break;
 			case _door_ver:
-				m->block_change(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction], _floor);
+				m.block_change(player_x + direction_x[direction], player_y + direction_y[direction], _floor);
 				break;
 			case _wall:
-				switch (m->player->get_shovel_id())
+				switch (m.player->get_shovel_id())
 				{
 					case 0:
-						m->player->dig(direction);
-						m->block_change(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction], _floor);
+						m.player->dig(direction);
+						m.block_change(player_x + direction_x[direction], player_y + direction_y[direction], _floor);
 						break;
 					default:
 						break;
 				}
 				break;
 			case _floor:
-				m->player->set_position(m->player->get_x() + direction_x[direction], m->player->get_y() + direction_y[direction]);
-				m->player->set_moving();
+				m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
+				m.player->set_moving();
 				break;
 			case _player:
 				break;
+			case _stair:
+				phase_number++;
+				init();
+				break;
 			default:
-				int index = info * -1 - 1;
-				Monster* monster = m->get_chr()[index];
-				m->player->attack(monster, direction);
-				if (monster->get_hp() <= 0)
-					m->pop_monster(index);
+				if (info < 0)
+				{
+					int index = info * -1 - 1;
+					Monster* monster = m.get_chr()[index];
+					m.player->attack(monster, direction);
+					if (monster->get_hp() <= 0)
+						m.pop_monster(index);
+				}
 				break;
 		}
-		monster_moving(m, inter);
+		monster_moving(&m, &inter);
 	}
+}
+
+void game_framework::CGameStateRun::init()
+{
+	tempo.init();
+	inter.init();
+	m.init(phase_number);
+	c.init(&m);
 }
 
 CGameStateRun::CGameStateRun(CGame *g) : CGameState(g)
 {
-
 }
 
 CGameStateRun::~CGameStateRun()
@@ -121,13 +148,9 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
-	CAudio* audio = CAudio::Instance();
 	audio->Load(0, "resources/audio/zone1_1.wav");
 	audio->Play(0);
-	tempo.init();
-	inter.init();
-	m.init();
-	c.init(&m);
+	init();
 }
 
 
@@ -136,7 +159,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	//if (tempo.if_shouldjump())
 	if(1)
-		moving(nChar - 37, &m, &inter);
+		moving(nChar - 37);
 
 }
 

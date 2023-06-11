@@ -5,7 +5,6 @@
 #include "img_path.h"
 #include "monster.h"
 #include "player.h"
-#include "item.h"
 #include <string>
 #include <vector>
 #include <fstream>
@@ -24,7 +23,6 @@ class game_map
 	private:
 		vector<vector<block>> blocks;
 		vector<Monster*> monsters;
-		vector<Item*> Items;
 
 		int start_x;
 		int start_y;
@@ -32,7 +30,7 @@ class game_map
 		int map_height;
 
 	public:
-		void init();
+		void init(int);
 		Player* player;
 		vector<Monster *> get_chr();
 		void pop_monster(int);

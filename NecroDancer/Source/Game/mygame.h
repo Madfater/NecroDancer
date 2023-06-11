@@ -95,11 +95,14 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
+		void moving(int);
+		void init();
 		tempo tempo;
 		game_map m ;
 		camera c ;
 		_interface inter;
-
+		int phase_number = 0;
+		CAudio* audio = CAudio::Instance();
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

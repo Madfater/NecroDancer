@@ -5,7 +5,12 @@
 #include <string>
 #include <vector>
 
-enum map_obj { _wall, _floor, _player, _empty, _border, _store, _slime, _bat, _minotaur, _door_hor, _door_ver, _stair , _chest};
+enum map_obj {
+	_wall, _floor, _player, _empty, _border, _store, 
+	_slime,_bat, _minotaur, _door_hor, _door_ver,
+	_stair,_chest, _pawn, _knight, _rook, 
+	_bishop, _queen, _king
+};
 enum status { normal, stunned, rush, _attack };
 enum directions { _left, _up, _right, _down, _upr, _downr, _downl, _upl, _stop};
 //enum weapon { dagger, dagger, _right, _down, _upr, _downr, _downl, _upl, _stop };
@@ -30,6 +35,7 @@ const vector<string> img_background = { "resources/picture/wall.bmp",
 										"resources/picture/stair.bmp",
 										"resources/picture/door_hor.bmp",
 										"resources/picture/door_ver.bmp",
+										"resources/picture/chest1.bmp"
 									  };
 
 //const string img_menu = "resources/picture/mainmenu.bmp";

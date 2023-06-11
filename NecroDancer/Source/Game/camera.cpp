@@ -27,6 +27,7 @@ bool hasObstacle(int x, int y, vector<vector<int>> blocks)
 
 	while (player_x != x || player_y != y)
 	{
+		//obstacle
 		if (blocks[player_y][player_x] == _door_hor || 
 			blocks[player_y][player_x] == _door_ver || 
 			blocks[player_y][player_x] == _wall || 
@@ -109,6 +110,10 @@ void camera::show()
 				case _wall:
 					camera_blocks_img[y][x].SetFrameIndexOfBitmap(_wall);
 					break;
+				case _stair:
+					camera_blocks_img[y][x].SetFrameIndexOfBitmap(4);
+					camera_blocks_img[y][x].SetTopLeft(x * 60, y * 60);
+					break;
 				default:
 					camera_blocks_img[y][x].SetFrameIndexOfBitmap(_floor+(x+y)%2);
 					camera_blocks_img[y][x].SetTopLeft(x * 60, y * 60);
@@ -130,6 +135,7 @@ void camera::show()
 					if (i->get_is_damaged())
 						i->show_hp();
 				}
+
 	}
 
 	for (auto &i : _map->get_chr())

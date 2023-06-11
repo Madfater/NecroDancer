@@ -2,31 +2,38 @@
 #include "game_map.h"
 
 
-void game_map::init()
+void game_map::init(int phase_number)
 {
-	start_x = 3;
-	start_y = 3;
-	map_height = 17;
+	start_x = 11;
+	start_y = 18;
+	map_height = 21;
 	map_width = 24;
+	std::ifstream inputFile;
+	monsters = vector<Monster*>();
+	blocks = vector<vector<block>>();
 
 	player = new Player(start_x,start_y);
 
-	std::ifstream inputFile("resources/map/map.bin", std::ios::binary);
-	std::vector<std::vector<int>> matrix(17, std::vector<int>(24));
+	if(phase_number==0)
+		inputFile= std::ifstream("resources/map/map-boss.bin", std::ios::binary);
+	else
+		inputFile= std::ifstream("resources/map/map-boss-test.bin", std::ios::binary);
 
-	for (int i = 0; i < 17; i++)
+	std::vector<std::vector<int>> matrix(map_height, std::vector<int>(map_width));
+
+	for (int i = 0; i < map_height; i++)
 	{
-		for (int j = 0; j < 24; j++)
+		for (int j = 0; j < map_width; j++)
 		{
 			inputFile.read(reinterpret_cast<char*>(&matrix[i][j]), 1);
 		}
 	}
 	inputFile.close();
 
-	for (int i = 0; i < 17; i++)
+	for (int i = 0; i < map_height; i++)
 	{
 		blocks.push_back(vector<block>());
-		for (int j = 0; j < 24; j++)
+		for (int j = 0; j < map_width; j++)
 		{
 			int block = 1;
 			switch (matrix[i][j])
@@ -43,13 +50,29 @@ void game_map::init()
 					monsters.push_back(new minotaur());
 					monsters[monsters.size() - 1]->set_position(j, i, this);
 					break;
-				case _stair:
-					Items.push_back(new Stair());
-					Items[Items.size() - 1]->set_position(j, i, this);
+				case _pawn:
+					monsters.push_back(new pawn());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
 					break;
-				case _chest:
-					Items.push_back(new Chest());
-					Items[Items.size() - 1]->set_position(j, i, this);
+				case _knight:
+					monsters.push_back(new knight());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
+					break;
+				case _rook:
+					monsters.push_back(new rook());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
+					break;
+				case _bishop:
+					monsters.push_back(new bishop());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
+					break;
+				case _queen:
+					monsters.push_back(new queen());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
+					break;
+				case _king:
+					monsters.push_back(new king());
+					monsters[monsters.size() - 1]->set_position(j, i, this);
 					break;
 				default:
 					block = matrix[i][j];
@@ -87,15 +110,6 @@ int game_map::get_block_info(int x,int y)
 	for (int i = 0; i < monsters.size(); i++)
 		if (monsters[i]->get_x() == x && monsters[i]->get_y() == y)
 			return -1*(i+1);
-
-	for (auto &item : Items)
-		if (item->get_x() == x && item->get_y() == y)
-		{
-			if (dynamic_cast<Stair*>(item) != nullptr)
-				return _stair;
-			else if (dynamic_cast<Chest*>(item) != nullptr)
-				return _chest;
-		}
 
 	return blocks[y][x].type;
 }
