@@ -53,7 +53,9 @@ void _interface::init()
 		num++;
 	}
 }
-
+void _interface::set_weapon_id(int id) {
+	weapon_id = id;
+}
 void _interface::load_hp(int hp) {
 
 	lifepoint = hp;

@@ -15,6 +15,7 @@ public:
 	game_framework::CMovingBitmap heart_half;
 	//game_framework::CMovingBitmap heart_half;
 	game_framework::CMovingBitmap money;
+	void set_weapon_id(int);
 	void init();
 	void load_hp(int);
 	void show();

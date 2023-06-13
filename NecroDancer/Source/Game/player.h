@@ -51,6 +51,7 @@ class Player
 		void set_moving();
 		void set_position(int, int);
 		void set_faceright(bool);
+		void set_weapon_id(int);
 		void dig(int);
 
 		void attack(Monster*,int);

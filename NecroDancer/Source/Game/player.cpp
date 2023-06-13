@@ -122,7 +122,10 @@ void Player::set_moving()
 {
 	is_moving = true;
 }
-
+void Player::set_weapon_id(int id)
+{
+	weapon_id = id;
+}
 void Player::set_position(int _x, int _y)
 {
 	x = _x;
