@@ -57,17 +57,13 @@ bool tempo::if_shouldjump()
 
 bool tempo::if_afterjump()
 {
-	bool jump = false;
-	for (int i = 0; i < beats_num; i++) {
-		if (beats_left[i].GetLeft() > interval_left || beats_left[i].GetLeft() < interval_right) 
-		{
-			jump = true;
+	//if(!_has_moved)
+		for (int i = 0; i < beats_num; i++) {
+			if (beats_left[i].GetLeft() == interval_right) {
+				return true;
+			}
 		}
-	}
-	if (jump == true && _has_moved == false)
-		return true;
-	else
-		return false;
+	return false;
 }
 
 void tempo::show() 
@@ -77,7 +73,7 @@ void tempo::show()
 		if (beats_left[i].GetLeft() > left_beat_end_pos) {
 			beats_left[i].SetTopLeft(left_beat_start_pos, beat_y);
 		}
-		if (beats_left[i].GetLeft() > interval_right && beats_left[i].GetLeft() < interval_right+beats_space) {
+		if (beats_left[i].GetLeft() > interval_right && beats_left[i].GetLeft() < beats_space) {//其中1個介於30~170之間
 			_has_moved = false;
 		}
 	}

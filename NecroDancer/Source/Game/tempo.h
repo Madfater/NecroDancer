@@ -6,6 +6,7 @@ class tempo
 {
 	private:
 		bool _has_moved = false; //only jump once this determine if player has jumped
+		bool monster_moved = false;
 
 	public:
 		vector<game_framework::CMovingBitmap> beats_left;

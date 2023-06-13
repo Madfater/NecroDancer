@@ -116,7 +116,7 @@ void CGameStateRun::moving(int direction)
 				}
 				break;
 		}
-		monster_moving(&m, &inter);
+		//monster_moving(&m, &inter);
 	}
 }
 
@@ -139,17 +139,19 @@ CGameStateRun::~CGameStateRun()
 
 void CGameStateRun::OnBeginState()
 {
+	audio->Load(0, "resources/audio/zone1_1.wav");
+	audio->Play(0);
+	
 }
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
-	
+	if(tempo.if_afterjump())
+		monster_moving(&m, &inter);
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
-	audio->Load(0, "resources/audio/zone1_1.wav");
-	audio->Play(0);
 	init();
 }
 
@@ -157,8 +159,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	//if (tempo.if_shouldjump())
-	if(1)
+	if (tempo.if_shouldjump())
+	//if(1)
 		moving(nChar - 37);
 
 }

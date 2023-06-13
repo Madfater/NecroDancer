@@ -13,9 +13,9 @@ enum map_obj {
 };
 enum status { normal, stunned, rush, _attack };
 enum directions { _left, _up, _right, _down, _upr, _downr, _downl, _upl, _stop};
-//enum weapon { dagger, dagger, _right, _down, _upr, _downr, _downl, _upl, _stop };
+enum weapon { dagger, longsword, spear, diamond_dagger, diamond_longsword, diamond_spear };
 
-const int weapon_damage[1] = { 1 };
+const int weapon_damage[6] = { 1, 1, 1, 2, 2, 2};
 
 const vector<short> slime_step = { _stop, _left, _stop, _right };
 
@@ -55,6 +55,18 @@ const string money = "resources/picture/heart_half.bmp";
 
 const vector<string> img_shovel = { "resources/picture/shovel_left.bmp","resources/picture/shovel_right.bmp" };
 
+const vector<string> img_weapon_icon = 
+{ 
+	"resources/picture/dagger.bmp", 
+	"resources/picture/longsword.bmp",
+	"resources/picture/spear.bmp",
+	"resources/picture/dagger_diamond.bmp",
+	"resources/picture/dagger_diamond.bmp",
+	"resources/picture/dagger_diamond.bmp"
+
+
+};
+
 const vector<string> img_monster_attack = {
 											"resources/picture/monster_attack1.bmp",
 											"resources/picture/monster_attack2.bmp",
@@ -62,6 +74,79 @@ const vector<string> img_monster_attack = {
 											"resources/picture/monster_attack4.bmp",
 											"resources/picture/monster_attack5.bmp"
 										  };
+const vector<vector<vector<string>>> img_weapon = {
+	{
+		{
+			"resources/picture/attack_dagger_left1.bmp",
+			"resources/picture/attack_dagger_left2.bmp",
+			"resources/picture/attack_dagger_left3.bmp"
+		},
+		{
+			"resources/picture/attack_dagger_up1.bmp",
+			"resources/picture/attack_dagger_up2.bmp",
+			"resources/picture/attack_dagger_up3.bmp"
+		},
+		{
+			"resources/picture/attack_dagger_right1.bmp",
+			"resources/picture/attack_dagger_right2.bmp",
+			"resources/picture/attack_dagger_right3.bmp"
+		},
+		{
+			"resources/picture/attack_dagger_down1.bmp",
+			"resources/picture/attack_dagger_down2.bmp",
+			"resources/picture/attack_dagger_down3.bmp"
+		}
+	},
+	{
+		{
+			"resources/picture/attack_longsworld_left1.bmp",
+			"resources/picture/attack_longsworld_left2.bmp",
+			"resources/picture/attack_longsworld_left3.bmp"
+		},
+		{
+			"resources/picture/attack_longsworld_up1.bmp",
+			"resources/picture/attack_longsworld_up2.bmp",
+			"resources/picture/attack_longsworld_up3.bmp"
+		},
+		{
+			"resources/picture/attack_longsworld_right1.bmp",
+			"resources/picture/attack_longsworld_right2.bmp",
+			"resources/picture/attack_longsworld_right3.bmp"
+		},
+		{
+			"resources/picture/attack_longsworld_down1.bmp",
+			"resources/picture/attack_longsworld_down2.bmp",
+			"resources/picture/attack_longsworld_down3.bmp"
+		},
+	},
+	{
+		{
+			"resources/picture/attack_spear_left1.bmp",
+			"resources/picture/attack_spear_left2.bmp",
+			"resources/picture/attack_spear_left3.bmp",
+			"resources/picture/attack_spear_left4.bmp",
+		},
+		{
+			"resources/picture/attack_spear_up1.bmp",
+			"resources/picture/attack_spear_up2.bmp",
+			"resources/picture/attack_spear_up3.bmp",
+			"resources/picture/attack_spear_up4.bmp"
+		},
+		{
+			"resources/picture/attack_spear_right1.bmp",
+			"resources/picture/attack_spear_right2.bmp",
+			"resources/picture/attack_spear_right3.bmp",
+			"resources/picture/attack_spear_right4.bmp"
+		},
+		{
+			"resources/picture/attack_spear_down1.bmp",
+			"resources/picture/attack_spear_down2.bmp",
+			"resources/picture/attack_spear_down3.bmp",
+			"resources/picture/attack_spear_down4.bmp"
+		}
+	}
+
+};
 const vector<vector<string>> img_attack_dagger = {
 													{
 														"resources/picture/attack_dagger_left1.bmp",
