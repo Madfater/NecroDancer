@@ -3,6 +3,8 @@
 #include "interface.h"
 #include "img_path.h"
 
+#define weapon_icon_pos 0
+#define weapon_icon_height 20
 #define heart_height 20
 #define heart_space 60
 #define heart_pos 700
@@ -12,6 +14,17 @@ using namespace game_framework;
 
 void _interface::init()
 {
+	for (int i = 0; i < 6; i++)
+	{
+		CMovingBitmap weapon;
+		weapon.LoadBitmapByString({ img_weapon_icon[i] }, RGB(0, 0, 0));
+		weapon.SetTopLeft(weapon_icon_pos,weapon_icon_height);
+		weapon_icon.push_back(weapon);
+	}
+	
+
+
+
 	lifepoint = 3;
 	full=lifepoint / 2;
 	empty = (10 - lifepoint) / 2;
@@ -79,4 +92,5 @@ void _interface::show()
 	{
 		hearts[i].ShowBitmap();
 	}
+	weapon_icon[weapon_id].ShowBitmap();
 }

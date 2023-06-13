@@ -12,6 +12,7 @@ class Player
 	private:
 		vector<game_framework::CMovingBitmap> img;
 		vector<vector<game_framework::CMovingBitmap>> shovel_img;
+		vector<vector<game_framework::CMovingBitmap>> _atk_img;
 		vector<game_framework::CMovingBitmap> atk_img;
 		game_framework::CMovingBitmap being_atk_img;
 
@@ -27,7 +28,7 @@ class Player
 		int dig_counter = 0;
 
 		int HP;
-		int weapon_id;
+		int weapon_id = 2;
 		int shovel_id = 0;
 		int x;
 		int y;

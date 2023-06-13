@@ -61,8 +61,8 @@ const vector<string> img_weapon_icon =
 	"resources/picture/longsword.bmp",
 	"resources/picture/spear.bmp",
 	"resources/picture/dagger_diamond.bmp",
-	"resources/picture/dagger_diamond.bmp",
-	"resources/picture/dagger_diamond.bmp"
+	"resources/picture/longsword_diamond.bmp",
+	"resources/picture/spear_diamond.bmp"
 
 
 };
@@ -99,24 +99,24 @@ const vector<vector<vector<string>>> img_weapon = {
 	},
 	{
 		{
-			"resources/picture/attack_longsworld_left1.bmp",
-			"resources/picture/attack_longsworld_left2.bmp",
-			"resources/picture/attack_longsworld_left3.bmp"
+			"resources/picture/attack_longsword_left1.bmp",
+			"resources/picture/attack_longsword_left2.bmp",
+			"resources/picture/attack_longsword_left3.bmp"
 		},
 		{
-			"resources/picture/attack_longsworld_up1.bmp",
-			"resources/picture/attack_longsworld_up2.bmp",
-			"resources/picture/attack_longsworld_up3.bmp"
+			"resources/picture/attack_longsword_up1.bmp",
+			"resources/picture/attack_longsword_up2.bmp",
+			"resources/picture/attack_longsword_up3.bmp"
 		},
 		{
-			"resources/picture/attack_longsworld_right1.bmp",
-			"resources/picture/attack_longsworld_right2.bmp",
-			"resources/picture/attack_longsworld_right3.bmp"
+			"resources/picture/attack_longsword_right1.bmp",
+			"resources/picture/attack_longsword_right2.bmp",
+			"resources/picture/attack_longsword_right3.bmp"
 		},
 		{
-			"resources/picture/attack_longsworld_down1.bmp",
-			"resources/picture/attack_longsworld_down2.bmp",
-			"resources/picture/attack_longsworld_down3.bmp"
+			"resources/picture/attack_longsword_down1.bmp",
+			"resources/picture/attack_longsword_down2.bmp",
+			"resources/picture/attack_longsword_down3.bmp"
 		},
 	},
 	{
