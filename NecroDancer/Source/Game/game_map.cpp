@@ -104,6 +104,9 @@ bool game_map::is_out_of_range(int x, int y)
 int game_map::get_block_info(int x,int y)
 {
 
+	if (is_out_of_range(x, y))
+		return _empty;
+
 	if (player->get_x() == x && player->get_y() == y)
 		return _player;
 

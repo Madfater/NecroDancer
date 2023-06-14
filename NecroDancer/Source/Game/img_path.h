@@ -22,6 +22,15 @@ const vector<short> slime_step = { _stop, _left, _stop, _right };
 const short direction_x[17] = { -1,0,1,0,1,1,-1,-1,0,2,2,-2,-2,1,1,-1,-1 };
 const short direction_y[17] = { 0,-1,0,1,-1,1,1,-1,0,1,-1,1,-1,2,-2,2,-2 };
 
+const int d_spear_x[4] = { -2,0,2,0 };
+const int d_spear_y[4] = { 0,-2,0,2 };
+
+const int d_ls_x1[4] = { -1,-1,1,1 };
+const int d_ls_y1[4] = { 1,-1,-1,1 };
+
+const int d_ls_x2[4] = { -1,1,1,-1 };
+const int d_ls_y2[4] = { -1,-1,1 ,1 };
+
 const string img_menu = "resources/picture/mainmenu.bmp";
 
 const string img_beat = "resources/picture/beat.bmp";

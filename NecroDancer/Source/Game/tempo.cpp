@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "tempo.h"
 
-#define interval_right 30
-#define interval_left 370
+#define interval_right 50
+#define interval_left 350
 #define left_beat_start_pos 0
 #define left_beat_end_pos 400
 #define right_beat_start_pos 900

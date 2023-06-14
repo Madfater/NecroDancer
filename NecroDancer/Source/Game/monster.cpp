@@ -659,7 +659,10 @@ int king::move(game_map * m)
 			}
 		}
 	}
-	return res;
+	if (++step_cnt % 2 == 0)
+		return res;
+	else
+		return _stop;
 }
 
 void king::set_position(int _x, int _y, game_map* m)

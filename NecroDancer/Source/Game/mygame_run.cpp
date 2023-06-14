@@ -56,7 +56,7 @@ void monster_moving(game_map* m,_interface* inter)
 
 void CGameStateRun::moving(int direction)
 {
-	if (direction >= 0 && direction <= 4)//left up right down
+	if ((direction >= 0 && direction <= 4) || direction==_stop)//left up right down
 	{
 		switch (direction)
 		{
@@ -71,6 +71,10 @@ void CGameStateRun::moving(int direction)
 		}
 		int player_x = m.player->get_x();
 		int player_y = m.player->get_y();
+		int weapon_id = m.player->get_weapon_id();
+		std::random_device rd;
+		std::mt19937 rng(rd());
+		int id = 0;
 		int info = m.get_block_info(player_x + direction_x[direction], player_y + direction_y[direction]);
 		switch (info)
 		{
@@ -96,14 +100,85 @@ void CGameStateRun::moving(int direction)
 				}
 				break;
 			case _floor:
-				m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
-				m.player->set_moving();
+				if (weapon_id != 0 && weapon_id != 3)
+				{
+					int ls1 = m.get_block_info(player_x + d_ls_x1[direction], player_y + d_ls_y1[direction]);
+					int ls2 = m.get_block_info(player_x + d_ls_x2[direction], player_y + d_ls_y2[direction]);
+					int spear = m.get_block_info(player_x + d_spear_x[direction], player_y + d_spear_y[direction]);
+					switch (weapon_id)
+					{
+						case 1: case 4:
+							
+							if (ls1 < 0)
+							{
+								int index = ls1 * -1 - 1;
+								Monster* monster = m.get_chr()[index];
+								m.player->attack(monster, direction);
+								if (monster->get_hp() <= 0)
+									m.pop_monster(index);
+							}
+							if (ls2 < 0)
+							{
+								int index = ls2 * -1 - 1;
+								Monster* monster = m.get_chr()[index];
+								m.player->attack(monster, direction);
+								if (monster->get_hp() <= 0)
+									m.pop_monster(index);
+							}
+							if (ls1 > 0 && ls2 > 0)
+							{
+								m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
+								m.player->set_moving();
+							}
+							break;
+						case 2: case 5:
+							if (spear < 0)
+							{
+								int index = spear * -1 - 1;
+								Monster* monster = m.get_chr()[index];
+								m.player->attack(monster, direction);
+								if (monster->get_hp() <= 0)
+									m.pop_monster(index);
+							}
+							else
+							{
+								m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
+								m.player->set_moving();
+							}
+							break;
+						default:
+							m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
+							m.player->set_moving();
+							break;
+					}
+				}
+				else
+				{
+					m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
+					m.player->set_moving();
+				}
 				break;
 			case _player:
 				break;
 			case _stair:
 				phase_number++;
 				init();
+				break;
+			case _chest:
+				m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
+				m.player->set_moving();
+				if (phase_number == 0)
+				{
+					std::uniform_int_distribution<int> distInt(1, 2);
+					id = distInt(rng);
+				}
+				else
+				{
+					std::uniform_int_distribution<int> distInt(1, 5);
+					id = distInt(rng);
+				}
+				m.player->set_weapon_id(id);
+				inter.set_weapon_id(id);
 				break;
 			default:
 				if (info < 0)
@@ -116,8 +191,8 @@ void CGameStateRun::moving(int direction)
 				}
 				break;
 		}
-		//monster_moving(&m, &inter);
 	}
+	monster_moving(&m, &inter);
 }
 
 void game_framework::CGameStateRun::init()
@@ -147,14 +222,13 @@ void CGameStateRun::OnBeginState()
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
 	if(tempo.if_afterjump())
-		monster_moving(&m, &inter);
+		moving(_stop);
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 {
 	init();
 }
-
 
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)

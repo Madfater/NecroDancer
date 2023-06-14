@@ -22,9 +22,6 @@ void _interface::init()
 		weapon_icon.push_back(weapon);
 	}
 	
-
-
-
 	lifepoint = 3;
 	full=lifepoint / 2;
 	empty = (10 - lifepoint) / 2;
