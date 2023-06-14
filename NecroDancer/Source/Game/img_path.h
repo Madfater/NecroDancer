@@ -15,6 +15,10 @@ enum status { normal, stunned, rush, _attack };
 enum directions { _left, _up, _right, _down, _upr, _downr, _downl, _upl, _stop};
 enum weapon { dagger, longsword, spear, diamond_dagger, diamond_longsword, diamond_spear };
 
+const string map_name[3] = { "resources/map/map-zone1.bin","resources/map/map-zone2.bin" ,"resources/map/map-boss.bin" };
+const short s_x[3] = { 19,4,11 };
+const short s_y[3] = { 4,16,18 };
+
 const int weapon_damage[6] = { 1, 1, 1, 2, 2, 2};
 
 const vector<short> slime_step = { _stop, _left, _stop, _right };

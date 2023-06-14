@@ -102,7 +102,7 @@ namespace game_framework {
 		camera c ;
 		_interface inter;
 		int phase_number = 0;
-		CAudio* audio = CAudio::Instance();
+		int wid = 0;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

@@ -3,8 +3,8 @@
 
 Player::Player(int _x, int _y)
 {
-	HP = 3;
-	weapon_id = 2;
+	HP = 6;
+	weapon_id = 0;
 	x = _x;
 	y = _y;
 	

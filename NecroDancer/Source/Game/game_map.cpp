@@ -4,20 +4,15 @@
 
 void game_map::init(int phase_number)
 {
-	start_x = 11;
-	start_y = 18;
+	start_x = s_x[phase_number];
+	start_y = s_y[phase_number];
 	map_height = 21;
 	map_width = 24;
-	std::ifstream inputFile;
+	std::ifstream inputFile = std::ifstream(map_name[phase_number], std::ios::binary);
+
 	monsters = vector<Monster*>();
 	blocks = vector<vector<block>>();
-
 	player = new Player(start_x,start_y);
-
-	if(phase_number==0)
-		inputFile= std::ifstream("resources/map/map-boss.bin", std::ios::binary);
-	else
-		inputFile= std::ifstream("resources/map/map-boss-test.bin", std::ios::binary);
 
 	std::vector<std::vector<int>> matrix(map_height, std::vector<int>(map_width));
 

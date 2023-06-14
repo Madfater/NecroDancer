@@ -28,7 +28,7 @@ class Player
 		int dig_counter = 0;
 
 		int HP;
-		int weapon_id = 2;
+		int weapon_id = 0;
 		int shovel_id = 0;
 		int x;
 		int y;

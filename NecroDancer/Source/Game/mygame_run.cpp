@@ -15,6 +15,8 @@ using namespace game_framework;
 // 這個class為遊戲的遊戲執行物件，主要的遊戲程式都在這裡
 /////////////////////////////////////////////////////////////////////////////
 
+CAudio* audio = CAudio::Instance();
+
 
 void monster_moving(game_map* m,_interface* inter)
 {
@@ -108,7 +110,6 @@ void CGameStateRun::moving(int direction)
 					switch (weapon_id)
 					{
 						case 1: case 4:
-							
 							if (ls1 < 0)
 							{
 								int index = ls1 * -1 - 1;
@@ -125,7 +126,7 @@ void CGameStateRun::moving(int direction)
 								if (monster->get_hp() <= 0)
 									m.pop_monster(index);
 							}
-							if (ls1 > 0 && ls2 > 0)
+							if (ls1 >= 0 && ls2 >= 0)
 							{
 								m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
 								m.player->set_moving();
@@ -162,9 +163,11 @@ void CGameStateRun::moving(int direction)
 				break;
 			case _stair:
 				phase_number++;
+				wid = m.player->get_weapon_id();
 				init();
 				break;
 			case _chest:
+				m.block_change(player_x + direction_x[direction], player_y + direction_y[direction], 1);
 				m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
 				m.player->set_moving();
 				if (phase_number == 0)
@@ -181,6 +184,9 @@ void CGameStateRun::moving(int direction)
 				inter.set_weapon_id(id);
 				break;
 			default:
+				{
+				int ls1 = m.get_block_info(player_x + d_ls_x1[direction], player_y + d_ls_y1[direction]);
+				int ls2 = m.get_block_info(player_x + d_ls_x2[direction], player_y + d_ls_y2[direction]);
 				if (info < 0)
 				{
 					int index = info * -1 - 1;
@@ -189,10 +195,27 @@ void CGameStateRun::moving(int direction)
 					if (monster->get_hp() <= 0)
 						m.pop_monster(index);
 				}
+				if (ls1 < 0)
+				{
+					int index = ls1 * -1 - 1;
+					Monster* monster = m.get_chr()[index];
+					m.player->attack(monster, direction);
+					if (monster->get_hp() <= 0)
+						m.pop_monster(index);
+				}
+				if (ls2 < 0)
+				{
+					int index = ls2 * -1 - 1;
+					Monster* monster = m.get_chr()[index];
+					m.player->attack(monster, direction);
+					if (monster->get_hp() <= 0)
+						m.pop_monster(index);
+				}
+				}
 				break;
 		}
+		monster_moving(&m, &inter);
 	}
-	monster_moving(&m, &inter);
 }
 
 void game_framework::CGameStateRun::init()
@@ -201,6 +224,8 @@ void game_framework::CGameStateRun::init()
 	inter.init();
 	m.init(phase_number);
 	c.init(&m);
+	m.player->set_weapon_id(wid);
+	inter.set_weapon_id(wid);
 }
 
 CGameStateRun::CGameStateRun(CGame *g) : CGameState(g)
@@ -234,7 +259,6 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	if (tempo.if_shouldjump())
-	//if(1)
 		moving(nChar - 37);
 
 }
