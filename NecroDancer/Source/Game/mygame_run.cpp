@@ -106,10 +106,10 @@ void CGameStateRun::moving(int direction)
 				{
 					int ls1 = m.get_block_info(player_x + d_ls_x1[direction], player_y + d_ls_y1[direction]);
 					int ls2 = m.get_block_info(player_x + d_ls_x2[direction], player_y + d_ls_y2[direction]);
-					int spear = m.get_block_info(player_x + d_spear_x[direction], player_y + d_spear_y[direction]);
+					int s = m.get_block_info(player_x + d_spear_x[direction], player_y + d_spear_y[direction]);
 					switch (weapon_id)
 					{
-						case 1: case 4:
+						case longsword: case diamond_longsword:
 							if (ls1 < 0)
 							{
 								int index = ls1 * -1 - 1;
@@ -132,10 +132,10 @@ void CGameStateRun::moving(int direction)
 								m.player->set_moving();
 							}
 							break;
-						case 2: case 5:
-							if (spear < 0)
+						case spear: case diamond_spear:
+							if (s < 0)
 							{
-								int index = spear * -1 - 1;
+								int index = s * -1 - 1;
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
 								if (monster->get_hp() <= 0)
@@ -185,36 +185,49 @@ void CGameStateRun::moving(int direction)
 				break;
 			default:
 				{
-				int ls1 = m.get_block_info(player_x + d_ls_x1[direction], player_y + d_ls_y1[direction]);
-				int ls2 = m.get_block_info(player_x + d_ls_x2[direction], player_y + d_ls_y2[direction]);
-				if (info < 0)
-				{
-					int index = info * -1 - 1;
-					Monster* monster = m.get_chr()[index];
-					m.player->attack(monster, direction);
-					if (monster->get_hp() <= 0)
-						m.pop_monster(index);
-				}
-				if (ls1 < 0)
-				{
-					int index = ls1 * -1 - 1;
-					Monster* monster = m.get_chr()[index];
-					m.player->attack(monster, direction);
-					if (monster->get_hp() <= 0)
-						m.pop_monster(index);
-				}
-				if (ls2 < 0)
-				{
-					int index = ls2 * -1 - 1;
-					Monster* monster = m.get_chr()[index];
-					m.player->attack(monster, direction);
-					if (monster->get_hp() <= 0)
-						m.pop_monster(index);
-				}
+					int ls1 = m.get_block_info(player_x + d_ls_x1[direction], player_y + d_ls_y1[direction]);
+					int ls2 = m.get_block_info(player_x + d_ls_x2[direction], player_y + d_ls_y2[direction]);
+					if (info < 0)
+					{
+						int index = info * -1 - 1;
+						Monster* monster = m.get_chr()[index];
+						m.player->attack(monster, direction);
+						if (monster->get_hp() <= 0)
+							m.pop_monster(index);
+					}
+					if (ls1 < 0 && (m.player->get_weapon_id()==longsword || m.player->get_weapon_id() == diamond_longsword))
+					{
+						int index = ls1 * -1 - 1;
+						Monster* monster = m.get_chr()[index];
+						m.player->attack(monster, direction);
+						if (monster->get_hp() <= 0)
+							m.pop_monster(index);
+					}
+					if (ls2 < 0 && (m.player->get_weapon_id() == longsword || m.player->get_weapon_id() == diamond_longsword))
+					{
+						int index = ls2 * -1 - 1;
+						Monster* monster = m.get_chr()[index];
+						m.player->attack(monster, direction);
+						if (monster->get_hp() <= 0)
+							m.pop_monster(index);
+					}
 				}
 				break;
 		}
 		monster_moving(&m, &inter);
+
+		if (phase_number == 2 && m.player->get_y() < 13)
+		{
+			m.block_change(10, 13, _border);
+			m.block_change(11, 13, _border);
+			m.block_change(12, 13, _border);
+		}
+		if (phase_number == 2 && m.get_chr().size() ==0)
+		{
+			m.block_change(10, 4, _floor);
+			m.block_change(11, 4, _floor);
+			m.block_change(12, 4, _floor);
+		}
 	}
 }
 
@@ -246,8 +259,8 @@ void CGameStateRun::OnBeginState()
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
-	if(tempo.if_afterjump())
-		moving(_stop);
+	//if(tempo.if_afterjump())
+		//moving(_stop);
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -258,7 +271,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	if (tempo.if_shouldjump())
+	//if (tempo.if_shouldjump())
+	if(1)
 		moving(nChar - 37);
 
 }
