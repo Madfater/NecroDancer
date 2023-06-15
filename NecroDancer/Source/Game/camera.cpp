@@ -134,7 +134,7 @@ void camera::show()
 
 		for (int x = 0; x < 15; x++)
 			for (auto &i : _map->get_chr())
-				if (i->get_camera_x() == x && i->get_camera_y() == y && camera_blocks[y][x] != _empty)
+				if (i->get_camera_x() == x && i->get_camera_y() == y && camera_blocks[y][x] != _empty && i->get_hp()>0)
 				{
 					i->show();
 					if (i->get_is_damaged())
@@ -144,7 +144,7 @@ void camera::show()
 	}
 
 	for (auto &i : _map->get_chr())
-		if (i->get_is_damaged())
+		if (i->get_is_damaged() && i->get_hp()>0)
 			i->show_hp();
 
 	if (_map->player->get_is_attacking())

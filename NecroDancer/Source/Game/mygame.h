@@ -101,7 +101,7 @@ namespace game_framework {
 		game_map m ;
 		camera c ;
 		_interface inter;
-		int phase_number = 0;
+		int phase_number = 2;
 		int wid = 0;
 	};
 

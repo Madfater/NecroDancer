@@ -626,8 +626,13 @@ int king::move(game_map * m)
 	int min = INT_MIN;
 	int res = 0;
 	int dis_x = 0, dis_y = 0;
+	int cnt = 0;
 
-	if (m->get_chr().size() == 1)
+	for (auto &i : m->get_chr())
+		if (i->get_hp() > 0)
+			cnt++;
+
+	if (cnt==1)
 	{
 		for (int i = 0; i < 8; i++)
 		{

@@ -22,6 +22,8 @@ void monster_moving(game_map* m,_interface* inter)
 {
 	for (auto &i : m->get_chr())
 	{
+		if (i->get_hp() <= 0)
+			continue;
 		int d = i->move(m);
 		int x = i->get_x() + direction_x[d];
 		int y = i->get_y() + direction_y[d];
@@ -115,16 +117,12 @@ void CGameStateRun::moving(int direction)
 								int index = ls1 * -1 - 1;
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
-								if (monster->get_hp() <= 0)
-									m.pop_monster(index);
 							}
 							if (ls2 < 0)
 							{
 								int index = ls2 * -1 - 1;
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
-								if (monster->get_hp() <= 0)
-									m.pop_monster(index);
 							}
 							if (ls1 >= 0 && ls2 >= 0)
 							{
@@ -138,8 +136,6 @@ void CGameStateRun::moving(int direction)
 								int index = s * -1 - 1;
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
-								if (monster->get_hp() <= 0)
-									m.pop_monster(index);
 							}
 							else
 							{
@@ -192,24 +188,20 @@ void CGameStateRun::moving(int direction)
 						int index = info * -1 - 1;
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
-						if (monster->get_hp() <= 0)
-							m.pop_monster(index);
+						
 					}
 					if (ls1 < 0 && (m.player->get_weapon_id()==longsword || m.player->get_weapon_id() == diamond_longsword))
 					{
 						int index = ls1 * -1 - 1;
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
-						if (monster->get_hp() <= 0)
-							m.pop_monster(index);
 					}
 					if (ls2 < 0 && (m.player->get_weapon_id() == longsword || m.player->get_weapon_id() == diamond_longsword))
 					{
 						int index = ls2 * -1 - 1;
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
-						if (monster->get_hp() <= 0)
-							m.pop_monster(index);
+						
 					}
 				}
 				break;
@@ -222,23 +214,41 @@ void CGameStateRun::moving(int direction)
 			m.block_change(11, 13, _border);
 			m.block_change(12, 13, _border);
 		}
-		if (phase_number == 2 && m.get_chr().size() ==0)
+		if (phase_number == 2)
 		{
-			m.block_change(10, 4, _floor);
-			m.block_change(11, 4, _floor);
-			m.block_change(12, 4, _floor);
+			bool f = true;
+			for(auto &i:m.get_chr())
+				if (i->get_hp() > 0)
+				{
+					f = false;
+					break;
+				}
+			if (f)
+			{
+				m.block_change(10, 4, _floor);
+				m.block_change(11, 4, _floor);
+				m.block_change(12, 4, _floor);
+			}
+			
 		}
 	}
 }
 
 void game_framework::CGameStateRun::init()
 {
-	tempo.init();
-	inter.init();
-	m.init(phase_number);
-	c.init(&m);
-	m.player->set_weapon_id(wid);
-	inter.set_weapon_id(wid);
+	if (phase_number < 3)
+	{
+		tempo.init();
+		inter.init();
+		m.init(phase_number);
+		c.init(&m);
+		m.player->set_weapon_id(wid);
+		inter.set_weapon_id(wid);
+	}
+	else
+	{
+
+	}
 }
 
 CGameStateRun::CGameStateRun(CGame *g) : CGameState(g)
@@ -284,6 +294,16 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 {
+	if ((point.x >= 335 && point.x <= 535) && (point.y >= 250 && point.y <= 350) && phase_number>2)
+	{
+		phase_number = 0;
+		init();
+	}
+	else if ((point.x >= 335 && point.x <= 535) && (point.y >= 350 && point.y <= 450) && phase_number > 2)
+	{
+		phase_number = 0;
+		init();
+	}
 }
 
 void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
@@ -304,7 +324,28 @@ void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動
 
 void CGameStateRun::OnShow()
 {
-	c.show();
-	tempo.show();
-	inter.show();
+	if (phase_number < 3)
+	{
+		c.show();
+		tempo.show();
+		inter.show();
+	}
+	else
+	{
+		game_framework::CMovingBitmap win;
+		game_framework::CMovingBitmap restart;
+		game_framework::CMovingBitmap leave;
+		win.LoadBitmapByString({ "resources/picture/win.bmp","resources/picture/lose.bmp" });
+		restart.LoadBitmapByString({ "resources/picture/restart.bmp" });
+		leave.LoadBitmapByString({ "resources/picture/leave.bmp" });
+		win.SetTopLeft(300, 0);
+		restart.SetTopLeft(335, 250);
+		leave.SetTopLeft(335, 350);
+		win.SetFrameIndexOfBitmap(phase_number - 3);
+		win.ShowBitmap();
+		restart.ShowBitmap();
+		leave.ShowBitmap();
+
+	}
+	
 }

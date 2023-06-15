@@ -106,7 +106,7 @@ int game_map::get_block_info(int x,int y)
 		return _player;
 
 	for (int i = 0; i < monsters.size(); i++)
-		if (monsters[i]->get_x() == x && monsters[i]->get_y() == y)
+		if (monsters[i]->get_x() == x && monsters[i]->get_y() == y && monsters[i]->get_hp()>0)
 			return -1*(i+1);
 
 	return blocks[y][x].type;
