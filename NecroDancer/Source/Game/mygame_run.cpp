@@ -323,7 +323,7 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	if (tempo.if_shouldjump())
 		moving(nChar - 37);
-	if (nChar == 32)
+	if (nChar == 65)
 		is_debugmode = !is_debugmode;
 }
 
