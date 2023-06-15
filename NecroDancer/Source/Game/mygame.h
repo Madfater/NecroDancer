@@ -97,11 +97,12 @@ namespace game_framework {
 	private:
 		void moving(int);
 		void init();
+		void monster_moving(game_map*, _interface*);
 		tempo tempo;
 		game_map m ;
 		camera c ;
 		_interface inter;
-		int phase_number = 2;
+		int phase_number = 0;
 		int wid = 0;
 	};
 
