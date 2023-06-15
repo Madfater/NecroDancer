@@ -104,6 +104,7 @@ namespace game_framework {
 		_interface inter;
 		int phase_number = 0;
 		int wid = 0;
+		bool is_debugmode = false;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

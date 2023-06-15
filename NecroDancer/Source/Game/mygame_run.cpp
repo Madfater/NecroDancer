@@ -56,8 +56,11 @@ void CGameStateRun :: monster_moving(game_map* m,_interface* inter)
 				break;
 		}
 		inter->load_hp(m->player->get_hp());
-		if (m->player->get_hp() <= 0)
+		if (m->player->get_hp() <= 0 && !is_debugmode)
+		{
 			phase_number = 4;
+			init();
+		}
 	}
 }
 
@@ -273,6 +276,13 @@ void game_framework::CGameStateRun::init()
 		m.player->set_weapon_id(wid);
 		inter.set_weapon_id(wid);
 	}
+	else
+	{
+		tempo.init();
+		inter.init();
+		m.init(0);
+		c.init(&m);
+	}
 }
 
 CGameStateRun::CGameStateRun(CGame *g) : CGameState(g)
@@ -313,7 +323,8 @@ void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	if (tempo.if_shouldjump())
 		moving(nChar - 37);
-
+	if (nChar == 32)
+		is_debugmode = !is_debugmode;
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
