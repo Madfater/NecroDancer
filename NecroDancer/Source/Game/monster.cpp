@@ -14,6 +14,17 @@ Monster::Monster(int _HP,int _damage, vector<vector<string>> files)
 		img[i].LoadBitmapByString(files[i],RGB(0,0,0));
 		img[i].SetAnimation(100, false);
 	}
+
+	for (int i = 0; i < HP; i++)
+	{
+		hearts.push_back(game_framework::CMovingBitmap{});
+		hearts[i].LoadBitmapByString({ img_health_temp_full }, RGB(0, 0, 0));
+	}
+	for (int i = HP; i < full_HP; i++)
+	{
+		hearts.push_back(game_framework::CMovingBitmap{});
+		hearts[i].LoadBitmapByString({ img_health_temp_empty }, RGB(0, 0, 0));
+	}
 }
 
 bool Monster::get_faceright() 
@@ -84,6 +95,7 @@ void Monster::set_is_moving()
 void Monster::lose_HP(int damage)
 {
 	HP -= damage;
+	if (HP <= 0) HP = 0;
 	is_damaged = true;
 	hearts.clear();
 	for (int i = 0; i < HP; i++)
