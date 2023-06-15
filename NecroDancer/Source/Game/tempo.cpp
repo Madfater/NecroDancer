@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "tempo.h"
 
-#define interval_right 30
-#define interval_left 370
+#define interval_right 40 //  基準是0 0~40可以按
+#define interval_left 360 //  基準是400 360~400可以按
 #define left_beat_start_pos 0
 #define left_beat_end_pos 400
 #define right_beat_start_pos 900

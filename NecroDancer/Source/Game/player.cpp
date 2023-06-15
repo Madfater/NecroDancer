@@ -173,7 +173,7 @@ void Player::attack_animation()
 {
 	if (attack_counter < 10) 
 	{
-		_atk_img[weapon_id][_direction].ShowBitmap();
+		_atk_img[weapon_id%3][_direction].ShowBitmap();
 		attack_counter++;
 	}
 	else

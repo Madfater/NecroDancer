@@ -12,6 +12,9 @@ public:
 	int weapon_id = 0;
 	vector<game_framework::CMovingBitmap> hearts;
 	vector<game_framework::CMovingBitmap> weapon_icon;
+	game_framework::CMovingBitmap slot_shovel;
+	game_framework::CMovingBitmap slot_attack;
+	game_framework::CMovingBitmap shovel_icon;
 	game_framework::CMovingBitmap heart_half;
 	//game_framework::CMovingBitmap heart_half;
 	game_framework::CMovingBitmap money;

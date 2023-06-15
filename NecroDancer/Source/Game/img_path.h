@@ -65,7 +65,8 @@ const vector<string> img_chest = { "resources/picture/chest.bmp" };
 const vector<string> img_stair = { "resources/picture/stair.bmp" };
 
 const string money = "resources/picture/heart_half.bmp";
-
+const string img_slot_shovel = "resources/picture/slot_shovel.bmp";
+const string img_slot_attack = "resources/picture/slot_attack.bmp";
 const vector<string> img_shovel = { "resources/picture/shovel_left.bmp","resources/picture/shovel_right.bmp" };
 
 const vector<string> img_weapon_icon = 
