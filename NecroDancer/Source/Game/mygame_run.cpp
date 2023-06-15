@@ -18,7 +18,7 @@ using namespace game_framework;
 CAudio* audio = CAudio::Instance();
 
 
-void monster_moving(game_map* m,_interface* inter)
+void CGameStateRun :: monster_moving(game_map* m,_interface* inter)
 {
 	for (auto &i : m->get_chr())
 	{
@@ -56,6 +56,11 @@ void monster_moving(game_map* m,_interface* inter)
 				break;
 		}
 		inter->load_hp(m->player->get_hp());
+		if (m->player->get_hp() <= 0 && !is_debugmode)
+		{
+			phase_number = 4;
+			init();
+		}
 	}
 }
 
@@ -231,6 +236,7 @@ void CGameStateRun::moving(int direction)
 				}
 				break;
 		}
+
 		monster_moving(&m, &inter);
 
 		if (phase_number == 2 && m.player->get_y() < 13)
@@ -272,7 +278,10 @@ void game_framework::CGameStateRun::init()
 	}
 	else
 	{
-
+		tempo.init();
+		inter.init();
+		m.init(0);
+		c.init(&m);
 	}
 }
 
@@ -312,10 +321,10 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	//if (tempo.if_shouldjump())
-	if(1)
+	if (tempo.if_shouldjump())
 		moving(nChar - 37);
-
+	if (nChar == 65)
+		is_debugmode = !is_debugmode;
 }
 
 void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -376,7 +385,6 @@ void CGameStateRun::OnShow()
 		win.ShowBitmap();
 		restart.ShowBitmap();
 		leave.ShowBitmap();
-
 	}
 	
 }
