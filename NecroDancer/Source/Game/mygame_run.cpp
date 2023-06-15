@@ -300,8 +300,8 @@ void CGameStateRun::OnBeginState()
 
 void CGameStateRun::OnMove()							// 移動遊戲元素
 {
-	//if(tempo.if_afterjump())
-		//moving(_stop);
+	if(tempo.if_afterjump())
+		moving(_stop);
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
