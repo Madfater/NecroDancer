@@ -41,6 +41,10 @@ Player::Player(int _x, int _y)
 	_atk_img[spear][2].SetTopLeft(8 * 60, 4 * 60 - 10); //right
 	_atk_img[spear][3].SetTopLeft(7 * 60, 5 * 60 - 10); //down
 
+
+
+
+
 	/*for (int i = 0; i < 4; i++) 
 	{
 		atk_img.push_back(game_framework::CMovingBitmap{});
@@ -64,9 +68,9 @@ Player::Player(int _x, int _y)
 		
 	}
 	for (int i = 0; i < 2; i++) {
-		shovel_img[0][i].SetTopLeft(6 * 60, 3 * 60 - 30); //left
+		shovel_img[0][i].SetTopLeft(6 * 60, 4 * 60 - 30); //left
 		shovel_img[1][i].SetTopLeft(7 * 60, 3 * 60 - 30); //up
-		shovel_img[2][i].SetTopLeft(8 * 60, 3 * 60 - 30); //right
+		shovel_img[2][i].SetTopLeft(8 * 60, 4 * 60 - 30); //right
 		shovel_img[3][i].SetTopLeft(7 * 60, 5 * 60 - 30); //down
 	}
 
@@ -173,7 +177,8 @@ void Player::attack_animation()
 {
 	if (attack_counter < 10) 
 	{
-		_atk_img[weapon_id%3][_direction].ShowBitmap();
+		int temp = weapon_id % 3;
+		_atk_img[temp][_direction].ShowBitmap();
 		attack_counter++;
 	}
 	else

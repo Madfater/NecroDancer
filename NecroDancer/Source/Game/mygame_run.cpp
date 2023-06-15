@@ -45,6 +45,7 @@ void monster_moving(game_map* m,_interface* inter)
 			case _player:
 				i->set_position(i->get_x(), i->get_y(), m);
 				m->player->lose_HP(i->get_damage());
+				audio->Play(4);
 				break;
 			case _floor:
 				i->set_is_moving();
@@ -83,14 +84,18 @@ void CGameStateRun::moving(int direction)
 		switch (info)
 		{
 			case _border:
+				m.player->dig(direction);
+				audio->Play(1);
 				break;
 			case _empty:
 				break;
 			case _door_hor:
 				m.block_change(player_x + direction_x[direction], player_y + direction_y[direction], _floor);
+				audio->Play(5);
 				break;
 			case _door_ver:
 				m.block_change(player_x + direction_x[direction], player_y + direction_y[direction], _floor);
+				audio->Play(5);
 				break;
 			case _wall:
 				switch (m.player->get_shovel_id())
@@ -98,6 +103,7 @@ void CGameStateRun::moving(int direction)
 					case 0:
 						m.player->dig(direction);
 						m.block_change(player_x + direction_x[direction], player_y + direction_y[direction], _floor);
+						audio->Play(2);
 						break;
 					default:
 						break;
@@ -117,12 +123,18 @@ void CGameStateRun::moving(int direction)
 								int index = ls1 * -1 - 1;
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
+								audio->Play(3);
+								if (monster->get_hp() <= 0)
+									m.pop_monster(index);
 							}
 							if (ls2 < 0)
 							{
 								int index = ls2 * -1 - 1;
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
+								audio->Play(3);
+								if (monster->get_hp() <= 0)
+									m.pop_monster(index);
 							}
 							if (ls1 >= 0 && ls2 >= 0)
 							{
@@ -136,6 +148,9 @@ void CGameStateRun::moving(int direction)
 								int index = s * -1 - 1;
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
+								audio->Play(3);
+								if (monster->get_hp() <= 0)
+									m.pop_monster(index);
 							}
 							else
 							{
@@ -166,6 +181,7 @@ void CGameStateRun::moving(int direction)
 				m.block_change(player_x + direction_x[direction], player_y + direction_y[direction], 1);
 				m.player->set_position(player_x + direction_x[direction], player_y + direction_y[direction]);
 				m.player->set_moving();
+				audio->Play(6);
 				if (phase_number == 0)
 				{
 					std::uniform_int_distribution<int> distInt(1, 2);
@@ -189,12 +205,18 @@ void CGameStateRun::moving(int direction)
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
 						
+						audio->Play(3);
+						if (monster->get_hp() <= 0)
+							m.pop_monster(index);
 					}
 					if (ls1 < 0 && (m.player->get_weapon_id()==longsword || m.player->get_weapon_id() == diamond_longsword))
 					{
 						int index = ls1 * -1 - 1;
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
+						audio->Play(3);
+						if (monster->get_hp() <= 0)
+							m.pop_monster(index);
 					}
 					if (ls2 < 0 && (m.player->get_weapon_id() == longsword || m.player->get_weapon_id() == diamond_longsword))
 					{
@@ -202,6 +224,9 @@ void CGameStateRun::moving(int direction)
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
 						
+						audio->Play(3);
+						if (monster->get_hp() <= 0)
+							m.pop_monster(index);
 					}
 				}
 				break;
@@ -263,7 +288,13 @@ CGameStateRun::~CGameStateRun()
 void CGameStateRun::OnBeginState()
 {
 	audio->Load(0, "resources/audio/zone1_1.wav");
-	audio->Play(0);
+	audio->Load(1, "resources/audio/dig_dirt.wav");
+	audio->Load(2, "resources/audio/dig_fail.wav");
+	audio->Load(3, "resources/audio/hit.wav");
+	audio->Load(4, "resources/audio/hurt.wav");
+	audio->Load(5, "resources/audio/door_open.wav");
+	audio->Load(6, "resources/audio/chest_open.wav");
+	audio->Play(0,true);
 	
 }
 
