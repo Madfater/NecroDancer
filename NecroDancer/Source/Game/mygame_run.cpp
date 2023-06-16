@@ -129,8 +129,6 @@ void CGameStateRun::moving(int direction)
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
 								audio->Play(3);
-								if (monster->get_hp() <= 0)
-									m.pop_monster(index);
 							}
 							if (ls2 < 0)
 							{
@@ -138,8 +136,6 @@ void CGameStateRun::moving(int direction)
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
 								audio->Play(3);
-								if (monster->get_hp() <= 0)
-									m.pop_monster(index);
 							}
 							if (ls1 >= 0 && ls2 >= 0)
 							{
@@ -154,8 +150,6 @@ void CGameStateRun::moving(int direction)
 								Monster* monster = m.get_chr()[index];
 								m.player->attack(monster, direction);
 								audio->Play(3);
-								if (monster->get_hp() <= 0)
-									m.pop_monster(index);
 							}
 							else
 							{
@@ -209,10 +203,8 @@ void CGameStateRun::moving(int direction)
 						int index = info * -1 - 1;
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
-						
 						audio->Play(3);
-						if (monster->get_hp() <= 0)
-							m.pop_monster(index);
+						
 					}
 					if (ls1 < 0 && (m.player->get_weapon_id()==longsword || m.player->get_weapon_id() == diamond_longsword))
 					{
@@ -220,18 +212,13 @@ void CGameStateRun::moving(int direction)
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
 						audio->Play(3);
-						if (monster->get_hp() <= 0)
-							m.pop_monster(index);
 					}
 					if (ls2 < 0 && (m.player->get_weapon_id() == longsword || m.player->get_weapon_id() == diamond_longsword))
 					{
 						int index = ls2 * -1 - 1;
 						Monster* monster = m.get_chr()[index];
 						m.player->attack(monster, direction);
-						
 						audio->Play(3);
-						if (monster->get_hp() <= 0)
-							m.pop_monster(index);
 					}
 				}
 				break;
